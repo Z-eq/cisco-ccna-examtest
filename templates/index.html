@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CCNA - By Zeq</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="light">
+<div class="container my-5">
+
+	<div class="text-center mb-4">
+		<h1>🖧</h1>
+		<button id="themeToggle" class="btn btn-secondary mb-3">🌓 Byt Tema</button>
+	</div>
+
+	<div id="startScreen">
+		<div class="text-center mb-3">
+			<button id="showHighscoresBtn" class="btn btn-outline-secondary btn-sm">Visa Highscores</button>
+		</div>
+
+		<div id="highscoresDiv" class="mb-3" style="display:none; max-width:720px; margin:0 auto;"></div>
+
+		<div id="fileSelection" class="mb-3">
+			<label class="form-label">Välj JSON-filer:</label>
+			<div id="fileCheckboxes">
+				</div>
+
+			<div class="mt-2">
+				<button id="toggleFilesBtn" class="btn btn-sm btn-outline-primary">Avmarkera alla</button>
+			</div>
+
+			<div class="form-check mt-2 mb-3">
+				<input class="form-check-input" type="checkbox" id="onlyWrong">
+				<label class="form-check-label" for="onlyWrong"> 🚩 Endast felsvarade frågor</label>
+			</div>
+		</div>
+
+		<div class="mb-3">
+			<label for="numQuestions" class="form-label">Antal frågor att ta:</label>
+			<input type="number" class="form-control w-25" id="numQuestions" value="10" min="1">
+		</div>
+
+		<div class="mb-3">
+			<button id="startBtn" class="btn btn-primary btn-lg">▶ Starta Quiz</button>
+		</div>
+	</div>
+
+	<div id="quizScreen" class="d-none">
+		<div class="d-flex justify-content-end mb-2">
+			<button id="abortBtn" class="btn btn-danger">⏹ Avbryt quiz</button>
+		</div>
+
+		<div class="progress mb-3">
+			<div id="progressBar" class="progress-bar" role="progressbar" style="width:0%">0%</div>
+		</div>
+
+		<div class="card mb-3">
+			<div class="card-body">
+				<h4 id="questionNum" class="text-dark"></h4>
+				<p id="questionText" class="text-dark"></p>
+				<div id="options">
+					</div>
+				<div id="explanation" class="explanation d-none"></div>
+				<button id="multiSubmitBtn" class="btn btn-primary mt-3 d-none">Submit</button>
+				<button id="nextBtn" class="btn btn-success mt-3 d-none">Nästa fråga</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="resultScreen" class="d-none text-center">
+		<h2>📊 Resultat</h2>
+		<canvas id="categoryChart" width="400" height="200"></canvas>
+		<h4 id="totalResult" class="mt-3"></h4>
+		<button id="restartBtn" class="btn btn-primary btn-lg mt-3">🔁 Starta om</button>
+	</div>
+
+</div>
+
+<div class="modal fade" id="abortModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Avbryt quiz?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				Vill du rätta de frågor du redan svarat på innan du avslutar, eller återgå till startskärmen?
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="abortWithScore" class="btn btn-primary" data-bs-dismiss="modal">Rätta och visa resultat</button>
+				<button type="button" id="abortWithoutScore" class="btn btn-secondary" data-bs-dismiss="modal">Återgå till start</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="{{ url_for('static', filename='darkmode.js') }}"></script>
+<script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

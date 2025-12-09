@@ -1,0 +1,1151 @@
+[
+  {
+    "question": "Which protocol uses TCP three-way handwriting to establish a connection?",
+    "options": [
+      "UDP",
+      "TCP",
+      "ICMP",
+      "ARP"
+    ],
+    "correct": "TCP",
+    "category": "TCP/IP",
+    "explanation": "**TCP (Transmission Control Protocol)** är ett anslutningsorienterat protokoll som använder den **trevägshandskakningen** (SYN, SYN-ACK, ACK) för att tillförlitligt etablera en session innan dataöverföring påbörjas."
+  },
+  {
+    "question": "Which advantage does a switch bring to a LAN environment?",
+    "options": [
+      "combines segments together",
+      "breaks up segments",
+      "forces full-duplex on all ports",
+      "allows only one-way communication on a segment"
+    ],
+    "correct": "breaks up segments",
+    "category": "Switching",
+    "explanation": "A switch forwards traffic based on the destination MAC address, creating a separate **collision domain** for each port. By isolating traffic in this way, it logically **breaks up a single collision domain** (segment), increasing performance and efficiency compared to a hub."
+  },
+  {
+    "question": "Which protocol is used by the ping utility to test connectivity between network devices?",
+    "options": [
+      "ICMP",
+      "TCP",
+      "UDP",
+      "DNS"
+    ],
+    "correct": "ICMP",
+    "category": "IP Addressing",
+    "explanation": "**Ping** sends **ICMP (Internet Control Message Protocol) Echo Request** messages and waits for Echo Replies to determine if a host is reachable. It does not use TCP or UDP ports."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which command on a Cisco router clears the ARP cache?",
+    "options": [
+      "clear ip arp",
+      "clear arp-cache",
+      "clear mac address-table",
+      "clear interface arp"
+    ],
+    "correct": "clear ip arp",
+    "explanation": "The \"clear ip arp\" command clears the ARP cache on a Cisco device."
+  },
+  {
+    "question": "Which command shows VLANs and which ports belong to them?",
+    "options": [
+      "show vlan brief",
+      "show vlan id 1",
+      "show interfaces trunk",
+      "show interfaces status"
+    ],
+    "correct": "show vlan brief",
+    "category": "Switching",
+    "explanation": "\"show vlan brief\" visar en översikt av alla VLAN och de access-portar som är tilldelade dem. För en exakt lista över trunk-portar och de VLAN de bär, används dock kommandot 'show interfaces trunk'."
+  },
+  {
+    "question": "Which layer in the OSI model is responsible for session management?",
+    "options": [
+      "Layer 4",
+      "Layer 5",
+      "Layer 6",
+      "Layer 7"
+    ],
+    "correct": "Layer 5",
+    "category": "OSI",
+    "explanation": "The **Session layer (Layer 5)** handles the establishment, management, and termination of dialogue between two applications, including synchronization and checkpoints."
+  },
+  {
+    "question": "In Cisco routing implementations, what is the role of the administrative distance?",
+    "options": [
+      "It identifies how much time has passed since the route was learned.",
+      "It identifies how the route was learned.",
+      "It identifies the measure used to calculate the best path.",
+      "It identifies the trustworthiness of the route source."
+    ],
+    "correct": "It identifies the trustworthiness of the route source.",
+    "category": "Routing",
+    "explanation": "Administrative Distance (AD) is a value (0-255) used to rate the **trustworthiness** of different routing sources (e.g., Static, OSPF, EIGRP). The route with the lowest AD is always preferred when multiple sources provide a path to the same destination."
+  },
+  {
+    "question": "Match the operations used by SNMP agent to their explanation.",
+    "options": [
+      "set: This operation is used to put information in the MIB from an SNMP manager.",
+      "trap: This operation is used by the SNMP agent to send a triggered piece of information to the SNMP manager.",
+      "get: This operation is used to retrieve information from the MIB.",
+      "inform: This operation is the same as a trap, but it adds an acknowledgment that a trap does not provide."
+    ],
+    "correct": [
+      "set: This operation is used to put information in the MIB from an SNMP manager.",
+      "trap: This operation is used by the SNMP agent to send a triggered piece of information to the SNMP manager.",
+      "get: This operation is used to retrieve information from the MIB.",
+      "inform: This operation is the same as a trap, but it adds an acknowledgment that a trap does not provide."
+    ],
+    "category": "SNMP",
+    "explanation": "SNMP operations include get, set, trap, and inform, each with a specific function between managers and agents."
+  },
+  {
+    "question": "Which Cisco IOS command can you use to examine the configuration register?",
+    "options": [
+      "show running-config",
+      "show startup-config",
+      "show version",
+      "show config-register"
+    ],
+    "correct": "show version",
+    "category": "Cisco IOS",
+    "explanation": "The **`show version`** command displays the configuration register value, which dictates how the device boots (e.g., whether to load the startup-config or ignore it)."
+  },
+  {
+    "question": "Which type of address is automatically assigned to a physical interface when IPv6 is enabled on that interface?",
+    "options": [
+      "global unicast address",
+      "link-local address",
+      "loopback address",
+      "unique local address"
+    ],
+    "correct": "link-local address",
+    "category": "IPv6",
+    "explanation": "A **link-local address** (starting with **FE80::**) is automatically generated and assigned to every IPv6-enabled interface. It's used for communication only on the local segment, such as for Neighbor Discovery Protocol (NDP)."
+  },
+  {
+    "category": "IP Connectivity",
+    "question": "Which of the following is the main purpose of the ARP (Address Resolution Protocol)?",
+    "options": [
+      "To resolve IP addresses to MAC addresses",
+      "To resolve MAC addresses to IP addresses",
+      "To assign IP addresses to devices dynamically",
+      "To encrypt network traffic"
+    ],
+    "correct": "To resolve IP addresses to MAC addresses",
+    "explanation": "ARP is a Layer 2 protocol used to dynamically map a known Layer 3 address (IPv4) to an unknown Layer 2 address (MAC address) so that devices can communicate on the local segment."
+  },
+  {
+
+    "question": "Which cloud service model offers customers the most control over their cloud-hosted services?",
+  "options": [
+    "Function as a Service (FaaS)",
+    "Infrastructure as a Service (IaaS)",
+    "Platform as a Service (PaaS)",
+    "Software as a Service (SaaS)"
+  ],
+  "correct": "Infrastructure as a Service (IaaS)",
+  "category": "Cloud Computing",
+  "explanation": "The three main cloud service models represent a spectrum of control and management responsibilities. **Infrastructure as a Service (IaaS)** provides the customer with the most control. In the IaaS model, the provider manages the underlying networking, storage, and virtualization layers, but the customer retains full control over the **operating systems**, middleware, runtime, applications, and data. This is akin to having virtual data center components. **SaaS** offers the least control, while **PaaS** and **FaaS** offer medium control by abstracting away the OS and underlying infrastructure."
+},
+{
+    "question": "Which protocol is used to secure web traffic?",
+    "options": [
+      "HTTP",
+      "HTTPS",
+      "FTP",
+      "SSH"
+    ],
+    "correct": "HTTPS",
+    "category": "Security",
+    "explanation": "HTTPS (Hypertext Transfer Protocol Secure) använder SSL/TLS-kryptering för att säkra webbtrafik, vilket säkerställer integritet och dataintegritet mellan klienten och servern."
+  },
+  {
+    "question": "Which two statements about the Dynamic Multipoint Virtual Private Network (DMVPN) are true? (Choose two.)",
+    "options": [
+      "DMVPN creates hub-to-spoke tunnels.",
+      "DMVPN creates spoke-to-spoke tunnels.",
+      "DMVPN is used for connection between an enterprise and a provider.",
+      "DMVPN is used for connection between enterprises.",
+      "DMVPN is used within a branch network."
+    ],
+    "correct": [
+      "DMVPN creates hub-to-spoke tunnels.",
+      "DMVPN creates spoke-to-spoke tunnels."
+    ],
+    "category": "VPN",
+    "explanation": "DMVPN supports both hub-to-spoke and dynamic spoke-to-spoke VPN tunnels within an enterprise network."
+  },
+  {
+    "question": "In a WLAN, a common key can be used for which three things? (Choose three.)",
+    "options": [
+      "authentication only",
+      "authorization only",
+      "accounting only",
+      "encryption only",
+      "authentication and encryption"
+    ],
+    "correct": [
+      "authentication and encryption",
+      "authentication only",
+      "encryption only"
+    ],
+    "category": "Wireless",
+    "explanation": "A Pre-Shared Key (PSK) is used for authentication and is the basis for key derivation, which enables encryption. Authorization is typically handled by policy, but may be included depending on the context/standard."
+  },
+  {
+    "question": "Which two ports must a firewall allow for CAPWAP operations? (Choose two.)",
+    "options": [
+      "UDP 5246",
+      "UDP 5247",
+      "UDP 5426",
+      "UDP 5470",
+      "UDP 5530"
+    ],
+    "correct": [
+      "UDP 5246",
+      "UDP 5247"
+    ],
+    "category": "Wireless/Security",
+    "explanation": "**CAPWAP (Control and Provisioning of Wireless Access Points)** använder **UDP-port 5246** för **kontrollmeddelanden** (hantering av accesspunkten) och **UDP-port 5247** för **datatrafik** (tunneling av användardata)."
+  },
+  {
+    "question": "Which two symptoms are characteristic of a duplex mismatch? (Choose two.)",
+    "options": [
+      "The full-duplex side of the link will experience increased collision rates.",
+      "The half-duplex side of the link will experience increased collision rates.",
+      "TCP data transfer will perform better than UDP data transfer.",
+      "The connection will not be operational.",
+      "The full-duplex side of the link will have a large number of CRC errors."
+    ],
+    "correct": [
+      "The half-duplex side of the link will experience increased collision rates.",
+      "The full-duplex side of the link will have a large number of CRC errors."
+    ],
+    "category": "Troubleshooting",
+    "explanation": "A duplex mismatch occurs when one side operates half-duplex and the other operates full-duplex. The half-duplex side will detect high collisions, while the full-duplex side receives the resulting corrupted frames, leading to high CRC errors."
+  },
+  {
+    "question": "A client issues a DNS request to its local DNS server. The local DNS server does not have the information required. Which entity will finally send a DNS response to the client?",
+    "options": [
+      "the authoritative DNS server for the top-level domain",
+      "the authoritative top-level domain and subdomain DNS servers",
+      "the client's local DNS server",
+      "the Internet Service Provider's DNS server"
+    ],
+    "correct": "the client's local DNS server",
+    "category": "DNS",
+    "explanation": "The local DNS server (often called a recursive resolver) handles all recursive lookups to root, TLD, and authoritative servers on behalf of the client. It caches the final answer and is the only entity that sends the final response back to the client."
+  },
+  {
+    "question": "Which two symptoms indicate a duplex mismatch between a client and an Ethernet switch? (Choose two.)",
+  "options": [
+    "Auto-negotiation will report speed and duplex mismatch errors on the client NIC interface.",
+    "Interface statistics for the full-duplex side of the link will show increasing late collision errors.",
+    "The full-duplex interface will report increasing numbers of FCS errors or runts on the port.",
+    "The full-duplex side of the link will slow as CSMA/CD will force it to wait for incoming packets from the other side of the link.",
+    "The half-duplex side of the link will waste bandwidth due to increased packet retransmissions caused by increasing collisions."
+  ],
+  "correct": [
+    "The full-duplex interface will report increasing numbers of FCS errors or runts on the port.",
+    "The half-duplex side of the link will waste bandwidth due to increased packet retransmissions caused by increasing collisions."
+  ],
+  "category": "Cisco Troubleshooting/Ethernet",
+  "explanation": "A duplex mismatch (one side Full, the other Half) causes severe communication problems:\n\n1.  **Full-Duplex Side (Switch):** Since the switch sends and receives simultaneously without running CSMA/CD, when the half-duplex client sends data while the switch is also transmitting, the switch receives fragmented or garbled packets. This results in the switch reporting an increasing number of **FCS Errors** (Frame Check Sequence failures) and **Runts** (frames smaller than 64 bytes).\n2.  **Half-Duplex Side (Client):** The client must run CSMA/CD. When the full-duplex switch sends traffic at any time, it causes collisions on the client side, forcing the client to continuously retransmit packets, leading to poor throughput and wasted bandwidth."
+},
+{
+    
+    "question": "You have been assigned a task to configure two routers as part of an HSRP group. Because you have not configured priority on the routers, which statement is correct?",
+    "options": [
+      "Both routers will be in ACTIVE state.",
+      "Both routers will be in STANDBY state.",
+      "Both routers will be in LISTEN state.",
+      "One router will be in ACTIVE and the other in STANDBY state."
+    ],
+    "correct": "One router will be in ACTIVE and the other in STANDBY state.",
+    "category": "HSRP",
+    "explanation": "If HSRP priority is not configured, the router with the **highest IPv4 address** for the HSRP group interface becomes the **Active** router. The other becomes the Standby router. Only one can be Active."
+  },
+  {
+    "question": "You have entered the following commands in global configuration mode:\nRouter(config)# logging host 10.1.1.1\nRouter(config)# logging host 172.16.1.1\nWhich statement regarding the syslog configuration is true?",
+    "options": [
+      "The server that is specified in the command entered last will be the only one used.",
+      "The server that is specified in the command entered first will be the only one used.",
+      "The router will forward syslog messages to both syslog servers specified in the commands.",
+      "The router will overwrite the first command with the second."
+    ],
+    "correct": "The router will forward syslog messages to both syslog servers specified in the commands.",
+    "category": "Syslog",
+    "explanation": "The 'logging host' command is additive. Each command specifies an additional destination for syslog messages. Therefore, the router will forward messages to all configured syslog servers."
+  },
+  {
+    "question": "To configure NAT, one of the commands the administrator used was ip nat pool NAT-POOL 209.165.201.5 209.165.201.10 netmask 255.255.255.240. Assume that outside routers do not have a default route configured. Which two networks could be present in the routing tables of outside routers so that the two-way reachability exists between inside and outside hosts? (Choose two.)",
+    "options": [
+      "route to 209.165.201.4/28 network",
+      "route to 209.165.201.0/28 network",
+      "route to 209.165.201.0/24 network",
+      "route to 172.16.1.0/24 network",
+      "route to 172.16.0.0/16 network",
+      "route to 209.165.201.1/32 network"
+    ],
+    "correct": [
+      "route to 209.165.201.0/28 network",
+      "route to 209.165.201.0/24 network"
+    ],
+    "category": "NAT",
+    "explanation": "The NAT pool uses public addresses 209.165.201.5 to 209.165.201.10 with a /28 mask (255.255.255.240). The 209.165.201.0/28 network encompasses the entire pool. For return traffic, outside routers need a route to this public NAT address space. The 209.165.201.0/24 network is a summary route that also covers the pool. The private address space (172.16.x.x) should not be routed over the Internet."
+  },
+  {
+    "question": "Which command would you use to verify VLAN membership on a Cisco switch port?",
+    "options": [
+      "show vlan brief",
+      "show ip route",
+      "show interfaces status",
+      "show running-config"
+    ],
+    "correct": "show vlan brief",
+    "category": "Switching",
+    "explanation": "The 'show vlan brief' command displays all VLANs configured on the switch and shows which ports are assigned to each VLAN."
+  },
+  {
+    "question": "What is a concern of the default OSPF metric on Cisco routers?",
+    "options": [
+      "Links with speeds greater than 10 Gbps will not be supported until the release of OSPFv4.",
+      "Links with speeds greater than 1 Gbps are converted to 10 Mbps for the purposes of OSPF cost calculation.",
+      "Links with speeds greater than 100 Mbps have a cost of 1.",
+      "Links with speeds greater than 1 Gbps require additional memory in the OSPF router or switch to calculate the larger costs."
+    ],
+    "correct": "Links with speeds greater than 100 Mbps have a cost of 1.",
+    "category": "Routing Protocols (OSPF)",
+    "explanation": "The default OSPF **reference bandwidth is $100 \text{ Mbps}$**. This means that any link with an actual speed of $100 \text{ Mbps}$ or greater (e.g., $1 \text{ Gbps}$ or $10 \text{ Gbps}$) is assigned a calculated cost of **1** (Cost = $10^8 / \text{Bandwidth}$). This leads to **suboptimal routing** because OSPF cannot distinguish between fast links."
+  },
+  {
+    "question": "What is the first action the router does after it is powered up?",
+    "options": [
+      "finds and loads IOS",
+      "finds and applies the configuration statements",
+      "runs POST to test the hardware",
+      "displays command line prompt"
+    ],
+    "correct": "runs POST to test the hardware",
+    "category": "Cisco IOS",
+    "explanation": "When a router is powered on, the first step is executing the **POST (Power-On Self-Test)**, which is a diagnostic program to check the hardware components (CPU, memory, interfaces, etc.) before attempting to boot the IOS."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which protocol is used for device discovery and address resolution in IPv6?",
+    "options": [
+      "ARP",
+      "ND (Neighbor Discovery)",
+      "ICMPv6",
+      "DHCPv6"
+    ],
+    "correct": "ND (Neighbor Discovery)",
+    "explanation": "ND (Neighbor Discovery) is part of ICMPv6 and is used for neighbor discovery and address resolution in IPv6."
+  },
+  {
+    "question": "What are four problems with IPv4 addressing workarounds? (Choose four.)",
+    "options": [
+      "NAT breaks the end-to-end model of IP.",
+      "DHCP breaks the end-to-end model of IP.",
+      "NAT inhibits end-to-end network security.",
+      "VLSM inhibits end-to-end network security.",
+      "Some applications are not NAT-friendly.",
+      "Some applications are NAT-friendly.",
+      "The merging of private networks is difficult if overlapping IPv4 address ranges are used."
+    ],
+    "correct": [
+      "NAT breaks the end-to-end model of IP.",
+      "NAT inhibits end-to-end network security.",
+      "Some applications are not NAT-friendly.",
+      "The merging of private networks is difficult if overlapping IPv4 address ranges are used."
+    ],
+    "category": "IP Addressing",
+    "explanation": "NAT (Network Address Translation) is the primary workaround that causes these problems by hiding the source address and breaking the original IP end-to-end principle."
+  },
+  {
+    "question": "Which of the following is a common network automation tool? (Select all that apply.)",
+    "options": [
+      "Puppet",
+      "Ansible",
+      "Wireshark",
+      "SolarWinds"
+    ],
+    "correct": [
+      "Puppet",
+      "Ansible"
+    ],
+    "category": "Network Fundamentals",
+    "explanation": "**Puppet** and **Ansible** are both widely used, agentless (Ansible) or agent-based (Puppet) configuration management and network automation tools. Wireshark is an analyzer, and SolarWinds is a monitoring platform."
+  },
+  {
+    "question": "On a Cisco switch, which two commands would you use to identify ports that are configured as trunks? (Choose two.)",
+    "options": [
+      "show interfaces status",
+      "show interfaces summary",
+      "show interfaces trunk",
+      "show ip interface brief",
+      "show vlan brief"
+    ],
+    "correct": [
+      "show interfaces status",
+      "show interfaces trunk"
+    ],
+    "category": "Switch Commands",
+    "explanation": "The **`show interfaces trunk`** command lists only active trunk ports. The **`show interfaces status`** command provides a concise summary where the 'Mode' column explicitly identifies ports as 'trunk' or 'trnk'."
+  },
+  {
+    "question": "Which command is used to save the configuration?",
+    "options": [
+      "copy running-config startup-config",
+      "write erase",
+      "reload",
+      "show config"
+    ],
+    "correct": "copy running-config startup-config",
+    "category": "Cisco IOS",
+    "explanation": "This command saves the current active configuration (**running-config** in RAM) to the non-volatile memory (**startup-config** in NVRAM), ensuring the configuration persists after a reboot."
+  },
+  {
+    "category": "Automation",
+    "question": "What does a POST request in REST API do?",
+    "options": [
+      "Fetches data",
+      "Creates new resource",
+      "Updates existing resource",
+      "Deletes resource"
+    ],
+    "correct": "Creates new resource",
+    "explanation": "HTTP **POST** is used to **create** new resources on the server in RESTful APIs."
+  },
+  {
+    "question": "In which network implementations is the spine-leaf topology most commonly used?",
+    "options": [
+      "enterprise LAN",
+      "enterprise edge",
+      "data centers",
+      "ISP backbone"
+    ],
+    "correct": "data centers",
+    "category": "Network Topology",
+    "explanation": "The spine-leaf architecture is optimized for East-West traffic (server-to-server) with low, predictable latency and high scalability, which are critical requirements for modern, high-density data centers."
+  },
+  {
+    "question": "Which of the following protocols operate at the Application layer of the OSI model? (Choose three.)",
+    "options": [
+      "HTTP",
+      "FTP",
+      "TCP",
+      "SMTP",
+      "IP"
+    ],
+    "correct": [
+      "HTTP",
+      "FTP",
+      "SMTP"
+    ],
+    "category": "OSI Model/Protocols",
+    "explanation": "The application layer (Layer 7) contains protocols that interact directly with user applications:\n- **HTTP**, **FTP** and **SMTP** operate at the application layer.\n- **TCP** operates on the Transport Layer (Layer 4).\n- **IP** operates on the Network Layer (Layer 3)."
+  },
+  {
+    "question": "Which subnet mask corresponds to a /24 network?",
+    "options": [
+      "255.255.255.0",
+      "255.255.0.0",
+      "255.0.0.0",
+      "255.255.255.128"
+    ],
+    "correct": "255.255.255.0",
+    "category": "Subnetting",
+    "explanation": "A $/24$ CIDR notation indicates that $24$ bits are used for the network portion of the address. In binary, this is $24$ ones, which translates to $255.255.255.0$ in dotted-decimal notation."
+  },
+  {
+    "question": "Which three represent common vectors that can inflict data loss and exfiltration of unauthorized transfer of company data? (Choose three.)",
+    "options": [
+      "monitoring systems",
+      "database servers",
+      "removable storage devices",
+      "fixed storage devices",
+      "cloud storage services",
+      "email attachments"
+    ],
+    "correct": [
+      "removable storage devices",
+      "cloud storage services",
+      "email attachments"
+    ],
+    "category": "Security/DLP",
+    "explanation": "Common exfiltration channels are physical media like removable storage (USB sticks), internet channels like cloud services (Dropbox/Google Drive), and common communication methods like email attachments. Monitoring systems and database servers are typically targets or infrastructure, not the exfiltration vector itself."
+  },
+  {
+    "question": "You want to control the severity of the event that determines when a syslog message should be sent. Which command do you use?",
+    "options": [
+      "logging {hostname | ip address}",
+      "logging trap severity",
+      "logging severity",
+      "logging level severity"
+    ],
+    "correct": "logging trap severity",
+    "category": "Syslog",
+    "explanation": "The **`logging trap <severity>`** command sets the **minimum severity level** for syslog messages that the device will send (trap) to a remote syslog server. Messages with this level or lower (more critical) will be sent."
+  },
+  {
+    "question": "Which three commands would enable you to enter extended ACL statements on a router? (Choose three.)",
+    "options": [
+      "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
+      "Router(config-ext-nacl)# deny ip any any host 209.165.201.0 eq 10",
+      "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
+      "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22",
+      "Router(config-ext-nacl)# deny tcp any host 201.165.201.0 0.0.0.31 host 192.168.1.1 eq 22",
+      "Router(config-ext-nacl)# permit udp host any eq dns"
+    ],
+    "correct": [
+      "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
+      "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
+      "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22"
+    ],
+    "category": "Security",
+    "explanation": "Correct answers are properly formed extended ACL statements: a numbered TCP permit with source and destination hosts and port eq 22, a permit ICMP specifying any to a host, and a UDP permit using eq dns. The other options contain invalid ACL syntax or misuse of keywords (for example using 'eq' with 'ip', incorrect host/network placements, or malformed wildcard mask ordering)."
+  },
+  {
+    "question": "Which two statements about a network that uses subnetworks are true? (Choose two.)",
+    "options": [
+      "It is more complex to apply network security policies.",
+      "Smaller networks are easier to manage.",
+      "Overall traffic is increased.",
+      "Smaller networks are harder to manage.",
+      "Overall traffic is reduced."
+    ],
+    "correct": [
+      "Smaller networks are easier to manage.",
+      "Overall traffic is reduced."
+    ],
+    "category": "IP Addressing",
+    "explanation": "Subnetting creates smaller broadcast domains, which reduces overall broadcast traffic and results in more manageable networks."
+  },
+  {
+
+    "question": "Which three commands would enable you to enter extended ACL statements on a router? (Choose three.)",
+  "options": [
+    "Router(config)# access-list 101",
+    "Router(config)# access-list 1300",
+    "Router(config)# ip access-list extended 1300",
+    "Router(config)# ip access-list extended 101",
+    "Router(config)# ip access-list extended EXT_ACL"
+  ],
+  "correct": [
+    "Router(config)# access-list 101",
+    "Router(config)# ip access-list extended 101",
+    "Router(config)# ip access-list extended EXT_ACL"
+  ],
+  "category": "Cisco ACL Configuration",
+  "explanation": "Extended Access Control Lists (ACLs) filter traffic based on source, destination, protocol, and port number. The modern, recommended syntax uses the 'ip access-list extended' command. \n\n1. **Numbered Extended ACLs:** Use the range **100-199** (e.g., 101) or **1300-1999** (e.g., 1300). Both 'ip access-list extended 1300' and 'ip access-list extended 101' are correct modern commands.\n2. **Named Extended ACLs:** Using a descriptive name (e.g., EXT_ACL) is best practice, activated by 'ip access-list extended EXT_ACL'.\n\nWhile 'access-list 101' is technically a valid *classic* way to define an extended ACL, the three modern, named/numbered commands are the explicit and preferred choices."
+},
+{
+    "question": "How many LEDs on each port of a Catalyst switch are used to show the status detail?",
+    "options": [
+      "Two LEDs are used on each port.",
+      "Three LEDs are used on each port.",
+      "Ports on the Cisco Catalyst switch do not have LEDs.",
+      "Each port on a Catalyst switch has only one LED."
+    ],
+    "correct": "Two LEDs are used on each port.",
+    "category": "Cisco Hardware",
+    "explanation": ""
+  },
+  {
+    "question": "Which is standard port for SMTP?",
+    "options": [
+      "25",
+      "110",
+      "143",
+      "53"
+    ],
+    "correct": "25",
+    "category": "TCP/IP",
+    "explanation": "SMTP (Simple Mail Transfer Protocol) uses port 25 by default."
+  },
+  {
+    "question": "Which three operations can an SNMP manager process perform in a network? (Choose three.)",
+    "options": [
+      "authenticate users accessing a device",
+      "configure a device",
+      "construct a management information base (MIB) on a device",
+      "retrieve data about the license of the device",
+      "retrieve data about the environmental parameters of a device"
+    ],
+    "correct": [
+      "configure a device",
+      "retrieve data about the license of the device",
+      "retrieve data about the environmental parameters of a device"
+    ],
+    "category": "Network Management",
+    "explanation": "En **SNMP Manager** använder **GET** (hämta data), **SET** (ändra/konfigurera) och **TRAPS** (ta emot händelsemeddelanden) för att hantera enheter. Licens- och miljödata (temperatur, fläktar) hämtas via GET-kommandon, och konfiguration kan utföras via SET-kommandon."
+  },
+  {
+    "category": "Network Access",
+    "question": "What is duplex mismatch?",
+    "options": [
+      "Incorrect VLAN configuration",
+      "Switch and device have different duplex settings",
+      "IP address conflict",
+      "Incorrect subnet mask"
+    ],
+    "correct": "Switch and device have different duplex settings",
+    "explanation": "Duplex mismatch causes collisions and performance issues."
+  },
+  {
+    "question": "Which is the correct subnet mask for a host route?",
+    "options": [
+      "0.0.0.0",
+      "255.254.0.0",
+      "255.255.255.254",
+      "255.255.255.255"
+    ],
+    "correct": "255.255.255.255",
+    "category": "IP Addressing",
+    "explanation": "A host route is a route that points to a specific, single host address. This requires a 32-bit prefix length, represented by the subnet mask 255.255.255.255 (/32), ensuring no host bits are left for a network range."
+  },
+  {
+    "question": "Which type of automation use case is appropriate if you need to shut down an interface when errors are found on that interface?",
+    "options": [
+      "configuration management",
+      "Automated backups",
+      "continuous compliance",
+      "event-driven network automation",
+      "reporting"
+    ],
+    "correct": "event-driven network automation",
+    "category": "Automation",
+    "explanation": "**Event-driven automation** triggers actions based on specific network conditions or events, such as interface errors or state changes reported via SNMP or Syslog."
+  },
+  {
+    "question": "According to the command output, how are packets that are bound for the network 192.168.2.0 forwarded?\n\nRouterX# show ip route\nD 192.168.1.0/24 [90/25789217] via 10.1.1.1\nR 192.168.2.0/24 [120/4] via 10.1.1.2\nO 192.168.3.0/24 [110/229840] via 10.1.1.3",
+    "options": [
+      "via 10.1.1.2, an IPv4 address on this router (RouterX)",
+      "via 10.1.1.2, an IPv4 address on a remote router",
+      "via 10.1.1.3 an IPv4 address on a remote router",
+      "via 10.1.1.3, an IPv4 address on this router (RouterX)"
+    ],
+    "correct": "via 10.1.1.2, an IPv4 address on a remote router",
+    "category": "Routing",
+    "explanation": "The entry `R 192.168.2.0/24 [120/4] via 10.1.1.2` indicates a route learned via the RIP protocol ('R') and specifies that the **next hop** to reach $192.168.2.0/24$ is the remote router at IP address **$10.1.1.2$**."
+  },
+  {
+    "question": "Which statement about ACLs is true?",
+    "options": [
+      "An ACL must have at least one permit action, or else it blocks all traffic.",
+      "ACLs process statements from bottom up looking for a match.",
+      "An ACL has an implicit permit at the end.",
+      "ACLs will check the packet against all entries looking for the best match."
+    ],
+    "correct": "An ACL must have at least one permit action, or else it blocks all traffic.",
+    "category": "ACLs",
+    "explanation": "Correct: In Cisco IOS, the ACL must have at least one 'permit'; otherwise all traffic is implicitly denied by the implicit 'deny all' at the end. ACLs are processed top-down and stop at the first match."
+  },
+  {
+    "question": "Which encryption protocol is used to secure communications in a WPA2 wireless network?",
+    "options": [
+      "WEP",
+      "TKIP",
+      "AES",
+      "SSH"
+    ],
+    "correct": "AES",
+    "category": "Wireless",
+    "explanation": "**WPA2** (Wi-Fi Protected Access 2) uses **AES (Advanced Encryption Standard)** with CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) for encrypting Wi-Fi traffic, providing strong security."
+  },
+  {
+    "question": "Two routers, A and B, are part of the Hot Standby Router Protocol (HSRP) standby group. There was no priority configured, and router A with the highest IP address for this HSRP group. Which statement is correct?",
+    "options": [
+      "Router A will be in the ACTIVE state and router B will be in the ACTIVE state.",
+      "Router A will be in the ACTIVE state and router B will be in the STANDBY state.",
+      "Router A will be in the LISTEN state and router B will be in the STANDBY state",
+      "Router A will be in the STANDBY state and router B will be in the STANDBY state."
+    ],
+    "correct": "Router A will be in the ACTIVE state and router B will be in the STANDBY state.",
+    "category": "First Hop Redundancy",
+    "explanation": "In HSRP, the router with the highest configured priority becomes the Active router. If the priority is not configured (or tied), the router with the highest interface IP address for the HSRP group will become the Active router. The second highest router becomes Standby."
+  },
+  {
+    "question": "A device has been assigned an IPv6 address through the Stateless Address Autoconfiguration (SLAAC) process. Which three statements about SLAAC are correct? (Choose three.)",
+    "options": [
+      "It generates link-local addresses.",
+      "It generates global unicast IPv6 addresses.",
+      "It must be used in combination with a DHCPv6 server.",
+      "It relies on ICMPv6 router advertisements.",
+      "It requires a device to use the EUI-64 format in the process.",
+      "It relies on a DHCPv6 server for duplicate address detection (DAD)."
+    ],
+    "correct": [
+      "It generates link-local addresses.",
+      "It generates global unicast IPv6 addresses.",
+      "It relies on ICMPv6 router advertisements."
+    ],
+    "category": "IPv6",
+    "explanation": "SLAAC is an autoconfiguration mechanism that automatically configures the IPv6 address of a device.\n\nThe correct answers are It generates link-local addresses, It generates global unicast IPv6 addresses, and It relies on ICMPv6 router advertisements. As defined in RFC 4862, the autoconfiguration process includes generating a link-local address, generating global addresses through SLAAC, and the duplicate address detection procedure to verify the uniqueness of the addresses on a link. Some devices may choose to use EUI-64 or a randomized value for the interface ID."
+  },
+  {
+    "question": "Which layer of the OSI model is responsible for terminating sessions?",
+    "options": [
+      "Layer 4",
+      "Layer 5",
+      "Layer 6",
+      "Layer 7"
+    ],
+    "correct": "Layer 5",
+    "category": "OSI",
+    "explanation": "The Session layer (Layer 5) handles the opening and closing of sessions between two applications."
+  },
+  {
+    "question": "Which connector type is commonly used for Ethernet over twisted-pair cables?",
+    "options": [
+      "RJ45",
+      "BNC",
+      "SC",
+      "DB-9"
+    ],
+    "correct": "RJ45",
+    "category": "Media",
+    "explanation": "RJ45 is the standard connector for Ethernet twisted-pair (copper) cables. BNC is a bayonet connector used with coaxial cable, SC is a fiber optic connector, and DB-9 is a serial port connector."
+  },
+  {
+    "question": "A network administrator configures the border router with the command ip nat inside source list 14 pool accounting. Which ACL is required to be configured in order for this command to function?",
+    "options": [
+    "An access list named accounting that defines the starting and ending public IPv4 addresses.",
+    "An access list named accounting that defines the private addresses that are translated by NAT.",
+    "An access list that is numbered 14 that defines the starting and ending public IPv4 addresses.",
+    "An access list that is numbered 14 that defines the private addresses that are translated by NAT."
+  ],
+  "correct": "An access list that is numbered 14 that defines the private addresses that are translated by NAT.",
+  "category": "Cisco IOS",
+  "explanation": "The syntax `ip nat inside source **list 14** pool accounting` uses the keyword `list` followed by the access list number. This ACL (in this case, **ACL 14**) specifies which **inside private (local) addresses** are permitted to be translated by NAT. The `pool accounting` refers to a named **NAT pool** which defines the range of public (global) addresses to be used for the translation, not the ACL itself."
+},
+{
+    "question": "Which statement is true for RAG?",
+    "options": [
+      "It was designed as a cost-effective and risk-free method to provide topic-specific context to a query.",
+      "It is computationally more expensive compared to fine-tuning.",
+      "It is computationally more expensive compared to training.",
+      "It can potentially cause a phenomenon that is known as catastrophic forgetting."
+    ],
+    "correct": "It was designed as a cost-effective and risk-free method to provide topic-specific context to a query.",
+    "category": "AI",
+    "explanation": "RAG (Retrieval-Augmented Generation) is highly cost-effective compared to fine-tuning or full training, and it eliminates the risk of catastrophic forgetting (where a model forgets previous learning when new data is added), making it ideal for adding topical context."
+  },
+  {
+    "question": "Which layer in the OSI model is responsible for encryption and data transformation?",
+    "options": [
+      "Applikation",
+      "Session",
+      "Presentation",
+      "Nätverk"
+    ],
+    "correct": "Presentation",
+    "category": "OSI",
+    "explanation": "Presentationslagret (Layer 6) hanterar datarepresentation, inklusive kryptering och kompression."
+  },
+  {
+    "question": "If a port is still a designated or root port at the end of the learning state, which state will it enter?",
+    "options": [
+      "blocking",
+      "disabled",
+      "forwarding",
+      "learning",
+      "listening"
+    ],
+    "correct": "forwarding",
+    "category": "Spanning Tree",
+    "explanation": "För Root Ports och Designated Ports är tillståndssekvensen i STP: **Listening** (15s) → **Learning** (15s) → **Forwarding**. När en port är i Forwarding-tillståndet kan den aktivt skicka och ta emot användardata."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which of the following is the most commonly used port for SSH?",
+    "options": [
+      "22",
+      "80",
+      "443",
+      "23"
+    ],
+    "correct": "22",
+    "explanation": "SSH (Secure Shell) uses port 22 for secure, encrypted communication between devices."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which command on a Cisco router displays interface statistics?",
+    "options": [
+      "show interfaces",
+      "show ip interface brief",
+      "show ip route",
+      "show version"
+    ],
+    "correct": "show interfaces",
+    "explanation": "\"show interfaces\" visar detaljerad statistik, inklusive paketfel, hastighet och status."
+  },
+  {
+    "question": "Which series of phases correctly represents a common attack methodology?",
+    "options": [
+      "Initial Compromise > Escalation of Privileges > Reconnaissance of internal hosts > Lateral movement > Exfiltration",
+      "Lateral movement > Escalation of Privileges > Reconnaissance of internal hosts > Initial Compromise > Exfiltration",
+      "Lateral movement > Reconnaissance of internal hosts > Escalation of Privileges > Initial Compromise > Exfiltration",
+      "Reconnaissance of internal hosts > Escalation of Privileges > Initial Compromise > Lateral movement > Exfiltration"
+    ],
+    "correct": "Initial Compromise > Escalation of Privileges > Reconnaissance of internal hosts > Lateral movement > Exfiltration",
+    "category": "Security",
+    "explanation": "En vanlig angreppssekvens börjar med **Initial Compromise** (att få fotfäste), följt av **Escalation of Privileges** (att öka åtkomsten), **Reconnaissance** (att utforska nätverket), **Lateral Movement** (att flytta sig till andra system) och slutligen **Exfiltration** (att stjäla data)."
+  },
+  {
+    "category": "Network Access",
+    "question": "What is the primary function of the Spanning Tree Protocol (STP)?",
+    "options": [
+      "To eliminate network loops by blocking redundant paths",
+      "To encrypt data traffic on a network",
+      "To assign IP addresses to network devices",
+      "To manage the IP routing table"
+    ],
+    "correct": "To eliminate network loops by blocking redundant paths",
+    "explanation": "STP is a protocol that prevents network loops in Ethernet networks by dynamically blocking redundant paths and ensuring a loop-free topology."
+  },
+  {
+    "question": "Which of the following VLAN trunking encapsulation protocols can be used on Cisco switches? Choose two",
+    "options": [
+      "IEEE 802.1Q",
+      "ISL",
+      "LACP",
+      "STP"
+    ],
+    "correct": [
+      "IEEE 802.1Q",
+      "ISL"
+    ],
+    "category": "Switching",
+    "explanation": "Cisco switches support both the open standard **IEEE 802.1Q** and the Cisco-proprietary **ISL** (Inter-Switch Link) for VLAN trunking. 802.1Q is the modern standard."
+  },
+  {
+    "question": "What is session multiplexing?",
+    "options": [
+      "a process by which an IP host is able to support multiple sessions simultaneously and manage the individual traffic streams over a single link",
+      "a process by which an IP host is able to support multiple sessions simultaneously over multiple links",
+      "a process that is used for congestion avoidance",
+      "a process that is used for packet dropping"
+    ],
+    "correct": "a process by which an IP host is able to support multiple sessions simultaneously and manage the individual traffic streams over a single link",
+    "category": "TCP/IP",
+    "explanation": "**Session Multiplexing** (hanteras av Transportlagret/Layer 4) är processen där en värd kan hantera **flera samtidiga kommunikationssessioner** från olika applikationer (via portnummer) över en enda nätverksanslutning."
+  },
+  {
+    "question": "A router has learned three possible routes that could be used to reach a destination network. These routes have been learned from three different routing protocols, OSPF, EIGRP and RIPv2. Which route will the router install in the routing table?",
+    "options": [
+      "EIGRP route",
+      "OSPF route",
+      "RIPv2",
+      "all three routes",
+      "default route"
+    ],
+    "correct": "EIGRP route",
+    "category": "Routing / Administrative Distance",
+    "explanation": "Routers use **Administrative Distance (AD)** to choose between routes learned from different routing protocols. EIGRP has an AD of **90**, OSPF has **110**, and RIPv2 has **120**. The route with the **lowest AD (EIGRP)** will be installed in the routing table."
+  },
+  {
+    "question": "What is the default STP priority value?",
+    "options": [
+      "32768",
+      "4096",
+      "8192",
+      "24576"
+    ],
+    "correct": "32768",
+    "category": "STP",
+    "explanation": "All switches start with a default STP bridge priority of 32768. The priority must be manually lowered (e.g., 4096) to make a switch the Root Bridge."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which protocol uses UDP port 161?",
+    "options": [
+      "SNMP",
+      "Telnet",
+      "DNS",
+      "HTTP"
+    ],
+    "correct": "SNMP",
+    "explanation": "**SNMP (Simple Network Management Protocol)** agents listen on **UDP port 161** for queries and requests from a Network Management System (NMS)."
+  },
+  {
+    "question": "Which statement is false in regard to router path determination?",
+    "options": [
+      "A routing table may contain entries both for a destination network or for its subnet.",
+      "The longest prefix match always wins among the routes that are installed in the routing table.",
+      "Static routes have a default administrative distance of 0.",
+      "When a router has the choice of a static route and an OSPF route, the static route takes precedence."
+    ],
+    "correct": "Static routes have a default administrative distance of 0.",
+    "category": "Routing",
+    "explanation": "The statement is **false**. The default Administrative Distance (AD) for a **static route** is **1**. An AD of 0 is reserved for directly connected interfaces, indicating the highest level of trust."
+  },
+  {
+    "category": "Network Fundamentals",
+    "question": "Which layer in the OSI model is responsible for end-to-end communication and error recovery?",
+    "options": [
+      "Transport Layer",
+      "Network Layer",
+      "Data Link Layer",
+      "Physical Layer"
+    ],
+    "correct": "Transport Layer",
+    "explanation": "**Transportlagret** (Lager 4) tillhandahåller end-to-end kommunikationstjänster. Vid användning av TCP hanterar det felåterställning (omsändning) och flödeskontroll."
+  },
+  {
+    "question": "Which network characteristic helps ensure that business-critical applications maintain performance during periods of network congestion?",
+    "options": [
+      "speed",
+      "security",
+      "QoS",
+      "reliability"
+    ],
+    "correct": "QoS",
+    "category": "Network Fundamentals",
+    "explanation": "QoS (Quality of Service) prioritizes business-critical traffic over other traffic during periods of congestion to maintain performance."
+  },
+  {
+    "question": "Which of the following is a private IPv4 network according to RFC 1918?",
+    "options": [
+      "10.0.0.0/8",
+      "8.8.8.0/24",
+      "172.32.0.0/16",
+      "192.0.2.0/24"
+    ],
+    "correct": "10.0.0.0/8",
+    "category": "IP Addressing",
+    "explanation": "RFC 1918 defines three private ranges. The largest is the Class A private network: 10.0.0.0 to 10.255.255.255, represented by 10.0.0.0/8. The range 172.32.0.0/16 is outside the private Class B range (172.16.0.0/12)."
+  },
+  {
+    "category": "IP Connectivity",
+    "question": "What is the administrative distance of OSPF?",
+    "options": [
+      "90",
+      "100",
+      "110",
+      "120"
+    ],
+    "correct": "110",
+    "explanation": "OSPF has an administrative distance (AD) of 110. This metric is used by Cisco devices to rank the trustworthiness of routing information sources (lower AD is preferred)."
+  },
+  {
+    "question": "Which Cisco IOS interface command assigns a static IPv6 address using an EUI-64 interface ID?",
+    "options": [
+      "ipv6 address 2001:db8:2222:7272::72/64",
+      "ipv6 address 2001:0db8:0:1::/64 eui-64",
+      "eui-64 address 2001:0db8:0:1::/64",
+      "ipv6 address 2001:0db8:0:1::0290:27ff:fe17:fc0f/64"
+    ],
+    "correct": "ipv6 address 2001:0db8:0:1::/64 eui-64",
+    "category": "IPv6",
+    "explanation": "The **`ipv6 address <prefix> eui-64`** command configures an IPv6 address on an interface using the EUI-64 format. This automatically generates the interface ID portion of the address from the MAC address, ensuring a unique IPv6 address on the link."
+  },
+  {
+    "question": "Which type of ACL permits or denies traffic based on IP address and port number?",
+    "options": [
+      "Standard ACL",
+      "Extended ACL",
+      "Reflexive ACL",
+      "Dynamic ACL"
+    ],
+    "correct": "Extended ACL",
+    "category": "Security",
+    "explanation": "An **Extended ACL** (Access Control List) provides granular filtering based on **source/destination IP addresses**, **protocols** (TCP, UDP, ICMP), and **port numbers**."
+  },
+  {
+    "category": "Network Access",
+    "question": "Which layer handles CSMA/CD?",
+    "options": [
+      "Network Layer",
+      "Data Link Layer",
+      "Physical Layer",
+      "Transport Layer"
+    ],
+    "correct": "Data Link Layer",
+    "explanation": "CSMA/CD (Carrier Sense Multiple Access with Collision Detection) is a media access control method, which is handled by the MAC sublayer of the Data Link Layer (Layer 2)."
+  },
+  {
+    "question": "Which approach requires administrative maintenance when changes occur in the network?",
+    "options": [
+      "static routing",
+      "dynamic routing",
+      "both dynamic routing and static routing",
+      "neither approach"
+    ],
+    "correct": "static routing",
+    "category": "Routing",
+    "explanation": "**Static routing** requires a network administrator to manually enter or update every route entry when the network topology changes, whereas dynamic routing protocols update routes automatically."
+  },
+  {
+    "question": "On which of these tables do routers rely to make forwarding decisions for Layer 3 packets?",
+    "options": [
+      "MAC address table",
+      "Cisco Discovery Protocol table",
+      "routing table",
+      "ARP table"
+    ],
+    "correct": "routing table",
+    "category": "Routing",
+    "explanation": "Routers are Layer 3 devices and primarily use the routing table to determine the best next-hop interface and address for forwarding Layer 3 (IP) packets toward their destination network."
+  },
+  {
+    "question": "Which information is used by a Cisco WLC to decide which VLAN to assign to a client?",
+    "options": [
+      "MAC address",
+      "IP address",
+      "SSID X",
+      "RF space"
+    ],
+    "correct": "SSID X",
+    "category": "Wireless / VLAN Assignment",
+    "explanation": "The Wireless LAN Controller (WLC) typically maps an **SSID** (the network name the client connects to) directly to a specific VLAN. This is the primary method for VLAN assignment in most wireless deployments."
+  },
+  {
+    "question": "Which command shows the BGP routing table on a Cisco router?",
+    "options": [
+      "show ip bgp",
+      "show ip route bgp",
+      "show ip bgp summary",
+      "show ip protocols"
+    ],
+    "correct": "show ip bgp",
+    "category": "Routing",
+    "explanation": "\"show ip bgp\" visar hela BGP-rutningstabellen."
+  },
+  {
+    "question": "What kind of threat requires mitigation by ensuring that the cable runs are neat?",
+    "options": [
+      "remote access threats",
+      "environmental threats",
+      "electrical threats",
+      "maintenance threats"
+    ],
+    "correct": "maintenance threats",
+    "category": "Security/Physical",
+    "explanation": "Keeping cable runs neat and organized primarily mitigates **maintenance threats** (such as accidental disconnections, incorrect re-patching, or difficulty troubleshooting) and helps ensure system availability."
+  },
+  {
+    "question": "Which command shows the IP and status of all interfaces?",
+    "options": [
+      "show ip route",
+      "show ip interface brief",
+      "show interfaces status",
+      "show ip arp"
+    ],
+    "correct": "show ip interface brief",
+    "category": "Cisco IOS",
+    "explanation": "The 'show ip interface brief' command is the standard Cisco IOS command that displays a quick summary of the status of all interfaces, including their assigned IP addresses and whether the line protocol is up/down."
+  },
+  {
+    "category": "Network Access",
+    "question": "What is the process of adding VLAN IDs to Ethernet frames called?",
+    "options": [
+      "Encapsulation",
+      "Tagging",
+      "Trunking",
+      "Channeling"
+    ],
+    "correct": "Tagging",
+    "explanation": "The process of adding an IEEE **802.1Q tag** (containing the VLAN ID) to an Ethernet frame before sending it over a trunk link is specifically called **VLAN tagging**."
+  },
+  {
+    "question": "What are two valid IPv6 address scopes for a unique local IPv6 address? (Choose two.)",
+  "options": [
+    "global",
+    "interface-local",
+    "link-local",
+    "organization-local",
+    "site-local"
+  ],
+  "correct": [
+    "organization-local",
+    "site-local"
+  ],
+  "category": "IPv6 Addressing",
+  "explanation": "Unique Local Addresses (ULA) are intended for communication within a limited administrative domain, such as a private network or an organization's site, and are not routable on the public internet.\n\n1.  **Site-Local:** This is the historical term that ULA (FC00::/7) was introduced to replace. It describes the scope of routing within a single, defined location or site.\n2.  **Organization-Local:** While not a formally defined scope in the same way as link-local or global, it accurately describes the intended use and scope of ULA—to be routable only within the bounds of a single organization."
+},
+{
+  "question": "Which statement about Service Set Identifiers (SSIDs) is true?",
+  "options": [
+    "An administrator can only create one SSID on the same access point.",
+    "An administrator can create several SSIDs on the same access point.",
+    "An SSID must be advertised by the Wi-Fi access point.",
+    "An SSID is configured by default on an access point."
+  ],
+  "correct": "An administrator can create several SSIDs on the same access point.",
+  "category": "Wireless Networking",
+  "explanation": "Modern Access Points (APs), especially those in enterprise environments (Cisco WLC and APs), support the creation of multiple Virtual APs (VAPs) which correspond to different SSIDs. Each SSID can be mapped to a separate VLAN, allowing different security policies (e.g., guest vs. employee access) and network services to be applied while using the same physical hardware."
+},
+{
+    
+    "question": "Where does a router that runs OSPFv2, and that has neighbor adjacencies established, store link-state advertisements (LSAs)?",
+    "options": [
+      "LSDB",
+      "Neighbors table",
+      "Routing table",
+      "SPF tree"
+    ],
+    "correct": "LSDB",
+    "category": "OSPF",
+    "explanation": "LSAs (Link-State Advertisements) are stored in the **Link-State Database (LSDB)**. This database contains a full map of the OSPF area. The router then uses Dijkstra's Shortest Path First (SPF) algorithm on the LSDB to calculate the best paths."
+  },
+  {
+    "question": "Match the transport to the protocol:",
+    "options": [
+      "HTTP : RESTCONF",
+      "SSH : gRPC",
+      "HTTP/2 : NETCONF"
+    ],
+    "correct": [
+      "HTTP : RESTCONF",
+      "SSH : NETCONF",
+      "HTTP/2 : gRPC"
+    ],
+    "category": "Automation",
+    "explanation": "NETCONF typically uses SSH for secure transport. RESTCONF uses HTTP(S) for a stateless interface. gRPC is a high-performance framework often transported over HTTP/2."
+  },
+  {
+    "question": "Match the PDU with its description.",
+    "options": [
+      "a Link layer PDU : frame",
+      "an Internet layer PDU : packet",
+      "the general term for the PDU that is used at the application layer : data",
+      "a Transport layer PDU : segment"
+    ],
+    "correct": [
+      "a Link layer PDU : frame",
+      "an Internet layer PDU : packet",
+      "the general term for the PDU that is used at the application layer : data",
+      "a Transport layer PDU : segment"
+    ],
+    "category": "TCP/IP Protocols",
+    "explanation": "The Protocol Data Units (PDUs) are Data (L7), Segment (L4), Packet (L3), and Frame (L2)."
+  },
+  {
+    "question": "When an enterprise has to comply with strict data security regulations, which cloud deployment model should they use for their services?",
+    "options": [
+      "community",
+      "hybrid",
+      "private",
+      "public"
+    ],
+    "correct": "private",
+    "category": "Cloud Computing",
+    "explanation": "A **Private Cloud** offers the highest level of isolation, control, and governance because the infrastructure is dedicated solely to one organization. This makes it the ideal choice for meeting strict regulatory and data security compliance requirements."
+  },
+  {
+    "question": "Which layer in the OSI model is responsible for port numbers?",
+    "options": [
+      "Lager 3",
+      "Lager 4",
+      "Lager 5",
+      "Lager 6"
+    ],
+    "correct": "Lager 4",
+    "category": "OSI",
+    "explanation": "Transportlagret (Layer 4) använder portnummer (t.ex. TCP/UDP-portar) för att identifiera specifika tjänster eller applikationer på en värd, vilket styr dataöverföringen mellan slutpunkter."
+  }
+]

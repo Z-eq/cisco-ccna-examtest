@@ -1,0 +1,64 @@
+/* --- Body tema --- */
+body.light { background: #f8f9fa; color: #000; }
+body.dark { background: #222; color: #fff; }
+
+/* --- Quiz-alternativen --- */
+.option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: none;              /* tar bort den gamla ramen */
+  border-bottom: 2px solid #333; /* lägger till en linje under varje alternativ */
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.option-btn:hover {
+  background-color: #f0f0f0; /* behåll bakgrund */
+  color: #000;               /* svart text */
+}
+
+
+/* Korrekt/fel svar när markerad */
+.option-btn.correct {
+  background-color: #198754 !important; 
+  color: white !important;
+}
+
+.option-btn.wrong {
+  background-color: #dc3545 !important; 
+  color: white !important;
+}
+
+/* Checkbox i multi-select */
+.option-btn input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Explanation box */
+.explanation {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #000;
+}
+
+body.dark .explanation { 
+  background-color: #333; 
+  color: #fff; 
+  border-color: #555; 
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #198754;
+}
