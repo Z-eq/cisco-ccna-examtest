@@ -31,13 +31,13 @@ It is highly recommended to use a virtual environment (venv) to isolate the proj
 a. Create and Activate Environment
 Bash
 
-# Create the environment
+## Create the environment
 python -m venv venv
 
-# Activate the environment
-# Windows (Command Prompt/PowerShell):
+## Activate the environment
+## Windows (Command Prompt/PowerShell):
 .\venv\Scripts\activate
-# macOS/Linux:
+## macOS/Linux:
 source venv/bin/activate
 
 b. Install Packages
