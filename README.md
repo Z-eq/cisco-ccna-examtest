@@ -106,4 +106,5 @@ If you need help or have any questions mail me at : zeq.alidemaj @ gmail com
         
     📄 Licensing
 
-This project is licensed under the MIT License - see the optional LICENSE file for details.
+This project is licensed under the MIT License - Its free to use change or whatever you wish!
+.
