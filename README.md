@@ -20,8 +20,9 @@ Follow these steps to get the application running on your local machine.
 Start by cloning the project to your computer:
 Bash
 
-git clone https://github.com/YourUsername/YourProjectName.git
-cd YourProjectName
+git clone [https://github.com/Z-eq/cisco-ccna-examtest.git]
+
+cd cisco-ccna-examtest
 
 #### 2. Install Python Dependencies
 
