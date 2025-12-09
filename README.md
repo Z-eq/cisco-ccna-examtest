@@ -4,16 +4,15 @@ Train for ccna certification! This fast Flask/JS app features dynamic category s
 
 #### Quiz App: Knowledge Tester
 
-Dynamic Selection: Choose exactly which JSON files (categories) you want to be tested on.
+ Dynamic Selection: Choose exactly which JSON files (categories) you want to be tested on.
 
-Clear Progress: Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
+ Clear Progress: Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
 
-Detailed Highscores: Saves highscores including score, total time, date, time of completion, and the categories included in the test.
+ Detailed Highscores: Saves highscores including score, total time, date, time of completion, and the categories included in the test.
 
-Flexible Question Types: Supports both single-choice and multi-select (multiple correct answers) questions.
+ Flexible Question Types: Supports both single-choice and multi-select (multiple correct answers) questions.
 
-Practice Mode: Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
-
+ Practice Mode: Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
 
  Getting Started
 
@@ -29,7 +28,7 @@ cd YourProjectName
 #### 2. Install Python Dependencies
 
 It is highly recommended to use a virtual environment (venv) to isolate the project's dependencies.
-a. Create and Activate Environment
+#### a. Create and Activate Environment
 Bash
 
 ### Create the environment
@@ -41,14 +40,14 @@ python -m venv venv
 #### macOS/Linux:
 source venv/bin/activate
 
-b. Install Packages
+#### b. Install Packages
 
 Use the requirements.txt file to install Flask and its dependencies:
 Bash
 
-pip install -r requirements.txt
+#### pip install -r requirements.txt
 
-3. Add Question Files
+#### 3. Add Question Files
 
 The application reads questions from the questions/ directory.
 
