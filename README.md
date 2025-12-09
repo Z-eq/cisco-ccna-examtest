@@ -4,8 +4,6 @@ Train for ccna certification! This fast Flask/JS app features dynamic category s
 
 Quiz App: Knowledge Tester
 
- Features
-
     Dynamic Selection: Choose exactly which JSON files (categories) you want to be tested on.
 
     Clear Progress: Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
@@ -80,6 +78,7 @@ python app.py
 The application will be available at: http://127.0.0.1:5000/.
 📁 Project Structure
 
+ Features
 .
 ├── app.py              # Flask backend, routing, and logic
 ├── requirements.txt    # Python dependencies (Flask)
