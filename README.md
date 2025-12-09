@@ -60,11 +60,17 @@ The application reads questions from the questions/ directory.
 
     [
       {
-        "question": "What is the capital of Sweden?",
-        "options": ["Malmö", "Gothenburg", "Stockholm", "Uppsala"],
-        "correct": "Stockholm",
-        "explanation": "Stockholm has been the capital of Sweden since the Middle Ages.",
-        "category": "Geography"
+            "question": "What type of cable is typically crossed over to connect two Cisco switches directly?",
+            "options": [
+            "Fiber",
+            "Coaxial",
+            "Crossover Ethernet cable",
+            "Straight-through Ethernet cable"
+    ],
+    "correct": "Crossover Ethernet cable",
+    "category": "Ethernet",
+    "explanation": "A **Crossover Ethernet cable** is traditionally used for a direct connection between two similar devices (like two switches or two hosts) because it crosses the transmit and receive pairs. Modern devices often use Auto-MDIX to handle this automatically, but the crossover cable is the correct type."
+ 
       }
     ]
 
