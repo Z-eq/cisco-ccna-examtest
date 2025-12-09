@@ -8,11 +8,13 @@ Train for CCNA certification! This app features dynamic category selection, deta
 
 ### Quiz Functionality
 
-* **Clear Progress:** Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
-* **Detailed Highscores:** Saves highscores including score, total time, date, time of completion, and the categories included in the test.
-* **Flexible Question Types:** Supports both single-choice and multi-select (multiple correct answers) questions.
-* **Practice Mode:** Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
-
+* **Flexible Source Management:** The user can select which JSON files to include in the test.
+* **Category Filtering (NEW):** After sources are loaded, the user can **select specific categories** (e.g., "OSI Model", "Routing", "VLAN") to include or exclude from the quiz.
+* **Practice Mode ("Wrong Answers Only"):** Automatically saves incorrectly answered questions, allowing the user to run a dedicated test focusing solely on these **"wrong answers"**.
+* **Flexible Question Types:** Supports both **single-choice** and **multi-select** (multiple correct answers) questions.
+* **Clear Progress Tracking:** Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
+* **Detailed Highscores:** Saves highscores including **score, total time, date, time of completion**, and a list of the **categories** included in the test.
+* **User Interface:** Supports both **Light** and **Dark** themes (Light/Dark Mode).
 ##  Getting Started
 
 Follow these steps to get the application running on your local machine.
