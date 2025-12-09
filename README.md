@@ -4,8 +4,6 @@ Train for ccna certification! This fast Flask/JS app features dynamic category s
 
 #### Quiz App: Knowledge Tester
 
- Dynamic Selection: Choose exactly which JSON files (categories) you want to be tested on.
-
  Clear Progress: Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
 
  Detailed Highscores: Saves highscores including score, total time, date, time of completion, and the categories included in the test.
