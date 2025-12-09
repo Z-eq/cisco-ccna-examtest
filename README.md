@@ -16,7 +16,7 @@ Quiz App: Knowledge Tester
 
     Practice Mode: Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
 
-🚀 Getting Started
+ Getting Started
 
 Follow these steps to get the application running on your local machine.
 1. Clone the Repository
