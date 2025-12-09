@@ -13,45 +13,33 @@ Train for CCNA certification! This app features dynamic category selection, deta
 * **Flexible Question Types:** Supports both single-choice and multi-select (multiple correct answers) questions.
 * **Practice Mode:** Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
 
-##  Getting Started
-
-Follow these steps to get the application running on your local machine.
-
-### 1. Clone the Repository
-
-Start by cloning the project to your computer:
-
-```bash
-git clone https://github.com/Z-eq/cisco-ccna-examtest.git
-cd cisco-ccna-examtest
-
-#### 2. Install Python Dependencies
+2. Install Python Dependencies
 
 It is highly recommended to use a virtual environment (venv) to isolate the project's dependencies.
-#### a. Create and Activate Environment
+a. Create and Activate Environment
 Bash
 
-### Create the environment
+# Create the environment
 python -m venv venv
 
-### Activate the environment
-### Windows (Command Prompt/PowerShell):
+# Activate the environment
+# Windows (Command Prompt/PowerShell):
 .\venv\Scripts\activate
-#### macOS/Linux:
+# macOS/Linux:
 source venv/bin/activate
 
-#### b. Install Packages
+b. Install Packages
 
 Use the requirements.txt file to install Flask and its dependencies:
 Bash
 
-#### pip install -r requirements.txt
+pip install -r requirements.txt
 
-#### 3. Add Question Files
+3. Add Question Files
 
 The application reads questions from the questions/ directory.
 
-    Create your own JSON files (e.g., questions/science.json or questions/history.json).
+    Create your own JSON files (e.g., questions/switching.json or questions/routing.json).
 
     The format must match the structure the app expects (see example below).
 
@@ -60,11 +48,11 @@ The application reads questions from the questions/ directory.
 
     [
       {
-        "question": "What is the capital of Sweden?",
-        "options": ["Malmö", "Gothenburg", "Stockholm", "Uppsala"],
-        "correct": "Stockholm",
-        "explanation": "Stockholm has been the capital of Sweden since the Middle Ages.",
-        "category": "Geography"
+        "question": "Which of the following layers belongs to the TCP/IP model?",
+        "options": ["Session", "Application", "Transport", "Physical"],
+        "correct": ["Application", "Transport"],
+        "explanation": "The Application and Transport layers are common to both models, but the TCP/IP model simplifies the upper layers.",
+        "category": "Networking Basics"
       }
     ]
 
@@ -78,22 +66,20 @@ python app.py
 The application will be available at: http://127.0.0.1:5000/.
 📁 Project Structure
 
-     Features
-
-    ├── app.py              # Flask backend, routing, and logic
-    ├── requirements.txt    # Python dependencies (Flask)
-        ├── templates/
-        │   └── index.html      # Main page template (HTML)
-    └── static/
-        ├── quiz.js         # Core frontend logic (JavaScript)
-        ├── style.css       # Styling (CSS)
+.
+├── app.py              # Flask backend, routing, and logic
+├── requirements.txt    # Python dependencies (Flask)
+├── templates/
+│   └── index.html      # Main page template (HTML)
+└── static/
+    ├── quiz.js         # Core frontend logic (JavaScript)
+    ├── style.css       # Styling (CSS)
     └── questions/      # Directory for JSON question files and data storage
-        ├── science.json
-        ├── history.json
-        ├── wrong.json      # Saved incorrect questions (Managed by app.py, excluded from repo)
-        └── highscores.json # Saved highscores (Managed by app.py, excluded from repo)
+        ├── science.json        
+        ├── history.json        
+        ├── wrong.json      # Saved incorrect questions (Managed by app.py)
+        └── highscores.json # Saved highscores (Managed by app.py)
 
-        
-    📄 Licensing
+📄 Licensing
 
 This project is licensed under the MIT License - see the optional LICENSE file for details.
