@@ -1,27 +1,28 @@
-# cisco-ccna-examtest 200-301 2.1
-Train for ccna certification! This fast Flask/JS app features dynamic category selection, detailed highscores (with time/topic tracking), and a specialized study mode to practice only your failed CCNA questions
+# Cisco CCNA Exam Test 200-301 v2.1
 
+A fast, category-based knowledge testing application built with Flask (Python) and JavaScript/CSS, specialized for CCNA certification training.
 
-#### Quiz App: Knowledge Tester
+##  Key Features
 
- Clear Progress: Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
+Train for CCNA certification! This app features dynamic category selection, detailed highscores (with time/topic tracking), and a specialized study mode to practice only your failed CCNA questions.
 
- Detailed Highscores: Saves highscores including score, total time, date, time of completion, and the categories included in the test.
+### Quiz Functionality
 
- Flexible Question Types: Supports both single-choice and multi-select (multiple correct answers) questions.
+* **Clear Progress:** Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
+* **Detailed Highscores:** Saves highscores including score, total time, date, time of completion, and the categories included in the test.
+* **Flexible Question Types:** Supports both single-choice and multi-select (multiple correct answers) questions.
+* **Practice Mode:** Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
 
- Practice Mode: Automatically saves incorrectly answered questions, allowing you to run a dedicated test focusing only on your "wrong answers".
-
- Getting Started
+##  Getting Started
 
 Follow these steps to get the application running on your local machine.
-#### 1. Clone the Repository
+
+### 1. Clone the Repository
 
 Start by cloning the project to your computer:
-Bash
 
-git clone [https://github.com/Z-eq/cisco-ccna-examtest.git]
-
+```bash
+git clone [https://github.com/Z-eq/cisco-ccna-examtest.git](https://github.com/Z-eq/cisco-ccna-examtest.git)
 cd cisco-ccna-examtest
 
 #### 2. Install Python Dependencies
