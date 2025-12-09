@@ -101,6 +101,8 @@ The application will be available at: http://127.0.0.1:5000/.
         ├── wrong.json      # Saved incorrect questions (Managed by app.py, excluded from repo)
         └── highscores.json # Saved highscores (Managed by app.py, excluded from repo)
 
+
+If you need help or have any questions mail me at : zeq.alidemaj @ gmail com
         
     📄 Licensing
 
