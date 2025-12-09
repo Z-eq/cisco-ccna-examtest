@@ -1,0 +1,1181 @@
+[
+    {
+        "question": "Which layer is responsible for routing?",
+        "options": [
+            "Network",
+            "Transport",
+            "Session",
+            "Data Link"
+        ],
+        "correct": "Network",
+        "category": "OSI Model",
+        "explanation": "The Network layer handles logical addressing and routing."
+    },
+    {
+        "question": "Which component is used to generate a signal for single-mode fiber connections?",
+        "options": [
+            "cathode",
+            "laser transmitter",
+            "LED diode",
+            "oscillator"
+        ],
+        "correct": "laser transmitter",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Single-mode fiber uses a laser transmitter for high-speed, long-distance optical signals."
+    },
+    {
+        "question": "Which series of phases correctly represents a common attack methodology?",
+        "options": [
+            "Initial Compromise > Escalation of Privileges > Reconnaissance of internal hosts > Lateral movement > Exfiltration",
+            "Lateral movement > Escalation of Privileges > Reconnaissance of internal hosts > Initial Compromise > Exfiltration",
+            "Lateral movement > Reconnaissance of internal hosts > Escalation of Privileges > Initial Compromise > Exfiltration",
+            "Reconnaissance of internal hosts > Escalation of Privileges > Initial Compromise > Lateral movement > Exfiltration"
+        ],
+        "correct": "Initial Compromise > Escalation of Privileges > Reconnaissance of internal hosts > Lateral movement > Exfiltration",
+        "category": "Security AAA & ACL",
+        "explanation": "A common attack sequence starts with initial compromise, then privilege escalation, reconnaissance, lateral movement, and exfiltration."
+    },
+    {
+        "question": "What are two reasons for choosing Transport Layer Security (TLS) over IP Security (IPsec) encryption? (Choose two.)",
+        "options": [
+            "IPsec encrypts the IP packet, resulting in lesser application-level security.",
+            "IPsec is less efficient than TLS, and in general not supported on mobile devices.",
+            "IPsec requires dedicated software installed on client hosts.",
+            "TLS can be used for encrypting traffic to public websites.",
+            "TLS decryption can be easily accelerated in hardware."
+        ],
+        "correct": [
+            "IPsec requires dedicated software installed on client hosts.",
+            "TLS can be used for encrypting traffic to public websites."
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "TLS is the standard for securing public web traffic (HTTPS) and is natively supported by browsers. IPsec, commonly used for VPNs, often requires dedicated client software and is not the protocol of choice for general web encryption."
+    },
+    {
+        "question": "Which flag is set in the first TCP packet sent by a device initiating a communication?",
+        "options": [
+            "ACK",
+            "FIN",
+            "PSH",
+            "RST",
+            "SYN"
+        ],
+        "correct": "SYN",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "A TCP connection is initiated with a SYN flag in the first packet during the three-way handshake."
+    },
+    {
+        "question": "After a designated router (DR) and backup designated router (BDR) are selected on the multi-access segment in an OSPF routing domain, what is the OSPF state of the routers that are not elected as DR or BDR?",
+        "options": [
+            "2-way",
+            "exchange",
+            "full",
+            "loading"
+        ],
+        "correct": "2-way",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Routers that are not elected as DR or BDR remain in the 2-way state on multi-access OSPF segments."
+    },
+    {
+        "question": "Presuming there are no specific obstacles on locations where you are setting up a WLAN network, for which location should you use a patch antenna?",
+        "options": [
+            "a big laboratory",
+            "a group of small offices",
+            "a large meeting room",
+            "a warehouse rack"
+        ],
+        "correct": "a warehouse rack",
+        "category": "Wireless",
+        "explanation": "A patch antenna is a directional antenna. It is best used to cover long, narrow areas (like the aisles between warehouse racks) or to provide focused coverage in a specific direction, minimizing signal interference elsewhere."
+    },
+    {
+        "question": "When configuring a trunk port on a Cisco switch, which VLAN ranges can be used to specify the allowed VLANs?",
+        "options": [
+            "extended and standard",
+            "extended",
+            "standard",
+            "standard and reserved"
+        ],
+        "correct": "extended and standard",
+        "category": "Switching & VLAN",
+        "explanation": "VLAN IDs are divided into standard (1-1005) and extended (1006-4094) ranges. Trunk ports can carry and be configured to allow VLANs from both these ranges."
+    },
+    {
+        "question": "How can a RADIUS server enhance management security in wireless environments?",
+        "options": [
+            "By enforcing access control list (ACL) configurations.",
+            "By preventing brute-force login attempts.",
+            "By providing a stronger encryption.",
+            "By providing individualized login to specific network devices."
+        ],
+        "correct": "By providing individualized login to specific network devices.",
+        "category": "Wireless",
+        "explanation": "RADIUS (Remote Authentication Dial-In User Service) is an Authentication, Authorization, and Accounting (AAA) protocol that centralizes access management. In a wireless environment, it enhances security by:\n\n1.  **Individualized Login (Authentication & Authorization):** RADIUS validates each user's credentials against a central database (like Active Directory) rather than relying on a single, shared Pre-Shared Key (PSK). This allows the network to assign unique access policies (Authorization) and track actions (Accounting) to **specific network devices or users**, which is critical for security auditing and ensuring accountability.\n2.  **Centralization:** Using RADIUS (802.1X Enterprise Mode) means that changing one person's access or credentials only requires an update to the central server, not every Access Point (AP) in the network."
+    },
+    {
+        "question": "Which two statements are true about WLAN? (Choose two.)",
+        "options": [
+            "802.11n supports a theoretical transfer rate of up to 300 Mbps.",
+            "For covering a long hallway, an omnidirectional antenna is the best solution.",
+            "The minimum recommended signal-to-noise ratio (SNR) is 25 dB.",
+            "The minimum recommended wireless signal strength for voice applications is -67 dBm.",
+            "The maximum recommended noise level is -50 dBm"
+        ],
+        "correct": [
+            "The minimum recommended signal-to-noise ratio (SNR) is 25 dB.",
+            "The minimum recommended wireless signal strength for voice applications is -67 dBm."
+        ],
+        "category": "Wireless",
+        "explanation": "The correct answers are The minimum recommended signal-to-noise ratio (SNR) is 25 dB, and The minimum recommended wireless signal strength for voice applications is -67 dBm. For covering a long hallway, a directional antenna is the best solution. 802.11n supports a theoretical transfer rate of up to 600 Mbps."
+    },
+    {
+        "question": "Which three statements are characteristics of the Enterprise mode of Wi-Fi Protected Access? (Choose three.)",
+        "options": [
+            "Access control is centralized",
+            "Advanced Encryption Standard (AES) is optional for encryption",
+            "The authentication server is used for key distribution",
+            "Shared secret is used for authentication",
+            "Local access control is used"
+        ],
+        "correct": [
+            "Access control is centralized",
+            "Advanced Encryption Standard (AES) is optional for encryption",
+            "The authentication server is used for key distribution"
+        ],
+        "category": "Wireless",
+        "explanation": "Enterprise WPA uses centralized authentication and may optionally use AES. Shared secret and local access control are characteristics of Personal mode."
+    },
+    {
+        "question": "What are two differences between the RADIUS and TACACS+ protocols? (Choose two.)",
+        "options": [
+            "RADIUS combines authentication and authorization, while TACACS+ implements two separate processes.",
+            "RADIUS encrypts the entire payload, while TACACS+ encrypts only the password.",
+            "RADIUS is a TCP-based protocol, while TACACS+ is a UDP-based protocol.",
+            "RADIUS is a UDP based protocol. TACACS+ is a TCP based protocol.",
+            "RADIUS supports bidirectional authentication, while TACACS+ supports only unidirectional authentication."
+        ],
+        "correct": [
+            "RADIUS combines authentication and authorization, while TACACS+ implements two separate processes.",
+            "RADIUS is a UDP based protocol. TACACS+ is a TCP based protocol."
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "TACACS+ uses TCP (reliable) and keeps Authentication, Authorization, and Accounting as separate processes for granular control. RADIUS uses UDP (connectionless) and combines Authentication and Authorization into a single function."
+    },
+    {
+        "question": "In the Wi-Fi 2.4 GHz band, which three channels do not overlap? (Choose three.)",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "6",
+            "11",
+            "15",
+            "21"
+        ],
+        "correct": [
+            "1",
+            "6",
+            "11"
+        ],
+        "category": "Wireless",
+        "explanation": "To prevent interference in the 2.4 GHz band, channels must be separated by 5 channel numbers (25 MHz). Channels 1, 6, and 11 are the only three standard channels that can be used simultaneously without overlapping."
+    },
+    {
+        "question": "The service provider is implementing Multiprotocol Label Switching Virtual Private Network (MPLS VPN) service. Which two options indicate the specific VPN type that is implemented and how the service provider appears from the perspective of the customer? (Choose two.)",
+        "options": [
+            "The service provider is implementing MPLS L2VPN.",
+            "The service provider is implementing MPLS L3VPN.",
+            "The service provider is implementing MPLS VPLS.",
+            "The service provider network can be represented as a router from the customer perspective.",
+            "The service provider network can be represented as a switch from the customer perspective."
+        ],
+        "correct": [
+            "The service provider is implementing MPLS L3VPN.",
+            "The service provider network can be represented as a router from the customer perspective."
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "In an MPLS L3VPN (Layer 3 VPN) service, the service provider's router (PE) participates in IP routing with the customer's router (CE). This means the customer sees the provider's network as a router that handles the routing function between sites. If the answer were L2VPN or VPLS, the provider network would appear as a switch (a transparent Layer 2 segment)."
+    },
+    {
+        "question": "Which three of the following application characteristic values are determined in the service level specification phase when designing the quality of service (QoS) policy of a network? (Choose three.)",
+        "options": [
+            "generated data flows",
+            "required bandwidth",
+            "required responsiveness",
+            "response criticality",
+            "tolerable jitter",
+            "tolerable packet loss"
+        ],
+        "correct": [
+            "required bandwidth",
+            "tolerable jitter",
+            "tolerable packet loss"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The Service Level Specification phase involves defining measurable technical requirements for a traffic class, such as bandwidth, delay, jitter, and packet loss tolerance. Other aspects like data flows and criticality are typically determined in earlier phases (audit/discovery)."
+    },
+    {
+        "question": "Which command on a Cisco router displays the routing table?",
+        "options": [
+            "show ip route",
+            "show ip arp",
+            "show running-config",
+            "show interfaces"
+        ],
+        "correct": "show ip route",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The 'show ip route' command shows the current IP routing table of the router."
+    },
+    {
+        "question": "Which command displays EtherChannel status?",
+        "options": [
+            "show etherchannel summary",
+            "show interface trunk",
+            "show interfaces port-channel",
+            "show vlan"
+        ],
+        "correct": "show etherchannel summary",
+        "category": "Switching & VLAN",
+        "explanation": "The command 'show etherchannel summary' displays the operational status of EtherChannel bundles."
+    },
+    {
+        "question": "What command enables trunking on a Cisco switch port?",
+        "options": [
+            "switchport mode trunk",
+            "switchport access vlan 10",
+            "switchport trunk native vlan 99",
+            "switchport mode access"
+        ],
+        "correct": "switchport mode trunk",
+        "category": "Switching & VLAN",
+        "explanation": "The 'switchport mode trunk' command enables trunking on a switch port, allowing multiple VLANs."
+    },
+    {
+        "question": "What are two main benefits of using spine-leaf architecture compared to traditional data center architectures, which use virtual Port Channel (vPC)? (Choose two.)",
+        "options": [
+            "It is cheaper to implement.",
+            "It is easier to scale.",
+            "The oversubscription of links is reduced.",
+            "The configuration is simplified.",
+            "The troubleshooting is simplified."
+        ],
+        "correct": [
+            "It is easier to scale.",
+            "The oversubscription of links is reduced."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Spine-leaf architecture is a two-tier, non-blocking topology designed to handle the east-west traffic patterns prevalent in modern data centers, offering significant advantages over the traditional three-tier model (even when enhanced with vPC):\n\n1.  **Easier to Scale:** Capacity is scaled linearly by adding more spine switches (for increased bandwidth) or more leaf switches (for increased port density). This modularity simplifies network growth.\n2.  **Reduced Oversubscription:** Every leaf switch connects to every spine switch, utilizing Equal-Cost Multi-Pathing (ECMP) routing. This allows traffic to be distributed across all available links simultaneously, resulting in highly efficient bandwidth utilization and a very low oversubscription ratio."
+    },
+    {
+        "question": "A company wants to interconnect all its branches. To ensure minimum downtime, the company wants to use a WAN that provides high availability and high redundancy. Which WAN topology should the company use?",
+        "options": [
+            "full mesh",
+            "hub-and-spoke",
+            "partial mesh",
+            "ring"
+        ],
+        "correct": "full mesh",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A full mesh topology provides the highest level of redundancy and availability because every site is connected directly to every other site. This ensures that if any single link fails, an alternative direct path is immediately available, leading to minimum downtime."
+    },
+    {
+        "question": "What protocol provides the mapping between IP addresses and MAC addresses?",
+        "options": [
+            "ARP",
+            "DNS",
+            "DHCP",
+            "NAT"
+        ],
+        "correct": "ARP",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "ARP (Address Resolution Protocol) maps IP addresses to MAC addresses within a local network."
+    },
+    {
+        "question": "What are the three software-defined networking (SDN) layers? (Choose three.)",
+        "options": [
+            "application",
+            "control",
+            "infrastructure",
+            "network",
+            "presentation"
+        ],
+        "correct": [
+            "application",
+            "control",
+            "infrastructure"
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "The correct answers are application, control, and infrastructure. Network and presentation are Open Systems Interconnection (OSI) layers."
+    },
+    {
+        "question": "Which Rapid PVST+ Spanning Tree Protocol roles correspond to a forwarding port state? (Choose two.)",
+        "options": [
+            "alternate",
+            "backup",
+            "designated",
+            "disabled",
+            "root"
+        ],
+        "correct": [
+            "designated",
+            "root"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "In RSTP/Rapid PVST+, only the **Designated Port** and the **Root Port** roles are in a Forwarding state, actively sending and receiving user traffic. Alternate and Backup ports are in a Discarding state (blocking)."
+    },
+    {
+        "question": "Which of the following is the correct binary representation of the third octet of the IPv4 address 172.20.170.50?",
+        "options": [
+            "0001 1110",
+            "0110 0110",
+            "1010 1010",
+            "1100 1011"
+        ],
+        "correct": "1010 1010",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The third octet is 170. To convert 170 to binary: 128 + 0 + 32 + 0 + 8 + 0 + 2 + 0 = 170 ."
+    },
+    {
+        "question": "If a port is still a designated or root port at the end of the learning state, which state will it enter?",
+        "options": [
+            "blocking",
+            "disabled",
+            "forwarding",
+            "learning",
+            "listening"
+        ],
+        "correct": "forwarding",
+        "category": "Switching & VLAN",
+        "explanation": "For ports determined to be Root or Designated, the state progression is typically: Listening → Learning → Forwarding. Once a port is in the Forwarding state, it can actively send and receive user data."
+    },
+    {
+        "question": "Which command verifies the IP routing table on a Cisco router?",
+        "options": [
+            "show ip route",
+            "show ip interface brief",
+            "ping",
+            "traceroute"
+        ],
+        "correct": "show ip route",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The 'show ip route' command displays all routes known by the router, including connected, static, and dynamic routes."
+    },
+    {
+        "question": "Refer to the exhibit. PC_A wants to communicate with PC_B, which resides on a different network. The hosts are connected via a router that acts as the default gateway for both. The ARP tables on all three devices are empty. When PC_A sends the first frame, which two things happen in the process? (Choose two.)",
+        "options": [
+            "PC_A broadcasts the frame intended for PC_B.",
+            "PC_A sends a broadcast ARP request looking for the MAC address of the router.",
+            "The router adds an IPv4 address to the MAC address's mapping for PC_A to its ARP table.",
+            "The router drops the packet after checking for the mapping of PC_B's IP address.",
+            "The router receives a frame with its own MAC and mismatched IP address, and drops it."
+        ],
+        "correct": [
+            "PC_A sends a broadcast ARP request looking for the MAC address of the router.",
+            "The router adds an IPv4 address to the MAC address's mapping for PC_A to its ARP table."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "PC_A uses ARP to discover the MAC of its default gateway; the router records PC_A in its ARP table."
+    },
+    {
+        "question": "You have set up a small office/home office (SOHO) to work from home. You are using broadband internet with a remote-access Virtual Private Network (VPN) to connect to your company resources. Which statement correctly describes this deployment mode?",
+        "options": [
+            "A VPN-capable router is required for the SOHO network.",
+            "You can use the web browser to establish a VPN tunnel.",
+            "A permanent VPN connection is required.",
+            "VPN tunneling is performed by the internet service provider (ISP)."
+        ],
+        "correct": "You can use the web browser to establish a VPN tunnel.",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "A remote-access VPN lets individual users securely connect to the company network over the internet, often through a browser or VPN client. The ISP only provides the connection, not the tunnel."
+    },
+    {
+        "question": "What is the purpose of the default gateway on a host?",
+        "options": [
+            "To route traffic to devices outside the local subnet",
+            "To resolve DNS queries",
+            "To assign IP addresses automatically",
+            "To configure VLAN membership"
+        ],
+        "correct": "To route traffic to devices outside the local subnet",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "The default gateway allows a host to communicate with devices on remote networks by forwarding packets to the appropriate router."
+    },
+    {
+        "question": "Which two commands display the type of trunking encapsulation of an interface? (Choose two.)",
+        "options": [
+            "show interfaces Ethernet0/0 switchport",
+            "show interfaces status",
+            "show interfaces summary",
+            "show interfaces trunk",
+            "show ip interfaces brief"
+        ],
+        "correct": [
+            "show interfaces Ethernet0/0 switchport",
+            "show interfaces trunk"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "`show interfaces switchport` provides detailed trunking encapsulation (dot1q/isl) for a specific port. `show interfaces trunk` summarizes all active trunks and their encapsulation types."
+    },
+    {
+        "question": "Which STP port state forwards traffic and listens for BPDU messages after the learning state?",
+        "options": [
+            "Forwarding",
+            "Blocking",
+            "Listening",
+            "Disabled"
+        ],
+        "correct": "Forwarding",
+        "category": "Switching & VLAN",
+        "explanation": "After the learning state, a port enters the forwarding state where it can send and receive data while still processing BPDUs to maintain the spanning-tree topology."
+    },
+    {
+        "question": "In which situation would you choose to use UDP instead of TCP for IP applications?",
+        "options": [
+            "when ensuring accurate file transfers even in the face of network issues",
+            "when ensuring packet headers are not changed during transmission from source to destination",
+            "when speed of delivery is more important than error correction in IP packet transmissions",
+            "when you require that the recipient of the packets verify that the packets are delivered"
+        ],
+        "correct": "when speed of delivery is more important than error correction in IP packet transmissions",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "UDP is connectionless and does not perform error checking or flow control, which makes it faster but unreliable. It is preferred for applications like streaming video, VoIP, and DNS where speed (low latency) is critical and retransmitting lost packets is counterproductive."
+    },
+    {
+        "question": "Two routers, A and B, are part of the Hot Standby Router Protocol (HSRP) standby group. There was no priority configured, and router A with the highest IP address for this HSRP group. Which statement is correct?",
+        "options": [
+            "Router A will be in the ACTIVE state and router B will be in the ACTIVE state.",
+            "Router A will be in the ACTIVE state and router B will be in the STANDBY state.",
+            "Router A will be in the LISTEN state and router B will be in the STANDBY state",
+            "Router A will be in the STANDBY state and router B will be in the STANDBY state."
+        ],
+        "correct": "Router A will be in the ACTIVE state and router B will be in the STANDBY state.",
+        "category": "Routing & Protocols",
+        "explanation": "In HSRP, the router with the highest configured priority becomes the Active router. If the priority is not configured (or tied), the router with the highest interface IP address for the HSRP group will become the Active router. The second highest router becomes Standby."
+    },
+    {
+        "question": "After receiving an Ethernet frame, a switch examines the destination MAC address, and forwards the frame out of all ports except the incoming port. In which communication types can this behavior occur?",
+        "options": [
+            "in broadcast and multicast communication",
+            "in broadcast communication",
+            "in broadcast, multicast, and unicast communication",
+            "in unicast communication"
+        ],
+        "correct": "in broadcast and multicast communication",
+        "category": "Switching & VLAN",
+        "explanation": "This behavior is called flooding. A switch floods frames when the destination address is a broadcast (FF:FF:FF:FF:FF:FF), a multicast, or a unicast address that is not present in its MAC address table (unknown unicast)."
+    },
+    {
+        "question": "Which type of NAT translates multiple private IP addresses to a single public IP address using different ports?",
+        "options": [
+            "PAT",
+            "Static NAT",
+            "Dynamic NAT",
+            "NAT64"
+        ],
+        "correct": "PAT",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "Port Address Translation (PAT), a form of NAT overload, allows many internal hosts to share a single public IP address by mapping each connection to a unique port number."
+    },
+    {
+        "question": "What is the purpose of a Layer 3 switch?",
+        "options": [
+            "to route traffic between company VLANs",
+            "to route traffic between the company network and the internet",
+            "to route traffic between multiple geographical locations",
+            "to route traffic between different protocol networks"
+        ],
+        "correct": "to route traffic between company VLANs",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The primary role of a Layer 3 switch in a modern LAN is to perform high-speed inter-VLAN routing (routing traffic between local subnets). Dedicated routers are typically used for connecting to the wider internet or geographical locations."
+    },
+    {
+        "question": "Which three types of booting are supported on servers? (Choose three.)",
+        "options": [
+            "booting from internal storage",
+            "booting from LAN",
+            "booting from SAN",
+            "booting from WAN",
+            "booting from wireless"
+        ],
+        "correct": [
+            "booting from internal storage",
+            "booting from LAN",
+            "booting from SAN"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Korrekt: Servrar stöder flera startmetoder beroende på deras design och miljö.\n- **Booting from internal storage**: Vanligast, sker direkt från lokala diskar (HDD/SSD).\n- **Booting from LAN**: Använder PXE (Preboot Execution Environment) för nätverksstart.\n- **Booting from SAN**: Låter servern starta från en fjärrlagringsenhet via Fibre Channel eller iSCSI.\nFelaktiga alternativ:\n- **Booting from WAN** och **booting from wireless** stöds inte på grund av fördröjning, säkerhet och stabilitetsproblem."
+    },
+    {
+        "question": "Which two symptoms indicate a duplex mismatch between a client and an Ethernet switch? (Choose two.)",
+        "options": [
+            "Auto-negotiation will report speed and duplex mismatch errors on the client NIC interface.",
+            "Interface statistics for the full-duplex side of the link will show increasing late collision errors.",
+            "The full-duplex interface will report increasing numbers of FCS errors or runts on the port.",
+            "The full-duplex side of the link will slow as CSMA/CD will force it to wait for incoming packets from the other side of the link.",
+            "The half-duplex side of the link will waste bandwidth due to increased packet retransmissions caused by increasing collisions."
+        ],
+        "correct": [
+            "The full-duplex interface will report increasing numbers of FCS errors or runts on the port.",
+            "The half-duplex side of the link will waste bandwidth due to increased packet retransmissions caused by increasing collisions."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A duplex mismatch (one side Full, the other Half) causes severe communication problems:\n\n1.  **Full-Duplex Side (Switch):** Since the switch sends and receives simultaneously without running CSMA/CD, when the half-duplex client sends data while the switch is also transmitting, the switch receives fragmented or garbled packets. This results in the switch reporting an increasing number of **FCS Errors** (Frame Check Sequence failures) and **Runts** (frames smaller than 64 bytes).\n2.  **Half-Duplex Side (Client):** The client must run CSMA/CD. When the full-duplex switch sends traffic at any time, it causes collisions on the client side, forcing the client to continuously retransmit packets, leading to poor throughput and wasted bandwidth."
+    },
+    {
+        "question": "Which three are the most reliable network practices used in Networking? (Choose three.)",
+        "options": [
+            "automated systems testing",
+            "copying and pasting configuration from a text editor to a device",
+            "manual system testing",
+            "using programmability tools to automate network configuration",
+            "using version controls for all configuration changes"
+        ],
+        "correct": [
+            "automated systems testing",
+            "using programmability tools to automate network configuration",
+            "using version controls for all configuration changes"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Reliable network practices include automated testing, automation tools for configuration, and version control of changes."
+    },
+    {
+        "question": "In Cisco routing implementations, what is the role of the administrative distance?",
+        "options": [
+            "It identifies how much time has passed since the route was learned.",
+            "It identifies how the route was learned.",
+            "It identifies the measure used to calculate the best path.",
+            "It identifies the trustworthiness of the route source."
+        ],
+        "correct": "It identifies the trustworthiness of the route source.",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Administrative Distance (AD) is used when a router learns about the same destination network from multiple routing sources (e.g., OSPF and EIGRP). The route source with the lowest AD is considered the most trustworthy and is placed in the routing table."
+    },
+    {
+        "question": "Which two statements about the Dynamic Multipoint Virtual Private Network (DMVPN) are true? (Choose two.)",
+        "options": [
+            "DMVPN creates hub-to-spoke tunnels.",
+            "DMVPN creates spoke-to-spoke tunnels.",
+            "DMVPN is used for connection between an enterprise and a provider.",
+            "DMVPN is used for connection between enterprises.",
+            "DMVPN is used within a branch network."
+        ],
+        "correct": [
+            "DMVPN creates hub-to-spoke tunnels.",
+            "DMVPN creates spoke-to-spoke tunnels."
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "DMVPN supports both hub-to-spoke and dynamic spoke-to-spoke VPN tunnels within an enterprise network."
+    },
+    {
+        "question": "Which command verifies the STP root bridge on a Cisco switch?",
+        "options": [
+            "show spanning-tree",
+            "show vlan brief",
+            "show interfaces trunk",
+            "show mac address-table"
+        ],
+        "correct": "show spanning-tree",
+        "category": "Switching & VLAN",
+        "explanation": "The 'show spanning-tree' command shows which switch is the root bridge for each VLAN."
+    },
+    {
+        "question": "On a Cisco switch, which two commands would you use to identify ports that are configured as trunks? (Choose two.)",
+        "options": [
+            "show interfaces status",
+            "show interfaces summary",
+            "show interfaces trunk",
+            "show ip interface brief",
+            "show vlan brief"
+        ],
+        "correct": [
+            "show interfaces status",
+            "show interfaces trunk"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "`show interfaces trunk` lists only active trunk ports. `show interfaces status` provides a concise summary where the 'Mode' column explicitly identifies ports as 'trunk' or 'trnk'."
+    },
+    {
+        "question": "In order to allow SNMP traffic to flow throughout the network, which two communication scenarios must be allowed? (Choose two.)",
+        "options": [
+            "TCP to port 161",
+            "TCP to port 162",
+            "UDP and TCP to port 161",
+            "UDP and TCP to port 162",
+            "UDP to port 161",
+            "UDP to port 162"
+        ],
+        "correct": [
+            "UDP to port 161",
+            "UDP to port 162"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "SNMP (Simple Network Management Protocol) uses UDP (User Datagram Protocol) for all communication. Port 161 is used for standard requests (Manager to Agent), and Port 162 is used for traps and informs (Agent to Manager)."
+    },
+    {
+        "question": "Which part of the Open Shortest Path First (OSPF) process is omitted if two routers are connected with a point-to-point link?",
+        "options": [
+            "Designated router/Border designated router (DR/BDR) election",
+            "exchange of hello packets",
+            "exchange of link-state database (LSDB) summary",
+            "Shortest Path First (SPF) calculation"
+        ],
+        "correct": "Designated router/Border designated router (DR/BDR) election",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "DR/BDR elections are only necessary on multi-access network types (like Ethernet) to minimize the number of required adjacencies and LSA flooding. On point-to-point links, the election process is skipped because a full adjacency is formed directly between the two routers."
+    },
+    {
+        "question": "Which OSI layer is responsible for physical cables and electrical signals?",
+        "options": [
+            "Layer 1",
+            "Layer 2",
+            "Layer 3",
+            "Layer 4"
+        ],
+        "correct": "Layer 1",
+        "category": "OSI Model",
+        "explanation": "The Physical layer (Layer 1) deals with transmission of raw bits over a physical medium such as cables."
+    },
+    {
+        "question": "Which role does not exist in the Rapid PVST+ Spanning Tree Protocol?",
+        "options": [
+            "alternate",
+            "backup",
+            "designated",
+            "disabled",
+            "nondesignated"
+        ],
+        "correct": "nondesignated",
+        "category": "Switching & VLAN",
+        "explanation": "In Rapid PVST+ (RSTP/802.1w), the traditional 'Nondesignated' role is replaced by the more specific 'Alternate' and 'Backup' port roles, both of which are in the Discarding state. Nondesignated is a general term, not a defined RSTP role."
+    },
+    {
+        "question": "What is a way of mitigating social engineering attacks?",
+        "options": [
+            "Avoiding making copies of files on external memory devices.",
+            "Avoiding using personal data to create a password.",
+            "Assigning administration privileges only to people with technical knowledge.",
+            "Training users about correct security behaviors."
+        ],
+        "correct": "Training users about correct security behaviors.",
+        "category": "Security AAA & ACL",
+        "explanation": "Social engineering relies on manipulating human psychology. The most effective mitigation is therefore to train users (employees) to recognize, avoid, and report techniques like phishing, pretexting, and baiting. While other options (like avoiding personal data in passwords) are good security hygiene, training is the primary defense against the attack vector itself."
+    },
+    {
+        "question": "Which statement about Service Set Identifiers (SSIDs) is true?",
+        "options": [
+            "An administrator can only create one SSID on the same access point.",
+            "An administrator can create several SSIDs on the same access point.",
+            "An SSID must be advertised by the Wi-Fi access point.",
+            "An SSID is configured by default on an access point."
+        ],
+        "correct": "An administrator can create several SSIDs on the same access point.",
+        "category": "Wireless",
+        "explanation": "Modern Access Points (APs), especially those in enterprise environments (Cisco WLC and APs), support the creation of multiple Virtual APs (VAPs) which correspond to different SSIDs. Each SSID can be mapped to a separate VLAN, allowing different security policies (e.g., guest vs. employee access) and network services to be applied while using the same physical hardware."
+    },
+    {
+        "question": "On a Cisco device, what is the default destination for syslog logging messages?",
+        "options": [
+            "console line",
+            "logging buffer",
+            "syslog server",
+            "terminal lines"
+        ],
+        "correct": "console line",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "By default, Cisco IOS is configured to send all generated syslog messages (which include error, warning, and informational events) directly to the **console line**. This allows an administrator who is physically connected to the device's console port to immediately see diagnostic and event messages. For enterprise management and persistent storage, administrators must manually configure additional destinations, such as the `logging buffer` (RAM) or a remote `syslog server` (logging host)."
+    },
+    {
+        "question": "A host has the MAC address of 11:22:33:aa:bbcc. It uses a modified EUI-64 format to create its global unicast IPv6 address. Which IPv6 address is a correctly created global unicast IPv6 address of the device?",
+        "options": [
+            "2001:db8:aaaa:bbbb:1122:33ff:feaa:bbcc",
+            "2001:db8:aaaa:bbbb:1322:33ff:feaa:bbcc",
+            "2001:db8:aaaa:bbbb:1d22:33ff:feaa:bbcc",
+            "2001:db8:aaaa:bbbb:1d22:33ff:ffaa:bbcc",
+            "2001:db8:aaaa:bbbb:887d:9eb8:437d:3456"
+        ],
+        "correct": "2001:db8:aaaa:bbbb:1322:33ff:feaa:bbcc",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The EUI-64 process converts the 48-bit MAC address (11:22:33:aa:bb:cc) into a 64-bit Interface ID in two main steps:\n\n1.  **Insertion (FFFE):** The MAC is split in half, and the hex sequence **FFFE** is inserted: 11:22:33:aa:bb:cc becomes 1122:33ff:feaa:bbcc.\n2.  **Inversion (U/L bit):** The **7th bit** of the first octet (11) is inverted. The first byte '11' (00010001 in binary) is modified by inverting the 7th bit (the bit highlighted: 00010**0**01 becomes 00010**1**01), resulting in '13' in hexadecimal.  The resulting Interface ID is **1322:33ff:feaa:bbcc**, which is then appended to the network prefix 2001:db8:aaaa:bbbb::/64."
+    },
+    {
+        "question": "What is the MAC address of the interface that autoconfigures itself to the IPv6 address of fe80::2a3:C2ff:fefc:4a5d?",
+        "options": [
+            "00:a3:c2:fc:4a:5d",
+            "2a:3c:2f:fc:4a:5d",
+            "ff:fe:a3:c2:fc:4a",
+            "02:a3:c2:ff:fc:4a"
+        ],
+        "correct": "00:a3:c2:fc:4a:5d",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Autoconfiguration uses the modified EUI-64 format: the first 24 bits of the MAC have the U/L bit inverted, 'ff:fe' inserted, and the last 24 bits preserved. The correct MAC here is 00:a3:c2:fc:4a:5d."
+    },
+    {
+        "question": "Which protocol enables VLAN trunk negotiation?",
+        "options": [
+            "DTP",
+            "LACP",
+            "STP",
+            "CDP"
+        ],
+        "correct": "DTP",
+        "category": "Switching & VLAN",
+        "explanation": "DTP (Dynamic Trunking Protocol) negotiates whether an interface becomes a trunk port."
+    },
+    {
+        "question": "What are the two advantages of Terraform? (Choose two.)",
+        "options": [
+            "allows users to use cloud-based apps over the Internet",
+            "can manage infrastructure on multiple cloud platforms",
+            "removes the need for organizations to maintain applications on their own computers",
+            "uses procedural language to describe the desired end-state for your infrastructure",
+            "uses a configuration language, designed to be easy for humans to read and write"
+        ],
+        "correct": [
+            "can manage infrastructure on multiple cloud platforms",
+            "uses a configuration language, designed to be easy for humans to read and write"
+        ],
+        "category": "Automation & DevOps",
+        "explanation": "Terraform is a popular Infrastructure as Code (IaC) tool. Its main advantage is its multi-cloud support and its use of a declarative, human-readable configuration language (HCL) to define the desired end-state of the infrastructure."
+    },
+    {
+        "question": "Which IPv6 network prefix is only intended for local links and cannot be routed?",
+        "options": [
+            "::ffff/80",
+            "2001::/3",
+            "fc00::/7",
+            "fe80::/10"
+        ],
+        "correct": "fe80::/10",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The prefix **fe80::/10** is reserved specifically for **Link-Local Addresses (LLA)**. These addresses are used by nodes to communicate with other nodes on the same physical link (or segment). Link-Local addresses are *non-routable* and cannot be forwarded by a router outside of that local link. This prefix is essential for IPv6 neighbor discovery and stateless address autoconfiguration (SLAAC) processes."
+    },
+    {
+        "question": "Which command displays IP-to-MAC address mapping?",
+        "options": [
+            "show ip arp",
+            "show mac address-table",
+            "show interfaces",
+            "show ip route"
+        ],
+        "correct": "show ip arp",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'show ip arp' command shows IP to MAC address bindings learned through ARP."
+    },
+    {
+        "question": "Which protocol automatically assigns IP addresses to devices on a network?",
+        "options": [
+            "DNS",
+            "DHCP",
+            "HTTP",
+            "FTP"
+        ],
+        "correct": "DHCP",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "DHCP (Dynamic Host Configuration Protocol) dynamically assigns IP addresses to network clients."
+    },
+    {
+        "question": "What is the function of northbound APIs?",
+        "options": [
+            "communication between the SDN controller and the services that run over the network",
+            "communication between the controllers and network devices",
+            "user communication to network devices",
+            "administrator communication to SDN controller"
+        ],
+        "correct": "communication between the SDN controller and the services that run over the network",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "In Software-Defined Networking (SDN), **Northbound APIs** are used for communication between the **SDN Controller** (the brain) and the applications or services running **above** it (e.g., policy engines, orchestration systems, cloud managers). These APIs allow applications to request and manipulate network services, abstracting the complexity of the underlying infrastructure. "
+    },
+    {
+        "question": "Which STP version allows per-VLAN instances?",
+        "options": [
+            "PVST+",
+            "MSTP",
+            "RSTP",
+            "STP"
+        ],
+        "correct": "PVST+",
+        "category": "Switching & VLAN",
+        "explanation": "PVST+ (Per VLAN Spanning Tree) creates a separate spanning tree instance for each VLAN."
+    },
+    {
+        "question": "Which protocol does OSPF use to establish neighbor relationships and maintain routing information?",
+        "options": [
+            "Hello protocol",
+            "TCP",
+            "ICMP",
+            "ARP"
+        ],
+        "correct": "Hello protocol",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "OSPF uses Hello packets to discover and maintain neighbor relationships and to elect the designated router (DR) and backup DR on multi-access networks."
+    },
+    {
+        "question": "A device has been assigned an IPv6 address through the Stateless Address Autoconfiguration (SLAAC) process. Which three statements about SLAAC are correct? (Choose three.)",
+        "options": [
+            "It generates link-local addresses.",
+            "It generates global unicast IPv6 addresses.",
+            "It must be used in combination with a DHCPv6 server.",
+            "It relies on ICMPv6 router advertisements.",
+            "It requires a device to use the EUI-64 format in the process.",
+            "It relies on a DHCPv6 server for duplicate address detection (DAD)."
+        ],
+        "correct": [
+            "It generates link-local addresses.",
+            "It generates global unicast IPv6 addresses.",
+            "It relies on ICMPv6 router advertisements."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "SLAAC is an autoconfiguration mechanism that automatically configures the IPv6 address of a device.\n\nThe correct answers are It generates link-local addresses, It generates global unicast IPv6 addresses, and It relies on ICMPv6 router advertisements. As defined in RFC 4862, the autoconfiguration process includes generating a link-local address, generating global addresses through SLAAC, and the duplicate address detection procedure to verify the uniqueness of the addresses on a link. Some devices may choose to use EUI-64 or a randomized value for the interface ID."
+    },
+    {
+        "question": "Which network topology layer does a wireless access point (WAP) belong to?",
+        "options": [
+            "access",
+            "collapsed core",
+            "core",
+            "distribution"
+        ],
+        "correct": "access",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "WAPs are edge devices connecting end users to the access layer of the network."
+    },
+    {
+        "question": "What type of VLANs does VTP manage?",
+        "options": [
+            "Standard VLANs",
+            "Extended VLANs",
+            "Private VLANs",
+            "Voice VLANs"
+        ],
+        "correct": "Standard VLANs",
+        "category": "Switching & VLAN",
+        "explanation": "VTP only propagates VLANs in the range 1–1005, which are standard VLANs."
+    },
+    {
+        "question": "Which of the following network devices defines a broadcast domain and a collision domain on every one of its ports?",
+        "options": [
+            "bridge",
+            "hub",
+            "router",
+            "switch"
+        ],
+        "correct": "router",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A router separates both collision domains and broadcast domains for each of its interfaces."
+    },
+    {
+        "question": "Which three statements about IPv4 addresses are true? (Choose three.)",
+        "options": [
+            "8.0.0.0 is a public address.",
+            "10.8.0.0 is a private address.",
+            "127.0.0.1 is a reserved address.",
+            "172.30.0.0 is a public address.",
+            "192.170.0.0 is a private address."
+        ],
+        "correct": [
+            "8.0.0.0 is a public address.",
+            "10.8.0.0 is a private address.",
+            "127.0.0.1 is a reserved address."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Public/Private ranges are: Private: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16. Reserved: 127.0.0.0/8 (Loopback). Therefore: 8.0.0.0 is Public; 10.8.0.0 is Private; 127.0.0.1 is Reserved; 172.30.0.0 is Private (falls in 172.16-31 range); 192.170.0.0 is Public."
+    },
+    {
+        "question": "Two computers are connected to a Cisco Catalyst Layer 2 switch. PC1 is assigned the address 10.250.20.20/26 and PC2 is assigned the address 10.250.20.50/26. When a user on PC1 issues the ping 10.250.20.63 command, will PC2 respond to it?",
+        "options": [
+            "No, because 10.250.20.63 is not in the subnet that PC1 belongs to.",
+            "No, because 10.250.20.63 is not the IP of PC2.",
+            "Yes, the PC2 will respond to the 10.250.20.63 broadcast if both ports are operationally in access mode and the same VLAN.",
+            "Yes, if the ip routing command is configured on the switch."
+        ],
+        "correct": "Yes, the PC2 will respond to the 10.250.20.63 broadcast if both ports are operationally in access mode and the same VLAN.",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Adressen 10.250.20.63 är broadcastadressen för subnätet 10.250.20.0/26. Eftersom både PC1 och PC2 tillhör samma subnät (och därmed samma broadcastdomän), skickas PC1:s ping som en Layer 2-broadcast. PC2 tar emot ICMP-förfrågan och svarar på den."
+    },
+    {
+        "question": "An enterprise wants to provide a global service that would be provided from an enterprise resource nearest to the user. For which three reasons does the enterprise choose to assign anycast IPv6 addresses to the relevant devices? (Choose three.)",
+        "options": [
+            "Because all the devices configured with the IPv6 anycast address would be aware of the user session.",
+            "Because IPv6 anycast addresses are globally routable.",
+            "Because routing of IPv6 anycast addresses is more secure than routing other IPv6 address types.",
+            "Because routing tables will point to the nearest resource configured with the IPv6 anycast address.",
+            "Because using IPv6 anycast addresses provides automatic failover."
+        ],
+        "correct": [
+            "Because IPv6 anycast addresses are globally routable.",
+            "Because routing tables will point to the nearest resource configured with the IPv6 anycast address.",
+            "Because using IPv6 anycast addresses provides automatic failover."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Anycasting routes traffic to the topologically closest host advertising that address, providing nearest service delivery and inherent redundancy (failover) if one instance stops advertising the route. Anycast addresses are globally routable."
+    },
+    {
+        "question": "Which three SNMP messages are sent from an SNMP agent to an SNMP manager? (Choose three.)",
+        "options": [
+            "GetRequest",
+            "GetNextRequest",
+            "InformRequest",
+            "Response",
+            "SetRequest",
+            "Trap"
+        ],
+        "correct": [
+            "InformRequest",
+            "Response",
+            "Trap"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "The three messages sent *from* the **Agent** *to* the **Manager** are:\n1. **Response:** Sent as an acknowledgment or reply to a Manager's Get or Set request.\n2. **Trap:** An unsolicited alert sent by the Agent to notify the Manager of a critical event (e.g., a link failure).\n3. **InformRequest:** An unsolicited alert, similar to a Trap, but it requires a confirmation (Response) from the Manager, making it more reliable."
+    },
+    {
+        "question": "Which command would you use to verify the number of excluded addresses on a router configured as a DHCP server?",
+        "options": [
+            "show ip dhcp bindings",
+            "show ip dhcp conflict",
+            "show ip dhcp database",
+            "show ip dhcp pool"
+        ],
+        "correct": "show ip dhcp pool",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The `show ip dhcp pool` command displays detailed information about all DHCP pools, including the range of addresses and the addresses that have been specifically excluded from the pool's allocation range."
+    },
+    {
+        "question": "When creating and maintaining the MAC address table, which two activities does a switch perform? (Choose two.)",
+        "options": [
+            "It adds the destination MAC address in the frame and the incoming port number.",
+            "It adds the destination MAC address in the frame and the outgoing port number.",
+            "It adds the source MAC address in the frame and the incoming port number.",
+            "It resets the aging timer of all the entries related to the incoming port.",
+            "It resets the aging time of the MAC table entry for the source MAC address."
+        ],
+        "correct": [
+            "It adds the source MAC address in the frame and the incoming port number.",
+            "It resets the aging time of the MAC table entry for the source MAC address."
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "A switch learns by examining the **Source MAC Address** and recording it along with the **Incoming Port Number**. Every time a frame is received from a known source MAC, the switch resets the aging timer for that specific entry to keep it active in the table."
+    },
+    {
+        "question": "What are two valid IPv6 address scopes for a unique local IPv6 address? (Choose two.)",
+        "options": [
+            "global",
+            "interface-local",
+            "link-local",
+            "organization-local",
+            "site-local"
+        ],
+        "correct": [
+            "organization-local",
+            "site-local"
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Unique Local Addresses (ULA) are intended for communication within a limited administrative domain, such as a private network or an organization's site, and are not routable on the public internet.\n\n1.  **Site-Local:** This is the historical term that ULA (FC00::/7) was introduced to replace. It describes the scope of routing within a single, defined location or site.\n2.  **Organization-Local:** While not a formally defined scope in the same way as link-local or global, it accurately describes the intended use and scope of ULA—to be routable only within the bounds of a single organization."
+    },
+    {
+        "question": "When an access point (AP) is operating in local mode, on which network device is wireless client traffic switched?",
+        "options": [
+            "on a network switch",
+            "on a wireless access controller (WLC)",
+            "on the egress AP",
+            "on the ingress AP"
+        ],
+        "correct": "on a network switch",
+        "category": "Wireless",
+        "explanation": "In local mode, APs forward all client traffic to the switch, which then routes it."
+    },
+    {
+        "question": "What are the three tasks of an Intrusion Prevention System (IPS)? (Choose three.)",
+        "options": [
+            "blocking suspicious activity",
+            "logging suspicious activity",
+            "reporting suspicious activity",
+            "inspecting packets only",
+            "tracing all traffic"
+        ],
+        "correct": [
+            "blocking suspicious activity",
+            "logging suspicious activity",
+            "reporting suspicious activity"
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "An IPS inspects traffic, logs suspicious activity, and can actively block malicious behavior. Reporting is included; inspecting and tracing are not considered primary tasks of IPS."
+    },
+    {
+        "question": "Which two characteristics apply to small office/home office (SOHO) routers? (Choose two.)",
+        "options": [
+            "They are more expensive than enterprise routers.",
+            "They are more reliable than enterprise routers.",
+            "They have a web-based administration interface.",
+            "They have integrated security functionality.",
+            "They perform intensive routing tasks."
+        ],
+        "correct": [
+            "They have a web-based administration interface.",
+            "They have integrated security functionality."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "SOHO routers are designed for ease of use by non-technical users, requiring a simple web interface for setup. They also integrate basic security functions like NAT and simple firewalls."
+    },
+    {
+        "question": "Which two symptoms are characteristic of a duplex mismatch? (Choose two.)",
+        "options": [
+            "The full-duplex side of the link will experience increased collision rates.",
+            "The half-duplex side of the link will experience increased collision rates.",
+            "TCP data transfer will perform better than UDP data transfer.",
+            "The connection will not be operational.",
+            "The full-duplex side of the link will have a large number of CRC errors."
+        ],
+        "correct": [
+            "The half-duplex side of the link will experience increased collision rates.",
+            "The full-duplex side of the link will have a large number of CRC errors."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "When the half-duplex side transmits while the full-duplex side is also sending, the half-duplex side detects the incoming signal as a collision. The full-duplex side receives the resulting corrupted frame, leading to high CRC errors."
+    },
+    {
+        "question": "In the routing table on R2, what is the protocol code for the default route?",
+        "options": [
+            "D",
+            "D*EX",
+            "O*E2",
+            "O*IA",
+            "S*"
+        ],
+        "correct": "O*E2",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Koden 'O' indikerar OSPF, och asterisken '*' betecknar en kandidat för default-rutten. 'E2' (External Type 2) är den vanliga koden för en extern default-rutt som har redistribuerats in i OSPF-domänen. Andra koder som 'D' och 'D*EX' representerar EIGRP-rutter, och 'S*' representerar en statisk default-rutt."
+    },
+    {
+        "question": "Which two conditions must be met on a router so that a route marked \"C\" shows up in the output of the show ip route command? (Choose two.)",
+        "options": [
+            "A valid IP address is configured on the interface.",
+            "Routing adjacency is established between two routers.",
+            "The interface has Layer 1 and Layer 2 connectivity.",
+            "The ip route mark connected command is issued for the route.",
+            "The same routing process ID must be set on both routers."
+        ],
+        "correct": [
+            "A valid IP address is configured on the interface.",
+            "The interface has Layer 1 and Layer 2 connectivity."
+        ],
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "A 'C' (Connected) route appears when an interface is configured with a valid IP address and is in an operational state (up/up), meaning it has Layer 1 (Physical) and Layer 2 (Data Link) connectivity."
+    },
+    {
+        "question": "Which three protocols use UDP? (Choose three.)",
+        "options": [
+            "DHCP",
+            "FTP",
+            "HTTPS",
+            "SNMP",
+            "TFTP"
+        ],
+        "correct": [
+            "DHCP",
+            "SNMP",
+            "TFTP"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "UDP is used by DHCP, SNMP, and TFTP because they are connectionless protocols that do not require reliable delivery."
+    },
+    {
+        "question": "What is the default port for HTTPS?",
+        "options": [
+            "80",
+            "443",
+            "21",
+            "22"
+        ],
+        "correct": "443",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "HTTPS (HTTP over SSL/TLS) uses port 443 by default."
+    },
+    {
+        "question": "Which protocol resolves hostnames to IP addresses?",
+        "options": [
+            "DNS",
+            "DHCP",
+            "NAT",
+            "FTP"
+        ],
+        "correct": "DNS",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "DNS (Domain Name System) resolves human-readable hostnames into IP addresses."
+    },
+    {
+        "question": "Which devices does the core layer interconnect?",
+        "options": [
+            "access layer switches",
+            "access points",
+            "distribution layer switches",
+            "end point devices"
+        ],
+        "correct": "distribution layer switches",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The core layer provides high-speed backbone connectivity and interconnects distribution layer devices."
+    },
+    {
+        "question": "On Cisco routers, routing for IPv6 is not enabled by default. Which command should you use to enable IPv6 routing?",
+        "options": [
+            "ipv6 enable",
+            "ipv6 local policy route-map",
+            "ipv6 route <IPv6 address>",
+            "ipv6 unicast-routing"
+        ],
+        "correct": "ipv6 unicast-routing",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The `ipv6 unicast-routing` command in global configuration mode enables the forwarding of IPv6 packets on all interfaces and is mandatory for the router to function as an IPv6 router. `ipv6 enable` only enables IPv6 processing on a single interface."
+    },
+    {
+        "question": "Which mechanism does NETCONF use to install, manipulate, and delete the configuration of network devices?",
+        "options": [
+            "OpenFlow",
+            "Remote Procedure Call (RPC)",
+            "REST",
+            "RESTCONF"
+        ],
+        "correct": "Remote Procedure Call (RPC)",
+        "category": "Automation & DevOps",
+        "explanation": "NETCONF uses Remote Procedure Call (RPC) messages (typically encapsulated in XML) to communicate configuration changes to network devices."
+    },
+    {
+        "question": "When using the modified EUI-64 format to create the interface ID of an IPv6 unicast address, which two portions of the Ethernet MAC are used unchanged? (Choose two.)",
+        "options": [
+            "Organizational Unique Identifier (OUI) octets",
+            "network interface card (NIC) specific octets",
+            "the universal/local bit",
+            "the unicast/multicast bit",
+            "the protocol type octet"
+        ],
+        "correct": [
+            "network interface card (NIC) specific octets",
+            "the unicast/multicast bit"
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The correct answers are network interface card (NIC) specific octets and the unicast/multicast bit. In the modified EUI-64 format, the 48-bit MAC address is split, and the constant 'FFFE' is inserted in the middle. The universal/local bit (the seventh bit of the MAC address) is inverted. As this bit is part of the OUI octets, inverting it changes the value of the OUI octets as well."
+    },
+    {
+        "question": "What is the Cisco best practice recommendation for port speed and duplex settings when using Fast Ethernet IEEE 802.3u-compliant devices?",
+        "options": [
+            "disable auto-negotiation on both sides of the link and manually configure full-duplex on both sides of the link",
+            "disable auto-negotiation on both sides of the link and manually configure half-duplex on both sides of the link",
+            "enable auto-negotiation on both sides of the link",
+            "manually configure one side of the link with duplex and speed and enable auto-negotiation on the other side of the link"
+        ],
+        "correct": "enable auto-negotiation on both sides of the link",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Auto-negotiation is the standard best practice for modern networks, including Fast Ethernet, to ensure both sides of the link correctly agree on the highest common speed and duplex setting, thus preventing mismatch issues."
+    },
+    {
+        "question": "Which command enables LACP on an interface?",
+        "options": [
+            "channel-group 1 mode active",
+            "channel-group 1 mode on",
+            "channel-group 1 mode auto",
+            "channel-group 1 mode desirable"
+        ],
+        "correct": "channel-group 1 mode active",
+        "category": "Switching & VLAN",
+        "explanation": "LACP uses 'active' or 'passive' modes. The 'active' mode actively negotiates a channel with LACP."
+    }
+]
