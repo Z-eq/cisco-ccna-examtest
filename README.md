@@ -80,19 +80,20 @@ The application will be available at: http://127.0.0.1:5000/.
 
      Features
 
-├── app.py              # Flask backend, routing, and logic
-├── requirements.txt    # Python dependencies (Flask)
-├── templates/
-│   └── index.html      # Main page template (HTML)
-└── static/
-    ├── quiz.js         # Core frontend logic (JavaScript)
-    ├── style.css       # Styling (CSS)
+    ├── app.py              # Flask backend, routing, and logic
+    ├── requirements.txt    # Python dependencies (Flask)
+        ├── templates/
+        │   └── index.html      # Main page template (HTML)
+    └── static/
+        ├── quiz.js         # Core frontend logic (JavaScript)
+        ├── style.css       # Styling (CSS)
     └── questions/      # Directory for JSON question files and data storage
         ├── science.json
         ├── history.json
         ├── wrong.json      # Saved incorrect questions (Managed by app.py, excluded from repo)
         └── highscores.json # Saved highscores (Managed by app.py, excluded from repo)
 
-📄 Licensing
+        
+    📄 Licensing
 
 This project is licensed under the MIT License - see the optional LICENSE file for details.
