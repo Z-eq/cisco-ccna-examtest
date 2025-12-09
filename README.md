@@ -17,7 +17,7 @@ Quiz App: Knowledge Tester
  Getting Started
 
 Follow these steps to get the application running on your local machine.
-1. Clone the Repository
+#### 1. Clone the Repository
 
 Start by cloning the project to your computer:
 Bash
@@ -25,7 +25,7 @@ Bash
 git clone https://github.com/YourUsername/YourProjectName.git
 cd YourProjectName
 
-2. Install Python Dependencies
+#### 2. Install Python Dependencies
 
 It is highly recommended to use a virtual environment (venv) to isolate the project's dependencies.
 a. Create and Activate Environment
@@ -34,10 +34,10 @@ Bash
 ### Create the environment
 python -m venv venv
 
-# Activate the environment
-# Windows (Command Prompt/PowerShell):
+### Activate the environment
+### Windows (Command Prompt/PowerShell):
 .\venv\Scripts\activate
-# macOS/Linux:
+#### macOS/Linux:
 source venv/bin/activate
 
 b. Install Packages
