@@ -1,1175 +1,1170 @@
 [
-  {
-    "question": "Which VLAN is the default VLAN on a Cisco switch?",
-    "options": [
-      "1",
-      "100",
-      "4095",
-      "0"
-    ],
-    "correct": "1",
-    "category": "Switching",
-    "explanation": "**VLAN 1** is the default VLAN to which all switch ports belong upon initial configuration. It is also the default VLAN for control protocols like CDP, VTP, and STP."
-  },
-  {
-    "question": "What command displays the routing protocol used by the router?",
-    "options": [
-      "show ip protocols",
-      "show ip route",
-      "show version",
-      "show running-config"
-    ],
-    "correct": "show ip protocols",
-    "category": "Routing",
-    "explanation": "The command **`show ip protocols`** displays information about the active routing protocols (such as OSPF, EIGRP, RIP) configured on the Cisco router."
-  },
-  {
-    "question": "Which Cisco IOS command is used to save the running configuration so that it persists after a reboot?",
-    "options": [
-      "copy running-config startup-config",
-      "write erase",
-      "reload",
-      "copy startup-config running-config"
-    ],
-    "correct": "copy running-config startup-config",
-    "category": "Cisco IOS",
-    "explanation": "\"copy running-config startup-config\" (or the older \"write memory\") saves the current configuration to NVRAM as the startup configuration. \"write erase\" deletes the startup config, \"reload\" reboots the device, and copying startup to running would replace the current config with the saved config."
-  },
-  {
-    "question": "Which protocol resolves hostnames to IP addresses?",
-    "options": [
-      "DNS",
-      "DHCP",
-      "NAT",
-      "FTP"
-    ],
-    "correct": "DNS",
-    "category": "TCP/IP",
-    "explanation": "DNS (Domain Name System) resolves human-readable hostnames into IP addresses."
-  },
-  {
-    "question": "What does the 'spanning-tree vlan 10 priority 24576' command do?",
-    "options": [
-      "Changes STP priority for VLAN 10",
-      "Sets VLAN 10 as root",
-      "Disables STP for VLAN 10",
-      "Assigns VLAN 10 to port-channel 10"
-    ],
-    "correct": "Changes STP priority for VLAN 10",
-    "category": "STP",
-    "explanation": "This command changes the STP bridge priority for VLAN 10 to influence root bridge election."
-  },
-  {
-    "question": "After the Cisco IOS Software image is loaded and started, from which three components can the device load its configuration? (Choose three.)",
-    "options": [
-      "NVRAM",
-      "SCP server",
-      "TFTP server",
-      "RAM only",
-      "DHCP URL"
-    ],
-    "correct": [
-      "NVRAM",
-      "SCP server",
-      "TFTP server"
-    ],
-    "category": "Cisco IOS",
-    "explanation": "A device typically tries to load `startup-config` from **NVRAM**. If that fails, it can be configured to attempt to load a configuration file from a network source, such as a **TFTP** or **SCP** server."
-  },
-  {
-    "question": "Which two are true regarding Terraform and Ansible?",
-    "options": [
-      "Ansible uses a declarative approach, while Terraform uses a procedural approach.",
-      "Terraform excels at deploying infrastructure where immutable changes are desired.",
-      "Ansible excels at tasks requiring granular control over each step of the process.",
-      "Both Terraform and Ansible require a state file to track current infrastructure states.",
-      "Terraform is written in Python, and Ansible is written in Go."
-    ],
-    "correct": [
-      "Terraform excels at deploying infrastructure where immutable changes are desired.",
-      "Ansible excels at tasks requiring granular control over each step of the process."
-    ],
-    "category": "Automation/Tools",
-    "explanation": "Terraform is declarative for immutable infrastructure, while Ansible allows granular procedural tasks."
-  },
-  {
-    "question": "Which command generates RSA keys for user authentication, used when connecting via SSH?",
-    "options": [
-      "crypto key generate rsa",
-      "crypto generate key rsa",
-      "crypto rsa generate key",
-      "crypto generate rsa key"
-    ],
-    "correct": "crypto key generate rsa",
-    "category": "Cisco IOS/Security",
-    "explanation": "The Cisco IOS command to create the necessary **RSA (Rivest–Shamir–Adleman)** cryptographic keys for SSH is **`crypto key generate rsa`**."
-  },
-  {
-    "question": "Which three options represent characteristics of a resilient network? (Choose three.)",
-    "options": [
-      "link congestions",
-      "small failure domains",
-      "low latency",
-      "short downtime",
-      "redundancy of links and devices",
-      "single points of failure",
-      "high jitter"
-    ],
-    "correct": [
-      "small failure domains",
-      "short downtime",
-      "redundancy of links and devices"
-    ],
-    "category": "Networking Fundamentals",
-    "explanation": "**Resiliency** is the ability of a network to recover from failure. This is achieved by using **redundant paths/devices**, minimizing the impact of a failure (**small failure domains**), and ensuring quick recovery (**short downtime**)."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which layer in the OSI model handles end-to-end communication and flow control?",
-    "options": [
-      "Layer 2",
-      "Layer 3",
-      "Layer 4",
-      "Layer 5"
-    ],
-    "correct": "Layer 4",
-    "explanation": "The transport layer (Layer 4) handles end-to-end communication, segmentation and flow control."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "What is the broadcast address for the network 192.168.5.0/24?",
-    "options": [
-      "192.168.5.0",
-      "192.168.5.255",
-      "192.168.5.1",
-      "192.168.5.128"
-    ],
-    "correct": "192.168.5.255",
-    "explanation": "In a $/24$ network, the first three octets ($192.168.5.$) define the network, and the last octet is used for hosts. The **broadcast address** is always the highest address in the range, where all host bits are set to 1, which is **$192.168.5.255$**."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which protocol is used for secure file transfer over SSH?",
-    "options": [
-      "FTP",
-      "TFTP",
-      "SFTP",
-      "HTTP"
-    ],
-    "correct": "SFTP",
-    "explanation": "SFTP (SSH File Transfer Protocol) uses SSH to secure file transfers."
-  },
-  {
-    "question": "Which layer in the OSI model is responsible for multiplexing and error control?",
-    "options": [
-      "Layer 2",
-      "Layer 3",
-      "Layer 4",
-      "Layer 7"
-    ],
-    "correct": "Layer 4",
-    "category": "OSI",
-    "explanation": "The **Transport Layer (Layer 4)** is responsible for separating data streams from multiple applications (multiplexing) and providing end-to-end reliability and error recovery (error control) using protocols like TCP."
-  },
-  {
-    "question": "Which two statements regarding the Root Guard are correct? (Choose two.)",
-  "options": [
-    "Root Guard can be enabled globally",
-    "Root Guard can only be enabled per interface",
-    "Root Guard can only be used on root and alternate ports",
-    "Root Guard can only be used on root ports",
-    "Root Guard is deployed on interfaces that connect to switches that should never be the root"
-  ],
-  "correct": [
-    "Root Guard can only be enabled per interface",
-    "Root Guard is deployed on interfaces that connect to switches that should never be the root"
-  ],
-  "category": "Cisco Switching",
-  "explanation": "Root Guard is an STP (Spanning Tree Protocol) feature designed to enforce the hierarchical structure of the network and prevent external switches from becoming the root bridge. \n\n1.  **Deployment:** Root Guard is applied to interfaces (ports) that connect to network segments where the root bridge is *not* expected to be found (e.g., ports leading to access layers or external networks). If a superior BPDU (suggesting a new, better root) is received on a Root Guard-enabled port, the port is transitioned to a special blocking state (Root-Inconsistent state) to prevent the topology change.\n2.  **Configuration:** It can only be configured **per interface** (using the command `spanning-tree guard root`). It is not a global command."
-},
-{
-    "question": "Why is clock synchronization between network devices important?",
-    "options": [
-      "to ensure that routing protocols on devices can communicate with each other",
-      "to ensure that traffic transiting network devices does not get dropped",
-      "to ensure the devices are manageable by SNMP protocol",
-      "to ensure the correct interpretation of events within syslog data"
-    ],
-    "correct": "to ensure the correct interpretation of events within syslog data",
-    "category": "Syslog/NTP",
-    "explanation": "Accurate **clock synchronization (via NTP)** is vital for logs. If devices have different times, correlating events across multiple systems (**syslog data**) during an outage or security incident becomes impossible."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which protocol on a Cisco switch shows VLAN and trunk information?",
-    "options": [
-      "show vlan brief",
-      "show interfaces trunk",
-      "show interfaces status",
-      "show ip interface brief"
-    ],
-    "correct": "show interfaces trunk",
-    "explanation": "The 'show interfaces trunk' command is the only option that explicitly displays the operational state of all configured **trunk links** on the switch, including the **encapsulation type**, the **native VLAN**, and which **VLANs are permitted** to cross the trunk."
-  },
-  {
-    "question": "What is the ICMP type for the echo reply packets?",
-    "options": [
-      "1",
-      "0",
-      "2",
-      "3"
-    ],
-    "correct": "0",
-    "category": "ICMP/IP",
-    "explanation": "ICMP type **0** is for **Echo Reply** (svar på ping). ICMP type 8 is Echo Request. Type 3 is Destination Unreachable."
-  },
-  {
-    "question": "Match the OSPF neighbor states on a LAN with their correct positions in the correct order.",
-    "options": [
-      "Down — 1",
-      "INIT — 2",
-      "Two-way — 3",
-      "Exstart — 4",
-      "Exchange — 5",
-      "Loading — 6",
-      "Full — 7"
-    ],
-    "correct": [
-        "Down — 1",
-        "INIT — 2",
-        "Two-way — 3", 
-        "Exstart — 4", 
-        "Exchange — 5", 
-        "Loading — 6", 
-        "Full — 7"
-    ],
-    "category": "OSPF",
-    "explanation": "The correct sequence for OSPF neighbor states on a multi-access network (LAN) is: Down, Init, Two-Way, Exstart, Exchange, Loading, Full."
-  },
-  {
-    "question": "Which statement about HSRP version 1 hello packets is true?",
-  "options": [
-    "HSRP hello packets are sent to multicast address 224.0.0.1 on TCP port 1985.",
-    "HSRP hello packets are sent to multicast address 224.0.0.5 on UDP port 1985.",
-    "HSRP hello packets are sent to multicast address 224.0.0.2 on UDP port 1985.",
-    "HSRP hello packets are sent to multicast address 224.0.0.10 on UDP port 1986."
-  ],
-  "correct": "HSRP hello packets are sent to multicast address 224.0.0.2 on UDP port 1985.",
-  "category": "High Availability",
-  "explanation": "HSRP v1 (Hot Standby Router Protocol version 1) Hello packets are sent using UDP protocol to port **1985**. The standard multicast address reserved for HSRP v1 is **224.0.0.2** (option C). Some older or non-standard configurations might mention 224.0.0.5, but 224.0.0.2 is the definitive standard used by Cisco for HSRPv1 'all routers' communication."
-  },
-  {
-    "question": "Which protocol automatically assigns IP addresses to devices on a network?",
-    "options": [
-      "DNS",
-      "DHCP",
-      "HTTP",
-      "FTP"
-    ],
-    "correct": "DHCP",
-    "category": "IP",
-    "explanation": "DHCP (Dynamic Host Configuration Protocol) dynamically assigns IP addresses to network clients."
-  },
-  {
-    "question": "Which banner should be used to show information that is hidden from unauthorized users?",
-    "options": [
-      "MOTD",
-      "login",
-      "EXEC",
-      "slip-ppp"
-    ],
-    "correct": "login",
-    "category": "Cisco IOS/Security",
-    "explanation": "The 'banner login' is displayed *before* the user is prompted for authentication (username/password), making it the most appropriate place for legal warnings or information visible to unauthorized users."
-  },
-  {
-    "question": "Which three statements are correct about the JSON data format? (Choose three.)",
-    "options": [
-      "Empty values cannot be used in the JSON data format.",
-      "JSON arrays separate elements using a semicolon.",
-      "JSON can be used when data is sent from a server to a web page.",
-      "JSON does not support comments.",
-      "JSON is a hierarchical data format."
-    ],
-    "correct": [
-      "JSON can be used when data is sent from a server to a web page.",
-      "JSON does not support comments.",
-      "JSON is a hierarchical data format."
-    ],
-    "category": "Data Formats",
-    "explanation": "JSON (JavaScript Object Notation) is widely used for data exchange over the web. It has a clear hierarchical structure (objects within objects). It is strictly defined and does not support comments. Array elements must be separated by commas, not semicolons."
-  },
-  {
-    "question": "Which layer in the OSI model handles IP addresses?",
-    "options": [
-      "Transport",
-      "Network",
-      "Application",
-      "Data Link"
-    ],
-    "correct": "Network",
-    "category": "OSI",
-    "explanation": "The **Network Layer (Layer 3)** is responsible for logical addressing (IPv4 and IPv6) and determining the best path for data packets through routing."
-  },
-  {
-
-    "question": "What is the purpose of entering the ip nat inside source static tcp 192.168.10.2 80 209.165.200.223 8080 command at the global configuration prompt?",
-  "options": [
-    "It identifies the inside NAT interface on the router.",
-    "It prevents the router from establishing a connection with any device that does not have the specified address and port number.",
-    "It binds the inside local address and local port to the specified inside global address and global port.",
-    "It enables a one-to-one translation between different internal port numbers."
-  ],
-  "correct": "It binds the inside local address and local port to the specified inside global address and global port.",
-  "category": "NAT and Cisco IOS",
-  "explanation": "This is a **Static Port Address Translation (PAT)** command, also known as a static NAT mapping. It creates a permanent, one-to-one mapping that translates a specific inside private address and port (192.168.10.2 port 80) to a specific outside public address and port (209.165.200.223 port 8080). This is commonly used for making internal servers accessible from the internet."
-},
-{
-  
-    "question": "Which of the basic ISP connectivity types provides the highest redundancy?",
-    "options": [
-      "single-homed",
-      "dual-homed",
-      "multihomed",
-      "dual-multihomed"
-    ],
-    "correct": "dual-multihomed",
-    "category": "WAN Connectivity",
-    "explanation": "A **dual-multihomed** setup provides the highest redundancy by connecting to **two separate ISPs (multihomed)** using **two separate routers/connections per ISP (dual)**. This protects against single link failure, single router failure, and single ISP failure."
-  },
-  {
-    "question": "Which command displays the number of OSPF router-IDs in the local process's database?",
-    "options": [
-      "show ip ospf database router-id",
-      "show ip ospf database network",
-      "show ip ospf database summary",
-      "show ip ospf neighbor"
-    ],
-    "correct": "show ip ospf database summary",
-    "category": "Routing",
-    "explanation": "`show ip ospf database summary` displays a summary of the OSPF database, including a count of the different Link-State Advertisement (LSA) types, such as Router LSAs (which contain Router IDs)."
-  },
-  {
-
-    "question": "Which two practices would you follow to prevent VLAN attacks on a network? (Choose two.)",
-  "options": [
-    "Set all ports to STP PortFast.",
-    "Disable DTP on all ports.",
-    "Disable Cisco Discovery Protocol on all ports.",
-    "Explicitly configure trunking mode or access mode.",
-    "Disable the HTTP service."
-  ],
-  "correct": [
-    "Disable DTP on all ports.",
-    "Explicitly configure trunking mode or access mode."
-  ],
-  "category": "VLAN Security",
-  "explanation": "VLAN hopping attacks exploit dynamic trunking and insecure ports. The two best practices to mitigate these are:\n\n1.  **Disable DTP (Dynamic Trunking Protocol):** DTP is used to negotiate trunking between two switches. If enabled, an attacker can spoof the switch identity and force the port into trunking mode, allowing access to all VLANs (VLAN Hopping). Disabling DTP and setting ports manually prevents this.\n2.  **Explicitly configure trunking mode or access mode:** Ports connected to end devices (hosts) should be explicitly set to **access mode** (`switchport mode access`) to prevent them from becoming trunks. Ports connected to other switches should be explicitly set to **trunk mode** (`switchport mode trunk`). This prevents ports from negotiating insecure states."
-},
-{
-
-    "question": "Which statement correctly describes the authenticator and its responsibility?",
-    "options": [
-      "The authenticator, which is usually the switch, acts as an intermediary between the authentication server and the client.",
-      "The authenticator is the server that is responsible for authenticating the client.",
-      "Both the authenticator and authentication server act as the login server.",
-      "The authenticator is usually a switch that authenticates the newly connected client to access the network."
-    ],
-    "correct": "The authenticator, which is usually the switch, acts as an intermediary between the authentication server and the client.",
-    "category": "Security/802.1X",
-    "explanation": "In 802.1X, the **Authenticator** (usually the switch) relays the client's credentials (Supplicant) to the **Authentication Server** (e.g., RADIUS) and enforces the access policy based on the server's response."
-  },
-  {
-    "question": "Which fields does the 802.1Q header add to an Ethernet frame?",
-  "options": [
-    "CRC",
-    "EtherType",
-    "preamble",
-    "VLAN ID"
-  ],
-  "correct": [
-    "VLAN ID"
-  ],
-  "category": "Cisco Switching",
-  "explanation": "The 802.1Q standard inserts a 4-byte Tag into the Ethernet frame. While the Tag contains two main functional fields (TPID/EtherType and VLAN ID), the **VLAN ID** (a 12-bit sub-field) is the unique identifier that specifically enables the separation and forwarding of traffic based on VLAN membership. It is the core functional component that the 802.1Q process adds to the frame to implement network segmentation."
-},
-{
-  "question": "What is the benefit of Mobility Express wireless access points (APs)?",
-  "options": [
-    "multiple SSIDs",
-    "multiple VLANs",
-    "Quality of Service (QoS)",
-    "reduced initial cost"
-  ],
-  "correct": "reduced initial cost",
-  "category": "Wireless",
-  "explanation": "Cisco Mobility Express is a controller-less solution designed primarily for Small to Midsize Businesses (SMBs). Its main benefit is the **reduced initial cost** because it eliminates the need to purchase a dedicated physical Wireless LAN Controller (WLC). Instead, one of the Access Points (APs) assumes the role of the master controller, managing the other APs in the network. Features like multiple SSIDs, VLANs, and QoS are standard capabilities across most modern Cisco wireless solutions, regardless of whether a separate controller is used."
-},
-{
-
-    "question": "In an enterprise environment, which guideline should be implemented to manage passwords securely, and why?",
-  "options": [
-    "A centralized password repository should be avoided, because it is a single point of failure.",
-    "A local password repository should be used, because it is more secure, and there is no need to transmit passwords using a AAA protocol.",
-    "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
-    "Passwords should NOT be used, because digital certificates are more secure and scale better."
-  ],
-  "correct": "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
-  "category": "Security Management/Best Practices",
-  "explanation": "In an enterprise environment, auditing and accountability are critical security principles (often referred to as 'Accounting' in the AAA framework—Authentication, Authorization, and Accounting). \n\n**Logging access** to passwords or sensitive administrative accounts (often done via a **Privileged Access Management (PAM)** solution) ensures complete visibility and accountability. This log, containing the user, the resource, and a timestamp, is essential for security auditing, compliance, and forensic analysis in the event of a security breach or misuse. Centralized password management is actually preferred for consistency and scalability, despite the single point of failure risk, which is mitigated through redundancy."
-},
-{
-  "question": "How can a RADIUS server enhance management security in wireless environments?",
-  "options": [
-    "By enforcing access control list (ACL) configurations.",
-    "By preventing brute-force login attempts.",
-    "By providing a stronger encryption.",
-    "By providing individualized login to specific network devices."
-  ],
-  "correct": "By providing individualized login to specific network devices.",
-  "category": "Wireless Security/AAA",
-  "explanation": "RADIUS (Remote Authentication Dial-In User Service) is an Authentication, Authorization, and Accounting (AAA) protocol that centralizes access management. In a wireless environment, it enhances security by:\n\n1.  **Individualized Login (Authentication & Authorization):** RADIUS validates each user's credentials against a central database (like Active Directory) rather than relying on a single, shared Pre-Shared Key (PSK). This allows the network to assign unique access policies (Authorization) and track actions (Accounting) to **specific network devices or users**, which is critical for security auditing and ensuring accountability.\n2.  **Centralization:** Using RADIUS (802.1X Enterprise Mode) means that changing one person's access or credentials only requires an update to the central server, not every Access Point (AP) in the network."
-},
-{
-    "question": "Which three ACL statements are written correctly? (Choose three.)",
-    "options": [
-      "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
-      "Router(config-ext-nacl)# deny ip any any host 209.165.201.0 eq 10",
-      "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
-      "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22",
-      "Router(config-ext-nacl)# deny tcp any host 201.165.201.0 0.0.0.31 host 192.168.1.1 eq 22",
-      "Router(config-ext-nacl)# permit udp host any eq dns"
-    ],
-    "correct": [
-      "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
-      "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
-      "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22"
-    ],
-    "category": "Access Control Lists (ACLs)",
-    "explanation": "The three correct options use proper extended ACL syntax: 1) Allows specific host TCP traffic on port 22. 2) Allows ICMP (ping) traffic from any source to a specific destination host. 3) Allows UDP traffic from any source/port to any destination on the DNS port (53)."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which layer in the OSI model is responsible for physical signaling and cabling?",
-    "options": [
-      "Layer 1",
-      "Layer 2",
-      "Layer 3",
-      "Layer 4"
-    ],
-    "correct": "Layer 1",
-    "explanation": "The **Physical Layer (Layer 1)** is responsible for the mechanical, electrical, functional, and procedural means to activate, maintain, and de-activate physical connections for bit transmission, including specifications for **cabling** and electrical **signals**."
-  },
-  {
-    "question": "Which two ICMPv6 types are used for testing IPv6 reachability? (Choose two.)",
-    "options": [
-      "ICMPv6 type 1",
-      "ICMPv6 type 128",
-      "ICMPv6 type 129",
-      "ICMPv6 type 135",
-      "ICMPv6 type 136"
-    ],
-    "correct": [
-      "ICMPv6 type 128",
-      "ICMPv6 type 129"
-    ],
-    "category": "IPv6 Protocols",
-    "explanation": "ICMPv6 Type 128 is the **Echo Request** and Type 129 is the **Echo Reply**. These are the equivalents of ICMPv4 types 8 and 0, respectively, and are used by the Ping utility to test end-to-end reachability in IPv6."
-  },
-  {
-    "question": "What is the maximum transmission speed of Fast Ethernet?",
-    "options": [
-      "100 Mbps",
-      "1 Gbps",
-      "10 Mbps",
-      "10 Gbps"
-    ],
-    "correct": "100 Mbps",
-    "category": "Ethernet",
-    "explanation": "Fast Ethernet (100BASE-T) offers a transmission speed of up to 100 Mbps."
-  },
-  {
-    "question": "Which of the following protocols operate at the Application layer of the OSI model? (choose four)",
-    "options": [
-      "HTTP",
-      "FTP",
-      "SMTP",
-      "DNS",
-      "TCP"
-    ],
-    "correct": [
-      "HTTP",
-      "FTP",
-      "SMTP",
-      "DNS"
-    ],
-    "category": "Protocols",
-    "explanation": "HTTP, FTP, and SMTP all operate at Layer 7 ...on operations. DNS also operates at Layer 7, b... UDP-based protocol."
-  },
-  {
-    "question": "Regarding VLANs, which statement is true?",
-    "options": [
-      "Each VLAN is usually associated with only one IPv4 subnet.",
-      "It is recommended to have multiple IPv4 subnets on the same VLAN.",
-      "Only native VLAN 1 can have multiple IPv4 subnets on the same VLAN.",
-      "There can be multiple IPv4 subnets on the extended VLAN range."
-    ],
-    "correct": "Each VLAN is usually associated with only one IPv4 subnet.",
-    "category": "VLANs",
-    "explanation": "En grundläggande regel för nätverksdesign är korrespondensen **1:1** mellan ett **VLAN** (broadcast-domän på Layer 2) och ett **IP-subnät** (nätverk på Layer 3). Att ha flera subnät i samma broadcast-domän leder till ineffektiv routing och förvirring."
-  },
-  {
-    "question": "What is the correct way to configure an IPv6 default route?",
-    "options": [
-      "ipv6 route 0.0.0.0 0.0.0.0 fe80::2",
-      "ipv6 route ::/0 2001:db8::1",
-      "ipv6 route ff::0/32 fe80::2",
-      "ipv6 route ff::0/128 2001:0db8:feed::1"
-    ],
-    "correct": "ipv6 route ::/0 2001:db8::1",
-    "category": "IPv6/Routing",
-    "explanation": "In IPv6, the **default route** is represented by the prefix **$::/0$**, which matches all destination addresses. The command `ipv6 route ::/0 2001:db8::1` directs all traffic that does not have a more specific route to the next-hop address $2001:db8::1$."
-  },
-  {
-    "question": "Routers communicate First Hop Redundancy Protocol (FHRP) information between each other through hello messages. What is this mechanism called?",
-    "options": [
-      "EtherChannel",
-      "keepalive",
-      "link-state",
-      "VLAN tagging"
-    ],
-    "correct": "keepalive",
-    "category": "Routing",
-    "explanation": "FHRP protocols (like HSRP, VRRP, GLBP) use **keepalive** or 'hello' messages to exchange information, monitor the status of the active gateway, and maintain redundancy."
-  },
-  {
-    "question": "Which of these IPv4 addresses are private addresses as defined by RFC 1918?",
-    "options": [
-      "10.0.5.6",
-      "172.16.30.5",
-      "192.168.0.100",
-      "8.8.8.8",
-      "172.32.0.1"
-    ],
-    "correct": [
-      "10.0.5.6",
-      "172.16.30.5",
-      "192.168.0.100"
-    ],
-    "category": "IP Addressing",
-    "explanation": "10.0.0.0/8, 172.16.0.0/12 (172.16.0.0 to 172.31.255.255), and 192.168.0.0/16 are the reserved private address ranges as defined by RFC 1918. 8.8.8.8 and 172.32.0.1 are public addresses."
-  },
-  {
-    "question": "Which command shows Cisco router's active interface with detailed information?",
-    "options": [
-      "show interfaces",
-      "show ip interface brief",
-      "show ip interface",
-      "show running-config"
-    ],
-    "correct": "show interfaces",
-    "category": "Cisco IOS",
-    "explanation": "The **`show interfaces`** command (or `show interface <interface_id>`) provides the most comprehensive and detailed statistics and status information for a router's interface."
-  },
-  {
-    "question": "When configuring a trunk port on a Cisco switch, which VLAN ranges can be used to specify the allowed VLANs?",
-    "options": [
-      "extended and standard",
-      "extended",
-      "standard",
-      "standard and reserved"
-    ],
-    "correct": "extended and standard",
-    "category": "VLAN/Switching",
-    "explanation": "VLAN IDs are divided into standard (1-1005) and extended (1006-4094) ranges. Trunk ports can carry and be configured to allow VLANs from both these ranges."
-  },
-  {
-    "question": "Which URL prefix for Cisco network devices contains the current running configuration?",
-    "options": [
-      "rcp:",
-      "nvram:",
-      "system:",
-      "memory:"
-    ],
-    "correct": "memory:",
-    "category": "Cisco IOS",
-    "explanation": "The 'memory:' URL references the running configuration stored in RAM on the Cisco device."
-  },
-  {
-    "question": "Which part of the Open Shortest Path First (OSPF) process is omitted if two routers are connected with a point-to-point link?",
-    "options": [
-      "Designated router/Border designated router (DR/BDR) election",
-      "exchange of hello packets",
-      "exchange of link-state database (LSDB) summary",
-      "Shortest Path First (SPF) calculation"
-    ],
-    "correct": "Designated router/Border designated router (DR/BDR) election",
-    "category": "OSPF",
-    "explanation": "DR/BDR elections are only necessary on multi-access network types (like Ethernet) to minimize the number of required adjacencies and LSA flooding. On point-to-point links, the election process is skipped because a full adjacency is formed directly between the two routers."
-  },
-  {
-    "question": "What are two characteristics of an anycast IPv6 address? (Choose two.)",
-    "options": [
-      "It can be assigned to a host (end-user devices).",
-      "It can be assigned to multiple nodes.",
-      "It can be recognized by a pre-defined prefix.",
-      "It is used in an IPv6 packet as a source IPv6 address.",
-      "It is assigned from the unicast IPv6 address space."
-    ],
-    "correct": [
-      "It can be assigned to multiple nodes.",
-      "It is assigned from the unicast IPv6 address space."
-    ],
-    "category": "IPv6",
-    "explanation": "An anycast address is assigned to multiple devices (nodes) that provide the same service. Traffic sent to this address is routed to the topologically nearest node. Anycast addresses are taken from the Global Unicast Address space."
-  },
-  {
-    "question": "Where is the running configuration of the router temporarily stored while the router is powered on?",
-    "options": [
-      "RAM",
-      "Flash memory",
-      "NVRAM",
-      "ROM"
-    ],
-    "correct": "RAM",
-    "category": "Cisco IOS/Memory",
-    "explanation": "The 'running-config' is the active configuration file loaded into RAM (Random Access Memory) and is executed there while the device is powered on. Changes made are temporary until saved to NVRAM."
-  },
-  {
-    "question": "You have detected that there is a rogue DHCP server in the LAN that replicates client DHCP requests before they reach the authentic DHCP server in the company. Which two options describe this attack type? (Choose two.)",
-    "options": [
-      "DHCP DoS attack",
-      "DHCP spoofing attack",
-      "DHCP authentication attack",
-      "IP address spoofing",
-      "application/service spoofing"
-    ],
-    "correct": [
-      "DHCP spoofing attack",
-      "application/service spoofing"
-    ],
-    "category": "Security",
-    "explanation": "The rogue server is engaging in a **DHCP Spoofing attack** by attempting to act as the legitimate DHCP server. By sending fake responses, it is also tricking the client into accepting an invalid IP address or gateway, which involves **IP address spoofing** in the DHCP reply."
-  },
-  {
-    "category": "Security",
-    "question": "What is the purpose of the AAA model?",
-    "options": [
-      "Authentication, Authorization, Accounting",
-      "Addressing, Archiving, Analysis",
-      "Acceleration, Aggregation, Authentication",
-      "Allocation, Authentication, Authorization"
-    ],
-    "correct": "Authentication, Authorization, Accounting",
-    "explanation": "AAA stands for Authentication, Authorization, Accounting - central in network security."
-  },
-  {
-    "question": "Which layer of the OSI model provides reliable delivery using acknowledgments?",
-    "options": [
-      "Transport",
-      "Session",
-      "Network",
-      "Data Link"
-    ],
-    "correct": "Transport",
-    "category": "OSI",
-    "explanation": "**Transportlagret** (Lager 4) säkerställer tillförlitlig dataöverföring från slutpunkt till slutpunkt vid användning av protokoll som TCP, vilket använder sekvensnummer och kvitteringar (ACKs) för att hantera felåterställning och omsändning."
-  },
-  {
-    "question": "Which command would you use to verify the number of excluded addresses on a router configured as a DHCP server?",
-    "options": [
-      "show ip dhcp bindings",
-      "show ip dhcp conflict",
-      "show ip dhcp database",
-      "show ip dhcp pool"
-    ],
-    "correct": "show ip dhcp pool",
-    "category": "Cisco CLI",
-    "explanation": "The `show ip dhcp pool` command displays detailed information about all DHCP pools, including the range of addresses and the addresses that have been specifically excluded from the pool's allocation range."
-  },
-  {
-    "question": "Which of the following IP addresses is a broadcast address in a /24 network?",
-    "options": [
-      "192.168.1.0",
-      "192.168.1.255",
-      "192.168.1.128",
-      "192.168.1.1"
-    ],
-    "correct": "192.168.1.255",
-    "category": "Subnetting",
-    "explanation": "The broadcast address in a /24 network is the last address, here 192.168.1.255."
-  },
-  {
-    "category": "IP Services",
-    "question": "What is the primary purpose of HSRP?",
-    "options": [
-      "Load balancing",
-      "Router redundancy",
-      "Traffic encryption",
-      "Path selection"
-    ],
-    "correct": "Router redundancy",
-    "explanation": "**HSRP (Hot Standby Router Protocol)** är utformat för att ge **redundans för standard-gatewayen** (första hoppet). Det låter två eller flera routrar dela en virtuell IP- och MAC-adress så att värdar behåller anslutningen även om den aktiva routern misslyckas."
-  },
-  {
-    "question": "Which command on a Cisco device is used to enter global configuration mode from privileged EXEC mode?",
-    "options": [
-      "enable",
-      "configure terminal",
-      "interface gigabit0/1",
-      "admin"
-    ],
-    "correct": "configure terminal",
-    "category": "Cisco IOS",
-    "explanation": "From the privileged EXEC prompt (Router#), \"configure terminal\" (often abbreviated \"conf t\") puts you into global configuration mode (Router(config)#). \"enable\" moves from user mode to enable mode, and \"interface gigabit0/1\" would enter interface configuration mode."
-  },
-  {
-    "question": "Where will a router search for the startup configuration if the startup configuration file does not exist in NVRAM?",
-    "options": [
-      "TFTP server",
-      "RAM",
-      "ROM",
-      "SSH server"
-    ],
-    "correct": "TFTP server",
-    "category": "Cisco IOS",
-    "explanation": "If the router does not find a configuration file in NVRAM during the boot process (as determined by the configuration register), it enters **Setup mode** and typically attempts to load a configuration file via the network from a **TFTP server** (a process known as Network Boot or Netboot)."
-  },
-  {
-    "question": "Which command is used to verify a default gateway configuration on a Layer 2 switch?",
-    "options": [
-      "show interface description",
-      "show interface stats",
-      "show ip default-gateway network",
-      "show management",
-      "show running-config"
-    ],
-    "correct": "show running-config",
-    "category": "Switch Commands",
-    "explanation": "Correct: On a Layer 2 switch, the default gateway configuration is displayed in the running configuration using the command 'show running-config'. This reveals the management VLAN interface and any configured default gateway. The other commands either show interface details, statistics, or management info but not the gateway setting."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which command on a Cisco switch shows spanning-tree status?",
-    "options": [
-      "show spanning-tree",
-      "show vlan brief",
-      "show interfaces trunk",
-      "show running-config"
-    ],
-    "correct": "show spanning-tree",
-    "explanation": "\"show spanning-tree\" shows information about STP (Spanning Tree Protocol) and its state."
-  },
-  {
-    "question": "What is a way of mitigating social engineering attacks?",
-    "options": [
-      "Avoiding making copies of files on external memory devices.",
-      "Avoiding using personal data to create a password.",
-      "Assigning administration privileges only to people with technical knowledge.",
-      "Training users about correct security behaviors."
-    ],
-    "correct": "Training users about correct security behaviors.",
-    "category": "Security",
-    "explanation": "Social engineering relies on manipulating human psychology. The most effective mitigation is therefore to train users (employees) to recognize, avoid, and report techniques like phishing, pretexting, and baiting. While other options (like avoiding personal data in passwords) are good security hygiene, training is the primary defense against the attack vector itself."
-  },
-  {
-    "question": "You are working as IT security engineer and you are browsing through the sectools.org website to see the top network security tools, as well as find more details on each particular tool and read reviews for it. What is the initiative that runs this website?",
-    "options": [
-      "IEEE",
-      "ITU-T",
-      "Nmap Project",
-      "Metasploit"
-    ],
-    "correct": "Nmap Project",
-    "category": "Security",
-    "explanation": "SecTools.org is run by the Nmap Project, which is most famous for its network scanning utility, Nmap."
-  },
-  {
-    "question": "Refer to the exhibit. Which two options are common IPsec or SSL VPN implementations? (Choose two.)",
-    "options": [
-      "IPsec Tunnel VPN (between Firewall and Router)",
-      "SSL VPN (between Firewall and Router)",
-      "IPsec VTI VPN (between Client and Server)",
-      "DMVPN (between Firewall and Server)",
-      "SSL VPN (between Client and Firewall)"
-    ],
-    "correct": [
-      "IPsec Tunnel VPN (between Firewall and Router)",
-      "SSL VPN (between Client and Firewall)"
-    ],
-    "category": "VPN Technologies",
-    "explanation": "**IPsec Tunnel VPNs** are used for **site-to-site** connections (e.g., between gateways like firewalls or routers). **SSL VPNs** are commonly used for **remote access** connections between a single **client** device and a gateway (like a firewall)."
-  },
-  {
-    "question": "What is the primary purpose of using VLANs on a switch?",
-    "options": [
-      "To segment the network into separate broadcast domains",
-      "To increase the collision domain of the network",
-      "To allow multiple switches to be managed as one",
-      "To route traffic between different networks"
-    ],
-    "correct": "To segment the network into separate broadcast domains",
-    "category": "Switching",
-    "explanation": "VLANs (Virtual Local Area Networks) are used to logically segment a Layer 2 switch into multiple distinct broadcast domains. This limits the size of broadcast traffic and improves network security and efficiency."
-  },
-  {
-    "question": "Which three statements describe characteristics of solicited-node IPv6 addresses? (Choose three.)",
-    "options": [
-      "There can be only one per device.",
-      "They are automatically created by the device.",
-      "They are created using the device's MAC address.",
-      "They are multicast addresses.",
-      "They are valid within an organization.",
-      "They have a recognizable prefix."
-    ],
-    "correct": [
-      "They are automatically created by the device.",
-      "They are multicast addresses.",
-      "They have a recognizable prefix."
-    ],
-    "category": "IPv6",
-    "explanation": "Solicited-node IPv6 addresses are automatically created multicast addresses with the prefix ff02::1:ff00::/104."
-  },
-  {
-    "question": "What is the purpose of inter-VLAN routing?",
-    "options": [
-      "to transport packets within VLANs",
-      "to convert packets from Layer 2 to Layer 3",
-      "to transport packets between VLANs",
-      "to increase the security of VLANs",
-      "to increase the scalability of VLANs"
-    ],
-    "correct": "to transport packets between VLANs",
-    "category": "VLANs/Routing",
-    "explanation": "Since VLANs create separate broadcast domains (and separate subnets), a Layer 3 device (router or Layer 3 switch) is required to perform routing, allowing traffic to be successfully **transported between different VLANs**."
-  },
-  {
-    "question": "Which of these options is a mitigation technique to prevent rogue DHCP servers from providing false IP configuration parameters?",
-    "options": [
-      "DHCP spoofing",
-      "Dynamic ARP Inspection",
-      "port security",
-      "ARP spoofing",
-      "DHCP snooping"
-    ],
-    "correct": "DHCP snooping",
-    "category": "Security",
-    "explanation": "DHCP Snooping is a Layer 2 security feature that filters untrusted DHCP messages to prevent rogue DHCP servers from operating on the network and providing malicious IP configuration."
-  },
-  {
-    "question": "What does the ICMP protocol do?",
-    "options": [
-      "Assigns IP addresses",
-      "Transfers files",
-      "Sends troubleshooting messages",
-      "Encrypts data"
-    ],
-    "correct": "Sends troubleshooting messages",
-    "category": "TCP/IP",
-    "explanation": "ICMP (Internet Control Message Protocol) is primarily used for network diagnostics and error reporting. For example, the 'ping' utility relies on ICMP Echo Request and Echo Reply messages to test connectivity between two hosts."
-  },
-  {
-    "question": "Which protocol would you use if you wanted to copy the configuration from a remote server securely?",
-    "options": [
-      "TFTP",
-      "HTTP",
-      "FTP",
-      "SCP"
-    ],
-    "correct": "SCP",
-    "category": "CLI/Security",
-    "explanation": "**SCP (Secure Copy Protocol)** använder **SSH** för att säkert överföra filer, vilket säkerställer att data och autentiseringsuppgifter krypteras. TFTP, FTP och HTTP erbjuder inte inbyggd kryptering."
-  },
-  {
-    "question": "Which command can you use to merge the configuration in RAM with a saved configuration file on a TFTP server?",
-    "options": [
-      "copy tftp running-config",
-      "copy tftp startup-config",
-      "copy running-config startup-config",
-      "copy startup-config tftp"
-    ],
-    "correct": "copy tftp running-config",
-    "category": "Cisco IOS",
-    "explanation": "The **`copy tftp running-config`** command fetches the configuration file from a TFTP server and merges its contents with the current running configuration in RAM."
-  },
-  {
-    "question": "You are configuring an IPv6 static route using the link-local IPv6 address as the next-hop. Which command has the correct syntax?",
-    "options": [
-      "ipv6 route 2001:0db8:beef:: 2001:0db8:feed::1",
-      "ipv6 route 2001:0db8:beef:: fa1/0 fe80::2",
-      "ipv6 route 2001:0db8:beef::/32 2001:0db8:feed::1",
-      "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2"
-    ],
-    "correct": "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2",
-    "category": "Cisco CLI/IPv6",
-    "explanation": "When using a link-local IPv6 address (which starts with fe80::) as the next hop in a static route, the outgoing interface must be explicitly specified (fa1/0 in this case) because the link-local address is not globally unique."
-  },
-  {
-    "question": "Which of the following protocols operate at the OSI Transport layer?",
-    "options": [
-      "TCP",
-      "UDP",
-      "IP",
-      "HTTP",
-      "ICMP"
-    ],
-    "correct": [
-      "TCP",
-      "UDP"
-    ],
-    "category": "OSI/TCP-IP",
-    "explanation": "**TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** both operate at the **Transport Layer (Layer 4)**. They provide end-to-end communication services for applications, handling segmentation (TCP) and port addressing."
-  },
-  {
-    "category": "IP Connectivity",
-    "question": "What is the default administrative distance for a directly connected route?",
-    "options": [
-      "0",
-      "1",
-      "5",
-      "255"
-    ],
-    "correct": "0",
-    "explanation": "Directly connected networks have an administrative distance of 0, static routes have an AD of 1."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which protocol is used to synchronize clocks in a network?",
-    "options": [
-      "NTP",
-      "SNMP",
-      "DHCP",
-      "DNS"
-    ],
-    "correct": "NTP",
-    "explanation": "NTP (Network Time Protocol) is used to synchronize clocks across networks."
-  },
-  {
-    "question": "Which command on a Cisco switch displays the MAC address table?",
-    "options": [
-      "show mac address-table",
-      "show arp",
-      "show ip route",
-      "show running-config"
-    ],
-    "correct": "show mac address-table",
-    "category": "Cisco IOS",
-    "explanation": "\"show mac address-table\" displays the MAC address table learned by learning on the switch."
-  },
-  {
-    "question": "Which four options are valid destinations to which a router can forward a syslog message? (Choose four.)",
-    "options": [
-      "logging buffer",
-      "TACACS+ server",
-      "console line",
-      "management interface",
-      "terminal lines",
-      "syslog server",
-      "SNMP trap server"
-    ],
-    "correct": [
-      "logging buffer",
-      "console line",
-      "terminal lines",
-      "syslog server"
-    ],
-    "category": "Cisco IOS/Syslog",
-    "explanation": "These are the four standard destinations for Cisco IOS logging: internal buffer, console port, virtual terminal sessions (`terminal monitor`), and an external Syslog server."
-  },
-  {
-    "question": "What type of VLANs does VTP manage?",
-    "options": [
-      "Standard VLANs",
-      "Extended VLANs",
-      "Private VLANs",
-      "Voice VLANs"
-    ],
-    "correct": "Standard VLANs",
-    "category": "VLAN",
-    "explanation": "VTP (VLAN Trunking Protocol) only propagates VLANs in the standard range (VLAN IDs 1–1005). Extended VLANs (1006–4094) must be configured manually on each switch."
-  },
-  {
-    "category": "Network Fundamentals",
-    "question": "Which protocol uses port 443?",
-    "options": [
-      "HTTP",
-      "SSH",
-      "HTTPS",
-      "DNS"
-    ],
-    "correct": "HTTPS",
-    "explanation": "HTTPS uses TCP port 443 for encrypted web communication."
-  },
-  {
-    "question": "You are given a physical network diagram. Which two statements about the logical diagram for the same network are true? (Choose two.)",
-    "options": [
-      "The logical diagram is obvious from the physical diagram.",
-      "The logical diagram can be drawn by adding device model information to the physical diagram.",
-      "The logical diagram can be drawn by examining device configurations.",
-      "The logical diagram can be drawn by analyzing data flows in the network.",
-      "The logical diagram is always different to the physical diagram."
-    ],
-    "correct": [
-      "The logical diagram can be drawn by examining device configurations.",
-      "The logical diagram can be drawn by analyzing data flows in the network."
-    ],
-    "category": "Network Design",
-    "explanation": "A **Logical Diagram** shows how the network functions (IP addresses, subnets, VLANs, routing protocols, and data flows). This information is derived from the **device configurations** and by observing how **data flows** across the network, not just from the physical cable layout."
-  },
-  {
-    "question": "Refer to the exhibit. Which two combinations will result in an EtherChannel being established between the two switches that are using LACP? (Choose two.)\n\nswitch 1 on, switch 2 active\nswitch 1 active, switch 2 active\nswitch 1 active, switch 2 passive\nswitch 1 passive, switch 2 passive\nswitch 1 on, switch 2 on",
-    "options": [
-      "switch 1 on, switch 2 active",
-      "switch 1 active, switch 2 active",
-      "switch 1 active, switch 2 passive",
-      "switch 1 passive, switch 2 passive",
-      "switch 1 on, switch 2 on"
-    ],
-    "correct": [
-      "switch 1 active, switch 2 active",
-      "switch 1 active, switch 2 passive"
-    ],
-    "category": "EtherChannel",
-    "explanation": "För att **LACP** (Link Aggregation Control Protocol) ska bilda en EtherChannel måste **minst en sida vara i det aktiva tillståndet** (aktivt förhandlande). \n* **Active/Active** fungerar.\n* **Active/Passive** fungerar (Active initierar). \n* **Passive/Passive** misslyckas (ingen av sidorna initierar).\n* **On/On** är statisk konfiguration och ignorerar LACP-förhandling."
-  },
-  {
-    "question": "What is the maximum length of a Cat5e/Cat6 Ethernet cable segment (for example, 1000BASE-T)?",
-    "options": [
-      "100 meters",
-      "55 meters",
-      "185 meters",
-      "500 meters"
-    ],
-    "correct": "100 meters",
-    "category": "Media",
-    "explanation": "The maximum recommended length for a UTP Ethernet cable (Cat5e/Cat6) is 100 meters (about 328 feet). Beyond this, the signal may degrade. (185m was used for 10BASE2 coax, 55m is a guideline for some 10Gbps links on Cat6, 500m is typical for multimode fiber with certain standards.)"
-  },
-  {
-    "question": "How do link-state protocols limit the scope of route changes?",
-    "options": [
-      "by supporting classless addressing",
-      "by sending the mask along with the address",
-      "by sending only updates of a topology change",
-      "by segmenting the network into areas"
-    ],
-    "correct": "by segmenting the network into areas",
-    "category": "Routing",
-    "explanation": "Link-state protocols like OSPF use **areas** (segmentation) to partition the network. This design ensures that a topology change within one area results in LSAs being flooded only within that area, thus limiting the size of the Link-State Database and the scope of recalculation."
-  },
-  {
-    "question": "Which of the following is the correct binary representation of the third octet of the IPv4 address 172.20.170.50?",
-    "options": [
-      "0001 1110",
-      "0110 0110",
-      "1010 1010",
-      "1100 1011"
-    ],
-    "correct": "1010 1010",
-    "category": "IP Addressing",
-    "explanation": "The third octet is 170. The binary conversion is $128 + 0 + 32 + 0 + 8 + 0 + 2 + 0 = 170$, which translates to $10101010$."
-  },
-  {
-    "question": "Which method preserves the parameters of a Large Language Model, such as GPT, while adding data that was not part of the original training data set?",
-    "options": [
-      "training",
-      "fine-tuning",
-      "RAG",
-      "GAN"
-    ],
-    "correct": "RAG",
-    "category": "AI/LLMs",
-    "explanation": "RAG (Retrieval-Augmented Generation) uses external knowledge bases (like databases or documents) to ground the LLM's response, providing up-to-date context without the need to modify (retrain or fine-tune) the model's core parameters."
-  },
-  {
-    "question": "From a network perspective, how is a server a different endpoint than a user workstation?",
-    "options": [
-      "A server requires lower latency.",
-      "A server requires more bandwidth.",
-      "A server requires Power over Ethernet (PoE) connectivity.",
-      "A server requires stricter network access control."
-    ],
-    "correct": "A server requires more bandwidth.",
-    "category": "Network Design",
-    "explanation": "A server is a central point that handles concurrent connections and traffic from many users/devices, leading to a much higher demand for **bandwidth** compared to a single user workstation."
-  },
-  {
-    "question": "What is the subnet mask for a /25 network?",
-    "options": [
-      "255.255.255.0",
-      "255.255.255.128",
-      "255.255.255.192",
-      "255.255.254.0"
-    ],
-    "correct": "255.255.255.128",
-    "category": "Subnetting",
-    "explanation": "/25 corresponds to a subnet mask of 255.255.255.128, giving two subnets from a /24."
-  },
-  {
-    "category": "Automation",
-    "question": "Which of the following is an example of a tool used for network automation?",
-    "options": [
-      "Ansible",
-      "Wireshark",
-      "PuTTY",
-      "Hyper-V"
-    ],
-    "correct": "Ansible",
-    "explanation": "Ansible is a popular open-source automation tool that is used for network configuration management and automation. Wireshark is for analysis, PuTTY is a terminal emulator, and Hyper-V is for virtualization."
-  },
-  {
-    "question": "Which layer in the OSI model is responsible for encapsulating data in frames?",
-    "options": [
-      "Lager 1",
-      "Lager 2",
-      "Lager 3",
-      "Lager 4"
-    ],
-    "correct": "Lager 2",
-    "category": "OSI",
-    "explanation": "The data binding layer (Layer 2) is responsible for framing data and managing MAC addresses."
-  },
-  {
-    "question": "Which two commands display the type of trunking encapsulation of an interface? (Choose two.)",
-    "options": [
-      "show interfaces Ethernet0/0 switchport",
-      "show interfaces status",
-      "show interfaces summary",
-      "show interfaces trunk",
-      "show ip interfaces brief"
-    ],
-    "correct": [
-      "show interfaces Ethernet0/0 switchport",
-      "show interfaces trunk"
-    ],
-    "category": "Switch Commands",
-    "explanation": "`show interfaces switchport` provides detailed trunking encapsulation (dot1q/isl) for a specific port. `show interfaces trunk` summarizes all active trunks and their encapsulation types."
-  },
-  {
-    "question": "You are reading an article in the news regarding a DNS amplification attack to a specific organization. The attack caused DDoS that made it impossible for anyone to resolve the organization's website IP address and access the website. Which statement regarding an amplification attack is correct?",
-    "options": [
-      "A small forged packet elicits a small reply from the reflectors.",
-      "A small forged packet elicits a large reply from the reflectors.",
-      "A large forged packet elicits a small reply from the reflectors.",
-      "A large forged packet elicits a large reply from the reflectors."
-    ],
-    "correct": "A small forged packet elicits a large reply from the reflectors.",
-    "category": "Security",
-    "explanation": "An amplification attack relies on sending a small request packet with a forged source address (the victim's) to a reflector service (like DNS), causing the reflector to send a much larger response back to the victim."
-  },
-  {
-    "question": "The service provider is implementing Multiprotocol Label Switching Virtual Private Network (MPLS VPN) service. Which two options indicate the specific VPN type that is implemented and how the service provider appears from the perspective of the customer? (Choose two.)",
-    "options": [
-      "The service provider is implementing MPLS L2VPN.",
-      "The service provider is implementing MPLS L3VPN.",
-      "The service provider is implementing MPLS VPLS.",
-      "The service provider network can be represented as a router from the customer perspective.",
-      "The service provider network can be represented as a switch from the customer perspective."
-    ],
-    "correct": [
-      "The service provider is implementing MPLS L3VPN.",
-      "The service provider network can be represented as a router from the customer perspective."
-    ],
-    "category": "MPLS VPN",
-    "explanation": "In an MPLS L3VPN (Layer 3 VPN) service, the service provider's router (PE) participates in IP routing with the customer's router (CE). This means the customer sees the provider's network as a router that handles the routing function between sites. If the answer were L2VPN or VPLS, the provider network would appear as a switch (a transparent Layer 2 segment)."
-  }
+    {
+        "question": "Which VLAN is the default VLAN on a Cisco switch?",
+        "options": [
+            "1",
+            "100",
+            "4095",
+            "0"
+        ],
+        "correct": "1",
+        "category": "Switching & VLAN",
+        "explanation": "**VLAN 1** is the default VLAN to which all switch ports belong upon initial configuration. It is also the default VLAN for control protocols like CDP, VTP, and STP."
+    },
+    {
+        "question": "What command displays the routing protocol used by the router?",
+        "options": [
+            "show ip protocols",
+            "show ip route",
+            "show version",
+            "show running-config"
+        ],
+        "correct": "show ip protocols",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The command **`show ip protocols`** displays information about the active routing protocols (such as OSPF, EIGRP, RIP) configured on the Cisco router."
+    },
+    {
+        "question": "Which Cisco IOS command is used to save the running configuration so that it persists after a reboot?",
+        "options": [
+            "copy running-config startup-config",
+            "write erase",
+            "reload",
+            "copy startup-config running-config"
+        ],
+        "correct": "copy running-config startup-config",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "\"copy running-config startup-config\" (or the older \"write memory\") saves the current configuration to NVRAM as the startup configuration. \"write erase\" deletes the startup config, \"reload\" reboots the device, and copying startup to running would replace the current config with the saved config."
+    },
+    {
+        "question": "Which protocol resolves hostnames to IP addresses?",
+        "options": [
+            "DNS",
+            "DHCP",
+            "NAT",
+            "FTP"
+        ],
+        "correct": "DNS",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "DNS (Domain Name System) resolves human-readable hostnames into IP addresses."
+    },
+    {
+        "question": "What does the 'spanning-tree vlan 10 priority 24576' command do?",
+        "options": [
+            "Changes STP priority for VLAN 10",
+            "Sets VLAN 10 as root",
+            "Disables STP for VLAN 10",
+            "Assigns VLAN 10 to port-channel 10"
+        ],
+        "correct": "Changes STP priority for VLAN 10",
+        "category": "Switching & VLAN",
+        "explanation": "This command changes the STP bridge priority for VLAN 10 to influence root bridge election."
+    },
+    {
+        "question": "After the Cisco IOS Software image is loaded and started, from which three components can the device load its configuration? (Choose three.)",
+        "options": [
+            "NVRAM",
+            "SCP server",
+            "TFTP server",
+            "RAM only",
+            "DHCP URL"
+        ],
+        "correct": [
+            "NVRAM",
+            "SCP server",
+            "TFTP server"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A device typically tries to load `startup-config` from **NVRAM**. If that fails, it can be configured to attempt to load a configuration file from a network source, such as a **TFTP** or **SCP** server."
+    },
+    {
+        "question": "Which two are true regarding Terraform and Ansible?",
+        "options": [
+            "Ansible uses a declarative approach, while Terraform uses a procedural approach.",
+            "Terraform excels at deploying infrastructure where immutable changes are desired.",
+            "Ansible excels at tasks requiring granular control over each step of the process.",
+            "Both Terraform and Ansible require a state file to track current infrastructure states.",
+            "Terraform is written in Python, and Ansible is written in Go."
+        ],
+        "correct": [
+            "Terraform excels at deploying infrastructure where immutable changes are desired.",
+            "Ansible excels at tasks requiring granular control over each step of the process."
+        ],
+        "category": "Automation & DevOps",
+        "explanation": "Terraform is declarative for immutable infrastructure, while Ansible allows granular procedural tasks."
+    },
+    {
+        "question": "Which command generates RSA keys for user authentication, used when connecting via SSH?",
+        "options": [
+            "crypto key generate rsa",
+            "crypto generate key rsa",
+            "crypto rsa generate key",
+            "crypto generate rsa key"
+        ],
+        "correct": "crypto key generate rsa",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The Cisco IOS command to create the necessary **RSA (Rivest–Shamir–Adleman)** cryptographic keys for SSH is **`crypto key generate rsa`**."
+    },
+    {
+        "question": "Which three options represent characteristics of a resilient network? (Choose three.)",
+        "options": [
+            "link congestions",
+            "small failure domains",
+            "low latency",
+            "short downtime",
+            "redundancy of links and devices",
+            "single points of failure",
+            "high jitter"
+        ],
+        "correct": [
+            "small failure domains",
+            "short downtime",
+            "redundancy of links and devices"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "**Resiliency** is the ability of a network to recover from failure. This is achieved by using **redundant paths/devices**, minimizing the impact of a failure (**small failure domains**), and ensuring quick recovery (**short downtime**)."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which layer in the OSI model handles end-to-end communication and flow control?",
+        "options": [
+            "Layer 2",
+            "Layer 3",
+            "Layer 4",
+            "Layer 5"
+        ],
+        "correct": "Layer 4",
+        "explanation": "The transport layer (Layer 4) handles end-to-end communication, segmentation and flow control."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "What is the broadcast address for the network 192.168.5.0/24?",
+        "options": [
+            "192.168.5.0",
+            "192.168.5.255",
+            "192.168.5.1",
+            "192.168.5.128"
+        ],
+        "correct": "192.168.5.255",
+        "explanation": "In a $/24$ network, the first three octets ($192.168.5.$) define the network, and the last octet is used for hosts. The **broadcast address** is always the highest address in the range, where all host bits are set to 1, which is **$192.168.5.255$**."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which protocol is used for secure file transfer over SSH?",
+        "options": [
+            "FTP",
+            "TFTP",
+            "SFTP",
+            "HTTP"
+        ],
+        "correct": "SFTP",
+        "explanation": "SFTP (SSH File Transfer Protocol) uses SSH to secure file transfers."
+    },
+    {
+        "question": "Which layer in the OSI model is responsible for multiplexing and error control?",
+        "options": [
+            "Layer 2",
+            "Layer 3",
+            "Layer 4",
+            "Layer 7"
+        ],
+        "correct": "Layer 4",
+        "category": "OSI Model",
+        "explanation": "The **Transport Layer (Layer 4)** is responsible for separating data streams from multiple applications (multiplexing) and providing end-to-end reliability and error recovery (error control) using protocols like TCP."
+    },
+    {
+        "question": "Which two statements regarding the Root Guard are correct? (Choose two.)",
+        "options": [
+            "Root Guard can be enabled globally",
+            "Root Guard can only be enabled per interface",
+            "Root Guard can only be used on root and alternate ports",
+            "Root Guard can only be used on root ports",
+            "Root Guard is deployed on interfaces that connect to switches that should never be the root"
+        ],
+        "correct": [
+            "Root Guard can only be enabled per interface",
+            "Root Guard is deployed on interfaces that connect to switches that should never be the root"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "Root Guard is an STP (Spanning Tree Protocol) feature designed to enforce the hierarchical structure of the network and prevent external switches from becoming the root bridge. \n\n1.  **Deployment:** Root Guard is applied to interfaces (ports) that connect to network segments where the root bridge is *not* expected to be found (e.g., ports leading to access layers or external networks). If a superior BPDU (suggesting a new, better root) is received on a Root Guard-enabled port, the port is transitioned to a special blocking state (Root-Inconsistent state) to prevent the topology change.\n2.  **Configuration:** It can only be configured **per interface** (using the command `spanning-tree guard root`). It is not a global command."
+    },
+    {
+        "question": "Why is clock synchronization between network devices important?",
+        "options": [
+            "to ensure that routing protocols on devices can communicate with each other",
+            "to ensure that traffic transiting network devices does not get dropped",
+            "to ensure the devices are manageable by SNMP protocol",
+            "to ensure the correct interpretation of events within syslog data"
+        ],
+        "correct": "to ensure the correct interpretation of events within syslog data",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Accurate **clock synchronization (via NTP)** is vital for logs. If devices have different times, correlating events across multiple systems (**syslog data**) during an outage or security incident becomes impossible."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which protocol on a Cisco switch shows VLAN and trunk information?",
+        "options": [
+            "show vlan brief",
+            "show interfaces trunk",
+            "show interfaces status",
+            "show ip interface brief"
+        ],
+        "correct": "show interfaces trunk",
+        "explanation": "The 'show interfaces trunk' command is the only option that explicitly displays the operational state of all configured **trunk links** on the switch, including the **encapsulation type**, the **native VLAN**, and which **VLANs are permitted** to cross the trunk."
+    },
+    {
+        "question": "What is the ICMP type for the echo reply packets?",
+        "options": [
+            "1",
+            "0",
+            "2",
+            "3"
+        ],
+        "correct": "0",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "ICMP type **0** is for **Echo Reply** (svar på ping). ICMP type 8 is Echo Request. Type 3 is Destination Unreachable."
+    },
+    {
+        "question": "Match the OSPF neighbor states on a LAN with their correct positions in the correct order.",
+        "options": [
+            "Down — 1",
+            "INIT — 2",
+            "Two-way — 3",
+            "Exstart — 4",
+            "Exchange — 5",
+            "Loading — 6",
+            "Full — 7"
+        ],
+        "correct": [
+            "Down — 1",
+            "INIT — 2",
+            "Two-way — 3",
+            "Exstart — 4",
+            "Exchange — 5",
+            "Loading — 6",
+            "Full — 7"
+        ],
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The correct sequence for OSPF neighbor states on a multi-access network (LAN) is: Down, Init, Two-Way, Exstart, Exchange, Loading, Full."
+    },
+    {
+        "question": "Which statement about HSRP version 1 hello packets is true?",
+        "options": [
+            "HSRP hello packets are sent to multicast address 224.0.0.1 on TCP port 1985.",
+            "HSRP hello packets are sent to multicast address 224.0.0.5 on UDP port 1985.",
+            "HSRP hello packets are sent to multicast address 224.0.0.2 on UDP port 1985.",
+            "HSRP hello packets are sent to multicast address 224.0.0.10 on UDP port 1986."
+        ],
+        "correct": "HSRP hello packets are sent to multicast address 224.0.0.2 on UDP port 1985.",
+        "category": "Routing & Protocols",
+        "explanation": "HSRP v1 (Hot Standby Router Protocol version 1) Hello packets are sent using UDP protocol to port **1985**. The standard multicast address reserved for HSRP v1 is **224.0.0.2** (option C). Some older or non-standard configurations might mention 224.0.0.5, but 224.0.0.2 is the definitive standard used by Cisco for HSRPv1 'all routers' communication."
+    },
+    {
+        "question": "Which protocol automatically assigns IP addresses to devices on a network?",
+        "options": [
+            "DNS",
+            "DHCP",
+            "HTTP",
+            "FTP"
+        ],
+        "correct": "DHCP",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "DHCP (Dynamic Host Configuration Protocol) dynamically assigns IP addresses to network clients."
+    },
+    {
+        "question": "Which banner should be used to show information that is hidden from unauthorized users?",
+        "options": [
+            "MOTD",
+            "login",
+            "EXEC",
+            "slip-ppp"
+        ],
+        "correct": "login",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'banner login' is displayed *before* the user is prompted for authentication (username/password), making it the most appropriate place for legal warnings or information visible to unauthorized users."
+    },
+    {
+        "question": "Which three statements are correct about the JSON data format? (Choose three.)",
+        "options": [
+            "Empty values cannot be used in the JSON data format.",
+            "JSON arrays separate elements using a semicolon.",
+            "JSON can be used when data is sent from a server to a web page.",
+            "JSON does not support comments.",
+            "JSON is a hierarchical data format."
+        ],
+        "correct": [
+            "JSON can be used when data is sent from a server to a web page.",
+            "JSON does not support comments.",
+            "JSON is a hierarchical data format."
+        ],
+        "category": "Automation & DevOps",
+        "explanation": "JSON (JavaScript Object Notation) is widely used for data exchange over the web. It has a clear hierarchical structure (objects within objects). It is strictly defined and does not support comments. Array elements must be separated by commas, not semicolons."
+    },
+    {
+        "question": "Which layer in the OSI model handles IP addresses?",
+        "options": [
+            "Transport",
+            "Network",
+            "Application",
+            "Data Link"
+        ],
+        "correct": "Network",
+        "category": "OSI Model",
+        "explanation": "The **Network Layer (Layer 3)** is responsible for logical addressing (IPv4 and IPv6) and determining the best path for data packets through routing."
+    },
+    {
+        "question": "What is the purpose of entering the ip nat inside source static tcp 192.168.10.2 80 209.165.200.223 8080 command at the global configuration prompt?",
+        "options": [
+            "It identifies the inside NAT interface on the router.",
+            "It prevents the router from establishing a connection with any device that does not have the specified address and port number.",
+            "It binds the inside local address and local port to the specified inside global address and global port.",
+            "It enables a one-to-one translation between different internal port numbers."
+        ],
+        "correct": "It binds the inside local address and local port to the specified inside global address and global port.",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "This is a **Static Port Address Translation (PAT)** command, also known as a static NAT mapping. It creates a permanent, one-to-one mapping that translates a specific inside private address and port (192.168.10.2 port 80) to a specific outside public address and port (209.165.200.223 port 8080). This is commonly used for making internal servers accessible from the internet."
+    },
+    {
+        "question": "Which of the basic ISP connectivity types provides the highest redundancy?",
+        "options": [
+            "single-homed",
+            "dual-homed",
+            "multihomed",
+            "dual-multihomed"
+        ],
+        "correct": "dual-multihomed",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "A **dual-multihomed** setup provides the highest redundancy by connecting to **two separate ISPs (multihomed)** using **two separate routers/connections per ISP (dual)**. This protects against single link failure, single router failure, and single ISP failure."
+    },
+    {
+        "question": "Which command displays the number of OSPF router-IDs in the local process's database?",
+        "options": [
+            "show ip ospf database router-id",
+            "show ip ospf database network",
+            "show ip ospf database summary",
+            "show ip ospf neighbor"
+        ],
+        "correct": "show ip ospf database summary",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "`show ip ospf database summary` displays a summary of the OSPF database, including a count of the different Link-State Advertisement (LSA) types, such as Router LSAs (which contain Router IDs)."
+    },
+    {
+        "question": "Which two practices would you follow to prevent VLAN attacks on a network? (Choose two.)",
+        "options": [
+            "Set all ports to STP PortFast.",
+            "Disable DTP on all ports.",
+            "Disable Cisco Discovery Protocol on all ports.",
+            "Explicitly configure trunking mode or access mode.",
+            "Disable the HTTP service."
+        ],
+        "correct": [
+            "Disable DTP on all ports.",
+            "Explicitly configure trunking mode or access mode."
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "VLAN hopping attacks exploit dynamic trunking and insecure ports. The two best practices to mitigate these are:\n\n1.  **Disable DTP (Dynamic Trunking Protocol):** DTP is used to negotiate trunking between two switches. If enabled, an attacker can spoof the switch identity and force the port into trunking mode, allowing access to all VLANs (VLAN Hopping). Disabling DTP and setting ports manually prevents this.\n2.  **Explicitly configure trunking mode or access mode:** Ports connected to end devices (hosts) should be explicitly set to **access mode** (`switchport mode access`) to prevent them from becoming trunks. Ports connected to other switches should be explicitly set to **trunk mode** (`switchport mode trunk`). This prevents ports from negotiating insecure states."
+    },
+    {
+        "question": "Which statement correctly describes the authenticator and its responsibility?",
+        "options": [
+            "The authenticator, which is usually the switch, acts as an intermediary between the authentication server and the client.",
+            "The authenticator is the server that is responsible for authenticating the client.",
+            "Both the authenticator and authentication server act as the login server.",
+            "The authenticator is usually a switch that authenticates the newly connected client to access the network."
+        ],
+        "correct": "The authenticator, which is usually the switch, acts as an intermediary between the authentication server and the client.",
+        "category": "Security AAA & ACL",
+        "explanation": "In 802.1X, the **Authenticator** (usually the switch) relays the client's credentials (Supplicant) to the **Authentication Server** (e.g., RADIUS) and enforces the access policy based on the server's response."
+    },
+    {
+        "question": "Which fields does the 802.1Q header add to an Ethernet frame?",
+        "options": [
+            "CRC",
+            "EtherType",
+            "preamble",
+            "VLAN ID"
+        ],
+        "correct": [
+            "VLAN ID"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "The 802.1Q standard inserts a 4-byte Tag into the Ethernet frame. While the Tag contains two main functional fields (TPID/EtherType and VLAN ID), the **VLAN ID** (a 12-bit sub-field) is the unique identifier that specifically enables the separation and forwarding of traffic based on VLAN membership. It is the core functional component that the 802.1Q process adds to the frame to implement network segmentation."
+    },
+    {
+        "question": "What is the benefit of Mobility Express wireless access points (APs)?",
+        "options": [
+            "multiple SSIDs",
+            "multiple VLANs",
+            "Quality of Service (QoS)",
+            "reduced initial cost"
+        ],
+        "correct": "reduced initial cost",
+        "category": "Wireless",
+        "explanation": "Cisco Mobility Express is a controller-less solution designed primarily for Small to Midsize Businesses (SMBs). Its main benefit is the **reduced initial cost** because it eliminates the need to purchase a dedicated physical Wireless LAN Controller (WLC). Instead, one of the Access Points (APs) assumes the role of the master controller, managing the other APs in the network. Features like multiple SSIDs, VLANs, and QoS are standard capabilities across most modern Cisco wireless solutions, regardless of whether a separate controller is used."
+    },
+    {
+        "question": "In an enterprise environment, which guideline should be implemented to manage passwords securely, and why?",
+        "options": [
+            "A centralized password repository should be avoided, because it is a single point of failure.",
+            "A local password repository should be used, because it is more secure, and there is no need to transmit passwords using a AAA protocol.",
+            "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
+            "Passwords should NOT be used, because digital certificates are more secure and scale better."
+        ],
+        "correct": "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
+        "category": "Security AAA & ACL",
+        "explanation": "In an enterprise environment, auditing and accountability are critical security principles (often referred to as 'Accounting' in the AAA framework—Authentication, Authorization, and Accounting). \n\n**Logging access** to passwords or sensitive administrative accounts (often done via a **Privileged Access Management (PAM)** solution) ensures complete visibility and accountability. This log, containing the user, the resource, and a timestamp, is essential for security auditing, compliance, and forensic analysis in the event of a security breach or misuse. Centralized password management is actually preferred for consistency and scalability, despite the single point of failure risk, which is mitigated through redundancy."
+    },
+    {
+        "question": "How can a RADIUS server enhance management security in wireless environments?",
+        "options": [
+            "By enforcing access control list (ACL) configurations.",
+            "By preventing brute-force login attempts.",
+            "By providing a stronger encryption.",
+            "By providing individualized login to specific network devices."
+        ],
+        "correct": "By providing individualized login to specific network devices.",
+        "category": "Wireless",
+        "explanation": "RADIUS (Remote Authentication Dial-In User Service) is an Authentication, Authorization, and Accounting (AAA) protocol that centralizes access management. In a wireless environment, it enhances security by:\n\n1.  **Individualized Login (Authentication & Authorization):** RADIUS validates each user's credentials against a central database (like Active Directory) rather than relying on a single, shared Pre-Shared Key (PSK). This allows the network to assign unique access policies (Authorization) and track actions (Accounting) to **specific network devices or users**, which is critical for security auditing and ensuring accountability.\n2.  **Centralization:** Using RADIUS (802.1X Enterprise Mode) means that changing one person's access or credentials only requires an update to the central server, not every Access Point (AP) in the network."
+    },
+    {
+        "question": "Which three ACL statements are written correctly? (Choose three.)",
+        "options": [
+            "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
+            "Router(config-ext-nacl)# deny ip any any host 209.165.201.0 eq 10",
+            "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
+            "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22",
+            "Router(config-ext-nacl)# deny tcp any host 201.165.201.0 0.0.0.31 host 192.168.1.1 eq 22",
+            "Router(config-ext-nacl)# permit udp host any eq dns"
+        ],
+        "correct": [
+            "Router(config-ext-nacl)#10 permit tcp host 192.168.1.1 host 209.165.201.1 eq 22",
+            "Router(config-ext-nacl)# permit icmp any host 200.165.201.1",
+            "Router(config-ext-nacl)# deny tcp host 209.165.201.0 host 192.168.1.1 eq 22"
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "The three correct options use proper extended ACL syntax: 1) Allows specific host TCP traffic on port 22. 2) Allows ICMP (ping) traffic from any source to a specific destination host. 3) Allows UDP traffic from any source/port to any destination on the DNS port (53)."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which layer in the OSI model is responsible for physical signaling and cabling?",
+        "options": [
+            "Layer 1",
+            "Layer 2",
+            "Layer 3",
+            "Layer 4"
+        ],
+        "correct": "Layer 1",
+        "explanation": "The **Physical Layer (Layer 1)** is responsible for the mechanical, electrical, functional, and procedural means to activate, maintain, and de-activate physical connections for bit transmission, including specifications for **cabling** and electrical **signals**."
+    },
+    {
+        "question": "Which two ICMPv6 types are used for testing IPv6 reachability? (Choose two.)",
+        "options": [
+            "ICMPv6 type 1",
+            "ICMPv6 type 128",
+            "ICMPv6 type 129",
+            "ICMPv6 type 135",
+            "ICMPv6 type 136"
+        ],
+        "correct": [
+            "ICMPv6 type 128",
+            "ICMPv6 type 129"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "ICMPv6 Type 128 is the **Echo Request** and Type 129 is the **Echo Reply**. These are the equivalents of ICMPv4 types 8 and 0, respectively, and are used by the Ping utility to test end-to-end reachability in IPv6."
+    },
+    {
+        "question": "What is the maximum transmission speed of Fast Ethernet?",
+        "options": [
+            "100 Mbps",
+            "1 Gbps",
+            "10 Mbps",
+            "10 Gbps"
+        ],
+        "correct": "100 Mbps",
+        "category": "Switching & VLAN",
+        "explanation": "Fast Ethernet (100BASE-T) offers a transmission speed of up to 100 Mbps."
+    },
+    {
+        "question": "Which of the following protocols operate at the Application layer of the OSI model? (choose four)",
+        "options": [
+            "HTTP",
+            "FTP",
+            "SMTP",
+            "DNS",
+            "TCP"
+        ],
+        "correct": [
+            "HTTP",
+            "FTP",
+            "SMTP",
+            "DNS"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "HTTP, FTP, and SMTP all operate at Layer 7 ...on operations. DNS also operates at Layer 7, b... UDP-based protocol."
+    },
+    {
+        "question": "Regarding VLANs, which statement is true?",
+        "options": [
+            "Each VLAN is usually associated with only one IPv4 subnet.",
+            "It is recommended to have multiple IPv4 subnets on the same VLAN.",
+            "Only native VLAN 1 can have multiple IPv4 subnets on the same VLAN.",
+            "There can be multiple IPv4 subnets on the extended VLAN range."
+        ],
+        "correct": "Each VLAN is usually associated with only one IPv4 subnet.",
+        "category": "Switching & VLAN",
+        "explanation": "En grundläggande regel för nätverksdesign är korrespondensen **1:1** mellan ett **VLAN** (broadcast-domän på Layer 2) och ett **IP-subnät** (nätverk på Layer 3). Att ha flera subnät i samma broadcast-domän leder till ineffektiv routing och förvirring."
+    },
+    {
+        "question": "What is the correct way to configure an IPv6 default route?",
+        "options": [
+            "ipv6 route 0.0.0.0 0.0.0.0 fe80::2",
+            "ipv6 route ::/0 2001:db8::1",
+            "ipv6 route ff::0/32 fe80::2",
+            "ipv6 route ff::0/128 2001:0db8:feed::1"
+        ],
+        "correct": "ipv6 route ::/0 2001:db8::1",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "In IPv6, the **default route** is represented by the prefix **$::/0$**, which matches all destination addresses. The command `ipv6 route ::/0 2001:db8::1` directs all traffic that does not have a more specific route to the next-hop address $2001:db8::1$."
+    },
+    {
+        "question": "Routers communicate First Hop Redundancy Protocol (FHRP) information between each other through hello messages. What is this mechanism called?",
+        "options": [
+            "EtherChannel",
+            "keepalive",
+            "link-state",
+            "VLAN tagging"
+        ],
+        "correct": "keepalive",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "FHRP protocols (like HSRP, VRRP, GLBP) use **keepalive** or 'hello' messages to exchange information, monitor the status of the active gateway, and maintain redundancy."
+    },
+    {
+        "question": "Which of these IPv4 addresses are private addresses as defined by RFC 1918?",
+        "options": [
+            "10.0.5.6",
+            "172.16.30.5",
+            "192.168.0.100",
+            "8.8.8.8",
+            "172.32.0.1"
+        ],
+        "correct": [
+            "10.0.5.6",
+            "172.16.30.5",
+            "192.168.0.100"
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "10.0.0.0/8, 172.16.0.0/12 (172.16.0.0 to 172.31.255.255), and 192.168.0.0/16 are the reserved private address ranges as defined by RFC 1918. 8.8.8.8 and 172.32.0.1 are public addresses."
+    },
+    {
+        "question": "Which command shows Cisco router's active interface with detailed information?",
+        "options": [
+            "show interfaces",
+            "show ip interface brief",
+            "show ip interface",
+            "show running-config"
+        ],
+        "correct": "show interfaces",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The **`show interfaces`** command (or `show interface <interface_id>`) provides the most comprehensive and detailed statistics and status information for a router's interface."
+    },
+    {
+        "question": "When configuring a trunk port on a Cisco switch, which VLAN ranges can be used to specify the allowed VLANs?",
+        "options": [
+            "extended and standard",
+            "extended",
+            "standard",
+            "standard and reserved"
+        ],
+        "correct": "extended and standard",
+        "category": "Switching & VLAN",
+        "explanation": "VLAN IDs are divided into standard (1-1005) and extended (1006-4094) ranges. Trunk ports can carry and be configured to allow VLANs from both these ranges."
+    },
+    {
+        "question": "Which URL prefix for Cisco network devices contains the current running configuration?",
+        "options": [
+            "rcp:",
+            "nvram:",
+            "system:",
+            "memory:"
+        ],
+        "correct": "memory:",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'memory:' URL references the running configuration stored in RAM on the Cisco device."
+    },
+    {
+        "question": "Which part of the Open Shortest Path First (OSPF) process is omitted if two routers are connected with a point-to-point link?",
+        "options": [
+            "Designated router/Border designated router (DR/BDR) election",
+            "exchange of hello packets",
+            "exchange of link-state database (LSDB) summary",
+            "Shortest Path First (SPF) calculation"
+        ],
+        "correct": "Designated router/Border designated router (DR/BDR) election",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "DR/BDR elections are only necessary on multi-access network types (like Ethernet) to minimize the number of required adjacencies and LSA flooding. On point-to-point links, the election process is skipped because a full adjacency is formed directly between the two routers."
+    },
+    {
+        "question": "What are two characteristics of an anycast IPv6 address? (Choose two.)",
+        "options": [
+            "It can be assigned to a host (end-user devices).",
+            "It can be assigned to multiple nodes.",
+            "It can be recognized by a pre-defined prefix.",
+            "It is used in an IPv6 packet as a source IPv6 address.",
+            "It is assigned from the unicast IPv6 address space."
+        ],
+        "correct": [
+            "It can be assigned to multiple nodes.",
+            "It is assigned from the unicast IPv6 address space."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "An anycast address is assigned to multiple devices (nodes) that provide the same service. Traffic sent to this address is routed to the topologically nearest node. Anycast addresses are taken from the Global Unicast Address space."
+    },
+    {
+        "question": "Where is the running configuration of the router temporarily stored while the router is powered on?",
+        "options": [
+            "RAM",
+            "Flash memory",
+            "NVRAM",
+            "ROM"
+        ],
+        "correct": "RAM",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'running-config' is the active configuration file loaded into RAM (Random Access Memory) and is executed there while the device is powered on. Changes made are temporary until saved to NVRAM."
+    },
+    {
+        "question": "You have detected that there is a rogue DHCP server in the LAN that replicates client DHCP requests before they reach the authentic DHCP server in the company. Which two options describe this attack type? (Choose two.)",
+        "options": [
+            "DHCP DoS attack",
+            "DHCP spoofing attack",
+            "DHCP authentication attack",
+            "IP address spoofing",
+            "application/service spoofing"
+        ],
+        "correct": [
+            "DHCP spoofing attack",
+            "application/service spoofing"
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "The rogue server is engaging in a **DHCP Spoofing attack** by attempting to act as the legitimate DHCP server. By sending fake responses, it is also tricking the client into accepting an invalid IP address or gateway, which involves **IP address spoofing** in the DHCP reply."
+    },
+    {
+        "category": "Security AAA & ACL",
+        "question": "What is the purpose of the AAA model?",
+        "options": [
+            "Authentication, Authorization, Accounting",
+            "Addressing, Archiving, Analysis",
+            "Acceleration, Aggregation, Authentication",
+            "Allocation, Authentication, Authorization"
+        ],
+        "correct": "Authentication, Authorization, Accounting",
+        "explanation": "AAA stands for Authentication, Authorization, Accounting - central in network security."
+    },
+    {
+        "question": "Which layer of the OSI model provides reliable delivery using acknowledgments?",
+        "options": [
+            "Transport",
+            "Session",
+            "Network",
+            "Data Link"
+        ],
+        "correct": "Transport",
+        "category": "OSI Model",
+        "explanation": "**Transportlagret** (Lager 4) säkerställer tillförlitlig dataöverföring från slutpunkt till slutpunkt vid användning av protokoll som TCP, vilket använder sekvensnummer och kvitteringar (ACKs) för att hantera felåterställning och omsändning."
+    },
+    {
+        "question": "Which command would you use to verify the number of excluded addresses on a router configured as a DHCP server?",
+        "options": [
+            "show ip dhcp bindings",
+            "show ip dhcp conflict",
+            "show ip dhcp database",
+            "show ip dhcp pool"
+        ],
+        "correct": "show ip dhcp pool",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The `show ip dhcp pool` command displays detailed information about all DHCP pools, including the range of addresses and the addresses that have been specifically excluded from the pool's allocation range."
+    },
+    {
+        "question": "Which of the following IP addresses is a broadcast address in a /24 network?",
+        "options": [
+            "192.168.1.0",
+            "192.168.1.255",
+            "192.168.1.128",
+            "192.168.1.1"
+        ],
+        "correct": "192.168.1.255",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The broadcast address in a /24 network is the last address, here 192.168.1.255."
+    },
+    {
+        "category": "TCP/IP/DNS Protocols",
+        "question": "What is the primary purpose of HSRP?",
+        "options": [
+            "Load balancing",
+            "Router redundancy",
+            "Traffic encryption",
+            "Path selection"
+        ],
+        "correct": "Router redundancy",
+        "explanation": "**HSRP (Hot Standby Router Protocol)** är utformat för att ge **redundans för standard-gatewayen** (första hoppet). Det låter två eller flera routrar dela en virtuell IP- och MAC-adress så att värdar behåller anslutningen även om den aktiva routern misslyckas."
+    },
+    {
+        "question": "Which command on a Cisco device is used to enter global configuration mode from privileged EXEC mode?",
+        "options": [
+            "enable",
+            "configure terminal",
+            "interface gigabit0/1",
+            "admin"
+        ],
+        "correct": "configure terminal",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "From the privileged EXEC prompt (Router#), \"configure terminal\" (often abbreviated \"conf t\") puts you into global configuration mode (Router(config)#). \"enable\" moves from user mode to enable mode, and \"interface gigabit0/1\" would enter interface configuration mode."
+    },
+    {
+        "question": "Where will a router search for the startup configuration if the startup configuration file does not exist in NVRAM?",
+        "options": [
+            "TFTP server",
+            "RAM",
+            "ROM",
+            "SSH server"
+        ],
+        "correct": "TFTP server",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "If the router does not find a configuration file in NVRAM during the boot process (as determined by the configuration register), it enters **Setup mode** and typically attempts to load a configuration file via the network from a **TFTP server** (a process known as Network Boot or Netboot)."
+    },
+    {
+        "question": "Which command is used to verify a default gateway configuration on a Layer 2 switch?",
+        "options": [
+            "show interface description",
+            "show interface stats",
+            "show ip default-gateway network",
+            "show management",
+            "show running-config"
+        ],
+        "correct": "show running-config",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Correct: On a Layer 2 switch, the default gateway configuration is displayed in the running configuration using the command 'show running-config'. This reveals the management VLAN interface and any configured default gateway. The other commands either show interface details, statistics, or management info but not the gateway setting."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which command on a Cisco switch shows spanning-tree status?",
+        "options": [
+            "show spanning-tree",
+            "show vlan brief",
+            "show interfaces trunk",
+            "show running-config"
+        ],
+        "correct": "show spanning-tree",
+        "explanation": "\"show spanning-tree\" shows information about STP (Spanning Tree Protocol) and its state."
+    },
+    {
+        "question": "What is a way of mitigating social engineering attacks?",
+        "options": [
+            "Avoiding making copies of files on external memory devices.",
+            "Avoiding using personal data to create a password.",
+            "Assigning administration privileges only to people with technical knowledge.",
+            "Training users about correct security behaviors."
+        ],
+        "correct": "Training users about correct security behaviors.",
+        "category": "Security AAA & ACL",
+        "explanation": "Social engineering relies on manipulating human psychology. The most effective mitigation is therefore to train users (employees) to recognize, avoid, and report techniques like phishing, pretexting, and baiting. While other options (like avoiding personal data in passwords) are good security hygiene, training is the primary defense against the attack vector itself."
+    },
+    {
+        "question": "You are working as IT security engineer and you are browsing through the sectools.org website to see the top network security tools, as well as find more details on each particular tool and read reviews for it. What is the initiative that runs this website?",
+        "options": [
+            "IEEE",
+            "ITU-T",
+            "Nmap Project",
+            "Metasploit"
+        ],
+        "correct": "Nmap Project",
+        "category": "Security AAA & ACL",
+        "explanation": "SecTools.org is run by the Nmap Project, which is most famous for its network scanning utility, Nmap."
+    },
+    {
+        "question": "Refer to the exhibit. Which two options are common IPsec or SSL VPN implementations? (Choose two.)",
+        "options": [
+            "IPsec Tunnel VPN (between Firewall and Router)",
+            "SSL VPN (between Firewall and Router)",
+            "IPsec VTI VPN (between Client and Server)",
+            "DMVPN (between Firewall and Server)",
+            "SSL VPN (between Client and Firewall)"
+        ],
+        "correct": [
+            "IPsec Tunnel VPN (between Firewall and Router)",
+            "SSL VPN (between Client and Firewall)"
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "**IPsec Tunnel VPNs** are used for **site-to-site** connections (e.g., between gateways like firewalls or routers). **SSL VPNs** are commonly used for **remote access** connections between a single **client** device and a gateway (like a firewall)."
+    },
+    {
+        "question": "What is the primary purpose of using VLANs on a switch?",
+        "options": [
+            "To segment the network into separate broadcast domains",
+            "To increase the collision domain of the network",
+            "To allow multiple switches to be managed as one",
+            "To route traffic between different networks"
+        ],
+        "correct": "To segment the network into separate broadcast domains",
+        "category": "Switching & VLAN",
+        "explanation": "VLANs (Virtual Local Area Networks) are used to logically segment a Layer 2 switch into multiple distinct broadcast domains. This limits the size of broadcast traffic and improves network security and efficiency."
+    },
+    {
+        "question": "Which three statements describe characteristics of solicited-node IPv6 addresses? (Choose three.)",
+        "options": [
+            "There can be only one per device.",
+            "They are automatically created by the device.",
+            "They are created using the device's MAC address.",
+            "They are multicast addresses.",
+            "They are valid within an organization.",
+            "They have a recognizable prefix."
+        ],
+        "correct": [
+            "They are automatically created by the device.",
+            "They are multicast addresses.",
+            "They have a recognizable prefix."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Solicited-node IPv6 addresses are automatically created multicast addresses with the prefix ff02::1:ff00::/104."
+    },
+    {
+        "question": "What is the purpose of inter-VLAN routing?",
+        "options": [
+            "to transport packets within VLANs",
+            "to convert packets from Layer 2 to Layer 3",
+            "to transport packets between VLANs",
+            "to increase the security of VLANs",
+            "to increase the scalability of VLANs"
+        ],
+        "correct": "to transport packets between VLANs",
+        "category": "Switching & VLAN",
+        "explanation": "Since VLANs create separate broadcast domains (and separate subnets), a Layer 3 device (router or Layer 3 switch) is required to perform routing, allowing traffic to be successfully **transported between different VLANs**."
+    },
+    {
+        "question": "Which of these options is a mitigation technique to prevent rogue DHCP servers from providing false IP configuration parameters?",
+        "options": [
+            "DHCP spoofing",
+            "Dynamic ARP Inspection",
+            "port security",
+            "ARP spoofing",
+            "DHCP snooping"
+        ],
+        "correct": "DHCP snooping",
+        "category": "Security AAA & ACL",
+        "explanation": "DHCP Snooping is a Layer 2 security feature that filters untrusted DHCP messages to prevent rogue DHCP servers from operating on the network and providing malicious IP configuration."
+    },
+    {
+        "question": "What does the ICMP protocol do?",
+        "options": [
+            "Assigns IP addresses",
+            "Transfers files",
+            "Sends troubleshooting messages",
+            "Encrypts data"
+        ],
+        "correct": "Sends troubleshooting messages",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "ICMP (Internet Control Message Protocol) is primarily used for network diagnostics and error reporting. For example, the 'ping' utility relies on ICMP Echo Request and Echo Reply messages to test connectivity between two hosts."
+    },
+    {
+        "question": "Which protocol would you use if you wanted to copy the configuration from a remote server securely?",
+        "options": [
+            "TFTP",
+            "HTTP",
+            "FTP",
+            "SCP"
+        ],
+        "correct": "SCP",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "**SCP (Secure Copy Protocol)** använder **SSH** för att säkert överföra filer, vilket säkerställer att data och autentiseringsuppgifter krypteras. TFTP, FTP och HTTP erbjuder inte inbyggd kryptering."
+    },
+    {
+        "question": "Which command can you use to merge the configuration in RAM with a saved configuration file on a TFTP server?",
+        "options": [
+            "copy tftp running-config",
+            "copy tftp startup-config",
+            "copy running-config startup-config",
+            "copy startup-config tftp"
+        ],
+        "correct": "copy tftp running-config",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The **`copy tftp running-config`** command fetches the configuration file from a TFTP server and merges its contents with the current running configuration in RAM."
+    },
+    {
+        "question": "You are configuring an IPv6 static route using the link-local IPv6 address as the next-hop. Which command has the correct syntax?",
+        "options": [
+            "ipv6 route 2001:0db8:beef:: 2001:0db8:feed::1",
+            "ipv6 route 2001:0db8:beef:: fa1/0 fe80::2",
+            "ipv6 route 2001:0db8:beef::/32 2001:0db8:feed::1",
+            "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2"
+        ],
+        "correct": "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "When using a link-local IPv6 address (which starts with fe80::) as the next hop in a static route, the outgoing interface must be explicitly specified (fa1/0 in this case) because the link-local address is not globally unique."
+    },
+    {
+        "question": "Which of the following protocols operate at the OSI Transport layer?",
+        "options": [
+            "TCP",
+            "UDP",
+            "IP",
+            "HTTP",
+            "ICMP"
+        ],
+        "correct": [
+            "TCP",
+            "UDP"
+        ],
+        "category": "OSI Model",
+        "explanation": "**TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)** both operate at the **Transport Layer (Layer 4)**. They provide end-to-end communication services for applications, handling segmentation (TCP) and port addressing."
+    },
+    {
+        "category": "TCP/IP/DNS Protocols",
+        "question": "What is the default administrative distance for a directly connected route?",
+        "options": [
+            "0",
+            "1",
+            "5",
+            "255"
+        ],
+        "correct": "0",
+        "explanation": "Directly connected networks have an administrative distance of 0, static routes have an AD of 1."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which protocol is used to synchronize clocks in a network?",
+        "options": [
+            "NTP",
+            "SNMP",
+            "DHCP",
+            "DNS"
+        ],
+        "correct": "NTP",
+        "explanation": "NTP (Network Time Protocol) is used to synchronize clocks across networks."
+    },
+    {
+        "question": "Which command on a Cisco switch displays the MAC address table?",
+        "options": [
+            "show mac address-table",
+            "show arp",
+            "show ip route",
+            "show running-config"
+        ],
+        "correct": "show mac address-table",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "\"show mac address-table\" displays the MAC address table learned by learning on the switch."
+    },
+    {
+        "question": "Which four options are valid destinations to which a router can forward a syslog message? (Choose four.)",
+        "options": [
+            "logging buffer",
+            "TACACS+ server",
+            "console line",
+            "management interface",
+            "terminal lines",
+            "syslog server",
+            "SNMP trap server"
+        ],
+        "correct": [
+            "logging buffer",
+            "console line",
+            "terminal lines",
+            "syslog server"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "These are the four standard destinations for Cisco IOS logging: internal buffer, console port, virtual terminal sessions (`terminal monitor`), and an external Syslog server."
+    },
+    {
+        "question": "What type of VLANs does VTP manage?",
+        "options": [
+            "Standard VLANs",
+            "Extended VLANs",
+            "Private VLANs",
+            "Voice VLANs"
+        ],
+        "correct": "Standard VLANs",
+        "category": "Switching & VLAN",
+        "explanation": "VTP (VLAN Trunking Protocol) only propagates VLANs in the standard range (VLAN IDs 1–1005). Extended VLANs (1006–4094) must be configured manually on each switch."
+    },
+    {
+        "category": "Network Fundamentals & Tools",
+        "question": "Which protocol uses port 443?",
+        "options": [
+            "HTTP",
+            "SSH",
+            "HTTPS",
+            "DNS"
+        ],
+        "correct": "HTTPS",
+        "explanation": "HTTPS uses TCP port 443 for encrypted web communication."
+    },
+    {
+        "question": "You are given a physical network diagram. Which two statements about the logical diagram for the same network are true? (Choose two.)",
+        "options": [
+            "The logical diagram is obvious from the physical diagram.",
+            "The logical diagram can be drawn by adding device model information to the physical diagram.",
+            "The logical diagram can be drawn by examining device configurations.",
+            "The logical diagram can be drawn by analyzing data flows in the network.",
+            "The logical diagram is always different to the physical diagram."
+        ],
+        "correct": [
+            "The logical diagram can be drawn by examining device configurations.",
+            "The logical diagram can be drawn by analyzing data flows in the network."
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A **Logical Diagram** shows how the network functions (IP addresses, subnets, VLANs, routing protocols, and data flows). This information is derived from the **device configurations** and by observing how **data flows** across the network, not just from the physical cable layout."
+    },
+    {
+        "question": "Refer to the exhibit. Which two combinations will result in an EtherChannel being established between the two switches that are using LACP? (Choose two.)\n\nswitch 1 on, switch 2 active\nswitch 1 active, switch 2 active\nswitch 1 active, switch 2 passive\nswitch 1 passive, switch 2 passive\nswitch 1 on, switch 2 on",
+        "options": [
+            "switch 1 on, switch 2 active",
+            "switch 1 active, switch 2 active",
+            "switch 1 active, switch 2 passive",
+            "switch 1 passive, switch 2 passive",
+            "switch 1 on, switch 2 on"
+        ],
+        "correct": [
+            "switch 1 active, switch 2 active",
+            "switch 1 active, switch 2 passive"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "För att **LACP** (Link Aggregation Control Protocol) ska bilda en EtherChannel måste **minst en sida vara i det aktiva tillståndet** (aktivt förhandlande). \n* **Active/Active** fungerar.\n* **Active/Passive** fungerar (Active initierar). \n* **Passive/Passive** misslyckas (ingen av sidorna initierar).\n* **On/On** är statisk konfiguration och ignorerar LACP-förhandling."
+    },
+    {
+        "question": "What is the maximum length of a Cat5e/Cat6 Ethernet cable segment (for example, 1000BASE-T)?",
+        "options": [
+            "100 meters",
+            "55 meters",
+            "185 meters",
+            "500 meters"
+        ],
+        "correct": "100 meters",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The maximum recommended length for a UTP Ethernet cable (Cat5e/Cat6) is 100 meters (about 328 feet). Beyond this, the signal may degrade. (185m was used for 10BASE2 coax, 55m is a guideline for some 10Gbps links on Cat6, 500m is typical for multimode fiber with certain standards.)"
+    },
+    {
+        "question": "How do link-state protocols limit the scope of route changes?",
+        "options": [
+            "by supporting classless addressing",
+            "by sending the mask along with the address",
+            "by sending only updates of a topology change",
+            "by segmenting the network into areas"
+        ],
+        "correct": "by segmenting the network into areas",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Link-state protocols like OSPF use **areas** (segmentation) to partition the network. This design ensures that a topology change within one area results in LSAs being flooded only within that area, thus limiting the size of the Link-State Database and the scope of recalculation."
+    },
+    {
+        "question": "Which of the following is the correct binary representation of the third octet of the IPv4 address 172.20.170.50?",
+        "options": [
+            "0001 1110",
+            "0110 0110",
+            "1010 1010",
+            "1100 1011"
+        ],
+        "correct": "1010 1010",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The third octet is 170. The binary conversion is $128 + 0 + 32 + 0 + 8 + 0 + 2 + 0 = 170$, which translates to $10101010$."
+    },
+    {
+        "question": "Which method preserves the parameters of a Large Language Model, such as GPT, while adding data that was not part of the original training data set?",
+        "options": [
+            "training",
+            "fine-tuning",
+            "RAG",
+            "GAN"
+        ],
+        "correct": "RAG",
+        "category": "AI & Machine Learning",
+        "explanation": "RAG (Retrieval-Augmented Generation) uses external knowledge bases (like databases or documents) to ground the LLM's response, providing up-to-date context without the need to modify (retrain or fine-tune) the model's core parameters."
+    },
+    {
+        "question": "From a network perspective, how is a server a different endpoint than a user workstation?",
+        "options": [
+            "A server requires lower latency.",
+            "A server requires more bandwidth.",
+            "A server requires Power over Ethernet (PoE) connectivity.",
+            "A server requires stricter network access control."
+        ],
+        "correct": "A server requires more bandwidth.",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A server is a central point that handles concurrent connections and traffic from many users/devices, leading to a much higher demand for **bandwidth** compared to a single user workstation."
+    },
+    {
+        "question": "What is the subnet mask for a /25 network?",
+        "options": [
+            "255.255.255.0",
+            "255.255.255.128",
+            "255.255.255.192",
+            "255.255.254.0"
+        ],
+        "correct": "255.255.255.128",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "/25 corresponds to a subnet mask of 255.255.255.128, giving two subnets from a /24."
+    },
+    {
+        "category": "Automation & DevOps",
+        "question": "Which of the following is an example of a tool used for network automation?",
+        "options": [
+            "Ansible",
+            "Wireshark",
+            "PuTTY",
+            "Hyper-V"
+        ],
+        "correct": "Ansible",
+        "explanation": "Ansible is a popular open-source automation tool that is used for network configuration management and automation. Wireshark is for analysis, PuTTY is a terminal emulator, and Hyper-V is for virtualization."
+    },
+    {
+        "question": "Which layer in the OSI model is responsible for encapsulating data in frames?",
+        "options": [
+            "Lager 1",
+            "Lager 2",
+            "Lager 3",
+            "Lager 4"
+        ],
+        "correct": "Lager 2",
+        "category": "OSI Model",
+        "explanation": "The data binding layer (Layer 2) is responsible for framing data and managing MAC addresses."
+    },
+    {
+        "question": "Which two commands display the type of trunking encapsulation of an interface? (Choose two.)",
+        "options": [
+            "show interfaces Ethernet0/0 switchport",
+            "show interfaces status",
+            "show interfaces summary",
+            "show interfaces trunk",
+            "show ip interfaces brief"
+        ],
+        "correct": [
+            "show interfaces Ethernet0/0 switchport",
+            "show interfaces trunk"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "`show interfaces switchport` provides detailed trunking encapsulation (dot1q/isl) for a specific port. `show interfaces trunk` summarizes all active trunks and their encapsulation types."
+    },
+    {
+        "question": "You are reading an article in the news regarding a DNS amplification attack to a specific organization. The attack caused DDoS that made it impossible for anyone to resolve the organization's website IP address and access the website. Which statement regarding an amplification attack is correct?",
+        "options": [
+            "A small forged packet elicits a small reply from the reflectors.",
+            "A small forged packet elicits a large reply from the reflectors.",
+            "A large forged packet elicits a small reply from the reflectors.",
+            "A large forged packet elicits a large reply from the reflectors."
+        ],
+        "correct": "A small forged packet elicits a large reply from the reflectors.",
+        "category": "Security AAA & ACL",
+        "explanation": "An amplification attack relies on sending a small request packet with a forged source address (the victim's) to a reflector service (like DNS), causing the reflector to send a much larger response back to the victim."
+    },
+    {
+        "question": "The service provider is implementing Multiprotocol Label Switching Virtual Private Network (MPLS VPN) service. Which two options indicate the specific VPN type that is implemented and how the service provider appears from the perspective of the customer? (Choose two.)",
+        "options": [
+            "The service provider is implementing MPLS L2VPN.",
+            "The service provider is implementing MPLS L3VPN.",
+            "The service provider is implementing MPLS VPLS.",
+            "The service provider network can be represented as a router from the customer perspective.",
+            "The service provider network can be represented as a switch from the customer perspective."
+        ],
+        "correct": [
+            "The service provider is implementing MPLS L3VPN.",
+            "The service provider network can be represented as a router from the customer perspective."
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "In an MPLS L3VPN (Layer 3 VPN) service, the service provider's router (PE) participates in IP routing with the customer's router (CE). This means the customer sees the provider's network as a router that handles the routing function between sites. If the answer were L2VPN or VPLS, the provider network would appear as a switch (a transparent Layer 2 segment)."
+    }
 ]

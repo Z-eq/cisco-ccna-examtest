@@ -1,1132 +1,1132 @@
 [
-  {
-    "question": "Routers communicate First Hop Redundancy Protocol (FHRP) information between each other through hello messages. What is this mechanism called?",
-    "options": [
-      "EtherChannel",
-      "keepalive",
-      "link-state",
-      "VLAN tagging"
-    ],
-    "correct": "keepalive",
-    "category": "Routing",
-    "explanation": "FHRP routers use 'keepalive' hello messages to exchange information and maintain redundancy."
-  },
-  {
-    "question": "Which protocol does a router use to learn dynamic IP routes?",
-    "options": [
-      "RIP",
-      "DNS",
-      "DHCP",
-      "ICMP"
-    ],
-    "correct": "RIP",
-    "category": "Routing",
-    "explanation": "RIP (Routing Information Protocol) is a distance-vector protocol that learns routes dynamically."
-  },
-  {
-    "question": "What are two characteristics of an anycast IPv6 address? (Choose two.)",
-    "options": [
-      "It can be assigned to a host (end-user devices).",
-      "It can be assigned to multiple nodes.",
-      "It can be recognized by a pre-defined prefix.",
-      "It is used in an IPv6 packet as a source IPv6 address.",
-      "It is assigned from the unicast IPv6 address space."
-    ],
-    "correct": [
-      "It can be assigned to multiple nodes.",
-      "It is assigned from the unicast IPv6 address space."
-    ],
-    "category": "IPv6",
-    "explanation": "An anycast address is assigned to multiple devices (nodes) that provide the same service. Traffic sent to this address is routed to the topologically nearest node. Anycast addresses are taken from the Global Unicast Address space."
-  },
-  {
-    "question": "What does the term per-hop behavior (PHB) signify?",
-    "options": [
-      "a set of node requirements for compliance with the DiffServ model",
-      "a set of packet markings applied to different classes of traffic",
-      "a set of techniques for traffic shaping",
-      "a set of traffic classes defined in the network"
-    ],
-    "correct": "a set of techniques for traffic shaping",
-    "category": "QoS",
-    "explanation": "The term PHB refers to how a node will treat traffic having the same Differentiated Services Code Point (DSCP) values. The DiffServ model itself does not specify how PHBs must be implemented. A variety of techniques may be used to implement the desired traffic conditioning and PHB."
-  },
-  {
-    "question": "Which command is used to verify a default gateway configuration on a Layer 2 switch?",
-    "options": [
-      "show interface description",
-      "show interface stats",
-      "show ip default-gateway network",
-      "show management",
-      "show running-config"
-    ],
-    "correct": "show running-config",
-    "category": "Switch Commands",
-    "explanation": "Correct: On a Layer 2 switch, the default gateway configuration is displayed in the running configuration using the command 'show running-config'. This reveals the management VLAN interface and any configured default gateway. The other commands either show interface details, statistics, or management info but not the gateway setting."
-  },
-  {
-    "question": "Which layer of the OSI model is responsible for encryption and data conversion?",
-    "options": [
-      "Application",
-      "Session",
-      "Presentation",
-      "Network"
-    ],
-    "correct": "Presentation",
-    "category": "OSI",
-    "explanation": "The Presentation layer (Layer 6) handles data representation, encryption, and compression."
-  },
-  {
-    "question": "The exhibit shows a MAC address table of a switch. The switch receives a frame from the device with the MAC address of 00e0.b048.11da. The destination MAC address of the frame is not in the switch MAC address table. What will the switch do with the frame?",
-    "options": [
-      "It will discard the frame.",
-      "It will flood the frame out all active ports on the same VLAN except the one it is received on.",
-      "It will forward the frame out of the Fa0/1 port.",
-      "It will forward the frame out of the Fa0/2 port."
-    ],
-    "correct": "It will flood the frame out all active ports on the same VLAN except the one it is received on.",
-    "category": "Switching",
-    "explanation": "When a switch receives a frame with an unknown destination MAC address, it floods the frame out of all ports belonging to the same VLAN, except the port it was received on (ingress port). This process is known as 'Unknown Unicast Flooding' and is necessary to locate the destination device."
-  },
-  {
-    "question": "When a router is calculating the network portion of an IPv4 address, which bitwise operation is performed on the IPv4 address and the subnet mask?",
-    "options": [
-      "AND",
-      "NAND",
-      "OR",
-      "XOR"
-    ],
-    "correct": "AND",
-    "category": "IP Addressing",
-    "explanation": "The bitwise AND operation (where 1 AND 1 = 1, and all others = 0) is performed between the IP address and the subnet mask. This operation effectively isolates the network bits (where the mask is '1') and sets the host bits to zero, yielding the network address."
-  },
-  {
-    "question": "When using a AAA server along with an access switch, which two features benefit from centralized authentication? (Choose two.)",
-    "options": [
-      "IPsec VPN access",
-      "management access",
-      "network access",
-      "network telemetry authentication",
-      "spanning tree authentication"
-    ],
-    "correct": [
-      "management access",
-      "network access"
-    ],
-    "category": "AAA Protocols",
-    "explanation": "AAA servers primarily handle Network Access (802.1X for users connecting to the network) and Management Access (SSH/Telnet login for administrators to manage the switch). VPN access is typically handled by a gateway/firewall, not an access switch."
-  },
-  {
-    "question": "What command displays the routing protocol used by the router?",
-    "options": [
-      "show ip protocols",
-      "show ip route",
-      "show version",
-      "show running-config"
-    ],
-    "correct": "show ip protocols",
-    "category": "Routing",
-    "explanation": "The command 'show ip protocols' shows which routing protocols (like RIP, OSPF, EIGRP) are active."
-  },
-  {
-    "question": "Which layer does the core layer interconnect?",
-    "options": [
-      "access layer switches",
-      "access points",
-      "distribution layer switches",
-      "end point devices"
-    ],
-    "correct": "distribution layer switches",
-    "category": "Network Design",
-    "explanation": "The core layer provides high-speed backbone connectivity and interconnects distribution layer devices."
-  },
-  {
-    "question": "Which command would you use to verify VLAN membership on a Cisco switch port?",
-    "options": [
-      "show vlan brief",
-      "show ip route",
-      "show interfaces status",
-      "show running-config"
-    ],
-    "correct": "show vlan brief",
-    "category": "Switching",
-    "explanation": "The 'show vlan brief' command displays all VLANs configured on the switch and shows which ports are assigned to each VLAN."
-  },
-  {
-    "question": "Which three security services does the Counter Mode with Cipher Block Chaining Message Authentication Code Protocol (CCMP) provide? (Choose three.)",
-    "options": [
-      "access control",
-      "authentication",
-      "authorization",
-      "data confidentiality",
-      "data redundancy"
-    ],
-    "correct": [
-      "data confidentiality",
-      "authentication",
-      "access control"
-    ],
-    "category": "Wireless Security Protocols",
-    "explanation": "CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) is the encryption protocol used within the WPA2/WPA3 framework. Although CCMP's core function is Data Confidentiality and ensuring Data Integrity (which is missing as an option), when restricted to the list provided, the most relevant services it supports within the 802.11i standard are:\n\n1.  **Data Confidentiality:** Achieved through AES encryption (the 'Counter Mode' part).\n2.  **Authentication:** Achieved implicitly through its Message Integrity Check (MIC/MAC), which verifies the source of the data.\n3.  **Access Control:** CCMP is the technical mechanism that enforces the session security after the initial access control (handled by PSK or 802.1X) has been established."
-  },
-  {
-    "question": "Which two statements regarding the Root Guard are correct? (Choose two.)",
-    "options": [
-      "Root Guard can be enabled globally",
-      "Root Guard can only be enabled per interface",
-      "Root Guard can only be used on root and alternate ports",
-      "Root Guard can only be used on root ports",
-      "Root Guard is deployed on interfaces that connect to switches that should never be the root"
-    ],
-    "correct": [
-      "Root Guard can only be enabled per interface",
-      "Root Guard is deployed on interfaces that connect to switches that should never be the root"
-    ],
-    "category": "Cisco Switching/STP",
-    "explanation": "Root Guard is an STP (Spanning Tree Protocol) feature designed to enforce the hierarchical structure of the network and prevent external switches from becoming the root bridge. \n\n1.  **Deployment:** Root Guard is applied to interfaces (ports) that connect to network segments where the root bridge is *not* expected to be found (e.g., ports leading to access layers or external networks). If a superior BPDU (suggesting a new, better root) is received on a Root Guard-enabled port, the port is transitioned to a special blocking state (Root-Inconsistent state) to prevent the topology change.\n2.  **Configuration:** It can only be configured **per interface** (using the command `spanning-tree guard root`). It is not a global command."
-  },
-  {
-    "question": "What is the benefit of Mobility Express wireless access points (APs)?",
-    "options": [
-      "multiple SSIDs",
-      "multiple VLANs",
-      "Quality of Service (QoS)",
-      "reduced initial cost"
-    ],
-    "correct": "reduced initial cost",
-    "category": "Cisco Wireless",
-    "explanation": "Cisco Mobility Express is a controller-less solution designed primarily for Small to Midsize Businesses (SMBs). Its main benefit is the **reduced initial cost** because it eliminates the need to purchase a dedicated physical Wireless LAN Controller (WLC). Instead, one of the Access Points (APs) assumes the role of the master controller, managing the other APs in the network. Features like multiple SSIDs, VLANs, and QoS are standard capabilities across most modern Cisco wireless solutions, regardless of whether a separate controller is used."
-  },
-  {
-    "question": "What are the default OSPF hello and dead timer values on point-to-point links?",
-    "options": [
-      "Hello value is 10 seconds, dead value is 20 seconds.",
-      "Hello value is 10 seconds, dead value is 40 seconds.",
-      "Hello value is 20 seconds, dead value is 50 seconds.",
-      "Hello value is 30 seconds, dead value is 120 seconds."
-    ],
-    "correct": "Hello value is 10 seconds, dead value is 40 seconds.",
-    "category": "OSPF",
-    "explanation": "OSPF default hello on broadcast and point-to-point links is 10 seconds and dead interval is 4 times the hello (40s)."
-  },
-  {
-    "question": "Which authentication type in REST-based APIs uses pregenerated keys?",
-    "options": [
-      "Basic HTTP authentication",
-      "API key Authentication",
-      "Custom token authentication",
-      "Biometric authentication"
-    ],
-    "correct": "API key Authentication",
-    "category": "API Security",
-    "explanation": "API Key Authentication uses a single, long, pregenerated string that the client includes in requests (via headers or query parameters) to identify itself and control access to the API."
-  },
-  {
-    "question": "From a network perspective, how is a server a different endpoint than a user workstation?",
-    "options": [
-      "A server requires lower latency.",
-      "A server requires more bandwidth.",
-      "A server requires Power over Ethernet (PoE) connectivity.",
-      "A server requires stricter network access control."
-    ],
-    "correct": "A server requires more bandwidth.",
-    "category": "Network Design",
-    "explanation": "The correct answer is A server requires more bandwidth. Since a server is a convergent point on the network that connects multiple devices, it consumes more bandwidth.\n\nLow latency is not a differentiator for a server, since it is also a requirement for IP phones, for instance. Servers cannot be powered through PoE, since their power requirements surpass PoE capabilities. Servers are deployed in secured environments (locked closets or server rooms), where network access control is not a focus, since other security measures are implemented."
-  },
-  {
-    "question": "What alternative to Cisco Meraki Dashboard can you use to manage Cisco Meraki network devices?",
-    "options": [
-      "Cisco Meraki Dashboard API",
-      "RESTCONF",
-      "SNMP",
-      "Telnet"
-    ],
-    "correct": "Cisco Meraki Dashboard API",
-    "category": "Automation/Meraki",
-    "explanation": "Cisco Meraki is primarily cloud-managed via the Dashboard web interface. The official, modern alternative for bulk configuration, monitoring, and integration is the Meraki Dashboard API (Application Programming Interface), which is a RESTful interface."
-  },
-  {
-    "question": "Which cloud service model offers customers the most control over their cloud-hosted services?",
-    "options": [
-      "Function as a Service (FaaS)",
-      "Infrastructure as a Service (IaaS)",
-      "Platform as a Service (PaaS)",
-      "Software as a Service (SaaS)"
-    ],
-    "correct": "Infrastructure as a Service (IaaS)",
-    "category": "Cloud Computing",
-    "explanation": "The three main cloud service models represent a spectrum of control and management responsibilities. **Infrastructure as a Service (IaaS)** provides the customer with the most control. In the IaaS model, the provider manages the underlying networking, storage, and virtualization layers, but the customer retains full control over the **operating systems**, middleware, runtime, applications, and data. This is akin to having virtual data center components. **SaaS** offers the least control, while **PaaS** and **FaaS** offer medium control by abstracting away the OS and underlying infrastructure."
-  },
-  {
-    "question": "Where does a router that runs OSPFv2, and that has neighbor adjacencies established, store link-state advertisements (LSAs)?",
-    "options": [
-      "LSDB",
-      "Neighbors table",
-      "Routing table",
-      "SPF tree"
-    ],
-    "correct": "LSDB",
-    "category": "OSPF",
-    "explanation": "LSAs (Link-State Advertisements) are stored in the **Link-State Database (LSDB)**. This database contains a full map of the OSPF area. The router then uses Dijkstra's Shortest Path First (SPF) algorithm on the LSDB to calculate the best paths, which are placed in the Routing table."
-  },
-  {
-    "question": "In an 802.1X implementation, what are the roles of the devices shown? PC on the left side conneted to switch in the middle and server on the right!",
-    "options": [
-      "A: authenticator, B: supplicant, C: authentication server",
-      "A: client device, B: supplicant, C: authentication server",
-      "A: supplicant, B: authenticator, C: authentication server",
-      "A: supplicant, B: client device, C: authentication server"
-    ],
-    "correct": "A: supplicant, B: authenticator, C: authentication server",
-    "category": "Security/802.1X",
-    "explanation": "In 802.1X (port-based network access control): The PC (A) is the **Supplicant** (the device requesting access). The Switch (B) is the **Authenticator** (the relay point). The Server (C, usually RADIUS) is the **Authentication Server** (which verifies the user/device credentials)."
-  },
-  {
-    "question": "Which two parameters can be used for metric calculations? (Choose two.)",
-    "options": [
-      "IP Address",
-      "Hop count",
-      "Link Up/Downtime",
-      "Bandwidth",
-      "Default Route",
-      "Local Routes"
-    ],
-    "correct": [
-      "Hop count",
-      "Bandwidth"
-    ],
-    "category": "Routing Metrics",
-    "explanation": "Routing protocols use metrics to determine the best path. Simple protocols like RIP use Hop Count (number of routers). Advanced protocols like OSPF and EIGRP use more complex metrics that include Bandwidth and Delay."
-  },
-  {
-    "question": "Which three fields are included in a TCP header? (Choose three.)",
-    "options": [
-      "destination address",
-      "destination port",
-      "flags",
-      "frame check sequence",
-      "window size"
-    ],
-    "correct": [
-      "destination port",
-      "flags",
-      "window size"
-    ],
-    "category": "TCP/IP",
-    "explanation": "Destination port (Layer 4), Flags (control bits like SYN, ACK), and Window Size (flow control) are key TCP header fields. Destination address is in the IP header (L3), and Frame Check Sequence (FCS) is in the Ethernet trailer (L2)."
-  },
-  {
-    "question": "What is the main purpose of a default route?",
-    "options": [
-      "To route packets to unknown networks",
-      "To limit routing updates",
-      "To summarize routes",
-      "To create static VLANs"
-    ],
-    "correct": "To route packets to unknown networks",
-    "category": "Routing",
-    "explanation": "A default route provides a path when no specific route to a destination network exists."
-  },
-  {
-    "question": "Which command displays VLANs configured on a switch?",
-    "options": [
-      "show vlan brief",
-      "show interfaces trunk",
-      "show running-config",
-      "show mac address-table"
-    ],
-    "correct": "show vlan brief",
-    "category": "VLAN",
-    "explanation": "The 'show vlan brief' command displays VLAN IDs, names, and associated ports."
-  },
-  {
-    "question": "What is the severity level of the syslog message '%LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down'?",
-    "options": [
-      "Error",
-      "Log alert",
-      "Log audit",
-      "Warning"
-    ],
-    "correct": "Error",
-    "category": "Syslog",
-    "explanation": "The number '3' indicates the syslog severity level 'Error'."
-  },
-  {
-    "question": "In a wireless IEEE 802.11 implementation, what is the most secure option to protect user traffic?",
-    "options": [
-      "WEP",
-      "WPA",
-      "WPA2",
-      "WPA3"
-    ],
-    "correct": "WPA3",
-    "category": "Wireless Security",
-    "explanation": "WPA3 (Wi-Fi Protected Access 3) is the current and most secure standard, using stronger encryption and the Simultaneous Authentication of Equals (SAE) handshake to protect against offline dictionary attacks, which WPA2's PSK (Pre-Shared Key) is vulnerable to."
-  },
-  {
-    "question": "Which IPv6 command on a Cisco router can be used to provide the name-to-IP address resolution in case the DNS service in the network fails?",
-    "options": [
-      "hostname TFTP-SERVER 2001:db8:a:a::69",
-      "ipv6 host TFTP-SERVER interface Gi0/0",
-      "ipv6 host TFTP-SERVER 2001:db8:a:a::69 2001:db8:a:a::169",
-      "ipv6 hostname TFTP-SERVER 2001:db8:a:a::69"
-    ],
-    "correct": "ipv6 host TFTP-SERVER 2001:db8:a:a::69 2001:db8:a:a::169",
-    "category": "Cisco CLI/IPv6",
-    "explanation": "The `ipv6 host` command is used to manually configure a static name-to-address mapping (similar to a local DNS entry) on a Cisco router. The command can include one or more IPv6 addresses for a given hostname, which the router will use if DNS fails."
-  },
-  {
-    "question": "Which state does a port with PortFast and BPDU guard transition into if BPDU is received on that port?",
-    "options": [
-      "discarding",
-      "errdisable",
-      "forwarding",
-      "learning"
-    ],
-    "correct": "errdisable",
-    "category": "Cisco Switching/STP",
-    "explanation": "The primary function of **BPDU Guard** is to protect the integrity of the Spanning Tree Protocol (STP) root path by shutting down ports that are not expected to receive BPDUs. When a port is configured with **PortFast** (meaning it's expected to connect only to an end device like a PC) and receives a BPDU from an adjacent switch, BPDU Guard immediately transitions the port into the **errdisable** state. In the errdisable state, the port is logically shut down and requires manual intervention (or automated recovery) to become active again."
-  },
-  {
-    "question": "Refer to the exhibit. Which two options are common IPsec or SSL VPN implementations? (Choose two.)",
-    "options": [
-      "IPsec Tunnel VPN (between Firewall and Router)",
-      "SSL VPN (between Firewall and Router)",
-      "IPsec VTI VPN (between Client and Server)",
-      "DMVPN (between Firewall and Server)",
-      "SSL VPN (between Client and Firewall)"
-    ],
-    "correct": [
-      "IPsec Tunnel VPN (between Firewall and Router)",
-      "SSL VPN (between Client and Firewall)"
-    ],
-    "category": "VPN Technologies",
-    "explanation": "Correct: IPsec Tunnel VPNs are typically used for site-to-site connections (for example, between a firewall and a router), providing secure communication between networks. SSL VPNs, on the other hand, are most commonly used for remote access connections between a client and a firewall.\n- 'SSL VPN (between Firewall and Router)' is uncommon because SSL VPNs are designed for user-based remote access.\n- 'IPsec VTI VPN (between Client and Server)' is not a standard remote access implementation.\n- 'DMVPN (between Firewall and Server)' is incorrect because DMVPN is used for dynamic multipoint connections between routers, not servers."
-  },
-  {
-    "question": "The console of a device you are administering displays the following syslog message: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down. What is the severity level of the displayed syslog message?",
-    "options": [
-      "Error",
-      "Log alert",
-      "Log audit",
-      "System daemon",
-      "Warning"
-    ],
-    "correct": "Error",
-    "category": "Syslog",
-    "explanation": "Syslog severity levels are numbered 0 to 7. The number '3' in the message (%LINK-3-UPDOWN) corresponds to the 'Error' level. This level indicates an error condition that should be addressed immediately."
-  },
-  {
-    "question": "Which feature of PVST+ is not available in RSTP?",
-    "options": [
-      "fast convergence on topology changes",
-      "per-port STP",
-      "per-VLAN STP instance",
-      "edge ports"
-    ],
-    "correct": "per-VLAN STP instance",
-    "category": "STP",
-    "explanation": "RSTP (Rapid Spanning Tree Protocol) is an evolution of STP that provides faster convergence, but it only runs one single instance of STP for the entire bridged network. PVST+ (Per-VLAN Spanning Tree Plus) maintains a separate, independent STP instance for *each* VLAN, allowing for load balancing and more granular control, a feature not available in pure RSTP."
-  },
-  {
-    "question": "What is the default STP priority value?",
-    "options": [
-      "32768",
-      "4096",
-      "8192",
-      "24576"
-    ],
-    "correct": "32768",
-    "category": "STP",
-    "explanation": "All switches start with a default STP bridge priority of 32768."
-  },
-  {
-    "question": "Which two attack categories does the smurf attack belong to? (Choose two.)",
-    "options": [
-      "amplification",
-      "brute-force",
-      "man-in-the-middle",
-      "exfiltration",
-      "reflection"
-    ],
-    "correct": [
-      "amplification",
-      "reflection"
-    ],
-    "category": "Security",
-    "explanation": "A Smurf attack uses a spoofed source IP address (the victim's) to send ICMP Echo Requests to a large network. That network then 'reflects' a massive number of ICMP Echo Replies back to the victim's spoofed address, 'amplifying' the attack volume."
-  },
-  {
-    "question": "Which three commands should you use to configure data and voice VLAN on the same interface? (Choose three.)",
-    "options": [
-      "Switch(config-if)# switchport access vlan 2",
-      "Switch(config-if)# switchport data vlan 2",
-      "Switch(config-if)# switchport mode access",
-      "Switch(config-if)# switchport mode trunk",
-      "Switch(config-if)# switchport trunk allowed vlan 2,3",
-      "Switch(config-if)# switchport voice vlan 3"
-    ],
-    "correct": [
-      "Switch(config-if)# switchport access vlan 2",
-      "Switch(config-if)# switchport mode access",
-      "Switch(config-if)# switchport voice vlan 3"
-    ],
-    "category": "VLAN/Switching",
-    "explanation": "To configure a port for both data and voice traffic (a typical setup for IP phones), you must set the port to access mode, define the data VLAN (access vlan), and define the voice VLAN (voice vlan). The 'switchport data vlan' is an equivalent to 'switchport access vlan' in many contexts, but 'access vlan' is the primary command for data traffic."
-  },
-  {
-    "question": "After the Cisco IOS Software image is loaded and started, from which three components can the device load its configuration? (Choose three.)",
-    "options": [
-      "NVRAM",
-      "SCP server",
-      "TFTP server",
-      "RAM only",
-      "DHCP URL"
-    ],
-    "correct": [
-      "NVRAM",
-      "SCP server",
-      "TFTP server"
-    ],
-    "category": "Cisco IOS",
-    "explanation": "Configuration is loaded from NVRAM if startup-config exists; otherwise, it can be retrieved from network sources such as TFTP or SCP. RAM only stores running config after loading. DHCP can provide a URL but is not a primary source."
-  },
-  {
-    "question": "Which three operations can an SNMP manager process perform in a network? (Choose three.)",
-    "options": [
-      "authenticate users accessing a device",
-      "configure a device",
-      "construct a management information base (MIB) on a device",
-      "retrieve data about the license of the device",
-      "retrieve data about the environmental parameters of a device"
-    ],
-    "correct": [
-      "configure a device",
-      "retrieve data about the license of the device",
-      "retrieve data about the environmental parameters of a device"
-    ],
-    "category": "Network Management",
-    "explanation": "An SNMP manager can configure devices and collect information such as license and environmental data. It cannot authenticate users, and the MIB is predefined on the device."
-  },
-  {
-    "question": "Which number represents the default encryption type of the protected password used to restrict access to the privileged EXEC mode?",
-    "options": [
-      "4",
-      "5",
-      "8",
-      "9"
-    ],
-    "correct": "4",
-    "category": "Cisco Security",
-    "explanation": "Cisco uses numbers to indicate the encryption type for passwords (like 'enable secret'). Type 4 historically represented SHA-256 protection, but note that current best practices favor Type 8 or 9 (newer SHA-256 and SHA-512) for strong security."
-  },
-  {
-    "question": "Which three statements are correct about the JSON data format? (Choose three.)",
-    "options": [
-      "Empty values cannot be used in the JSON data format.",
-      "JSON arrays separate elements using a semicolon.",
-      "JSON can be used when data is sent from a server to a web page.",
-      "JSON does not support comments.",
-      "JSON is a hierarchical data format."
-    ],
-    "correct": [
-      "JSON can be used when data is sent from a server to a web page.",
-      "JSON does not support comments.",
-      "JSON is a hierarchical data format."
-    ],
-    "category": "Data Formats",
-    "explanation": "JSON (JavaScript Object Notation) is widely used for data exchange over the web. It has a clear hierarchical structure (objects within objects). It is strictly defined and does not support comments. Array elements must be separated by commas, not semicolons."
-  },
-  {
-    "question": "Which command sets a VLAN as the native VLAN on a trunk port?",
-    "options": [
-      "switchport trunk native vlan 99",
-      "switchport access vlan 99",
-      "switchport mode trunk",
-      "switchport trunk allowed vlan 99"
-    ],
-    "correct": "switchport trunk native vlan 99",
-    "category": "Trunking",
-    "explanation": "This command specifies which VLAN is untagged on a trunk port."
-  },
-  {
-    "question": "Which two statements describe examples of social engineering attacks? (Choose two.)",
-    "options": [
-      "Cracking a user password using personal data related to the victim.",
-      "Defacing a website and explaining the political ideology behind the attack.",
-      "Delivering a DoS attack from a server trusted by all company users.",
-      "Sending an email from a seemingly legitimate address with writing that adopts typical sender language.",
-      "Sending an infected USB with a magazine."
-    ],
-    "correct": [
-      "Sending an email from a seemingly legitimate address with writing that adopts typical sender language.",
-      "Sending an infected USB with a magazine."
-    ],
-    "category": "Security",
-    "explanation": "Social engineering relies on manipulating users to gain access or information. Both sending a highly believable (spear-phishing) email and leaving an infected physical item (like a USB) for a user to find and plug in are classic examples of deceiving human users."
-  },
-  {
-    "question": "Which Rapid PVST+ Spanning Tree Protocol role is used only when switches are connected to a shared segment?",
-    "options": [
-      "alternate",
-      "backup",
-      "designated",
-      "root"
-    ],
-    "correct": "backup",
-    "category": "Cisco Switching/RSTP",
-    "explanation": "In Rapid PVST+ (which uses RSTP principles), the **Backup port** role is unique because it only exists in multi-access networks (like those using a shared segment, although this is rare in modern Ethernet). A Backup port is a port that connects to the same segment as the **Designated port** on the **same switch**. It provides a redundant connection to that segment. \n\n* If the Designated port fails, the Backup port immediately takes over and transitions to the **Forwarding** state.\n* It is always in the **Discarding** state in the active topology.\n\nThis role is distinct from the **Alternate port**, which provides a redundant path to the root bridge via a *different* switch."
-  },
-  {
-    "question": "What is the purpose of the metric parameter of a route?",
-    "options": [
-      "It binds a numeric value to the path to a network.",
-      "It identifies the next hop IP to reach the destination network.",
-      "It identifies the subnet mask of the remote network.",
-      "It tells us how many routers the packet must pass through."
-    ],
-    "correct": "It binds a numeric value to the path to a network.",
-    "category": "Routing Fundamentals",
-    "explanation": "Korrekt: **Metric** anger ett numeriskt värde som används för att rangordna flera möjliga vägar till ett nätverk — lägre värde indikerar en mer önskvärd väg.\nFelaktiga alternativ:\n- **Next hop IP** är en separat parameter som anger nästa router på vägen.\n- **Subnet mask** beskriver nätverkets storlek, inte dess prioritet.\n- **Antal routers** kan användas som en del av vissa metriker (t.ex. hop count i RIP), men metrikens syfte är bredare: att representera kostnaden för vägen oavsett mätmetod."
-  },
-  {
-    "question": "How many bits does the subnet mask consist of?",
-    "options": [
-      "16",
-      "24",
-      "32",
-      "48"
-    ],
-    "correct": "32",
-    "category": "IP Addressing",
-    "explanation": "An IPv4 address and its corresponding subnet mask both consist of 32 bits, typically represented in four octets (8 bits each) separated by periods."
-  },
-  {
-    "question": "Which subnet mask corresponds to a /24 network?",
-    "options": [
-      "255.255.255.0",
-      "255.255.0.0",
-      "255.0.0.0",
-      "255.255.255.128"
-    ],
-    "correct": "255.255.255.0",
-    "category": "Subnetting",
-    "explanation": "A /24 network has 24 bits for the network portion, equal to the subnet mask 255.255.255.0."
-  },
-  {
-    "question": "Which two of the following protocols does the distribution layer use to provide default gateway redundancy? (Choose two.)",
-    "options": [
-      "Device Control Protocol (DCP)",
-      "Distributed Network Protocol (DNP3)",
-      "Dynamic Source Routing Protocol (DSR)",
-      "First Hop Redundancy Protocol (FHRP)",
-      "Hot Standby Router Protocol (HSRP)"
-    ],
-    "correct": [
-      "First Hop Redundancy Protocol (FHRP)",
-      "Hot Standby Router Protocol (HSRP)"
-    ],
-    "category": "Routing",
-    "explanation": "FHRP protocols like HSRP provide default gateway redundancy at the distribution layer."
-  },
-  {
-    "question": "Which issue is eliminated when using PortFast?",
-    "options": [
-      "bandwidth throttling",
-      "DHCP timeout",
-      "duplex mismatch",
-      "native VLAN mismatch"
-    ],
-    "correct": "DHCP timeout",
-    "category": "Cisco Switching/STP",
-    "explanation": "The primary purpose of configuring **PortFast** on a Cisco switch port is to eliminate the delay associated with the Spanning Tree Protocol (STP) transitioning a port through its listening and learning states. When a host (like a PC or server) connects to a port, it expects immediate network access to acquire an IP address via DHCP. Without PortFast, the delay (up to 50 seconds in classic STP) can cause the host's DHCP request to time out before the port enters the forwarding state, thus failing to acquire an address. PortFast immediately moves the port to the **forwarding** state, solving the **DHCP timeout** issue for end-devices."
-  },
-  {
-    "question": "You are configuring an IPv6 static route using the link-local IPv6 address as the next-hop. Which command has the correct syntax?",
-    "options": [
-      "ipv6 route 2001:0db8:beef:: 2001:0db8:feed::1",
-      "ipv6 route 2001:0db8:beef:: fa1/0 fe80::2",
-      "ipv6 route 2001:0db8:beef::/32 2001:0db8:feed::1",
-      "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2"
-    ],
-    "correct": "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2",
-    "category": "Cisco CLI/IPv6",
-    "explanation": "When using a link-local IPv6 address (which starts with fe80::) as the next hop in a static route, the outgoing interface must be explicitly specified (fa1/0 in this case) because the link-local address is not globally unique."
-  },
-  {
-    "question": "For a router, which of the following is the preferred source of information about a destination network?",
-    "options": [
-      "an active local interface connected to the network",
-      "Enhanced Interior Gateway Routing Protocol (EIGRP)",
-      "Open Shortest Path First (OSPF)",
-      "the ip route configuration command"
-    ],
-    "correct": "an active local interface connected to the network",
-    "category": "Routing",
-    "explanation": "Routers prefer directly connected interfaces as the most reliable source of reachability information."
-  },
-  {
-    "question": "Which two Microsoft Windows commands will display the DNS server address configured on the host? (Choose two.)",
-    "options": [
-      "ipconfig",
-      "ipconfig /all",
-      "net config",
-      "netstat -f",
-      "nslookup"
-    ],
-    "correct": [
-      "ipconfig /all",
-      "nslookup"
-    ],
-    "category": "Network Fundamentals",
-    "explanation": "The 'ipconfig /all' and 'nslookup' commands show DNS server details. 'ipconfig' alone gives basic info, while 'net config' and 'netstat -f' are unrelated to DNS configuration."
-  },
-  {
-    "question": "Which is the correct subnet mask for a host route?",
-    "options": [
-      "0.0.0.0",
-      "255.254.0.0",
-      "255.255.255.254",
-      "255.255.255.255"
-    ],
-    "correct": "255.255.255.255",
-    "category": "IP Addressing",
-    "explanation": "A host route is a route that points to a specific, single host address. This requires a 32-bit prefix length, represented by the subnet mask 255.255.255.255 (/32), ensuring no host bits are left for a network range."
-  },
-  {
-    "question": "When configuring an IPv4 static route pointing to the next-hop IPv4, which command should you use?",
-    "options": [
-      "ip route 172.16.1.0 255.255.255.0 172.16.2.1",
-      "ip route 172.16.1.0 net-mask 255.255.255.0 next-hop 172.16.2.1",
-      "ip route 172.16.1.0/24 172.16.2.1",
-      "ip route static 172.16.1.0 net-mask 255.255.255.0 next-hop 172.16.2.1"
-    ],
-    "correct": "ip route 172.16.1.0 255.255.255.0 172.16.2.1",
-    "category": "Cisco CLI",
-    "explanation": "The standard Cisco IOS command syntax for configuring a static route specifying the next-hop IP address is `ip route [destination-network] [subnet-mask] [next-hop-ip]`."
-  },
-  {
-    "question": "What is the function of HSRP?",
-    "options": [
-      "Provides redundancy for default gateway",
-      "Enables routing between VLANs",
-      "Balances load between routers",
-      "Encrypts network traffic"
-    ],
-    "correct": "Provides redundancy for default gateway",
-    "category": "HSRP",
-    "explanation": "HSRP (Hot Standby Router Protocol) provides gateway redundancy by using a virtual IP address shared by routers."
-  },
-  {
-    "question": "A client issues a DNS request to its local DNS server. The local DNS server does not have the information required. Which entity will finally send a DNS response to the client?",
-    "options": [
-      "the authoritative DNS server for the top-level domain",
-      "the authoritative top-level domain and subdomain DNS servers",
-      "the client's local DNS server",
-      "the Internet Service Provider's DNS server"
-    ],
-    "correct": "the client's local DNS server",
-    "category": "DNS",
-    "explanation": "The local DNS server (often called a recursive resolver) handles all recursive lookups to root, TLD, and authoritative servers on behalf of the client. It caches the final answer and is the only entity that sends the final response back to the client."
-  },
-  {
-    "question": "In which network implementations is the spine-leaf topology most commonly used?",
-    "options": [
-      "enterprise LAN",
-      "enterprise edge",
-      "data centers",
-      "ISP backbone"
-    ],
-    "correct": "data centers",
-    "category": "Network Topology",
-    "explanation": "The spine-leaf architecture is optimized for East-West traffic (server-to-server) with low, predictable latency and high scalability, which are critical requirements for modern, high-density data centers."
-  },
-  {
-    "question": "What does the 'spanning-tree vlan 10 priority 24576' command do?",
-    "options": [
-      "Changes STP priority for VLAN 10",
-      "Sets VLAN 10 as root",
-      "Disables STP for VLAN 10",
-      "Assigns VLAN 10 to port-channel 10"
-    ],
-    "correct": "Changes STP priority for VLAN 10",
-    "category": "STP",
-    "explanation": "This command changes the STP bridge priority for VLAN 10 to influence root bridge election."
-  },
-  {
-    "question": "In an enterprise environment, which guideline should be implemented to manage passwords securely, and why?",
-    "options": [
-      "A centralized password repository should be avoided, because it is a single point of failure.",
-      "A local password repository should be used, because it is more secure, and there is no need to transmit passwords using a AAA protocol.",
-      "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
-      "Passwords should NOT be used, because digital certificates are more secure and scale better."
-    ],
-    "correct": "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
-    "category": "Security Management/Best Practices",
-    "explanation": "In large enterprise environments, strong security practices emphasize **accountability** and **auditing** (the 'Accounting' part of the AAA framework). \n\nLogging and monitoring **access to sensitive passwords** (often managed via a Privileged Access Management or PAM solution) is essential. This log, which includes the user, the time, and the resource accessed, provides crucial **visibility** for security teams, ensures non-repudiation, helps maintain compliance, and is vital data for any forensic analysis following an incident. While a centralized repository presents a single point of failure risk, that risk is typically mitigated through redundancy and is preferred over decentralized management for consistency."
-  },
-  {
-    "question": "Which fields does the 802.1Q header add to an Ethernet frame?",
-    "options": [
-      "CRC",
-      "EtherType",
-      "preamble",
-      "VLAN ID"
-    ],
-    "correct": [
-      "VLAN ID"
-    ],
-    "category": "Cisco Switching/VLANs",
-    "explanation": "The 802.1Q standard inserts a 4-byte Tag into the Ethernet frame. While the Tag contains two main functional fields (TPID/EtherType and VLAN ID), the **VLAN ID** (a 12-bit sub-field) is the unique identifier that specifically enables the separation and forwarding of traffic based on VLAN membership. It is the core functional component that the 802.1Q process adds to the frame to implement network segmentation."
-  },
-  {
-    "question": "What are the two main WLAN deployment types? (Choose two.)",
-    "options": [
-      "centralized",
-      "router-based",
-      "standalone",
-      "Wi-Fi Direct",
-      "Zero Touch Provisioning (ZTP)"
-    ],
-    "correct": [
-      "centralized",
-      "standalone"
-    ],
-    "category": "WLAN",
-    "explanation": "The correct answers are centralized and standalone. When an AP is configured as centralized, all the traffic goes through the Cisco Wireless LAN Controller (WLC), which is not the case with standalone APs. The basic premise of a Wi-Fi Direct deployment is the creation of peer-to-peer Wi-Fi connections between devices, without the need for an AP. It is another example of a wireless personal area network (WPAN). ZTP is a process of automatically configuring network equipment."
-  },
-  {
-    "question": "You are tasked with installing and configuring a new PoE-supported IP camera with a power consumption of 20 W. After connecting it to a PoE-enabled switch, the camera does not turn on. What is the likely cause of the problem?",
-    "options": [
-      "The cable connecting the switch and the camera is too long.",
-      "The camera requires additional configuration to work with PoE.",
-      "The switch does not support the PoE Plus standard.",
-      "The switch requires additional configuration to enable PoE on the interface."
-    ],
-    "correct": "The switch does not support the PoE Plus standard.",
-    "category": "PoE",
-    "explanation": "Standard PoE (802.3af) delivers up to 15.4W. PoE+ (802.3at) delivers up to 30W. A camera requiring 20W exceeds the 15.4W limit of standard PoE. Therefore, the switch must support PoE Plus (802.3at) for the camera to power on."
-  },
-  {
-    "question": "A device running a Windows OS has the IP address 169.254.254.254. Which of the following statements is true?",
-    "options": [
-      "The address is automatically configured by the device itself.",
-      "The device is reachable via the internet.",
-      "The IP address is used to communicate with the default gateway.",
-      "The IP address is a loopback address."
-    ],
-    "correct": "The address is automatically configured by the device itself.",
-    "category": "IP Addressing",
-    "explanation": "The 169.254.x.x range is for Automatic Private IP Addressing (APIPA). A Windows device self-assigns this address when it is set to use DHCP but fails to find a DHCP server on the network."
-  },
-  {
-    "question": "You are asked to design a small LAN. You decide to follow the three-tier architecture model, and your goal is to build a secure network. Which statement is true?",
-  "options": [
-    "Security features should be implemented only in the distribution layer devices.",
-    "Security features should be implemented only in the core layer devices.",
-    "Security features should be implemented in the distribution and core layer devices.",
-    "Security features should be implemented in all three layers, access, distribution and core.",
-    "Security features should be implemented only in the access layer devices.",
-    "Security features should be implemented in the access and distribution layer devices."
-  ],
-  "correct": "Security features should be implemented in the access and distribution layer devices.",
-  "category": "Network Design & Security",
-  "explanation": "In many practical three-tier network designs, particularly in smaller LANs, the **Access** and **Distribution** layers are the primary points for implementing security policies. The Access layer provides device-level security (e.g., 802.1X, Port Security), while the Distribution layer acts as the aggregation point and policy enforcement boundary (e.g., ACLs, inter-VLAN filtering). The Core layer is typically reserved for high-speed switching with minimal or no policy processing."
-},
-{
-    "question": "When is an architecture design called a collapsed core architecture?",
-    "options": [
-      "When the core and the distribution layer are merged into one layer.",
-      "When the core layer fails to provide fault tolerance.",
-      "When the backbone and the access layer are merged into one layer.",
-      "When the distribution and access layer are merged into the core layer."
-    ],
-    "correct": "When the core and the distribution layer are merged into one layer.",
-    "category": "Network Architecture",
-    "explanation": "A **collapsed core architecture** is a two-tier network design common in smaller to mid-sized campus networks. It is created by **merging the Core and Distribution layers** of the traditional three-tier hierarchical model into a single layer. This approach simplifies the topology, reduces equipment costs, and lowers latency while retaining the key functions of both layers, such as high-speed switching (Core) and policy enforcement/routing aggregation (Distribution). The **Access layer** remains separate."
-  },
-  {
-    "question": "Which command displays IP addresses and status for all interfaces on a Cisco router?",
-    "options": [
-      "show ip route",
-      "show ip interface brief",
-      "show interfaces status",
-      "show ip arp"
-    ],
-    "correct": "show ip interface brief",
-    "category": "CLI",
-    "explanation": "The 'show ip interface brief' command gives a quick summary of all interfaces, their IP addresses and status."
-  },
-  {
-    "question": "You have restarted a router, which has the default booting procedure. During the reboot, the following messages appear on the console: %Error opening tftp://255.255.255.255/network-confg (Timed out) %Error opening tftp://255.255.255.255/cisconet.cfg (Timed out). What can you conclude based on the messages?",
-    "options": [
-      "The configuration file is not found on the TFTP server",
-      "The router successfully loaded the configuration",
-      "The IOS image is corrupted",
-      "The interface is administratively down"
-    ],
-    "correct": "The configuration file is not found on the TFTP server",
-    "category": "Cisco IOS",
-    "explanation": "If startup-config is missing, the router searches for a network source. TFTP is attempted but not found, hence the error messages."
-  },
-  {
-    "question": "Which two types of cables can be used to connect to the console port of a Cisco router? (Choose two.)",
-    "options": [
-      "Crossover",
-      "Rollover",
-      "Serial",
-      "Straight-through",
-      "USB"
-    ],
-    "correct": [
-      "Rollover",
-      "USB"
-    ],
-    "category": "Cisco Hardware",
-    "explanation": "Rollover and USB cables are used for console connections. Rollover is the traditional console cable, while modern devices also support USB console ports."
-  },
-  {
-    "question": "Which type of address is automatically assigned to a physical interface when IPv6 is enabled on that interface?",
-    "options": [
-      "global unicast address",
-      "link-local address",
-      "loopback address",
-      "unique local address"
-    ],
-    "correct": "link-local address",
-    "category": "IPv6",
-    "explanation": "A link-local address (starting with FE80::) is automatically generated and assigned to every IPv6-enabled interface, even without configuration. It's used for communication only on the local segment (link), such as for Neighbor Discovery Protocol (NDP)."
-  },
-  {
-    "question": "Which three characteristics apply to the 802.1Q protocol? (Choose three.)",
-    "options": [
-      "It carries untagged frames.",
-      "It modifies the 802.3 frame header.",
-      "It includes an 8-bit field for TTL (Time to Live).",
-      "It is a messaging protocol that carries a VLAN configuration.",
-      "It uses an internal tagging mechanism."
-    ],
-    "correct": [
-      "It carries untagged frames.",
-      "It modifies the 802.3 frame header.",
-      "It uses an internal tagging mechanism."
-    ],
-    "category": "Switching/VLANs",
-    "explanation": "802.1Q (VLAN tagging) inserts a 4-byte tag into the standard Ethernet frame (modifies the header). It uses a tagging mechanism to identify the VLAN. It can also carry untagged frames (the native VLAN)."
-  },
-  {
-    "question": "What does a VLAN do?",
-    "options": [
-      "Increases bandwidth",
-      "Creates logical broadcast domains",
-      "Reduces cabling",
-      "Uses DHCP"
-    ],
-    "correct": "Creates logical broadcast domains",
-    "category": "Switching",
-    "explanation": "VLANs (Virtual Local Area Networks) segment a single physical switch or network into multiple, smaller, isolated **logical broadcast domains** . Devices within the same VLAN can communicate directly, but broadcast traffic is contained within that specific VLAN, reducing network congestion and increasing security. This provides the functionality of multiple separate networks without needing additional physical hardware."
-  },
-  {
-    "question": "Presume that there are multiple paths to a given destination network. Which of the following does a dynamic routing protocol use to determine which route to the destination network is best?",
-    "options": [
-      "administrative distance",
-      "metrics",
-      "parameters",
-      "variables"
-    ],
-    "correct": "metrics",
-    "category": "Cisco Routing Concepts",
-    "explanation": "A dynamic routing protocol uses a **metric** to calculate the most efficient or 'best' path to a given destination when multiple routes are available **within that same routing protocol**. The metric is a quantifiable value representing the cost of a route. Different protocols use different metrics:\n\n* **OSPF** uses **Cost** (based on bandwidth).\n* **EIGRP** uses a complex calculation involving **Bandwidth** and **Delay**.\n* **RIP** uses **Hop Count**.\n\nThe route with the lowest metric is considered the best path and is installed in the routing table. **Administrative Distance** is only used when comparing routes learned from *different* routing sources."
-  },
-  {
-    "question": "Refer to the exhibit. Which menu item should you select to configure a pre-shared key for a wireless network?",
-    "options": [
-      "Commands",
-      "Security",
-      "Wireless",
-      "WLANs"
-    ],
-    "correct": "WLANs",
-    "category": "Wireless/WLC",
-    "explanation": "In a Cisco Wireless Controller (WLC) interface, the Pre-Shared Key (PSK) is a security setting appliced to an individual Wireless LAN (WLAN), which corresponds to the SSID. Therefore, you must navigate to the 'WLANs' menu to access and configure this setting for a specific network."
-  },
-  {
-    "question": "Which command sets a router interface IP address?",
-    "options": [
-      "ip address 192.168.1.1 255.255.255.0",
-      "interface vlan 10",
-      "ip route 0.0.0.0 0.0.0.0",
-      "switchport access vlan 10"
-    ],
-    "correct": "ip address 192.168.1.1 255.255.255.0",
-    "category": "Routing",
-    "explanation": "The 'ip address' command is used under an interface to assign an IP address and mask."
-  },
-  {
-    "question": "How are NETCONF messages encoded?",
-    "options": [
-      "CSS",
-      "JSON",
-      "SQL",
-      "XML"
-    ],
-    "correct": "XML",
-    "category": "Network Management",
-    "explanation": "NETCONF uses XML encoding to exchange configuration data between devices and management systems."
-  },
-  {
-    "question": "Which layer of the OSI model provides reliable delivery using acknowledgments?",
-    "options": [
-      "Transport",
-      "Session",
-      "Network",
-      "Data Link"
-    ],
-    "correct": "Transport",
-    "category": "OSI",
-    "explanation": "The Transport layer ensures reliable data delivery through mechanisms such as TCP acknowledgments."
-  },
-  {
-    "question": "The copper cabling used in your network is too close to electrical interferences. Consequently, the interface statistics show an unusually large number of compromised frames. While you attempt to solve the issue, which frame forwarding method should you implement on the Cisco switches in order to lower the number of compromised frames?",
-    "options": [
-      "cut-through",
-      "express forwarding",
-      "process switching",
-      "store-and-forward"
-    ],
-    "correct": "store-and-forward",
-    "category": "Switching",
-    "explanation": "Store-and-forward switching receives the entire frame and performs a CRC (Cyclic Redundancy Check). If the frame is corrupted (compromised) due to interference, it is dropped, preventing bad frames from propagating further into the network. Cut-through methods do not perform this check."
-  },
-  {
-    "question": "What are two characteristics of a pre-shared key wireless implementation? (Choose two.)",
-    "options": [
-      "Access control is centralized.",
-      "An authentication server is required.",
-      "Encryption uses an optional Advanced Encryption Standard (AES).",
-      "Encryption uses the Temporal Key Integrity Protocol (TKIP).",
-      "The authentication key is rotated automatically."
-    ],
-    "correct": [
-      "Encryption uses an optional Advanced Encryption Standard (AES).",
-      "Encryption uses the Temporal Key Integrity Protocol (TKIP)."
-    ],
-    "category": "Wireless Security",
-    "explanation": "PSK (Pre-Shared Key) mode, also known as WPA/WPA2 Personal, uses a static passphrase for authentication. The two valid encryption mechanisms associated with this mode are:\n\n1.  **AES (Advanced Encryption Standard):** This is the modern and highly secure cipher used by WPA2 and WPA3. Its use is often preferred.\n2.  **TKIP (Temporal Key Integrity Protocol):** This is the older, less secure cipher associated with the original WPA (WPA1) but is commonly supported in WPA2 implementations for backward compatibility.\n\nPSK does not use centralized access control and does not require an external authentication server (like RADIUS)."
-  },
-  {
-    "question": "Which three statements describe characteristics of solicited-node IPv6 addresses? (Choose three.)",
-    "options": [
-      "There can be only one per device.",
-      "They are automatically created by the device.",
-      "They are created using the device's MAC address.",
-      "They are multicast addresses.",
-      "They are valid within an organization.",
-      "They have a recognizable prefix."
-    ],
-    "correct": [
-      "They are automatically created by the device.",
-      "They are multicast addresses.",
-      "They have a recognizable prefix."
-    ],
-    "category": "IPv6",
-    "explanation": "Solicited-node IPv6 addresses are automatically created multicast addresses with the prefix ff02::1:ff00::/104."
-  },
-  {
-    "question": "Refer to the exhibit. It represents the Cisco Enterprise Architecture model. In this model, where is the firewall located?",
-    "options": [
-      "between the edge router and the core switch",
-      "between the edge router and the distribution switch",
-      "between the internet and the core switch",
-      "between the internet and the edge router"
-    ],
-    "correct": "between the internet and the edge router",
-    "category": "Security ",
-    "explanation": "The correct answer is between the internet and the edge router. Putting the edge router between the internet and the firewall exposes the router to attacks. The connection sequence should be: internet, firewall, edge router, switch."
-  },
-  {
-    "question": "When an enterprise has to comply with strict data security regulations, which cloud deployment model should they use for their services?",
-    "options": [
-      "community",
-      "hybrid",
-      "private",
-      "public"
-    ],
-    "correct": "private",
-    "category": "Cloud Computing",
-    "explanation": "A Private Cloud offers the highest level of isolation, control, and governance because the infrastructure is dedicated solely to one organization. This makes it the ideal choice for meeting strict regulatory and data security compliance requirements."
-  },
-  {
-    "question": "What is the name typically used to describe virtualization software?",
-    "options": [
-      "container",
-      "distributed resource scheduler (DRS)",
-      "hypervisor",
-      "HyperFlex",
-      "snapshot manager"
-    ],
-    "correct": "hypervisor",
-    "category": "Virtualization",
-    "explanation": "A hypervisor is the specific software or firmware that creates and runs virtual machines (VMs). It allows multiple operating systems to share a single physical hardware platform."
-  },
-  {
-    "question": "For which network entity is the OSPF designated router/backup designated router (DR/BDR) selection performed?",
-    "options": [
-      "for each multi-access segment",
-      "for each OSPF router ID",
-      "for the entire OSPF area",
-      "per transmission state of the link"
-    ],
-    "correct": "for each multi-access segment",
-    "category": "Cisco Routing/OSPF",
-    "explanation": "OSPF (Open Shortest Path First) uses the Designated Router (DR) and Backup Designated Router (BDR) mechanism to reduce the number of adjacencies that must be formed, which lowers the amount of OSPF traffic (LSAs). This election is performed **independently on every multi-access network segment** (like an Ethernet LAN). The DR/BDR mechanism is only needed on segments where multiple routers could potentially form full adjacencies (broadcast or non-broadcast multi-access). Point-to-point links, for example, do not require a DR/BDR."
-  },
-  {
-    "question": "Where in the network should you implement QoS packet classification?",
-    "options": [
-      "at the input interface of a device at the LAN access edge of the network",
-      "at the input interface of a device at the WAN edge of the network",
-      "at the output interface of a device at the LAN access edge of the network",
-      "at the output interface of a device at the WAN edge of the network"
-    ],
-    "correct": "at the input interface of a device at the LAN access edge of the network",
-    "category": "QoS",
-    "explanation": "Packet classification should occur as close to the source as possible, typically on LAN access edge input interfaces."
-  },
-  {
-    "question": "Which command would you use to configure a router ID on a Cisco router?",
-    "options": [
-      "R1(config-router)# ip router-id ip-address",
-      "R1(config-router)# router-id ip-address",
-      "R1(config)# ip router-id ip-address",
-      "R1(config)# router-id ip-address"
-    ],
-    "correct": "R1 (config-router)# ip router-id ip-address",
-    "category": "Cisco Routing/OSPF & EIGRP",
-    "explanation": "The command used to manually configure the **Router ID** for a routing process (such as OSPF or EIGRP) on a Cisco router is `router-id ip-address`. This command is executed within the specific **router configuration mode** (e.g., `config-router`) for the routing protocol being configured. Manually configuring the Router ID ensures predictability and stability in the routing domain."
-  },
-  {
-    "question": "Which algorithm is used to calculate the optimal path to a given destination from data stored in a link-state database (LSDB)?",
-    "options": [
-      "Rivest, Shamir, and Adleman (RSA)",
-      "Secure Hash Algorithm (SHA)",
-      "Shortest Path First (SPF)",
-      "Quicksort"
-    ],
-    "correct": "Shortest Path First (SPF)",
-    "category": "Routing Algorithms",
-    "explanation": "Link-state routing protocols like OSPF use Dijkstra's algorithm, commonly referred to as the **Shortest Path First (SPF)** algorithm, to analyze the LSDB and compute the shortest, loop-free path to every network destination."
-  },
-  {
-    "question": "Which type of cable is typically used to connect a core switch with a data center switch, where bandwidth higher than 40 Gbps and low cost are required?",
-    "options": [
-      "Category 5e UTP",
-      "Category 6 UTP",
-      "multimode fiber",
-      "single-mode fiber"
-    ],
-    "correct": "multimode fiber",
-    "category": "Cabling",
-    "explanation": "Single-mode fiber is used for high-bandwidth, long-distance connections such as core-to-data center links."
-  }
+    {
+        "question": "Routers communicate First Hop Redundancy Protocol (FHRP) information between each other through hello messages. What is this mechanism called?",
+        "options": [
+            "EtherChannel",
+            "keepalive",
+            "link-state",
+            "VLAN tagging"
+        ],
+        "correct": "keepalive",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "FHRP routers use 'keepalive' hello messages to exchange information and maintain redundancy."
+    },
+    {
+        "question": "Which protocol does a router use to learn dynamic IP routes?",
+        "options": [
+            "RIP",
+            "DNS",
+            "DHCP",
+            "ICMP"
+        ],
+        "correct": "RIP",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "RIP (Routing Information Protocol) is a distance-vector protocol that learns routes dynamically."
+    },
+    {
+        "question": "What are two characteristics of an anycast IPv6 address? (Choose two.)",
+        "options": [
+            "It can be assigned to a host (end-user devices).",
+            "It can be assigned to multiple nodes.",
+            "It can be recognized by a pre-defined prefix.",
+            "It is used in an IPv6 packet as a source IPv6 address.",
+            "It is assigned from the unicast IPv6 address space."
+        ],
+        "correct": [
+            "It can be assigned to multiple nodes.",
+            "It is assigned from the unicast IPv6 address space."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "An anycast address is assigned to multiple devices (nodes) that provide the same service. Traffic sent to this address is routed to the topologically nearest node. Anycast addresses are taken from the Global Unicast Address space."
+    },
+    {
+        "question": "What does the term per-hop behavior (PHB) signify?",
+        "options": [
+            "a set of node requirements for compliance with the DiffServ model",
+            "a set of packet markings applied to different classes of traffic",
+            "a set of techniques for traffic shaping",
+            "a set of traffic classes defined in the network"
+        ],
+        "correct": "a set of techniques for traffic shaping",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The term PHB refers to how a node will treat traffic having the same Differentiated Services Code Point (DSCP) values. The DiffServ model itself does not specify how PHBs must be implemented. A variety of techniques may be used to implement the desired traffic conditioning and PHB."
+    },
+    {
+        "question": "Which command is used to verify a default gateway configuration on a Layer 2 switch?",
+        "options": [
+            "show interface description",
+            "show interface stats",
+            "show ip default-gateway network",
+            "show management",
+            "show running-config"
+        ],
+        "correct": "show running-config",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Correct: On a Layer 2 switch, the default gateway configuration is displayed in the running configuration using the command 'show running-config'. This reveals the management VLAN interface and any configured default gateway. The other commands either show interface details, statistics, or management info but not the gateway setting."
+    },
+    {
+        "question": "Which layer of the OSI model is responsible for encryption and data conversion?",
+        "options": [
+            "Application",
+            "Session",
+            "Presentation",
+            "Network"
+        ],
+        "correct": "Presentation",
+        "category": "OSI Model",
+        "explanation": "The Presentation layer (Layer 6) handles data representation, encryption, and compression."
+    },
+    {
+        "question": "The exhibit shows a MAC address table of a switch. The switch receives a frame from the device with the MAC address of 00e0.b048.11da. The destination MAC address of the frame is not in the switch MAC address table. What will the switch do with the frame?",
+        "options": [
+            "It will discard the frame.",
+            "It will flood the frame out all active ports on the same VLAN except the one it is received on.",
+            "It will forward the frame out of the Fa0/1 port.",
+            "It will forward the frame out of the Fa0/2 port."
+        ],
+        "correct": "It will flood the frame out all active ports on the same VLAN except the one it is received on.",
+        "category": "Switching & VLAN",
+        "explanation": "When a switch receives a frame with an unknown destination MAC address, it floods the frame out of all ports belonging to the same VLAN, except the port it was received on (ingress port). This process is known as 'Unknown Unicast Flooding' and is necessary to locate the destination device."
+    },
+    {
+        "question": "When a router is calculating the network portion of an IPv4 address, which bitwise operation is performed on the IPv4 address and the subnet mask?",
+        "options": [
+            "AND",
+            "NAND",
+            "OR",
+            "XOR"
+        ],
+        "correct": "AND",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The bitwise AND operation (where 1 AND 1 = 1, and all others = 0) is performed between the IP address and the subnet mask. This operation effectively isolates the network bits (where the mask is '1') and sets the host bits to zero, yielding the network address."
+    },
+    {
+        "question": "When using a AAA server along with an access switch, which two features benefit from centralized authentication? (Choose two.)",
+        "options": [
+            "IPsec VPN access",
+            "management access",
+            "network access",
+            "network telemetry authentication",
+            "spanning tree authentication"
+        ],
+        "correct": [
+            "management access",
+            "network access"
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "AAA servers primarily handle Network Access (802.1X for users connecting to the network) and Management Access (SSH/Telnet login for administrators to manage the switch). VPN access is typically handled by a gateway/firewall, not an access switch."
+    },
+    {
+        "question": "What command displays the routing protocol used by the router?",
+        "options": [
+            "show ip protocols",
+            "show ip route",
+            "show version",
+            "show running-config"
+        ],
+        "correct": "show ip protocols",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The command 'show ip protocols' shows which routing protocols (like RIP, OSPF, EIGRP) are active."
+    },
+    {
+        "question": "Which layer does the core layer interconnect?",
+        "options": [
+            "access layer switches",
+            "access points",
+            "distribution layer switches",
+            "end point devices"
+        ],
+        "correct": "distribution layer switches",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The core layer provides high-speed backbone connectivity and interconnects distribution layer devices."
+    },
+    {
+        "question": "Which command would you use to verify VLAN membership on a Cisco switch port?",
+        "options": [
+            "show vlan brief",
+            "show ip route",
+            "show interfaces status",
+            "show running-config"
+        ],
+        "correct": "show vlan brief",
+        "category": "Switching & VLAN",
+        "explanation": "The 'show vlan brief' command displays all VLANs configured on the switch and shows which ports are assigned to each VLAN."
+    },
+    {
+        "question": "Which three security services does the Counter Mode with Cipher Block Chaining Message Authentication Code Protocol (CCMP) provide? (Choose three.)",
+        "options": [
+            "access control",
+            "authentication",
+            "authorization",
+            "data confidentiality",
+            "data redundancy"
+        ],
+        "correct": [
+            "data confidentiality",
+            "authentication",
+            "access control"
+        ],
+        "category": "Wireless",
+        "explanation": "CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) is the encryption protocol used within the WPA2/WPA3 framework. Although CCMP's core function is Data Confidentiality and ensuring Data Integrity (which is missing as an option), when restricted to the list provided, the most relevant services it supports within the 802.11i standard are:\n\n1.  **Data Confidentiality:** Achieved through AES encryption (the 'Counter Mode' part).\n2.  **Authentication:** Achieved implicitly through its Message Integrity Check (MIC/MAC), which verifies the source of the data.\n3.  **Access Control:** CCMP is the technical mechanism that enforces the session security after the initial access control (handled by PSK or 802.1X) has been established."
+    },
+    {
+        "question": "Which two statements regarding the Root Guard are correct? (Choose two.)",
+        "options": [
+            "Root Guard can be enabled globally",
+            "Root Guard can only be enabled per interface",
+            "Root Guard can only be used on root and alternate ports",
+            "Root Guard can only be used on root ports",
+            "Root Guard is deployed on interfaces that connect to switches that should never be the root"
+        ],
+        "correct": [
+            "Root Guard can only be enabled per interface",
+            "Root Guard is deployed on interfaces that connect to switches that should never be the root"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "Root Guard is an STP (Spanning Tree Protocol) feature designed to enforce the hierarchical structure of the network and prevent external switches from becoming the root bridge. \n\n1.  **Deployment:** Root Guard is applied to interfaces (ports) that connect to network segments where the root bridge is *not* expected to be found (e.g., ports leading to access layers or external networks). If a superior BPDU (suggesting a new, better root) is received on a Root Guard-enabled port, the port is transitioned to a special blocking state (Root-Inconsistent state) to prevent the topology change.\n2.  **Configuration:** It can only be configured **per interface** (using the command `spanning-tree guard root`). It is not a global command."
+    },
+    {
+        "question": "What is the benefit of Mobility Express wireless access points (APs)?",
+        "options": [
+            "multiple SSIDs",
+            "multiple VLANs",
+            "Quality of Service (QoS)",
+            "reduced initial cost"
+        ],
+        "correct": "reduced initial cost",
+        "category": "Wireless",
+        "explanation": "Cisco Mobility Express is a controller-less solution designed primarily for Small to Midsize Businesses (SMBs). Its main benefit is the **reduced initial cost** because it eliminates the need to purchase a dedicated physical Wireless LAN Controller (WLC). Instead, one of the Access Points (APs) assumes the role of the master controller, managing the other APs in the network. Features like multiple SSIDs, VLANs, and QoS are standard capabilities across most modern Cisco wireless solutions, regardless of whether a separate controller is used."
+    },
+    {
+        "question": "What are the default OSPF hello and dead timer values on point-to-point links?",
+        "options": [
+            "Hello value is 10 seconds, dead value is 20 seconds.",
+            "Hello value is 10 seconds, dead value is 40 seconds.",
+            "Hello value is 20 seconds, dead value is 50 seconds.",
+            "Hello value is 30 seconds, dead value is 120 seconds."
+        ],
+        "correct": "Hello value is 10 seconds, dead value is 40 seconds.",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "OSPF default hello on broadcast and point-to-point links is 10 seconds and dead interval is 4 times the hello (40s)."
+    },
+    {
+        "question": "Which authentication type in REST-based APIs uses pregenerated keys?",
+        "options": [
+            "Basic HTTP authentication",
+            "API key Authentication",
+            "Custom token authentication",
+            "Biometric authentication"
+        ],
+        "correct": "API key Authentication",
+        "category": "Automation & DevOps",
+        "explanation": "API Key Authentication uses a single, long, pregenerated string that the client includes in requests (via headers or query parameters) to identify itself and control access to the API."
+    },
+    {
+        "question": "From a network perspective, how is a server a different endpoint than a user workstation?",
+        "options": [
+            "A server requires lower latency.",
+            "A server requires more bandwidth.",
+            "A server requires Power over Ethernet (PoE) connectivity.",
+            "A server requires stricter network access control."
+        ],
+        "correct": "A server requires more bandwidth.",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The correct answer is A server requires more bandwidth. Since a server is a convergent point on the network that connects multiple devices, it consumes more bandwidth.\n\nLow latency is not a differentiator for a server, since it is also a requirement for IP phones, for instance. Servers cannot be powered through PoE, since their power requirements surpass PoE capabilities. Servers are deployed in secured environments (locked closets or server rooms), where network access control is not a focus, since other security measures are implemented."
+    },
+    {
+        "question": "What alternative to Cisco Meraki Dashboard can you use to manage Cisco Meraki network devices?",
+        "options": [
+            "Cisco Meraki Dashboard API",
+            "RESTCONF",
+            "SNMP",
+            "Telnet"
+        ],
+        "correct": "Cisco Meraki Dashboard API",
+        "category": "Automation & DevOps",
+        "explanation": "Cisco Meraki is primarily cloud-managed via the Dashboard web interface. The official, modern alternative for bulk configuration, monitoring, and integration is the Meraki Dashboard API (Application Programming Interface), which is a RESTful interface."
+    },
+    {
+        "question": "Which cloud service model offers customers the most control over their cloud-hosted services?",
+        "options": [
+            "Function as a Service (FaaS)",
+            "Infrastructure as a Service (IaaS)",
+            "Platform as a Service (PaaS)",
+            "Software as a Service (SaaS)"
+        ],
+        "correct": "Infrastructure as a Service (IaaS)",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "The three main cloud service models represent a spectrum of control and management responsibilities. **Infrastructure as a Service (IaaS)** provides the customer with the most control. In the IaaS model, the provider manages the underlying networking, storage, and virtualization layers, but the customer retains full control over the **operating systems**, middleware, runtime, applications, and data. This is akin to having virtual data center components. **SaaS** offers the least control, while **PaaS** and **FaaS** offer medium control by abstracting away the OS and underlying infrastructure."
+    },
+    {
+        "question": "Where does a router that runs OSPFv2, and that has neighbor adjacencies established, store link-state advertisements (LSAs)?",
+        "options": [
+            "LSDB",
+            "Neighbors table",
+            "Routing table",
+            "SPF tree"
+        ],
+        "correct": "LSDB",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "LSAs (Link-State Advertisements) are stored in the **Link-State Database (LSDB)**. This database contains a full map of the OSPF area. The router then uses Dijkstra's Shortest Path First (SPF) algorithm on the LSDB to calculate the best paths, which are placed in the Routing table."
+    },
+    {
+        "question": "In an 802.1X implementation, what are the roles of the devices shown? PC on the left side conneted to switch in the middle and server on the right!",
+        "options": [
+            "A: authenticator, B: supplicant, C: authentication server",
+            "A: client device, B: supplicant, C: authentication server",
+            "A: supplicant, B: authenticator, C: authentication server",
+            "A: supplicant, B: client device, C: authentication server"
+        ],
+        "correct": "A: supplicant, B: authenticator, C: authentication server",
+        "category": "Security AAA & ACL",
+        "explanation": "In 802.1X (port-based network access control): The PC (A) is the **Supplicant** (the device requesting access). The Switch (B) is the **Authenticator** (the relay point). The Server (C, usually RADIUS) is the **Authentication Server** (which verifies the user/device credentials)."
+    },
+    {
+        "question": "Which two parameters can be used for metric calculations? (Choose two.)",
+        "options": [
+            "IP Address",
+            "Hop count",
+            "Link Up/Downtime",
+            "Bandwidth",
+            "Default Route",
+            "Local Routes"
+        ],
+        "correct": [
+            "Hop count",
+            "Bandwidth"
+        ],
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Routing protocols use metrics to determine the best path. Simple protocols like RIP use Hop Count (number of routers). Advanced protocols like OSPF and EIGRP use more complex metrics that include Bandwidth and Delay."
+    },
+    {
+        "question": "Which three fields are included in a TCP header? (Choose three.)",
+        "options": [
+            "destination address",
+            "destination port",
+            "flags",
+            "frame check sequence",
+            "window size"
+        ],
+        "correct": [
+            "destination port",
+            "flags",
+            "window size"
+        ],
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "Destination port (Layer 4), Flags (control bits like SYN, ACK), and Window Size (flow control) are key TCP header fields. Destination address is in the IP header (L3), and Frame Check Sequence (FCS) is in the Ethernet trailer (L2)."
+    },
+    {
+        "question": "What is the main purpose of a default route?",
+        "options": [
+            "To route packets to unknown networks",
+            "To limit routing updates",
+            "To summarize routes",
+            "To create static VLANs"
+        ],
+        "correct": "To route packets to unknown networks",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "A default route provides a path when no specific route to a destination network exists."
+    },
+    {
+        "question": "Which command displays VLANs configured on a switch?",
+        "options": [
+            "show vlan brief",
+            "show interfaces trunk",
+            "show running-config",
+            "show mac address-table"
+        ],
+        "correct": "show vlan brief",
+        "category": "Switching & VLAN",
+        "explanation": "The 'show vlan brief' command displays VLAN IDs, names, and associated ports."
+    },
+    {
+        "question": "What is the severity level of the syslog message '%LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down'?",
+        "options": [
+            "Error",
+            "Log alert",
+            "Log audit",
+            "Warning"
+        ],
+        "correct": "Error",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The number '3' indicates the syslog severity level 'Error'."
+    },
+    {
+        "question": "In a wireless IEEE 802.11 implementation, what is the most secure option to protect user traffic?",
+        "options": [
+            "WEP",
+            "WPA",
+            "WPA2",
+            "WPA3"
+        ],
+        "correct": "WPA3",
+        "category": "Wireless",
+        "explanation": "WPA3 (Wi-Fi Protected Access 3) is the current and most secure standard, using stronger encryption and the Simultaneous Authentication of Equals (SAE) handshake to protect against offline dictionary attacks, which WPA2's PSK (Pre-Shared Key) is vulnerable to."
+    },
+    {
+        "question": "Which IPv6 command on a Cisco router can be used to provide the name-to-IP address resolution in case the DNS service in the network fails?",
+        "options": [
+            "hostname TFTP-SERVER 2001:db8:a:a::69",
+            "ipv6 host TFTP-SERVER interface Gi0/0",
+            "ipv6 host TFTP-SERVER 2001:db8:a:a::69 2001:db8:a:a::169",
+            "ipv6 hostname TFTP-SERVER 2001:db8:a:a::69"
+        ],
+        "correct": "ipv6 host TFTP-SERVER 2001:db8:a:a::69 2001:db8:a:a::169",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The `ipv6 host` command is used to manually configure a static name-to-address mapping (similar to a local DNS entry) on a Cisco router. The command can include one or more IPv6 addresses for a given hostname, which the router will use if DNS fails."
+    },
+    {
+        "question": "Which state does a port with PortFast and BPDU guard transition into if BPDU is received on that port?",
+        "options": [
+            "discarding",
+            "errdisable",
+            "forwarding",
+            "learning"
+        ],
+        "correct": "errdisable",
+        "category": "Switching & VLAN",
+        "explanation": "The primary function of **BPDU Guard** is to protect the integrity of the Spanning Tree Protocol (STP) root path by shutting down ports that are not expected to receive BPDUs. When a port is configured with **PortFast** (meaning it's expected to connect only to an end device like a PC) and receives a BPDU from an adjacent switch, BPDU Guard immediately transitions the port into the **errdisable** state. In the errdisable state, the port is logically shut down and requires manual intervention (or automated recovery) to become active again."
+    },
+    {
+        "question": "Refer to the exhibit. Which two options are common IPsec or SSL VPN implementations? (Choose two.)",
+        "options": [
+            "IPsec Tunnel VPN (between Firewall and Router)",
+            "SSL VPN (between Firewall and Router)",
+            "IPsec VTI VPN (between Client and Server)",
+            "DMVPN (between Firewall and Server)",
+            "SSL VPN (between Client and Firewall)"
+        ],
+        "correct": [
+            "IPsec Tunnel VPN (between Firewall and Router)",
+            "SSL VPN (between Client and Firewall)"
+        ],
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "Correct: IPsec Tunnel VPNs are typically used for site-to-site connections (for example, between a firewall and a router), providing secure communication between networks. SSL VPNs, on the other hand, are most commonly used for remote access connections between a client and a firewall.\n- 'SSL VPN (between Firewall and Router)' is uncommon because SSL VPNs are designed for user-based remote access.\n- 'IPsec VTI VPN (between Client and Server)' is not a standard remote access implementation.\n- 'DMVPN (between Firewall and Server)' is incorrect because DMVPN is used for dynamic multipoint connections between routers, not servers."
+    },
+    {
+        "question": "The console of a device you are administering displays the following syslog message: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to down. What is the severity level of the displayed syslog message?",
+        "options": [
+            "Error",
+            "Log alert",
+            "Log audit",
+            "System daemon",
+            "Warning"
+        ],
+        "correct": "Error",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Syslog severity levels are numbered 0 to 7. The number '3' in the message (%LINK-3-UPDOWN) corresponds to the 'Error' level. This level indicates an error condition that should be addressed immediately."
+    },
+    {
+        "question": "Which feature of PVST+ is not available in RSTP?",
+        "options": [
+            "fast convergence on topology changes",
+            "per-port STP",
+            "per-VLAN STP instance",
+            "edge ports"
+        ],
+        "correct": "per-VLAN STP instance",
+        "category": "Switching & VLAN",
+        "explanation": "RSTP (Rapid Spanning Tree Protocol) is an evolution of STP that provides faster convergence, but it only runs one single instance of STP for the entire bridged network. PVST+ (Per-VLAN Spanning Tree Plus) maintains a separate, independent STP instance for *each* VLAN, allowing for load balancing and more granular control, a feature not available in pure RSTP."
+    },
+    {
+        "question": "What is the default STP priority value?",
+        "options": [
+            "32768",
+            "4096",
+            "8192",
+            "24576"
+        ],
+        "correct": "32768",
+        "category": "Switching & VLAN",
+        "explanation": "All switches start with a default STP bridge priority of 32768."
+    },
+    {
+        "question": "Which two attack categories does the smurf attack belong to? (Choose two.)",
+        "options": [
+            "amplification",
+            "brute-force",
+            "man-in-the-middle",
+            "exfiltration",
+            "reflection"
+        ],
+        "correct": [
+            "amplification",
+            "reflection"
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "A Smurf attack uses a spoofed source IP address (the victim's) to send ICMP Echo Requests to a large network. That network then 'reflects' a massive number of ICMP Echo Replies back to the victim's spoofed address, 'amplifying' the attack volume."
+    },
+    {
+        "question": "Which three commands should you use to configure data and voice VLAN on the same interface? (Choose three.)",
+        "options": [
+            "Switch(config-if)# switchport access vlan 2",
+            "Switch(config-if)# switchport data vlan 2",
+            "Switch(config-if)# switchport mode access",
+            "Switch(config-if)# switchport mode trunk",
+            "Switch(config-if)# switchport trunk allowed vlan 2,3",
+            "Switch(config-if)# switchport voice vlan 3"
+        ],
+        "correct": [
+            "Switch(config-if)# switchport access vlan 2",
+            "Switch(config-if)# switchport mode access",
+            "Switch(config-if)# switchport voice vlan 3"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "To configure a port for both data and voice traffic (a typical setup for IP phones), you must set the port to access mode, define the data VLAN (access vlan), and define the voice VLAN (voice vlan). The 'switchport data vlan' is an equivalent to 'switchport access vlan' in many contexts, but 'access vlan' is the primary command for data traffic."
+    },
+    {
+        "question": "After the Cisco IOS Software image is loaded and started, from which three components can the device load its configuration? (Choose three.)",
+        "options": [
+            "NVRAM",
+            "SCP server",
+            "TFTP server",
+            "RAM only",
+            "DHCP URL"
+        ],
+        "correct": [
+            "NVRAM",
+            "SCP server",
+            "TFTP server"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Configuration is loaded from NVRAM if startup-config exists; otherwise, it can be retrieved from network sources such as TFTP or SCP. RAM only stores running config after loading. DHCP can provide a URL but is not a primary source."
+    },
+    {
+        "question": "Which three operations can an SNMP manager process perform in a network? (Choose three.)",
+        "options": [
+            "authenticate users accessing a device",
+            "configure a device",
+            "construct a management information base (MIB) on a device",
+            "retrieve data about the license of the device",
+            "retrieve data about the environmental parameters of a device"
+        ],
+        "correct": [
+            "configure a device",
+            "retrieve data about the license of the device",
+            "retrieve data about the environmental parameters of a device"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "An SNMP manager can configure devices and collect information such as license and environmental data. It cannot authenticate users, and the MIB is predefined on the device."
+    },
+    {
+        "question": "Which number represents the default encryption type of the protected password used to restrict access to the privileged EXEC mode?",
+        "options": [
+            "4",
+            "5",
+            "8",
+            "9"
+        ],
+        "correct": "4",
+        "category": "Security AAA & ACL",
+        "explanation": "Cisco uses numbers to indicate the encryption type for passwords (like 'enable secret'). Type 4 historically represented SHA-256 protection, but note that current best practices favor Type 8 or 9 (newer SHA-256 and SHA-512) for strong security."
+    },
+    {
+        "question": "Which three statements are correct about the JSON data format? (Choose three.)",
+        "options": [
+            "Empty values cannot be used in the JSON data format.",
+            "JSON arrays separate elements using a semicolon.",
+            "JSON can be used when data is sent from a server to a web page.",
+            "JSON does not support comments.",
+            "JSON is a hierarchical data format."
+        ],
+        "correct": [
+            "JSON can be used when data is sent from a server to a web page.",
+            "JSON does not support comments.",
+            "JSON is a hierarchical data format."
+        ],
+        "category": "Automation & DevOps",
+        "explanation": "JSON (JavaScript Object Notation) is widely used for data exchange over the web. It has a clear hierarchical structure (objects within objects). It is strictly defined and does not support comments. Array elements must be separated by commas, not semicolons."
+    },
+    {
+        "question": "Which command sets a VLAN as the native VLAN on a trunk port?",
+        "options": [
+            "switchport trunk native vlan 99",
+            "switchport access vlan 99",
+            "switchport mode trunk",
+            "switchport trunk allowed vlan 99"
+        ],
+        "correct": "switchport trunk native vlan 99",
+        "category": "Switching & VLAN",
+        "explanation": "This command specifies which VLAN is untagged on a trunk port."
+    },
+    {
+        "question": "Which two statements describe examples of social engineering attacks? (Choose two.)",
+        "options": [
+            "Cracking a user password using personal data related to the victim.",
+            "Defacing a website and explaining the political ideology behind the attack.",
+            "Delivering a DoS attack from a server trusted by all company users.",
+            "Sending an email from a seemingly legitimate address with writing that adopts typical sender language.",
+            "Sending an infected USB with a magazine."
+        ],
+        "correct": [
+            "Sending an email from a seemingly legitimate address with writing that adopts typical sender language.",
+            "Sending an infected USB with a magazine."
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "Social engineering relies on manipulating users to gain access or information. Both sending a highly believable (spear-phishing) email and leaving an infected physical item (like a USB) for a user to find and plug in are classic examples of deceiving human users."
+    },
+    {
+        "question": "Which Rapid PVST+ Spanning Tree Protocol role is used only when switches are connected to a shared segment?",
+        "options": [
+            "alternate",
+            "backup",
+            "designated",
+            "root"
+        ],
+        "correct": "backup",
+        "category": "Switching & VLAN",
+        "explanation": "In Rapid PVST+ (which uses RSTP principles), the **Backup port** role is unique because it only exists in multi-access networks (like those using a shared segment, although this is rare in modern Ethernet). A Backup port is a port that connects to the same segment as the **Designated port** on the **same switch**. It provides a redundant connection to that segment. \n\n* If the Designated port fails, the Backup port immediately takes over and transitions to the **Forwarding** state.\n* It is always in the **Discarding** state in the active topology.\n\nThis role is distinct from the **Alternate port**, which provides a redundant path to the root bridge via a *different* switch."
+    },
+    {
+        "question": "What is the purpose of the metric parameter of a route?",
+        "options": [
+            "It binds a numeric value to the path to a network.",
+            "It identifies the next hop IP to reach the destination network.",
+            "It identifies the subnet mask of the remote network.",
+            "It tells us how many routers the packet must pass through."
+        ],
+        "correct": "It binds a numeric value to the path to a network.",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Korrekt: **Metric** anger ett numeriskt värde som används för att rangordna flera möjliga vägar till ett nätverk — lägre värde indikerar en mer önskvärd väg.\nFelaktiga alternativ:\n- **Next hop IP** är en separat parameter som anger nästa router på vägen.\n- **Subnet mask** beskriver nätverkets storlek, inte dess prioritet.\n- **Antal routers** kan användas som en del av vissa metriker (t.ex. hop count i RIP), men metrikens syfte är bredare: att representera kostnaden för vägen oavsett mätmetod."
+    },
+    {
+        "question": "How many bits does the subnet mask consist of?",
+        "options": [
+            "16",
+            "24",
+            "32",
+            "48"
+        ],
+        "correct": "32",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "An IPv4 address and its corresponding subnet mask both consist of 32 bits, typically represented in four octets (8 bits each) separated by periods."
+    },
+    {
+        "question": "Which subnet mask corresponds to a /24 network?",
+        "options": [
+            "255.255.255.0",
+            "255.255.0.0",
+            "255.0.0.0",
+            "255.255.255.128"
+        ],
+        "correct": "255.255.255.0",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "A /24 network has 24 bits for the network portion, equal to the subnet mask 255.255.255.0."
+    },
+    {
+        "question": "Which two of the following protocols does the distribution layer use to provide default gateway redundancy? (Choose two.)",
+        "options": [
+            "Device Control Protocol (DCP)",
+            "Distributed Network Protocol (DNP3)",
+            "Dynamic Source Routing Protocol (DSR)",
+            "First Hop Redundancy Protocol (FHRP)",
+            "Hot Standby Router Protocol (HSRP)"
+        ],
+        "correct": [
+            "First Hop Redundancy Protocol (FHRP)",
+            "Hot Standby Router Protocol (HSRP)"
+        ],
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "FHRP protocols like HSRP provide default gateway redundancy at the distribution layer."
+    },
+    {
+        "question": "Which issue is eliminated when using PortFast?",
+        "options": [
+            "bandwidth throttling",
+            "DHCP timeout",
+            "duplex mismatch",
+            "native VLAN mismatch"
+        ],
+        "correct": "DHCP timeout",
+        "category": "Switching & VLAN",
+        "explanation": "The primary purpose of configuring **PortFast** on a Cisco switch port is to eliminate the delay associated with the Spanning Tree Protocol (STP) transitioning a port through its listening and learning states. When a host (like a PC or server) connects to a port, it expects immediate network access to acquire an IP address via DHCP. Without PortFast, the delay (up to 50 seconds in classic STP) can cause the host's DHCP request to time out before the port enters the forwarding state, thus failing to acquire an address. PortFast immediately moves the port to the **forwarding** state, solving the **DHCP timeout** issue for end-devices."
+    },
+    {
+        "question": "You are configuring an IPv6 static route using the link-local IPv6 address as the next-hop. Which command has the correct syntax?",
+        "options": [
+            "ipv6 route 2001:0db8:beef:: 2001:0db8:feed::1",
+            "ipv6 route 2001:0db8:beef:: fa1/0 fe80::2",
+            "ipv6 route 2001:0db8:beef::/32 2001:0db8:feed::1",
+            "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2"
+        ],
+        "correct": "ipv6 route 2001:0db8:beef::/32 fa1/0 fe80::2",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "When using a link-local IPv6 address (which starts with fe80::) as the next hop in a static route, the outgoing interface must be explicitly specified (fa1/0 in this case) because the link-local address is not globally unique."
+    },
+    {
+        "question": "For a router, which of the following is the preferred source of information about a destination network?",
+        "options": [
+            "an active local interface connected to the network",
+            "Enhanced Interior Gateway Routing Protocol (EIGRP)",
+            "Open Shortest Path First (OSPF)",
+            "the ip route configuration command"
+        ],
+        "correct": "an active local interface connected to the network",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Routers prefer directly connected interfaces as the most reliable source of reachability information."
+    },
+    {
+        "question": "Which two Microsoft Windows commands will display the DNS server address configured on the host? (Choose two.)",
+        "options": [
+            "ipconfig",
+            "ipconfig /all",
+            "net config",
+            "netstat -f",
+            "nslookup"
+        ],
+        "correct": [
+            "ipconfig /all",
+            "nslookup"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'ipconfig /all' and 'nslookup' commands show DNS server details. 'ipconfig' alone gives basic info, while 'net config' and 'netstat -f' are unrelated to DNS configuration."
+    },
+    {
+        "question": "Which is the correct subnet mask for a host route?",
+        "options": [
+            "0.0.0.0",
+            "255.254.0.0",
+            "255.255.255.254",
+            "255.255.255.255"
+        ],
+        "correct": "255.255.255.255",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "A host route is a route that points to a specific, single host address. This requires a 32-bit prefix length, represented by the subnet mask 255.255.255.255 (/32), ensuring no host bits are left for a network range."
+    },
+    {
+        "question": "When configuring an IPv4 static route pointing to the next-hop IPv4, which command should you use?",
+        "options": [
+            "ip route 172.16.1.0 255.255.255.0 172.16.2.1",
+            "ip route 172.16.1.0 net-mask 255.255.255.0 next-hop 172.16.2.1",
+            "ip route 172.16.1.0/24 172.16.2.1",
+            "ip route static 172.16.1.0 net-mask 255.255.255.0 next-hop 172.16.2.1"
+        ],
+        "correct": "ip route 172.16.1.0 255.255.255.0 172.16.2.1",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The standard Cisco IOS command syntax for configuring a static route specifying the next-hop IP address is `ip route [destination-network] [subnet-mask] [next-hop-ip]`."
+    },
+    {
+        "question": "What is the function of HSRP?",
+        "options": [
+            "Provides redundancy for default gateway",
+            "Enables routing between VLANs",
+            "Balances load between routers",
+            "Encrypts network traffic"
+        ],
+        "correct": "Provides redundancy for default gateway",
+        "category": "Routing & Protocols",
+        "explanation": "HSRP (Hot Standby Router Protocol) provides gateway redundancy by using a virtual IP address shared by routers."
+    },
+    {
+        "question": "A client issues a DNS request to its local DNS server. The local DNS server does not have the information required. Which entity will finally send a DNS response to the client?",
+        "options": [
+            "the authoritative DNS server for the top-level domain",
+            "the authoritative top-level domain and subdomain DNS servers",
+            "the client's local DNS server",
+            "the Internet Service Provider's DNS server"
+        ],
+        "correct": "the client's local DNS server",
+        "category": "TCP/IP/DNS Protocols",
+        "explanation": "The local DNS server (often called a recursive resolver) handles all recursive lookups to root, TLD, and authoritative servers on behalf of the client. It caches the final answer and is the only entity that sends the final response back to the client."
+    },
+    {
+        "question": "In which network implementations is the spine-leaf topology most commonly used?",
+        "options": [
+            "enterprise LAN",
+            "enterprise edge",
+            "data centers",
+            "ISP backbone"
+        ],
+        "correct": "data centers",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The spine-leaf architecture is optimized for East-West traffic (server-to-server) with low, predictable latency and high scalability, which are critical requirements for modern, high-density data centers."
+    },
+    {
+        "question": "What does the 'spanning-tree vlan 10 priority 24576' command do?",
+        "options": [
+            "Changes STP priority for VLAN 10",
+            "Sets VLAN 10 as root",
+            "Disables STP for VLAN 10",
+            "Assigns VLAN 10 to port-channel 10"
+        ],
+        "correct": "Changes STP priority for VLAN 10",
+        "category": "Switching & VLAN",
+        "explanation": "This command changes the STP bridge priority for VLAN 10 to influence root bridge election."
+    },
+    {
+        "question": "In an enterprise environment, which guideline should be implemented to manage passwords securely, and why?",
+        "options": [
+            "A centralized password repository should be avoided, because it is a single point of failure.",
+            "A local password repository should be used, because it is more secure, and there is no need to transmit passwords using a AAA protocol.",
+            "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
+            "Passwords should NOT be used, because digital certificates are more secure and scale better."
+        ],
+        "correct": "Access to passwords should be logged along with the user information, in order to have visibility of password usage.",
+        "category": "Security AAA & ACL",
+        "explanation": "In large enterprise environments, strong security practices emphasize **accountability** and **auditing** (the 'Accounting' part of the AAA framework). \n\nLogging and monitoring **access to sensitive passwords** (often managed via a Privileged Access Management or PAM solution) is essential. This log, which includes the user, the time, and the resource accessed, provides crucial **visibility** for security teams, ensures non-repudiation, helps maintain compliance, and is vital data for any forensic analysis following an incident. While a centralized repository presents a single point of failure risk, that risk is typically mitigated through redundancy and is preferred over decentralized management for consistency."
+    },
+    {
+        "question": "Which fields does the 802.1Q header add to an Ethernet frame?",
+        "options": [
+            "CRC",
+            "EtherType",
+            "preamble",
+            "VLAN ID"
+        ],
+        "correct": [
+            "VLAN ID"
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "The 802.1Q standard inserts a 4-byte Tag into the Ethernet frame. While the Tag contains two main functional fields (TPID/EtherType and VLAN ID), the **VLAN ID** (a 12-bit sub-field) is the unique identifier that specifically enables the separation and forwarding of traffic based on VLAN membership. It is the core functional component that the 802.1Q process adds to the frame to implement network segmentation."
+    },
+    {
+        "question": "What are the two main WLAN deployment types? (Choose two.)",
+        "options": [
+            "centralized",
+            "router-based",
+            "standalone",
+            "Wi-Fi Direct",
+            "Zero Touch Provisioning (ZTP)"
+        ],
+        "correct": [
+            "centralized",
+            "standalone"
+        ],
+        "category": "Wireless",
+        "explanation": "The correct answers are centralized and standalone. When an AP is configured as centralized, all the traffic goes through the Cisco Wireless LAN Controller (WLC), which is not the case with standalone APs. The basic premise of a Wi-Fi Direct deployment is the creation of peer-to-peer Wi-Fi connections between devices, without the need for an AP. It is another example of a wireless personal area network (WPAN). ZTP is a process of automatically configuring network equipment."
+    },
+    {
+        "question": "You are tasked with installing and configuring a new PoE-supported IP camera with a power consumption of 20 W. After connecting it to a PoE-enabled switch, the camera does not turn on. What is the likely cause of the problem?",
+        "options": [
+            "The cable connecting the switch and the camera is too long.",
+            "The camera requires additional configuration to work with PoE.",
+            "The switch does not support the PoE Plus standard.",
+            "The switch requires additional configuration to enable PoE on the interface."
+        ],
+        "correct": "The switch does not support the PoE Plus standard.",
+        "category": "Switching & VLAN",
+        "explanation": "Standard PoE (802.3af) delivers up to 15.4W. PoE+ (802.3at) delivers up to 30W. A camera requiring 20W exceeds the 15.4W limit of standard PoE. Therefore, the switch must support PoE Plus (802.3at) for the camera to power on."
+    },
+    {
+        "question": "A device running a Windows OS has the IP address 169.254.254.254. Which of the following statements is true?",
+        "options": [
+            "The address is automatically configured by the device itself.",
+            "The device is reachable via the internet.",
+            "The IP address is used to communicate with the default gateway.",
+            "The IP address is a loopback address."
+        ],
+        "correct": "The address is automatically configured by the device itself.",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "The 169.254.x.x range is for Automatic Private IP Addressing (APIPA). A Windows device self-assigns this address when it is set to use DHCP but fails to find a DHCP server on the network."
+    },
+    {
+        "question": "You are asked to design a small LAN. You decide to follow the three-tier architecture model, and your goal is to build a secure network. Which statement is true?",
+        "options": [
+            "Security features should be implemented only in the distribution layer devices.",
+            "Security features should be implemented only in the core layer devices.",
+            "Security features should be implemented in the distribution and core layer devices.",
+            "Security features should be implemented in all three layers, access, distribution and core.",
+            "Security features should be implemented only in the access layer devices.",
+            "Security features should be implemented in the access and distribution layer devices."
+        ],
+        "correct": "Security features should be implemented in the access and distribution layer devices.",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "In many practical three-tier network designs, particularly in smaller LANs, the **Access** and **Distribution** layers are the primary points for implementing security policies. The Access layer provides device-level security (e.g., 802.1X, Port Security), while the Distribution layer acts as the aggregation point and policy enforcement boundary (e.g., ACLs, inter-VLAN filtering). The Core layer is typically reserved for high-speed switching with minimal or no policy processing."
+    },
+    {
+        "question": "When is an architecture design called a collapsed core architecture?",
+        "options": [
+            "When the core and the distribution layer are merged into one layer.",
+            "When the core layer fails to provide fault tolerance.",
+            "When the backbone and the access layer are merged into one layer.",
+            "When the distribution and access layer are merged into the core layer."
+        ],
+        "correct": "When the core and the distribution layer are merged into one layer.",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A **collapsed core architecture** is a two-tier network design common in smaller to mid-sized campus networks. It is created by **merging the Core and Distribution layers** of the traditional three-tier hierarchical model into a single layer. This approach simplifies the topology, reduces equipment costs, and lowers latency while retaining the key functions of both layers, such as high-speed switching (Core) and policy enforcement/routing aggregation (Distribution). The **Access layer** remains separate."
+    },
+    {
+        "question": "Which command displays IP addresses and status for all interfaces on a Cisco router?",
+        "options": [
+            "show ip route",
+            "show ip interface brief",
+            "show interfaces status",
+            "show ip arp"
+        ],
+        "correct": "show ip interface brief",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "The 'show ip interface brief' command gives a quick summary of all interfaces, their IP addresses and status."
+    },
+    {
+        "question": "You have restarted a router, which has the default booting procedure. During the reboot, the following messages appear on the console: %Error opening tftp://255.255.255.255/network-confg (Timed out) %Error opening tftp://255.255.255.255/cisconet.cfg (Timed out). What can you conclude based on the messages?",
+        "options": [
+            "The configuration file is not found on the TFTP server",
+            "The router successfully loaded the configuration",
+            "The IOS image is corrupted",
+            "The interface is administratively down"
+        ],
+        "correct": "The configuration file is not found on the TFTP server",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "If startup-config is missing, the router searches for a network source. TFTP is attempted but not found, hence the error messages."
+    },
+    {
+        "question": "Which two types of cables can be used to connect to the console port of a Cisco router? (Choose two.)",
+        "options": [
+            "Crossover",
+            "Rollover",
+            "Serial",
+            "Straight-through",
+            "USB"
+        ],
+        "correct": [
+            "Rollover",
+            "USB"
+        ],
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Rollover and USB cables are used for console connections. Rollover is the traditional console cable, while modern devices also support USB console ports."
+    },
+    {
+        "question": "Which type of address is automatically assigned to a physical interface when IPv6 is enabled on that interface?",
+        "options": [
+            "global unicast address",
+            "link-local address",
+            "loopback address",
+            "unique local address"
+        ],
+        "correct": "link-local address",
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "A link-local address (starting with FE80::) is automatically generated and assigned to every IPv6-enabled interface, even without configuration. It's used for communication only on the local segment (link), such as for Neighbor Discovery Protocol (NDP)."
+    },
+    {
+        "question": "Which three characteristics apply to the 802.1Q protocol? (Choose three.)",
+        "options": [
+            "It carries untagged frames.",
+            "It modifies the 802.3 frame header.",
+            "It includes an 8-bit field for TTL (Time to Live).",
+            "It is a messaging protocol that carries a VLAN configuration.",
+            "It uses an internal tagging mechanism."
+        ],
+        "correct": [
+            "It carries untagged frames.",
+            "It modifies the 802.3 frame header.",
+            "It uses an internal tagging mechanism."
+        ],
+        "category": "Switching & VLAN",
+        "explanation": "802.1Q (VLAN tagging) inserts a 4-byte tag into the standard Ethernet frame (modifies the header). It uses a tagging mechanism to identify the VLAN. It can also carry untagged frames (the native VLAN)."
+    },
+    {
+        "question": "What does a VLAN do?",
+        "options": [
+            "Increases bandwidth",
+            "Creates logical broadcast domains",
+            "Reduces cabling",
+            "Uses DHCP"
+        ],
+        "correct": "Creates logical broadcast domains",
+        "category": "Switching & VLAN",
+        "explanation": "VLANs (Virtual Local Area Networks) segment a single physical switch or network into multiple, smaller, isolated **logical broadcast domains** . Devices within the same VLAN can communicate directly, but broadcast traffic is contained within that specific VLAN, reducing network congestion and increasing security. This provides the functionality of multiple separate networks without needing additional physical hardware."
+    },
+    {
+        "question": "Presume that there are multiple paths to a given destination network. Which of the following does a dynamic routing protocol use to determine which route to the destination network is best?",
+        "options": [
+            "administrative distance",
+            "metrics",
+            "parameters",
+            "variables"
+        ],
+        "correct": "metrics",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "A dynamic routing protocol uses a **metric** to calculate the most efficient or 'best' path to a given destination when multiple routes are available **within that same routing protocol**. The metric is a quantifiable value representing the cost of a route. Different protocols use different metrics:\n\n* **OSPF** uses **Cost** (based on bandwidth).\n* **EIGRP** uses a complex calculation involving **Bandwidth** and **Delay**.\n* **RIP** uses **Hop Count**.\n\nThe route with the lowest metric is considered the best path and is installed in the routing table. **Administrative Distance** is only used when comparing routes learned from *different* routing sources."
+    },
+    {
+        "question": "Refer to the exhibit. Which menu item should you select to configure a pre-shared key for a wireless network?",
+        "options": [
+            "Commands",
+            "Security",
+            "Wireless",
+            "WLANs"
+        ],
+        "correct": "WLANs",
+        "category": "Wireless",
+        "explanation": "In a Cisco Wireless Controller (WLC) interface, the Pre-Shared Key (PSK) is a security setting appliced to an individual Wireless LAN (WLAN), which corresponds to the SSID. Therefore, you must navigate to the 'WLANs' menu to access and configure this setting for a specific network."
+    },
+    {
+        "question": "Which command sets a router interface IP address?",
+        "options": [
+            "ip address 192.168.1.1 255.255.255.0",
+            "interface vlan 10",
+            "ip route 0.0.0.0 0.0.0.0",
+            "switchport access vlan 10"
+        ],
+        "correct": "ip address 192.168.1.1 255.255.255.0",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The 'ip address' command is used under an interface to assign an IP address and mask."
+    },
+    {
+        "question": "How are NETCONF messages encoded?",
+        "options": [
+            "CSS",
+            "JSON",
+            "SQL",
+            "XML"
+        ],
+        "correct": "XML",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "NETCONF uses XML encoding to exchange configuration data between devices and management systems."
+    },
+    {
+        "question": "Which layer of the OSI model provides reliable delivery using acknowledgments?",
+        "options": [
+            "Transport",
+            "Session",
+            "Network",
+            "Data Link"
+        ],
+        "correct": "Transport",
+        "category": "OSI Model",
+        "explanation": "The Transport layer ensures reliable data delivery through mechanisms such as TCP acknowledgments."
+    },
+    {
+        "question": "The copper cabling used in your network is too close to electrical interferences. Consequently, the interface statistics show an unusually large number of compromised frames. While you attempt to solve the issue, which frame forwarding method should you implement on the Cisco switches in order to lower the number of compromised frames?",
+        "options": [
+            "cut-through",
+            "express forwarding",
+            "process switching",
+            "store-and-forward"
+        ],
+        "correct": "store-and-forward",
+        "category": "Switching & VLAN",
+        "explanation": "Store-and-forward switching receives the entire frame and performs a CRC (Cyclic Redundancy Check). If the frame is corrupted (compromised) due to interference, it is dropped, preventing bad frames from propagating further into the network. Cut-through methods do not perform this check."
+    },
+    {
+        "question": "What are two characteristics of a pre-shared key wireless implementation? (Choose two.)",
+        "options": [
+            "Access control is centralized.",
+            "An authentication server is required.",
+            "Encryption uses an optional Advanced Encryption Standard (AES).",
+            "Encryption uses the Temporal Key Integrity Protocol (TKIP).",
+            "The authentication key is rotated automatically."
+        ],
+        "correct": [
+            "Encryption uses an optional Advanced Encryption Standard (AES).",
+            "Encryption uses the Temporal Key Integrity Protocol (TKIP)."
+        ],
+        "category": "Wireless",
+        "explanation": "PSK (Pre-Shared Key) mode, also known as WPA/WPA2 Personal, uses a static passphrase for authentication. The two valid encryption mechanisms associated with this mode are:\n\n1.  **AES (Advanced Encryption Standard):** This is the modern and highly secure cipher used by WPA2 and WPA3. Its use is often preferred.\n2.  **TKIP (Temporal Key Integrity Protocol):** This is the older, less secure cipher associated with the original WPA (WPA1) but is commonly supported in WPA2 implementations for backward compatibility.\n\nPSK does not use centralized access control and does not require an external authentication server (like RADIUS)."
+    },
+    {
+        "question": "Which three statements describe characteristics of solicited-node IPv6 addresses? (Choose three.)",
+        "options": [
+            "There can be only one per device.",
+            "They are automatically created by the device.",
+            "They are created using the device's MAC address.",
+            "They are multicast addresses.",
+            "They are valid within an organization.",
+            "They have a recognizable prefix."
+        ],
+        "correct": [
+            "They are automatically created by the device.",
+            "They are multicast addresses.",
+            "They have a recognizable prefix."
+        ],
+        "category": "IP Addressing IPv4/Ipv6",
+        "explanation": "Solicited-node IPv6 addresses are automatically created multicast addresses with the prefix ff02::1:ff00::/104."
+    },
+    {
+        "question": "Refer to the exhibit. It represents the Cisco Enterprise Architecture model. In this model, where is the firewall located?",
+        "options": [
+            "between the edge router and the core switch",
+            "between the edge router and the distribution switch",
+            "between the internet and the core switch",
+            "between the internet and the edge router"
+        ],
+        "correct": "between the internet and the edge router",
+        "category": "Security ",
+        "explanation": "The correct answer is between the internet and the edge router. Putting the edge router between the internet and the firewall exposes the router to attacks. The connection sequence should be: internet, firewall, edge router, switch."
+    },
+    {
+        "question": "When an enterprise has to comply with strict data security regulations, which cloud deployment model should they use for their services?",
+        "options": [
+            "community",
+            "hybrid",
+            "private",
+            "public"
+        ],
+        "correct": "private",
+        "category": "WAN & SDN/Virtualization",
+        "explanation": "A Private Cloud offers the highest level of isolation, control, and governance because the infrastructure is dedicated solely to one organization. This makes it the ideal choice for meeting strict regulatory and data security compliance requirements."
+    },
+    {
+        "question": "What is the name typically used to describe virtualization software?",
+        "options": [
+            "container",
+            "distributed resource scheduler (DRS)",
+            "hypervisor",
+            "HyperFlex",
+            "snapshot manager"
+        ],
+        "correct": "hypervisor",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "A hypervisor is the specific software or firmware that creates and runs virtual machines (VMs). It allows multiple operating systems to share a single physical hardware platform."
+    },
+    {
+        "question": "For which network entity is the OSPF designated router/backup designated router (DR/BDR) selection performed?",
+        "options": [
+            "for each multi-access segment",
+            "for each OSPF router ID",
+            "for the entire OSPF area",
+            "per transmission state of the link"
+        ],
+        "correct": "for each multi-access segment",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "OSPF (Open Shortest Path First) uses the Designated Router (DR) and Backup Designated Router (BDR) mechanism to reduce the number of adjacencies that must be formed, which lowers the amount of OSPF traffic (LSAs). This election is performed **independently on every multi-access network segment** (like an Ethernet LAN). The DR/BDR mechanism is only needed on segments where multiple routers could potentially form full adjacencies (broadcast or non-broadcast multi-access). Point-to-point links, for example, do not require a DR/BDR."
+    },
+    {
+        "question": "Where in the network should you implement QoS packet classification?",
+        "options": [
+            "at the input interface of a device at the LAN access edge of the network",
+            "at the input interface of a device at the WAN edge of the network",
+            "at the output interface of a device at the LAN access edge of the network",
+            "at the output interface of a device at the WAN edge of the network"
+        ],
+        "correct": "at the input interface of a device at the LAN access edge of the network",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Packet classification should occur as close to the source as possible, typically on LAN access edge input interfaces."
+    },
+    {
+        "question": "Which command would you use to configure a router ID on a Cisco router?",
+        "options": [
+            "R1(config-router)# ip router-id ip-address",
+            "R1(config-router)# router-id ip-address",
+            "R1(config)# ip router-id ip-address",
+            "R1(config)# router-id ip-address"
+        ],
+        "correct": "R1 (config-router)# ip router-id ip-address",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "The command used to manually configure the **Router ID** for a routing process (such as OSPF or EIGRP) on a Cisco router is `router-id ip-address`. This command is executed within the specific **router configuration mode** (e.g., `config-router`) for the routing protocol being configured. Manually configuring the Router ID ensures predictability and stability in the routing domain."
+    },
+    {
+        "question": "Which algorithm is used to calculate the optimal path to a given destination from data stored in a link-state database (LSDB)?",
+        "options": [
+            "Rivest, Shamir, and Adleman (RSA)",
+            "Secure Hash Algorithm (SHA)",
+            "Shortest Path First (SPF)",
+            "Quicksort"
+        ],
+        "correct": "Shortest Path First (SPF)",
+        "category": "Routing Protocols (OSPF/EIGRP)",
+        "explanation": "Link-state routing protocols like OSPF use Dijkstra's algorithm, commonly referred to as the **Shortest Path First (SPF)** algorithm, to analyze the LSDB and compute the shortest, loop-free path to every network destination."
+    },
+    {
+        "question": "Which type of cable is typically used to connect a core switch with a data center switch, where bandwidth higher than 40 Gbps and low cost are required?",
+        "options": [
+            "Category 5e UTP",
+            "Category 6 UTP",
+            "multimode fiber",
+            "single-mode fiber"
+        ],
+        "correct": "multimode fiber",
+        "category": "Network Fundamentals & Tools",
+        "explanation": "Single-mode fiber is used for high-bandwidth, long-distance connections such as core-to-data center links."
+    }
 ]
