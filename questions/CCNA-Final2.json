@@ -1041,7 +1041,7 @@
             "between the internet and the edge router"
         ],
         "correct": "between the internet and the edge router",
-        "category": "Security ",
+        "category": "Security AAA & ACL",
         "explanation": "The correct answer is between the internet and the edge router. Putting the edge router between the internet and the firewall exposes the router to attacks. The connection sequence should be: internet, firewall, edge router, switch."
     },
     {
@@ -1129,4 +1129,5 @@
         "category": "Network Fundamentals & Tools",
         "explanation": "Single-mode fiber is used for high-bandwidth, long-distance connections such as core-to-data center links."
     }
+
 ]
