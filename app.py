@@ -130,4 +130,5 @@ def post_highscore():
 
 if __name__ == "__main__":
     # Kör utvecklingsservern
-    app.run(debug=True, host="127.0.0.1", port=5000)
+
+    app.run(debug=True, host="0.0.0.0", port=5000)
