@@ -1,6 +1,6 @@
 # Cisco CCNA Exam Test 200-301 v2.1
 
-* **691 Unique questions **
+### **691 Unique questions **
 
 A fast, category-based knowledge testing application built with Flask (Python) and JavaScript/CSS, specialized for CCNA certification training.
 
