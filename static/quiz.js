@@ -15,7 +15,7 @@ const languageStrings = {
     sv: {
         // Generellt & Info
         pageTitle: "CCNA - By Z",
-        mainTitle: "🖧 CCNA Test",
+        mainTitle: "🖧 CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Byt Tema",
         langButtonText: "🇬🇧 English",
         infoAlertTitle: "Info om denna Quiz:",
@@ -85,7 +85,7 @@ const languageStrings = {
     en: {
         // Generellt & Info
         pageTitle: "CCNA - By Z",
-        mainTitle: "🖧 CCNA Test",
+        mainTitle: "🖧 CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Toggle Theme",
         langButtonText: "🇸🇪 Swedish",
         infoAlertTitle: "Info about this Quiz:",
@@ -1022,3 +1022,4 @@ function showResult() {
         options: { scales: { y: { beginAtZero: true, max: Math.max(...totals) || 1 } } }
     });
 }
+
