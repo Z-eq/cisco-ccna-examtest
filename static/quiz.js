@@ -21,6 +21,8 @@ const languageStrings = {
         infoAlertTitle: "Info om denna Quiz:",
         infoAlertText1: "Det finns cirka <strong>691</strong> unika frågor totalt.",
         infoAlertText2: "Filerna märkta <strong>Final</strong> innehåller lite svårare och dem mer relevanta frågorna från hela frågebanken.",
+        infoAlertText3: "Koden för denna quiz finns på min <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
+       
         
         // Startskärmen
         card1Header: "1. Välj Frågekällor",
@@ -91,6 +93,7 @@ const languageStrings = {
         infoAlertTitle: "Info about this Quiz:",
         infoAlertText1: "There are approximately <strong>691</strong> unique questions in total.",
         infoAlertText2: "Files labeled <strong>Final</strong> contain slightly harder and more relevant questions from the entire question bank.",
+        infoAlertText3: "The code for this quiz can be found on my <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
         
         // Startskärmen
         card1Header: "1. Select Question Sources",
@@ -1022,4 +1025,5 @@ function showResult() {
         options: { scales: { y: { beginAtZero: true, max: Math.max(...totals) || 1 } } }
     });
 }
+
 
