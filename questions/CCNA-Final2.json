@@ -1041,7 +1041,7 @@
             "between the internet and the edge router"
         ],
         "correct": "between the internet and the edge router",
-        "category": "Security AAA & ACL",
+        "category": "Security ",
         "explanation": "The correct answer is between the internet and the edge router. Putting the edge router between the internet and the firewall exposes the router to attacks. The connection sequence should be: internet, firewall, edge router, switch."
     },
     {
@@ -1101,7 +1101,7 @@
             "R1(config)# ip router-id ip-address",
             "R1(config)# router-id ip-address"
         ],
-        "correct": "R1 (config-router)# ip router-id ip-address",
+        "correct": "R1(config-router)# ip router-id ip-address",
         "category": "Routing Protocols (OSPF/EIGRP)",
         "explanation": "The command used to manually configure the **Router ID** for a routing process (such as OSPF or EIGRP) on a Cisco router is `router-id ip-address`. This command is executed within the specific **router configuration mode** (e.g., `config-router`) for the routing protocol being configured. Manually configuring the Router ID ensures predictability and stability in the routing domain."
     },
@@ -1129,5 +1129,4 @@
         "category": "Network Fundamentals & Tools",
         "explanation": "Single-mode fiber is used for high-bandwidth, long-distance connections such as core-to-data center links."
     }
-
 ]

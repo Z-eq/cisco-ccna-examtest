@@ -255,7 +255,7 @@
             "No addresses are changed by the switch.",
             "The switch changes Layer 2 and Layer 3 addresses."
         ],
-        "correct": "The switch changes Layer 2 addresses, while Layer 3 addresses remain the same",
+        "correct": "The switch changes Layer 2 addresses, while Layer 3 addresses remain the same.",
         "category": "Switching & VLAN",
         "explanation": "When a switch forwards a frame, it changes the **Layer 2 (MAC) addresses** in the frame header to reflect the new source and destination MACs (the next hop/router's MAC), but the **Layer 3 (IP) addresses** are not altered."
     },
@@ -902,8 +902,7 @@
             "cellular 4G"
         ],
         "category": "WAN & SDN/Virtualization",
-        "explanation": "xDSL (e.g., DSL), cable (via cable modem), and cellular (4G/5G) are the primary residential/commercial technologies used to connect sites to the public internet, which then acts as the WAN backbone."
-    },
+        "explanation": "Internet-based WAN connectivity (also called Public WAN) relies on the shared, public Internet infrastructure for transport. \n\n1. **cable:** Uses HFC (Hybrid Fiber-Coaxial) networks and a cable modem (DOCSIS) to provide access via the public Internet.\n2. **xDSL:** Uses copper telephone lines (ADSL, VDSL) to deliver broadband access via the public Internet.\n3. **cellular 4G/5G (WWAN):** Uses mobile network towers to connect remote sites to the public Internet over a wireless medium.\n\nConversely, T1/E1, MPLS, and Metro Ethernet are classified as **private, provider-managed WAN solutions** because they use dedicated circuits or secured carrier networks that bypass the public Internet, offering higher performance and security guarantees."    },
     {
         "category": "Network Fundamentals & Tools",
         "question": "Which layer in the OSI model handles encryption and data representation?",

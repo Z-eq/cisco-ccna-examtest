@@ -118,7 +118,7 @@
             "The FHRP provides default gateway redundancy.",
             "The FHRP är always standard-based."
         ],
-        "    correct": "The FHRP provides default gateway redundancy.",
+        "correct": "The FHRP provides default gateway redundancy.",
         "category": "Routing & Protocols",
         "explanation": "Correct: FHRP (First Hop Redundancy Protocol) like HSRP, VRRP, GLBP, offers a virtual gateway address that multiple devices can share for redundancy. The options:\n- 'supplies hosts with routing information' is wrong - it provides a gateway, not end-to-end routing.\n- 'is ​​a routing protocol' is wrong; it is a redundancy protocol.\n- 'is ​​always standard-based' is flat error; HSRP is proprietary, VRRP is standard, GLBP mixed."
     },
@@ -649,20 +649,7 @@
         "explanation": "In Cisco Modeling Labs (CML), once a simulation is running, the console of any network device (router, switch, firewall, etc.) can be opened directly by clicking on the node in the topology and selecting the 'Console' option from the menu, which is presented within the CML GUI (Web User Interface)."
     },
     {
-        "question": "You are asked to design a small LAN. You decide to follow the three-tier architecture model, and your goal is to build a secure network. Which statement is true?",
-        "options": [
-            "Security features should be implemented only in the distribution layer devices.",
-            "Security features should be implemented only in the core layer devices.",
-            "Security features should be implemented in the distribution and core layer devices.",
-            "Security features should be implemented in all three layers, access, distribution and core.",
-            "Security features should be implemented only in the access layer devices.",
-            "Security features should be implemented in the access and distribution layer devices."
-        ],
-        "correct": "Security features should be implemented in all three layers, access, distribution and core.",
-        "category": "Network Fundamentals & Tools",
-        "explanation": "Säkerhet bör implementeras enligt principen **Defense in Depth**, vilket innebär att säkerhetsfunktioner (ACL:er, 802.1X, brandväggar) bör placeras i varje lager (Access, Distribution och Core) för att ge flera skyddslager mot hot."
-    },
-    {
+
         "question": "Which feature is critical to correctly implement a router on a stick?",
         "options": [
             "router subinterfaces that are each configured with a dot1q VLAN tag",

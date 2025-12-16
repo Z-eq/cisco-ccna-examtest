@@ -1012,7 +1012,7 @@
         "explanation": "A **Logical Diagram** shows how the network functions (IP addresses, subnets, VLANs, routing protocols, and data flows). This information is derived from the **device configurations** and by observing how **data flows** across the network, not just from the physical cable layout."
     },
     {
-        "question": "Refer to the exhibit. Which two combinations will result in an EtherChannel being established between the two switches that are using LACP? (Choose two.)\n\nswitch 1 on, switch 2 active\nswitch 1 active, switch 2 active\nswitch 1 active, switch 2 passive\nswitch 1 passive, switch 2 passive\nswitch 1 on, switch 2 on",
+        "question": "Refer to the exhibit. Which two combinations will result in an EtherChannel being established between the two switches that are using LACP? (Choose two.)",
         "options": [
             "switch 1 on, switch 2 active",
             "switch 1 active, switch 2 active",

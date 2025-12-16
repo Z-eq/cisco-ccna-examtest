@@ -549,7 +549,7 @@
         ],
         "correct": "Two LEDs are used on each port.",
         "category": "Network Fundamentals & Tools",
-        "explanation": ""
+        "explanation": "Typically, each port on a Cisco Catalyst switch uses two LEDs to display status details:\n\n1.  **Status/Link LED (Green/Amber):** This LED indicates the link status (solid green for an active link) and port activity (flashing green when data is being transferred). It also turns amber if the port is blocked by Spanning Tree Protocol (STP).\n2.  **Speed LED (Various Colors):** This LED indicates the connection speed (e.g., green for 1000 Mbps, orange for 100 Mbps, off for 10 Mbps). The specific color codes vary slightly depending on the switch model."
     },
     {
         "question": "Which is standard port for SMTP?",

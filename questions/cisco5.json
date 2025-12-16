@@ -191,7 +191,7 @@
             "Layer 2 addressing identifies end devices in LAN.",
             "Layer 2 enables the packet to be carried av local media across each segment.",
             "Ethernet uses IPv4 addresses.",
-            "Layer 2 identifies applications i LAN."
+            "Layer 2 identifies applications in LAN."
         ],
         "correct": [
             "Ethernet uses MAC addresses.",
@@ -890,18 +890,6 @@
         "correct": "CLI will display the running configuration file but without any lines containing “!” in them",
         "category": "Network Fundamentals & Tools",
         "explanation": "The '| exclude !' filter removes lines containing the exclamation mark, which is used in Cisco IOS configuration files as a comment or section separator."
-    },
-    {
-        "question": "What is the availability percentage over a one-year period for a network that is unavailable for 15 minutes each month?",
-        "options": [
-            "99.9657 percent",
-            "0.9996 percent",
-            "99.8457 percent",
-            "0.0342 percent"
-        ],
-        "correct": "99.9657 percent",
-        "category": "Network Fundamentals & Tools",
-        "explanation": "Total downtime per year is 15 minutes/month * 12 months = 180 minutes. Total minutes in a year is approximately 525,960 minutes (365.25 days * 24 hours * 60 minutes). Availability is calculated as (1 - (Downtime / Total time)) * 100. (1 - 180 / 525,960) * 100 = 99.9657%"
     },
     {
         "question": "What is the function of HSRP?",

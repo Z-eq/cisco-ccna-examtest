@@ -771,11 +771,11 @@
         "question": "Which layer of the OSI model handles IP addresses?",
         "options": [
             "Transport",
-            "Nätverk",
+            "Network",
             "Applikation",
             "Data Link"
         ],
-        "correct": "Nätverk",
+        "correct": "Network",
         "category": "OSI Model",
         "explanation": "The network layer (Layer 3) is responsible for logical addressing, including IP addressing and routing."
     },
