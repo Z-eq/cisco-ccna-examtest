@@ -68,8 +68,6 @@ The application reads questions from the questions/ directory.
     Create your own JSON files (e.g., questions/science.json or questions/history.json).
 
     The format must match the structure the app expects (see example below).
-
-```bash
     
 
     Example JSON Structure (for a file inside questions/):
