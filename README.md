@@ -31,6 +31,7 @@ This app is built to maximize study efficiency for the CCNA certification. It fe
 
 Follow these steps to get the application running on your local machine.
 
+You can test this app here: https://ccna.onrender.com
 
 ### 1. Clone the Repository
 
@@ -44,27 +45,53 @@ cd cisco-ccna-examtest
 
 It is highly recommended to use a virtual environment (venv) to isolate the project's dependencies.
 #### a. Create and Activate Environment
-Bash
 
 ### Create the environment
+
 python -m venv venv
 
 ### Activate the environment
-### Windows (Command Prompt/PowerShell):
+
+### In Windows (Command Prompt/PowerShell):
+
 .\venv\Scripts\activate
-#### macOS/Linux:
+
+#### On Linux/macOS:
+
 source venv/bin/activate
 
 #### b. Install Packages
 
 Use the requirements.txt file to install Flask and its dependencies:
-Bash
 
 #### pip install -r requirements.txt
 
-#### 3. Add Question Files
+#### 3. Run the Application
 
-The application reads questions from the questions/ directory.
+Ensure your virtual environment is active (Step 2), then run the application:
+
+python app.py
+
+The application will be available at: http://127.0.0.1:5000/.
+
+#### 4. You can also add your own question files
+
+
+
+### Option B: Global Installation (Without venv)
+
+If you choose not to use a virtual environment, you must ensure all necessary packages are installed directly into your system's Python environment. This uses the same installation command.
+You can follow step 1. and then also just install Flask by command: 
+
+pip install flask
+
+and run the program by python app.py 
+
+On Windows you can also double click at app.py to run the app.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+The application reads questions from the folder questions/ directory.
 
     Create your own JSON files (e.g., questions/science.json or questions/history.json).
 
@@ -90,14 +117,7 @@ The application reads questions from the questions/ directory.
       }
     ]
 
-4. Run the Application
 
-Ensure your virtual environment is active (Step 2), then run the application:
-Bash
-
-python app.py
-
-The application will be available at: http://127.0.0.1:5000/.
 📁 Project Structure
 
      Features
