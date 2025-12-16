@@ -4,8 +4,6 @@
 
 A fast, category-based knowledge testing application built with Flask (Python) and JavaScript/CSS, specialized for CCNA certification training.
 
-** Rekommendation:** For **optimal performance and speed**, it is highly recommended to run this application locally on your machine.
-
 ---
 
 ### Key Features
