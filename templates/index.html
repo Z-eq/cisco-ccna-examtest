@@ -21,7 +21,7 @@
         
         <div class="header-controls d-flex gap-3 position-absolute top-0 end-0 me-3 mt-3">
             <button id="languageToggle" class="btn btn-sm btn-primary">
-                🇬🇧 Engelska
+               
             </button>
             <button id="themeToggle" class="btn btn-sm btn-secondary">
                 🌓 Byt Tema
@@ -94,7 +94,8 @@
     </div>
     
     <div id="quizScreen" class="d-none">
-        <div class="d-flex justify-content-end mb-2">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <button id="tagBtn" class="btn btn-outline-warning">🔖 Tagga för senare</button>
             <button id="abortBtn" class="btn btn-danger">⏹ Avbryt quiz</button>
         </div>
 
@@ -137,6 +138,28 @@
             <div class="modal-footer">
                 <button type="button" id="abortWithScore" class="btn btn-primary" data-bs-dismiss="modal">Rätta och visa resultat</button>
                 <button type="button" id="abortWithoutScore" class="btn btn-secondary" data-bs-dismiss="modal">Återgå till start</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tagModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tagModalTitle">Tagga Fråga och Lägg till Kommentar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong id="tagQuestionLabel">Fråga:</strong> <span id="tagQuestionText"></span></p>
+                <div class="mb-3">
+                    <label for="tagCommentTextarea" class="form-label" id="tagCommentLabel">Dina anteckningar/kommentar:</label>
+                    <textarea class="form-control" id="tagCommentTextarea" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="tagCancelBtn" class="btn btn-secondary" data-bs-dismiss="modal">Avbryt</button>
+                <button type="button" id="confirmTagBtn" class="btn btn-warning">Spara Tagg och Kommentar</button>
             </div>
         </div>
     </div>
