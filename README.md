@@ -32,23 +32,14 @@ This app is built to maximize study efficiency for the CCNA certification. It fe
 Follow these steps to get the application running on your local machine.
 
 
-
-# Create the environment
-python -m venv venv
-
-# Activate the environment
-# Windows (Command Prompt/PowerShell):
-.\venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
-
-
-#### 1. Clone the Repository
+### 1. Clone the Repository
 
 Start by cloning the project to your computer:
 
 ```bash
-git clone [https://github.com/Z-eq/cisco-ccna-examtest.git](https://github.com/Z-eq/cisco-ccna-examtest.git)
+git clone https://github.com/Z-eq/cisco-ccna-examtest.git
+'''
+
 cd cisco-ccna-examtest
 Follow these steps to get the application running on your local machine.
 
