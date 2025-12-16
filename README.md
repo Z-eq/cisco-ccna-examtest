@@ -1,26 +1,45 @@
-# Cisco CCNA Exam Test 200-301 v2.1  
-# ** Over  650 unique questions **
+# Cisco CCNA Exam Test 200-301 v2.1
 
-
+## ** Over 680 Unique Questions**
 
 A fast, category-based knowledge testing application built with Flask (Python) and JavaScript/CSS, specialized for CCNA certification training.
 
-##  Key Features
+** Rekommendation:** For **optimal performance and speed**, it is highly recommended to run this application locally on your machine.
 
-Train for CCNA certification! This app features dynamic category selection, detailed highscores (with time/topic tracking), and a specialized study mode to practice only your failed CCNA questions.
+---
 
-### Quiz Functionality
+### Key Features
 
+This app is built to maximize study efficiency for the CCNA certification. It features dynamic category selection, detailed highscores, and advanced study tools.
 
+#### Advanced Study Tools (NEW)
+* **Question Tagging & Note-taking (NEW):** Tag any question during the quiz with a specific comment or note for later review. The application saves the exact question, category, and its original **source file** to a dedicated file (`tagged_questions.txt`).
+* **Practice Mode ("Wrong Answers Only"):** Automatically saves incorrectly answered questions, allowing the user to run a dedicated test focusing solely on these "wrong answers."
+
+#### Quiz Functionality
 * **Flexible Source Management:** The user can select which JSON files to include in the test.
-* **Category Filtering (NEW):** After sources are loaded, the user can **select specific categories** (e.g., "OSI Model", "Routing", "VLAN") to include or exclude from the quiz.
-* **Practice Mode ("Wrong Answers Only"):** Automatically saves incorrectly answered questions, allowing the user to run a dedicated test focusing solely on these **"wrong answers"**.
-* **Flexible Question Types:** Supports both **single-choice** and **multi-select** (multiple correct answers) questions.
-* **Clear Progress Tracking:** Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
-* **Detailed Highscores:** Saves highscores including **score, total time, date, time of completion**, and a list of the **categories** included in the test.
-* **User Interface:** Supports both **Light** and **Dark** themes (Light/Dark Mode).
-##  Getting Started
+* **Deduplication (NEW):** The system automatically ensures that only **unique questions** are loaded and included in the quiz, even if the same question exists across multiple selected source files.
+* **Category Filtering:** After sources are loaded, the user can select specific categories (e.g., "OSI Model", "Routing", "VLAN") to include or exclude from the quiz.
+* **Flexible Question Types:** Supports both single-choice and multi-select (multiple correct answers) questions.
 
+#### Tracking & Interface
+* **Clear Progress Tracking:** Features a visible progress bar and clear question numbering (e.g., "Question 5 of 10").
+* **Detailed Highscores:** Saves highscores including score, total time, date, time of completion, and a list of the categories included in the test.
+* **User Interface:** Supports both Light and Dark themes (Light/Dark Mode) and **Swedish/English** languages.
+
+---
+
+### Getting Started
+
+Follow these steps to get the application running on your local machine.
+
+#### 1. Clone the Repository
+
+Start by cloning the project to your computer:
+
+```bash
+git clone [https://github.com/Z-eq/cisco-ccna-examtest.git](https://github.com/Z-eq/cisco-ccna-examtest.git)
+cd cisco-ccna-examtest
 Follow these steps to get the application running on your local machine.
 
 ### 1. Clone the Repository
