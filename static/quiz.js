@@ -9,19 +9,20 @@ let currentQuestion = 0; // Index for questions in 'questions'
 let questionStartTime = 0; 
 let selectedQuizFiles = []; 
 let chart = null; // For Chart.js
+let quizStartTime = 0; // Global tid för hela quizet
 
 // --- Språkdata & Globalt språk ---
 const languageStrings = {
     sv: {
         // Generellt & Info
         pageTitle: "CCNA - By Z",
-        mainTitle: "🖧 CCNA Test - 200-301 v2.1",
+        mainTitle: "CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Byt Tema",
-        langButtonText: "🇬🇧 English",
-        infoAlertTitle: "Info om denna Quiz:",
-        infoAlertText1: "Det finns cirka <strong>691</strong> unika frågor totalt.",
+        langButtonText: "🇸🇪 Svenska",
+        infoAlertTitle: "", 
+        infoAlertText1: "Det finns cirka <strong>680</strong> unika frågor totalt.",
         infoAlertText2: "Filerna märkta <strong>Final</strong> innehåller lite svårare och dem mer relevanta frågorna från hela frågebanken.",
-        infoAlertText3: "Koden för denna quiz finns på min <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
+        infoAlertText3: "Koden för denna quiz finns på mitt <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
        
         
         // Startskärmen
@@ -68,14 +69,20 @@ const languageStrings = {
         resultTitle: "📊 Resultat",
         resultTotal: "🎯 Totalt: [CORRECT]/[TOTAL] ([PERCENT]%)",
         resultTime: "⏱️ **Total Tid:** [TOTALTIME] (Snitt per fråga: [AVGTIME]s)",
-        chartLabel: "Rätt per kategori",
+        chartLabel: "Resultat per kategori", 
         buttonRestart: "🔁 Starta om",
         
         // Modal
         abortModalTitle: "Avbryt quiz?",
         abortModalBody: "Vill du rätta de frågor du redan svarat på innan du avslutar, eller återgå till startskärmen?",
-        abortWithScore: "Rätta och visa resultat",
-        abortWithoutScore: "Återgå till start",
+        abortWithScore: "Rätta och visa resultat", // Text för 'abortWithScore' ID
+        abortWithoutScore: "Återgå till start",   // Text för 'abortWithoutScore' ID
+        tagModalTitle: "Tagga Fråga och Lägg till Kommentar", 
+        tagQuestionLabel: "Fråga:", 
+        tagCommentLabel: "Dina anteckningar/kommentar:", 
+        tagButtonCancel: "Avbryt", 
+        tagButtonSave: "Spara Tagg och Kommentar", 
+        tagButtonText: "🔖 Tagga för senare",
         
         // Toggles
         toggleFilesSelect: "Markera alla",
@@ -87,11 +94,11 @@ const languageStrings = {
     en: {
         // Generellt & Info
         pageTitle: "CCNA - By Z",
-        mainTitle: "🖧 CCNA Test - 200-301 v2.1",
+        mainTitle: "CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Toggle Theme",
-        langButtonText: "🇸🇪 Swedish",
-        infoAlertTitle: "Info about this Quiz:",
-        infoAlertText1: "There are approximately <strong>691</strong> unique questions in total.",
+        langButtonText: "🇬🇧 English",
+        infoAlertTitle: "", 
+        infoAlertText1: "There are approximately <strong>680</strong> unique questions in total.",
         infoAlertText2: "Files labeled <strong>Final</strong> contain slightly harder and more relevant questions from the entire question bank.",
         infoAlertText3: "The code for this quiz can be found on my <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
         
@@ -139,14 +146,20 @@ const languageStrings = {
         resultTitle: "📊 Results",
         resultTotal: "🎯 Total: [CORRECT]/[TOTAL] ([PERCENT]%)",
         resultTime: "⏱️ **Total Time:** [TOTALTIME] (Avg per question: [AVGTIME]s)",
-        chartLabel: "Correct per Category",
+        chartLabel: "Results per Category",
         buttonRestart: "🔁 Restart Quiz",
         
         // Modal
         abortModalTitle: "Abort Quiz?",
         abortModalBody: "Do you want to score the questions you've already answered before quitting, or return to the start screen?",
-        abortWithScore: "Score and show result",
-        abortWithoutScore: "Return to start",
+        abortWithScore: "Score and show results", 
+        abortWithoutScore: "Return to start",  
+        tagModalTitle: "Tag Question and Add Comment", 
+        tagQuestionLabel: "Question:", 
+        tagCommentLabel: "Your notes/comment:", 
+        tagButtonCancel: "Cancel", 
+        tagButtonSave: "Save Tag and Comment", 
+        tagButtonText: "🔖 Tag for Later",
         
         // Toggles
         toggleFilesSelect: "Select all",
@@ -157,6 +170,7 @@ const languageStrings = {
 };
 
 let currentLanguage = 'sv'; 
+const infoAlert = document.getElementById('infoAlert'); 
 
 // DOM References
 const startScreen = document.getElementById('startScreen');
@@ -167,6 +181,20 @@ const startBtn = document.getElementById('startBtn');
 const loadCategoriesBtn = document.getElementById('loadCategoriesBtn'); 
 const nextBtn = document.getElementById('nextBtn');
 const restartBtn = document.getElementById('restartBtn');
+const tagBtn = document.getElementById('tagBtn'); 
+const confirmTagBtn = document.getElementById('confirmTagBtn'); 
+const tagQuestionText = document.getElementById('tagQuestionText'); 
+const tagCommentTextarea = document.getElementById('tagCommentTextarea'); 
+// NYA DOM referenser för språkhantering
+const tagModalTitle = document.getElementById('tagModalTitle'); 
+const tagQuestionLabel = document.getElementById('tagQuestionLabel'); 
+const tagCommentLabel = document.getElementById('tagCommentLabel'); 
+const tagCancelBtn = document.getElementById('tagCancelBtn'); 
+
+// ABORT MODAL KNAPP REFERENSER (VIKTIGT FÖR TEXTEN!)
+const abortWithScoreBtn = document.getElementById('abortWithScore');
+const abortWithoutScoreBtn = document.getElementById('abortWithoutScore');
+
 
 const questionNum = document.getElementById('questionNum'); 
 const questionText = document.getElementById('questionText');
@@ -186,7 +214,11 @@ const categorySelection = document.getElementById('categorySelection');
 const categoryCheckboxes = document.getElementById('categoryCheckboxes');
 const toggleCategoriesBtn = document.getElementById('toggleCategoriesBtn');
 
-const languageToggleBtn = document.getElementById('languageToggle'); // New Language Button
+const languageToggleBtn = document.getElementById('languageToggle'); 
+
+// Modal instanser
+let tagModal = null; 
+let currentQuestionToTag = null; // Lagra frågan för tagg-modalen
 
 // ======================================================
 // LANGUAGE HANDLING
@@ -199,19 +231,26 @@ function updateUI(lang) {
     document.getElementById('pageTitle').textContent = strings.pageTitle;
     document.getElementById('mainTitle').textContent = strings.mainTitle;
     document.getElementById('themeToggle').textContent = strings.themeButtonText;
-    document.getElementById('languageToggle').textContent = strings.langButtonText;
+    document.getElementById('languageToggle').textContent = (lang === 'sv') ? languageStrings['en'].langButtonText : languageStrings['sv'].langButtonText;
+    document.documentElement.lang = lang;
 
-    // Info Alert
-    document.getElementById('infoAlert').innerHTML = `
-        <strong>${strings.infoAlertTitle}</strong><br>
-        • ${strings.infoAlertText1}<br>
-        • ${strings.infoAlertText2}<br>
+
+    // Info Alert (Centrerad lista)
+    infoAlert.innerHTML = `
+        <ul class="list-unstyled text-start mx-auto" style="max-width: 800px;"> 
+            <li>• ${strings.infoAlertText1}</li>
+            <li>• ${strings.infoAlertText2}</li>
+            <li>• ${strings.infoAlertText3}</li>
+        </ul>
     `;
 
     // Start Screen Headers/Labels
     document.getElementById('card1Header').textContent = strings.card1Header;
     document.getElementById('checkboxLabelWrong').textContent = strings.checkboxLabelWrong;
-    document.getElementById('toggleFilesBtn').textContent = (toggleFilesBtn.textContent === "Avmarkera alla" || toggleFilesBtn.textContent === "Deselect All") ? strings.toggleFilesDeselect : strings.toggleFilesSelect;
+    
+    // Använd dataset för tillståndshantering
+    const isFilesDeselectMode = toggleFilesBtn.dataset.mode === 'deselect';
+    toggleFilesBtn.textContent = isFilesDeselectMode ? strings.toggleFilesDeselect : strings.toggleFilesSelect;
     
     document.getElementById('card2Header').textContent = strings.card2Header;
     
@@ -223,12 +262,15 @@ function updateUI(lang) {
     }
     
     document.getElementById('categoriesAvailable').textContent = strings.categoriesAvailable;
-    document.getElementById('toggleCategoriesBtn').textContent = (toggleCategoriesBtn.textContent.includes("Avmarkera") || toggleCategoriesBtn.textContent.includes("Deselect")) ? strings.toggleCategoriesDeselect : strings.toggleCategoriesSelect;
+    
+    const isCatDeselectMode = toggleCategoriesBtn.dataset.mode === 'deselect';
+    toggleCategoriesBtn.textContent = isCatDeselectMode ? strings.toggleCategoriesDeselect : strings.toggleCategoriesSelect;
     
     document.getElementById('card3Header').textContent = strings.card3Header;
     document.getElementById('labelNumQuestions').textContent = strings.labelNumQuestions;
     document.getElementById('startBtn').textContent = strings.buttonStart;
     
+    // Uppdatera highscore-knappen baserat på synlighet
     document.getElementById('showHighscoresBtn').textContent = (highscoresDiv.style.display === 'block') ? strings.buttonHighscoresHide : strings.buttonHighscoresShow;
     
     // Quiz Screen
@@ -243,15 +285,29 @@ function updateUI(lang) {
     // Modal
     document.getElementById('abortModalTitle').textContent = strings.abortModalTitle;
     document.getElementById('abortModalBody').textContent = strings.abortModalBody;
-    document.getElementById('abortWithScore').textContent = strings.abortWithScore;
-    document.getElementById('abortWithoutScore').textContent = strings.abortWithoutScore;
+    
+    // FIX FÖR ABORT KNAPPARNAS TEXT
+    if (abortWithScoreBtn) abortWithScoreBtn.textContent = strings.abortWithScore; 
+    if (abortWithoutScoreBtn) abortWithoutScoreBtn.textContent = strings.abortWithoutScore; 
+    
+    // Tagga Modal översättning
+    if (tagModalTitle) tagModalTitle.textContent = strings.tagModalTitle; 
+    if (tagQuestionLabel) tagQuestionLabel.textContent = strings.tagQuestionLabel; 
+    if (tagCommentLabel) tagCommentLabel.textContent = strings.tagCommentLabel; 
+    if (tagCancelBtn) tagCancelBtn.textContent = strings.tagButtonCancel; 
+    
+    // Denna knapp har dynamisk text, men vi sätter dess grundtext här
+    if (confirmTagBtn) confirmTagBtn.textContent = strings.tagButtonSave; 
+    
+    // Uppdatera startskärmens tag-knappstext
+    if (tagBtn) tagBtn.textContent = strings.tagButtonText; 
     
     // Uppdatera progress bar texten (om synlig)
     updateProgress();
     
-    // Uppdatera highscore-visningen (om synlig)
+    // Om highscores visas, ladda om för att få rätt språk
     if (highscoresDiv.style.display === 'block') {
-        fetchAndDisplayHighscores(true);
+        fetchAndDisplayHighscores(true, false); // Tvinga omladdning men behåll visning
     }
 }
 
@@ -275,11 +331,14 @@ function getDisplayDateTime(dateObj) {
         hour: '2-digit', 
         minute: '2-digit' 
     };
-    return dateObj.toLocaleString('sv-SE', options).replace(',', ''); 
+    return dateObj.toLocaleString(currentLanguage === 'sv' ? 'sv-SE' : 'en-US', options).replace(',', ''); 
 }
 
 function formatTime(totalSeconds) {
-    if (!totalSeconds || isNaN(totalSeconds)) return languageStrings[currentLanguage].highscoresHeader3.replace('⏱️ ', '0s');
+    const strings = languageStrings[currentLanguage];
+    // Kollar om det är highscore-rubriken vi vill ha (baserat på hur den definierats i strängarna)
+    const timeHeader = strings.highscoresHeader3;
+    if (!totalSeconds || isNaN(totalSeconds)) return timeHeader.includes('⏱️') ? timeHeader.replace('⏱️ ', '0s') : '0s'; 
     
     const roundedSeconds = Math.round(totalSeconds);
     const minutes = Math.floor(roundedSeconds / 60);
@@ -300,7 +359,7 @@ function updateProgress() {
     progressBar.style.width = percent + '%';
     progressBar.textContent = Math.floor(percent) + '%';
     
-    if (total > 0) {
+    if (total > 0 && current < total) { // Visa endast om quizen pågår
         const str = languageStrings[currentLanguage].questionOfTotal;
         questionNum.textContent = str.replace('[CURRENT]', current + 1).replace('[TOTAL]', total); 
     } else {
@@ -322,15 +381,15 @@ function setEquals(a, b) {
     return true;
 }
 
-function saveHighscore(score, total, time, dateAndTime, files) {
+function saveHighscore(scorePercentage, scoreTotalStr, time, dateAndTime, files) {
     fetch('/highscores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
             date: dateAndTime, 
-            score, 
-            total,
-            time,
+            score: scorePercentage, 
+            total: scoreTotalStr, 
+            time: parseFloat(time),
             files: files 
         })
     }).catch(err => console.error("Could not save highscore:", err));
@@ -340,18 +399,18 @@ function saveHighscore(score, total, time, dateAndTime, files) {
 // HIGHSCORES show/hide AND LOADING
 // ======================================================
 
-async function fetchAndDisplayHighscores(show = true) {
+async function fetchAndDisplayHighscores(show = true, toggleVisibility = true) {
     const strings = languageStrings[currentLanguage];
 
-    if (show && highscoresDiv.style.display === 'block') {
+    if (toggleVisibility && show && highscoresDiv.style.display === 'block') {
         highscoresDiv.style.display = 'none';
         showHighscoresBtn.textContent = strings.buttonHighscoresShow;
         return;
     }
     
     if (show) {
-        highscoresDiv.innerHTML = strings.highscoresLoading;
-        showHighscoresBtn.textContent = strings.buttonHighscoresHide;
+        highscoresDiv.innerHTML = `<p>${strings.highscoresLoading}</p>`;
+        if (toggleVisibility) showHighscoresBtn.textContent = strings.buttonHighscoresHide;
     }
 
 
@@ -362,62 +421,66 @@ async function fetchAndDisplayHighscores(show = true) {
         let html = '';
 
         if (!data || data.length === 0) {
-            html = strings.highscoresNone;
+            html = `<p>${strings.highscoresNone}</p>`;
         } else {
+            // Använd HTML-tabell för bättre struktur
             html = `
-                <div class="highscore-entry header">
-                    <span>${strings.highscoresHeader1}</span>
-                    <span>${strings.highscoresHeader2}</span>
-                    <span>${strings.highscoresHeader3}</span>
-                    <span>${strings.highscoresHeader4}</span>
-                </div>
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>${strings.highscoresHeader1}</th>
+                            <th>${strings.highscoresHeader2}</th>
+                            <th>${strings.highscoresHeader3}</th>
+                            <th>${strings.highscoresHeader4}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
             `;
-            // Sorting logic remains the same
+            // Sorterar för att visa bästa/snabbaste först
             data.sort((a, b) => {
                 const timeA = parseFloat(a.time) || 9999;
                 const timeB = parseFloat(b.time) || 9999;
                 
+                // Prioritera snabbare tid, sedan högre procent
                 if (timeA !== timeB) return timeA - timeB; 
                 return (parseFloat(b.score) || 0) - (parseFloat(a.score) || 0); 
             });
 
 
-            data.forEach((h, idx) => {
-                if (!h || !h.total || typeof h.score !== 'number' || typeof h.time === 'undefined') return;
-                
+            data.forEach((h) => {
+                const scoreDisplay = h.score !== undefined && h.total !== undefined ? `${h.score}% (${h.total})` : 'N/A';
                 const timeDisplay = formatTime(h.time); 
-                const filesDisplay = (h.files || ['N/A']).join(', '); 
+                const filesDisplay = (h.files && Array.isArray(h.files) ? h.files.join(', ') : (h.files || 'N/A')); 
                 
-                html += `<div class="highscore-entry ${idx%2===0?'even':'odd'}">
-                            <span>${h.date}</span>
-                            <span>${h.score}% (${h.total})</span>
-                            <span>${timeDisplay}</span>
-                            <span>${filesDisplay}</span>
-                        </div>`;
+                html += `<tr>
+                            <td>${h.date}</td>
+                            <td>${scoreDisplay}</td>
+                            <td>${timeDisplay}</td>
+                            <td title="${filesDisplay}">${filesDisplay}</td>
+                        </tr>`;
             });
             
-            html = html || strings.highscoresNone;
+            html += `</tbody></table>`;
         }
         
         highscoresDiv.innerHTML = html;
 
         if (show) {
             highscoresDiv.style.display = 'block';
-            showHighscoresBtn.textContent = strings.buttonHighscoresHide;
+            if (toggleVisibility) showHighscoresBtn.textContent = strings.buttonHighscoresHide;
         } else {
             highscoresDiv.style.display = 'none';
-            showHighscoresBtn.textContent = strings.buttonHighscoresShow;
+            if (toggleVisibility) showHighscoresBtn.textContent = strings.buttonHighscoresShow;
         }
         
     } catch (err) {
         console.error("Could not fetch highscores:", err);
-        highscoresDiv.innerHTML = strings.highscoresError;
+        highscoresDiv.innerHTML = `<p class="text-danger">${strings.highscoresError}</p>`;
         if (show) highscoresDiv.style.display = 'block';
     }
 }
 
-// Connect the new function to the button
-showHighscoresBtn.addEventListener('click', () => fetchAndDisplayHighscores(true)); 
+showHighscoresBtn.addEventListener('click', () => fetchAndDisplayHighscores(true, true)); 
 
 // ======================================================
 // FETCH JSON FILES & START BUTTON LOGIC
@@ -426,11 +489,11 @@ showHighscoresBtn.addEventListener('click', () => fetchAndDisplayHighscores(true
 function updateStartButtonStatus() {
     const filesSelected = Array.from(fileCheckboxesDiv.querySelectorAll('input:checked')).length > 0 || onlyWrong.checked;
     
-    // If categories are NOT displayed (Direct Start mode), you can start if files are selected.
+    // Om kategorier INTE visas (Direct Start mode)
     if (categorySelection.classList.contains('d-none')) {
         startBtn.disabled = !filesSelected;
     } else {
-        // If categories ARE displayed, at least one category must be selected.
+        // Om kategorier VISAS, måste minst en kategori vara vald
         const selectedCategories = Array.from(categoryCheckboxes.querySelectorAll('input:checked')).length > 0;
         startBtn.disabled = !selectedCategories;
     }
@@ -451,7 +514,10 @@ function updateLoadButtonStatus() {
 }
 
 categoryCheckboxes.addEventListener('change', updateStartButtonStatus);
-onlyWrong.addEventListener('change', updateLoadButtonStatus);
+onlyWrong.addEventListener('change', () => {
+    updateLoadButtonStatus();
+    updateStartButtonStatus(); // Uppdatera Startknappens status om 'Endast felaktiga' ändras
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -474,11 +540,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <label class="form-check-label" for="${f}">${f}</label>`;
                 
                 div.querySelector('input').addEventListener('change', () => {
-                    // Reset all category selection/questions if files change
+                    // Återställ all kategorival/frågor om filer ändras
                     questions = []; 
                     allLoadedQuestions = [];
                     categorySelection.classList.add('d-none');
                     categoryCheckboxes.innerHTML = '';
+                    loadCategoriesBtn.classList.remove('btn-success');
                     updateStartButtonStatus();
                     updateLoadButtonStatus();
                 });
@@ -492,9 +559,12 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLoadButtonStatus(); 
             updateStartButtonStatus();
             
-            // Load highscores silently in the background without displaying them
-            fetchAndDisplayHighscores(false); 
+            // Ladda highscores tyst i bakgrunden utan att visa dem
+            fetchAndDisplayHighscores(false, false); 
         });
+
+    // INITIERA MODALER
+    tagModal = new bootstrap.Modal(document.getElementById('tagModal'));
 });
 
 
@@ -519,9 +589,11 @@ function displayCategoryCheckboxes(allQ) {
     availableCategories.forEach(cat => {
         const div = document.createElement('div');
         div.className = "form-check";
+        // Skapa ett säkert ID för kategorin
+        const catId = `cat-${cat.replace(/\s/g, '_').replace(/[^a-zA-Z0-9_]/g, '')}`;
         div.innerHTML = `
-            <input class="form-check-input" type="checkbox" value="${cat}" id="cat-${cat}" checked>
-            <label class="form-check-label" for="cat-${cat}">${cat}</label>`;
+            <input class="form-check-input" type="checkbox" value="${cat}" id="${catId}" checked>
+            <label class="form-check-label" for="${catId}">${cat}</label>`;
         
         div.querySelector('input').addEventListener('change', updateStartButtonStatus);
         categoryCheckboxes.appendChild(div);
@@ -539,12 +611,16 @@ toggleCategoriesBtn.addEventListener('click', () => {
     
     const newState = !allChecked;
     checkboxes.forEach(cb => cb.checked = newState);
+    
+    // Uppdatera dataset och text
+    toggleCategoriesBtn.dataset.mode = newState ? 'deselect' : 'select';
     toggleCategoriesBtn.textContent = newState ? strings.toggleCategoriesDeselect : strings.toggleCategoriesSelect; 
+
     updateStartButtonStatus();
 });
 
 // ======================================================
-// LOAD CATEGORIES LOGIC (STEP 1: Load questions and show filter)
+// LOAD CATEGORIES LOGIC (STEP 1: Load questions and show filter) - UPPDATERAD FÖR SOURCEFILE
 // ======================================================
 
 loadCategoriesBtn.addEventListener('click', () => {
@@ -559,19 +635,33 @@ loadCategoriesBtn.addEventListener('click', () => {
     startBtn.disabled = true;
 
     let fetchPromise;
+    selectedQuizFiles = []; 
 
     if (onlyWrong.checked) {
         selectedQuizFiles = ['Fel frågor']; 
-        fetchPromise = fetch("/wrong").then(r => r.json());
+        fetchPromise = fetch("/wrong").then(r => {
+            if (!r.ok) throw new Error("Could not fetch /wrong");
+            return r.json();
+        }).then(questions => questions.map(q => ({...q, sourceFile: 'wrong.json'}))); // Lägg till källfil
     } else {
-        selectedQuizFiles = Array.from(document.querySelectorAll('#fileCheckboxes input:checked')).map(cb => cb.value);
-        if (selectedQuizFiles.length === 0) { 
+        const filesToFetch = Array.from(document.querySelectorAll('#fileCheckboxes input:checked')).map(cb => cb.value);
+        if (filesToFetch.length === 0) { 
             alert(strings.alertSelectFile);
             updateLoadButtonStatus(); 
             startBtn.disabled = false;
             return; 
         }
-        fetchPromise = Promise.all(selectedQuizFiles.map(f => fetch(`/questions/${f}`).then(r => r.json()))).then(arrays => arrays.flat());
+        selectedQuizFiles = filesToFetch; 
+        
+        // Här mappar vi varje fråga med dess specifika källfil
+        fetchPromise = Promise.all(filesToFetch.map(f => 
+            fetch(`/questions/${f}`)
+                .then(r => {
+                    if (!r.ok) throw new Error(`Could not fetch ${f}`);
+                    return r.json();
+                })
+                .then(questions => questions.map(q => ({...q, sourceFile: f}))) // <-- SPARAR SPECIFIK KÄLLFIL HÄR
+        )).then(arrays => arrays.flat());
     }
 
     fetchPromise
@@ -579,19 +669,33 @@ loadCategoriesBtn.addEventListener('click', () => {
             if (!allQ || allQ.length === 0) { 
                 alert(strings.alertNoQuestions);
                 loadCategoriesBtn.textContent = strings.buttonLoadCategoriesNone;
+                loadCategoriesBtn.classList.add('btn-danger');
                 return; 
             }
             
-            allLoadedQuestions = allQ; 
-            questions = allQ; 
+            // Hantera dubbletter, men behåll sourceFile från den först hittade
+            let uniqueQuestions = {};
+            allQ.forEach(q => {
+                const key = q.question.toLowerCase().trim();
+                if (!uniqueQuestions[key]) {
+                    uniqueQuestions[key] = q;
+                }
+            });
             
-            displayCategoryCheckboxes(allQ);
-            loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoaded;
+            const uniqueQArray = Object.values(uniqueQuestions);
+            allLoadedQuestions = uniqueQArray;
+            questions = uniqueQArray; 
+            
+            displayCategoryCheckboxes(uniqueQArray);
+            loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoaded + ` (${uniqueQArray.length})`;
+            loadCategoriesBtn.classList.remove('btn-danger');
+            loadCategoriesBtn.classList.add('btn-success');
         })
         .catch(err => { 
             console.error("Error fetching questions:", err); 
             alert(strings.alertErrorFetching);
-            loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoading;
+            loadCategoriesBtn.textContent = strings.buttonLoadCategoriesNone;
+            loadCategoriesBtn.classList.add('btn-danger');
         })
         .finally(() => {
             loadCategoriesBtn.disabled = false;
@@ -600,7 +704,7 @@ loadCategoriesBtn.addEventListener('click', () => {
 });
 
 // ======================================================
-// START QUIZ LOGIC (STEP 2: Filtering & Start OR Direct Start)
+// START QUIZ LOGIC (STEP 2: Filtering & Start OR Direct Start) - UPPDATERAD FÖR SOURCEFILE
 // ======================================================
 startBtn.addEventListener('click', () => {
     const strings = languageStrings[currentLanguage];
@@ -608,7 +712,7 @@ startBtn.addEventListener('click', () => {
     if (startBtn.disabled) return;
     
     // ----------------------------------------------------
-    // MODE 1: DIRECT START - No questions are loaded yet.
+    // MODE 1: DIRECT START - No questions are loaded yet. - UPPDATERAD FÖR SOURCEFILE
     // ----------------------------------------------------
     if (allLoadedQuestions.length === 0) {
         
@@ -618,27 +722,50 @@ startBtn.addEventListener('click', () => {
             return; 
         }
 
-        loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoading.replace('...', strings.buttonLoadCategoriesLoading); // Use loading text
+        loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoading;
         loadCategoriesBtn.disabled = true;
         startBtn.disabled = true;
         
         let fetchPromise;
+        selectedQuizFiles = [];
+
         if (onlyWrong.checked) {
             selectedQuizFiles = ['Fel frågor'];
-            fetchPromise = fetch("/wrong").then(r => r.json());
+            fetchPromise = fetch("/wrong").then(r => {
+                if (!r.ok) throw new Error("Could not fetch /wrong");
+                return r.json();
+            }).then(questions => questions.map(q => ({...q, sourceFile: 'wrong.json'}))); // <-- KÄLLFIL
         } else {
-            selectedQuizFiles = Array.from(document.querySelectorAll('#fileCheckboxes input:checked')).map(cb => cb.value);
-            fetchPromise = Promise.all(selectedQuizFiles.map(f => fetch(`/questions/${f}`).then(r => r.json()))).then(arrays => arrays.flat());
+            const filesToFetch = Array.from(document.querySelectorAll('#fileCheckboxes input:checked')).map(cb => cb.value);
+            selectedQuizFiles = filesToFetch;
+            fetchPromise = Promise.all(filesToFetch.map(f => 
+                fetch(`/questions/${f}`)
+                    .then(r => {
+                        if (!r.ok) throw new Error(`Could not fetch ${f}`);
+                        return r.json();
+                    })
+                    .then(questions => questions.map(q => ({...q, sourceFile: f}))) // <-- KÄLLFIL
+            )).then(arrays => arrays.flat());
         }
 
         fetchPromise.then(allQ => {
             if (!allQ || allQ.length === 0) {
                 alert(strings.alertNoQuestionsStart); 
                 loadCategoriesBtn.textContent = strings.buttonLoadCategoriesNone;
+                loadCategoriesBtn.classList.remove('btn-success');
                 return;
             }
             
-            allLoadedQuestions = allQ; 
+            // Hantera dubbletter, men behåll sourceFile från den först hittade
+            let uniqueQuestions = {};
+            allQ.forEach(q => {
+                const key = q.question.toLowerCase().trim();
+                if (!uniqueQuestions[key]) {
+                    uniqueQuestions[key] = q;
+                }
+            });
+            
+            allLoadedQuestions = Object.values(uniqueQuestions);
             let questionsToUse = [...allLoadedQuestions]; 
             
             const num = parseInt(document.getElementById('numQuestions').value, 10);
@@ -654,7 +781,8 @@ startBtn.addEventListener('click', () => {
         }).catch(err => {
             console.error("Error during direct start of questions:", err); 
             alert(strings.alertErrorFetching);
-            loadCategoriesBtn.textContent = strings.buttonLoadCategoriesLoading;
+            updateLoadButtonStatus();
+            loadCategoriesBtn.classList.remove('btn-success');
         }).finally(() => {
             loadCategoriesBtn.disabled = false;
             startBtn.disabled = false;
@@ -690,6 +818,7 @@ startBtn.addEventListener('click', () => {
     
     // Hide/clear UI elements
     categorySelection.classList.add('d-none');
+    loadCategoriesBtn.classList.remove('btn-success'); // Ta bort grön färg
     updateLoadButtonStatus(); 
     
     startQuiz();
@@ -706,10 +835,14 @@ function startQuiz() {
     
     currentQuestion = 0;
     scoreList = [];
+    quizStartTime = Date.now(); // Starta global timer
+    
     startScreen.classList.add('d-none');
     quizScreen.classList.remove('d-none');
     resultScreen.classList.add('d-none');
     
+    infoAlert.classList.add('d-none'); 
+
     questions = shuffleArray(questions); 
     showQuestion();
 }
@@ -724,6 +857,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 restartBtn.addEventListener('click', () => {
+    // Återställ allt
     questions = []; 
     allLoadedQuestions = [];
     categorySelection.classList.add('d-none');
@@ -731,18 +865,29 @@ restartBtn.addEventListener('click', () => {
     
     resultScreen.classList.add('d-none');
     startScreen.classList.remove('d-none');
+    
+    infoAlert.classList.remove('d-none'); 
+    
     updateLoadButtonStatus(); 
     updateStartButtonStatus();
+    loadCategoriesBtn.classList.remove('btn-success'); 
 });
 
 // Abort quiz modal logic
 const abortModal = new bootstrap.Modal(document.getElementById('abortModal'));
 document.getElementById('abortBtn').addEventListener('click', () => abortModal.show());
-document.getElementById('abortWithScore').addEventListener('click', () => showResult());
+document.getElementById('abortWithScore').addEventListener('click', () => {
+    abortModal.hide();
+    showResult();
+});
 document.getElementById('abortWithoutScore').addEventListener('click', () => {
+    abortModal.hide();
     quizScreen.classList.add('d-none');
     startScreen.classList.remove('d-none');
     
+    infoAlert.classList.remove('d-none'); 
+    
+    // Rensa minneskrävande data
     questions = []; 
     allLoadedQuestions = [];
     categorySelection.classList.add('d-none');
@@ -750,6 +895,7 @@ document.getElementById('abortWithoutScore').addEventListener('click', () => {
     
     updateLoadButtonStatus(); 
     updateStartButtonStatus();
+    loadCategoriesBtn.classList.remove('btn-success'); 
 });
 
 // TOGGLE select/unselect all files
@@ -760,12 +906,16 @@ toggleFilesBtn.addEventListener('click', () => {
     
     const newState = !allChecked;
     checkboxes.forEach(cb => cb.checked = newState);
+    
+    toggleFilesBtn.dataset.mode = newState ? 'deselect' : 'select';
     toggleFilesBtn.textContent = newState ? strings.toggleFilesDeselect : strings.toggleFilesSelect;
     
+    // Rensa allt relaterat till laddade frågor
     questions = []; 
     allLoadedQuestions = [];
     categorySelection.classList.add('d-none');
     categoryCheckboxes.innerHTML = '';
+    loadCategoriesBtn.classList.remove('btn-success'); 
 
     updateLoadButtonStatus();
     updateStartButtonStatus();
@@ -775,17 +925,107 @@ toggleFilesBtn.addEventListener('click', () => {
 // ======================================================
 // MULTI-SUBMIT LOGIC
 // ======================================================
-
 function updateMultiSubmitButtonStatus() {
-    const currentQ = questions[currentQuestion];
-    // Q.correct is a string for single-choice, array for multi-choice
-    if (!currentQ || typeof currentQ.correct === 'string') return;
-
     const cbs = Array.from(optionsDiv.querySelectorAll('input[type="checkbox"]'));
     const anyChecked = cbs.some(c => c.checked);
     
     multiSubmitBtn.disabled = !anyChecked;
 }
+
+// ======================================================
+// TAGGA FRÅGA MED KOMMENTAR (Steg 1: Öppna Modal)
+// ======================================================
+function tagQuestion(q) {
+    // 1. Spara den aktuella frågan globalt
+    currentQuestionToTag = q; 
+    
+    // 2. Förbered modalen med frågetexten
+    tagQuestionText.textContent = q.question;
+    tagCommentTextarea.value = ''; // Rensa textfältet
+    
+    // 3. Återställ Spara-knappen i modalen
+    const strings = languageStrings[currentLanguage];
+    confirmTagBtn.textContent = strings.tagButtonSave;
+    confirmTagBtn.classList.remove('btn-success', 'btn-danger', 'btn-info');
+    confirmTagBtn.classList.add('btn-warning');
+
+    // 4. Visa modalen
+    tagModal.show();
+}
+
+// ======================================================
+// SKICKA FRÅGAN + KOMMENTAR TILL SERVERN (Steg 2: Skicka data) - UPPDATERAD FÖR SOURCEFILE
+// ======================================================
+confirmTagBtn.addEventListener('click', () => {
+    const strings = languageStrings[currentLanguage];
+    if (!currentQuestionToTag) return;
+
+    const comment = tagCommentTextarea.value.trim();
+
+    confirmTagBtn.textContent = 'Sparar...';
+    confirmTagBtn.disabled = true;
+
+    tagBtn.disabled = true;
+    tagBtn.textContent = 'Sparar tagg...';
+    tagBtn.classList.remove('btn-outline-warning', 'btn-success', 'btn-danger');
+    tagBtn.classList.add('btn-info'); 
+
+    // Använd den nu garanterade egenskapen currentQuestionToTag.sourceFile
+    const sourceFile = currentQuestionToTag.sourceFile || 'Okänd källa (JS Error)';
+
+    fetch('/tag', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            question: currentQuestionToTag.question, 
+            category: currentQuestionToTag.category || strings.categoryOther,
+            source: sourceFile, // <-- SKICKAR NU DEN SPECIFIKA KÄLLFILEN
+            comment: comment 
+        })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Serverfel vid taggning.');
+        
+        const successText = (comment.length > 0) 
+            ? strings.tagButtonText.replace('Tagga för senare', '✅ Taggad med anteckning') 
+            : strings.tagButtonText.replace('Tagga för senare', '✅ Taggad');
+            
+        tagBtn.textContent = successText;
+        tagBtn.classList.remove('btn-info');
+        tagBtn.classList.add('btn-success');
+
+        confirmTagBtn.textContent = '✅ Sparat!';
+        confirmTagBtn.classList.remove('btn-warning');
+        confirmTagBtn.classList.add('btn-success');
+        
+        setTimeout(() => {
+            tagModal.hide();
+        }, 800);
+    })
+    .catch(error => {
+        console.error("Fel vid taggning:", error);
+        tagBtn.textContent = '⚠️ Fel vid taggning';
+        tagBtn.classList.remove('btn-info');
+        tagBtn.classList.add('btn-danger');
+
+        confirmTagBtn.textContent = '⚠️ Fel!';
+        confirmTagBtn.classList.remove('btn-warning');
+        confirmTagBtn.classList.add('btn-danger');
+    })
+    .finally(() => {
+        confirmTagBtn.disabled = false;
+        
+        setTimeout(() => {
+            if (currentQuestionToTag === questions[currentQuestion]) { 
+                tagBtn.disabled = false;
+                tagBtn.textContent = strings.tagButtonText;
+                tagBtn.classList.remove('btn-success', 'btn-danger');
+                tagBtn.classList.add('btn-outline-warning');
+            }
+        }, 3000); 
+    });
+});
+
 
 // ======================================================
 // SHOW QUESTION
@@ -794,6 +1034,15 @@ function showQuestion() {
     const q = questions[currentQuestion];
     const strings = languageStrings[currentLanguage];
     
+    // Återställ Tagga-knappen
+    tagBtn.disabled = false;
+    tagBtn.textContent = strings.tagButtonText; 
+    tagBtn.classList.remove('btn-success', 'btn-danger', 'btn-info');
+    tagBtn.classList.add('btn-outline-warning');
+
+    // Sätt klickhändelsen till den aktuella frågan
+    tagBtn.onclick = () => tagQuestion(q);
+
     questionText.textContent = q.question;
 
     optionsDiv.innerHTML = '';
@@ -873,6 +1122,7 @@ function checkAnswer(selected, optionItem, q) {
         iconSpan.textContent = '✔';
         optionItem.appendChild(iconSpan);
         
+        // Ta bort från felaktiga listan
         fetch("/wrong/remove", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });
 
         setTimeout(() => {
@@ -884,6 +1134,7 @@ function checkAnswer(selected, optionItem, q) {
     } else {
         optionItem.classList.add('wrong');
         
+        // Visa det korrekta svaret
         Array.from(optionsDiv.querySelectorAll('.option-item')).forEach(item => { 
             const input = item.querySelector('input');
             if (input && input.value === q.correct) {
@@ -893,6 +1144,7 @@ function checkAnswer(selected, optionItem, q) {
 
         explanationDiv.textContent = q.explanation || strings.explanationNone;
         explanationDiv.classList.remove('d-none');
+        // Lägg till i felaktiga listan
         fetch("/wrong/add", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(q) });
 
         nextBtn.classList.remove('d-none');
@@ -928,13 +1180,13 @@ function submitMulti(q) {
         const input = item.querySelector('input');
         if (!input) return;
 
-        // Mark correct options
-        if (q.correct.includes(input.value)) {
+        // Mark correct options (green)
+        if (correctSet.has(input.value)) {
             item.classList.add('correct');
         } 
         
-        // Mark selected, incorrect options
-        if (input.checked && !q.correct.includes(input.value)) {
+        // Mark selected, incorrect options (red)
+        if (input.checked && !correctSet.has(input.value)) {
             item.classList.add('wrong');
         }
     });
@@ -970,6 +1222,8 @@ function showResult() {
     quizScreen.classList.add('d-none');
     resultScreen.classList.remove('d-none');
 
+    infoAlert.classList.add('d-none'); 
+
     const categoryResults = {};
     let totalCorrect = 0;
     let totalTime = 0;
@@ -1000,7 +1254,8 @@ function showResult() {
         .replace('[TOTALTIME]', formattedTotalTime)
         .replace('[AVGTIME]', averageTime);
 
-    document.getElementById('totalResult').innerHTML = `${resultTotalStr}<br>${resultTimeStr}`;
+    // ANPASSAD HTML FÖR RESULTAT
+    document.getElementById('totalResult').innerHTML = `<h4>${resultTotalStr}</h4><p class="text-muted">${resultTimeStr}</p>`; 
 
     if (totalQuestions > 0 && totalQuestions === questions.length) {
         saveHighscore(
@@ -1015,15 +1270,64 @@ function showResult() {
     // Chart.js - View result per category
     const ctx = document.getElementById('categoryChart').getContext('2d');
     const labels = Object.keys(categoryResults);
-    const data = labels.map(l => categoryResults[l].correct);
-    const totals = labels.map(l => categoryResults[l].total);
+    const correctData = labels.map(l => categoryResults[l].correct);
+    const incorrectData = labels.map(l => categoryResults[l].total - categoryResults[l].correct);
+
+    // Färgtema för diagrammet baserat på aktuellt läge
+    const isDarkMode = document.body.classList.contains('dark');
+    const axisColor = isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)';
+    const fontColor = isDarkMode ? '#f8f9fa' : '#212529';
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+
 
     if (chart) chart.destroy(); 
     chart = new Chart(ctx, {
         type: 'bar',
-        data: { labels, datasets: [{ label: strings.chartLabel, data, backgroundColor: labels.map((_, i) => `rgba(${50 + i * 40},123,255,0.7)`), borderColor: 'rgba(0,0,0,1)', borderWidth: 1 }] },
-        options: { scales: { y: { beginAtZero: true, max: Math.max(...totals) || 1 } } }
+        data: { 
+            labels: labels, 
+            datasets: [
+                {
+                    label: 'Rätt', 
+                    data: correctData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    stack: 'Stack 1'
+                },
+                {
+                    label: 'Fel',
+                    data: incorrectData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                    stack: 'Stack 1'
+                }
+            ]
+        },
+        options: { 
+            indexAxis: 'y', 
+            responsive: true,
+            scales: { 
+                x: { 
+                    stacked: true, 
+                    beginAtZero: true,
+                    ticks: { color: fontColor },
+                    grid: { color: gridColor }
+                },
+                y: {
+                    stacked: true,
+                    ticks: { color: fontColor },
+                    grid: { color: gridColor }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: strings.chartLabel,
+                    color: fontColor
+                },
+                legend: {
+                    labels: {
+                        color: fontColor
+                    }
+                }
+            }
+        }
     });
 }
-
-
