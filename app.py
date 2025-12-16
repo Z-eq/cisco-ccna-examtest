@@ -1,16 +1,20 @@
 # app.py
 
-# Importerar nödvändiga moduler från Flask och standardbiblioteket
+# Importerar moduler från Flask och standardbiblioteket
 from flask import Flask, jsonify, send_from_directory, render_template, request, abort
 import os, json
+# NY, Behövs för att generera tidsstämplar i /tag rutten
+from datetime import datetime 
 
 # Initialiserar Flask-applikationen
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
-# Definierar sökvägar till datalagring
+# Ange sökvägar till datalagring
 QUESTIONS_DIR = os.path.join(os.path.dirname(__file__), "questions")
 WRONG_FILE = "wrong.json"
 HIGHSCORE_FILE = "highscores.json"
+# NY SÖKVÄG: Fil för sparade taggade frågor
+TAGGED_QUESTIONS_FILE = 'tagged_questions.txt' 
 
 # Säkerställer att mappen för frågor/data finns
 os.makedirs(QUESTIONS_DIR, exist_ok=True)
@@ -19,6 +23,9 @@ os.makedirs(QUESTIONS_DIR, exist_ok=True)
 
 def filepath(name):
     """Returnerar den fullständiga sökvägen till en fil i QUESTIONS_DIR."""
+    # Specialhantering för TAGGED_QUESTIONS_FILE då den ligger i appens rot, inte i QUESTIONS_DIR
+    if name == TAGGED_QUESTIONS_FILE:
+        return os.path.join(os.path.dirname(__file__), name)
     return os.path.join(QUESTIONS_DIR, name)
 
 def read_json(filename, default_value=None):
@@ -64,7 +71,6 @@ def list_files():
 @app.route("/questions/<path:filename>")
 def get_question_file(filename):
     """Serverar en specifik frågefil. Flask hanterar 404:an automatiskt."""
-    # Har tagit bort den manuella os.path.exists/abort(404) checken (Optimering)
     return send_from_directory(QUESTIONS_DIR, filename)
 
 # --- Endpoints för felaktiga frågor ---
@@ -110,7 +116,6 @@ def remove_wrong_question():
 @app.route("/highscores", methods=["GET"])
 def get_highscores():
     """Hämtar listan över sparade highscores."""
-    # read_json hanterar nu try/except och returnerar [] om fel (Optimering)
     return jsonify(read_json(HIGHSCORE_FILE))
 
 @app.route("/highscores", methods=["POST"])
@@ -120,7 +125,6 @@ def post_highscore():
     if not data:
         return jsonify({"status":"error","reason":"invalid payload"}), 400
     
-    # read_json hanterar fel och ger en tom lista vid problem (Optimering)
     scores = read_json(HIGHSCORE_FILE, default_value=[]) 
     
     # Lägg till och spara
@@ -128,7 +132,48 @@ def post_highscore():
     write_json(HIGHSCORE_FILE, scores)
     return jsonify({"status":"ok"})
 
+# --- NY ENDPOINT: Tagga fråga med kommentar ---
+
+@app.route('/tag', methods=['POST']) 
+def tag_question():
+    """
+    Sparar den taggade frågan, inklusive en valfri kommentar, i en textfil.
+    Filen sparas i applikationens rot.
+    """
+    try:
+        data = request.get_json()
+        question = data.get('question', 'N/A')
+        category = data.get('category', 'Okänd kategori')
+        source = data.get('source', 'Okänd källa')
+        comment = data.get('comment', '').strip()
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        # Formatera datan för att spara den i filen
+        entry = (
+            f"--- Taggad Fråga ({timestamp}) ---\n"
+            f"Källa: {source} | Kategori: {category}\n"
+            f"Fråga: {question}\n"
+        )
+        
+        # Lägg till kommentaren om den finns
+        if comment:
+            entry += f"Anteckning: {comment}\n"
+            
+        entry += f"---------------------------------\n\n"
+
+        # Använd filepath för att säkerställa att filen skapas i appens rot
+        tag_file_path = filepath(TAGGED_QUESTIONS_FILE)
+        
+        # Skriv till filen i append-läge
+        with open(tag_file_path, 'a', encoding='utf-8') as f:
+            f.write(entry)
+
+        return jsonify({"success": True, "message": "Fråga taggad!"}), 200
+
+    except Exception as e:
+        print(f"Fel vid taggning av fråga: {e}")
+        return jsonify({"success": False, "message": str(e)}), 500
+
 if __name__ == "__main__":
     # Kör utvecklingsservern
-
     app.run(debug=True, host="0.0.0.0", port=5000)
