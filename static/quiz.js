@@ -698,21 +698,112 @@ function submitMulti(q) {
     }
 }
 
+// ======================================================
+// RESULT SCREEN & CHART LOGIC (FIXAD VERSION)
+// ======================================================
 function showResult() {
     const strings = languageStrings[currentLanguage];
-    quizScreen.classList.add('d-none'); resultScreen.classList.remove('d-none');
-    let totalCorrect = 0, totalTime = 0;
-    const catRes = {};
+    quizScreen.classList.add('d-none'); 
+    resultScreen.classList.remove('d-none');
+    
+    let totalCorrect = 0;
+    let totalTime = 0;
+    const catData = {};
+
     scoreList.forEach(s => {
-        catRes[s.category] = catRes[s.category] || { c: 0, t: 0 };
-        catRes[s.category].t++; totalTime += s.time;
-        if (s.correct) { catRes[s.category].c++; totalCorrect++; }
+        totalTime += s.time;
+        if (s.correct) totalCorrect++;
+
+        if (!catData[s.category]) {
+            catData[s.category] = { correct: 0, total: 0 };
+        }
+        catData[s.category].total++;
+        if (s.correct) catData[s.category].correct++;
     });
+
     const perc = scoreList.length ? (totalCorrect / scoreList.length * 100).toFixed(1) : 0;
-    document.getElementById('totalResult').innerHTML = `<h4>${totalCorrect}/${scoreList.length} (${perc}%)</h4><p>${formatTime(totalTime)}</p>`;
+    const avgTime = scoreList.length ? (totalTime / scoreList.length).toFixed(1) : 0;
+
+    const resultTotalStr = strings.resultTotal
+        .replace('[CORRECT]', totalCorrect)
+        .replace('[TOTAL]', scoreList.length)
+        .replace('[PERCENT]', perc);
+    
+    const resultTimeStr = strings.resultTime
+        .replace('[TOTALTIME]', formatTime(totalTime))
+        .replace('[AVGTIME]', avgTime);
+
+    document.getElementById('totalResult').innerHTML = `
+        <h4 class="mb-3">${resultTotalStr}</h4>
+        <p class="mb-4">${resultTimeStr}</p>
+    `;
+
+    const chartCanvas = document.getElementById('categoryChart');
+    const chartContainer = chartCanvas.parentElement;
+    chartContainer.style.height = "450px"; 
+    chartContainer.style.position = "relative";
+
+    const ctx = chartCanvas.getContext('2d');
+    const labels = Object.keys(catData);
+    const correctData = labels.map(l => catData[l].correct);
+    const wrongData = labels.map(l => catData[l].total - catData[l].correct);
+
+    if (chart) {
+        chart.destroy();
+    }
+
+    const isDarkMode = document.body.classList.contains('dark-theme') || document.body.classList.contains('dark');
+    const textColor = isDarkMode ? '#f8f9fa' : '#212529';
+
+    // FIX FÖR SPRÅK I GRAFEN:
+    const labelCorrect = currentLanguage === 'sv' ? 'Rätt' : 'Correct';
+    const labelWrong = currentLanguage === 'sv' ? 'Fel' : 'Wrong';
+
+    chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: labelCorrect, // Använder variabeln istället för hårdkodad text
+                    data: correctData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: labelWrong, // Använder variabeln istället för hårdkodad text
+                    data: wrongData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { color: textColor } },
+                title: { display: true, text: strings.chartLabel, color: textColor }
+            },
+            scales: {
+                x: { 
+                    stacked: true, 
+                    beginAtZero: true,
+                    ticks: { color: textColor, stepSize: 1 } 
+                },
+                y: { 
+                    stacked: true, 
+                    ticks: { color: textColor } 
+                }
+            }
+        }
+    });
+
     saveHighscore(Math.round(perc), `${totalCorrect}/${scoreList.length}`, totalTime, getDisplayDateTime(new Date()), selectedQuizFiles);
 }
-
 // NY FUNKTION FÖR ATT VISA/DÖLJA SPARADE TAGGAR
 async function toggleTagsVisibility() {
     const strings = languageStrings[currentLanguage];
