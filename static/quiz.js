@@ -22,7 +22,7 @@ const languageStrings = {
         infoAlertTitle: "", 
         infoAlertText1: "Det finns cirka <strong>680</strong> unika frågor totalt.",
         infoAlertText2: "Filerna märkta <strong>Final</strong> innehåller lite svårare och dem mer relevanta frågorna från hela frågebanken.",
-        infoAlertText3: "Koden för denna quiz finns på mitt <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
+        infoAlertText3: "Koden för denna quiz finns på min <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
        
         
         // Startskärmen
@@ -1330,4 +1330,5 @@ function showResult() {
             }
         }
     });
+
 }
