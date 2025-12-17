@@ -73,7 +73,7 @@
             "loading"
         ],
         "correct": "2-way",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers that are not elected as DR or BDR remain in the 2-way state on multi-access OSPF segments."
     },
     {
@@ -223,7 +223,7 @@
             "show interfaces"
         ],
         "correct": "show ip route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The 'show ip route' command shows the current IP routing table of the router."
     },
     {
@@ -357,7 +357,7 @@
             "traceroute"
         ],
         "correct": "show ip route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The 'show ip route' command displays all routes known by the router, including connected, static, and dynamic routes."
     },
     {
@@ -547,7 +547,7 @@
             "It identifies the trustworthiness of the route source."
         ],
         "correct": "It identifies the trustworthiness of the route source.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Administrative Distance (AD) is used when a router learns about the same destination network from multiple routing sources (e.g., OSPF and EIGRP). The route source with the lowest AD is considered the most trustworthy and is placed in the routing table."
     },
     {
@@ -620,7 +620,7 @@
             "Shortest Path First (SPF) calculation"
         ],
         "correct": "Designated router/Border designated router (DR/BDR) election",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "DR/BDR elections are only necessary on multi-access network types (like Ethernet) to minimize the number of required adjacencies and LSA flooding. On point-to-point links, the election process is skipped because a full adjacency is formed directly between the two routers."
     },
     {
@@ -806,7 +806,7 @@
             "ARP"
         ],
         "correct": "Hello protocol",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF uses Hello packets to discover and maintain neighbor relationships and to elect the designated router (DR) and backup DR on multi-access networks."
     },
     {
@@ -1033,22 +1033,21 @@
         "explanation": "When the half-duplex side transmits while the full-duplex side is also sending, the half-duplex side detects the incoming signal as a collision. The full-duplex side receives the resulting corrupted frame, leading to high CRC errors."
     },
     {
-
         "question": "Which two statements are true regarding asymmetric encryption algorithms? (Choose two.)",
-    "options": [
-        "Examples of asymmetric encryption algorithms are DES, 3DES, and AES.",
-        "The key that is used for encryption is different from the key that is used for decryption.",
-        "Asymmetric algorithms are substantially slower than symmetric algorithms.",
-        "The key management of symmetric algorithms tends to be simpler than the key management of asymmetric algorithms."
-    ],
-    "correct": [
-        "The key that is used for encryption is different from the key that is used for decryption.",
-        "Asymmetric algorithms are substantially slower than symmetric algorithms."
-    ],
-    "category": "Cryptography Fundamentals",
-    "explanation": "Asymmetric encryption (also known as public-key cryptography) uses a pair of mathematically related keys: a public key for encryption and a private key for decryption.\n\n* **Statement 2 is TRUE:** This is the defining characteristic of asymmetric encryption: the key used to encrypt the data (the public key) is mathematically different from the key used to decrypt it (the private key).\n* **Statement 3 is TRUE:** Asymmetric algorithms (like RSA and ECC) require much more complex computational mathematics than symmetric algorithms (like AES and DES), making them **substantially slower**—often 100 to 1,000 times slower—for bulk data encryption.\n\n* *Why the others are FALSE:*\n    * *Statement 1 is FALSE:* DES, 3DES, and AES are examples of **symmetric** encryption algorithms.\n    * *Statement 4 is FALSE:* Key management for **asymmetric** algorithms tends to be **simpler** (since only the public key needs to be shared securely) than for symmetric algorithms, where the single secret key must be shared securely via an out-of-band method."
-},
-{
+        "options": [
+            "Examples of asymmetric encryption algorithms are DES, 3DES, and AES.",
+            "The key that is used for encryption is different from the key that is used for decryption.",
+            "Asymmetric algorithms are substantially slower than symmetric algorithms.",
+            "The key management of symmetric algorithms tends to be simpler than the key management of asymmetric algorithms."
+        ],
+        "correct": [
+            "The key that is used for encryption is different from the key that is used for decryption.",
+            "Asymmetric algorithms are substantially slower than symmetric algorithms."
+        ],
+        "category": "Security AAA & ACL",
+        "explanation": "Asymmetric encryption (also known as public-key cryptography) uses a pair of mathematically related keys: a public key for encryption and a private key for decryption.\n\n* **Statement 2 is TRUE:** This is the defining characteristic of asymmetric encryption: the key used to encrypt the data (the public key) is mathematically different from the key used to decrypt it (the private key).\n* **Statement 3 is TRUE:** Asymmetric algorithms (like RSA and ECC) require much more complex computational mathematics than symmetric algorithms (like AES and DES), making them **substantially slower**—often 100 to 1,000 times slower—for bulk data encryption.\n\n* *Why the others are FALSE:*\n    * *Statement 1 is FALSE:* DES, 3DES, and AES are examples of **symmetric** encryption algorithms.\n    * *Statement 4 is FALSE:* Key management for **asymmetric** algorithms tends to be **simpler** (since only the public key needs to be shared securely) than for symmetric algorithms, where the single secret key must be shared securely via an out-of-band method."
+    },
+    {
         "question": "In the routing table on R2, what is the protocol code for the default route?",
         "options": [
             "D",
@@ -1058,7 +1057,7 @@
             "S*"
         ],
         "correct": "O*E2",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Koden 'O' indikerar OSPF, och asterisken '*' betecknar en kandidat för default-rutten. 'E2' (External Type 2) är den vanliga koden för en extern default-rutt som har redistribuerats in i OSPF-domänen. Andra koder som 'D' och 'D*EX' representerar EIGRP-rutter, och 'S*' representerar en statisk default-rutt."
     },
     {
@@ -1074,7 +1073,7 @@
             "A valid IP address is configured on the interface.",
             "The interface has Layer 1 and Layer 2 connectivity."
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A 'C' (Connected) route appears when an interface is configured with a valid IP address and is in an operational state (up/up), meaning it has Layer 1 (Physical) and Layer 2 (Data Link) connectivity."
     },
     {

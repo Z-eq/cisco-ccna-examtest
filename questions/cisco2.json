@@ -129,7 +129,7 @@
             "default route"
         ],
         "correct": "default route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A default route (often written as 0.0.0.0 0.0.0.0 in IPv4) is a catch-all entry used when no more specific match for the destination is found in the routing table."
     },
     {
@@ -177,7 +177,7 @@
             "connect between edge routers of the companies"
         ],
         "correct": "connect the edge router of a company to an ISP network",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "En **Default Static Route** (`0.0.0.0 0.0.0.0`) används vanligtvis på en företagsnätverks **Edge Router** för att skicka all trafik, som inte har en mer specifik matchning, mot **ISP-nätverket** (Internet). Detta fungerar bra eftersom det bara finns en utgångspunkt."
     },
     {
@@ -280,7 +280,7 @@
             "requests specific link-state records from another router — LSR",
             "discovers neighbors — hello"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "This maps the OSPF packet types to their primary functions:\n- **Hello**: Discovery and maintenance of neighbors.\n- **DBD (Database Description)**: Used to summarize and check the synchronization of the Link State Database.\n- **LSR (Link-State Request)**: Requests specific LSAs from a neighbor.\n- **LSU (Link-State Update)**: Sends the requested LSAs.\n- **LSAck (Link-State Acknowledgment)**: Acknowledges receipt of LSUs."
     },
     {
@@ -328,7 +328,7 @@
             "The host will lose connection to other subnets, since it cannot dynamically update the default gateway."
         ],
         "correct": "The host will lose connection to other subnets, since it cannot dynamically update the default gateway.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": ""
     },
     {
@@ -422,7 +422,7 @@
             "A valid IP address is configured on the interface.",
             "The interface has Layer 1 and Layer 2 connectivity."
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A 'C' (**Connected**) route is created in the routing table when an interface is configured with an **IP address** and is in an operational 'up/up' state, meaning it has active **Layer 1 (Physical) and Layer 2 (Data Link) connectivity**."
     },
     {
@@ -499,7 +499,7 @@
             "periodically every 30 minutes",
             "on topology change"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF, being a link-state protocol, sends LSAs immediately **on a topology change** to ensure fast convergence. It also performs a full refresh of all self-originated LSAs **periodically every 30 minutes** ($1800 \text{ seconds}$) to ensure database synchronization."
     },
     {
@@ -547,7 +547,7 @@
             "per transmission state of the link"
         ],
         "correct": "for each multi-access segment",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF (Open Shortest Path First) uses the Designated Router (DR) and Backup Designated Router (BDR) mechanism to reduce the number of adjacencies that must be formed, which lowers the amount of OSPF traffic (LSAs). This election is performed **independently on every multi-access network segment** (like an Ethernet LAN). The DR/BDR mechanism is only needed on segments where multiple routers could potentially form full adjacencies (broadcast or non-broadcast multi-access). Point-to-point links, for example, do not require a DR/BDR."
     },
     {
@@ -611,7 +611,7 @@
             "verifying that a neighbor is still functioning"
         ],
         "correct": "constructing a topological database",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "**Link-State Advertisements (LSAs)** are packets used by OSPF routers to share information about their locally attached links and state. The collective information from all LSAs is used to build the complete **topological database (LSDB)** in each router."
     },
     {
@@ -725,7 +725,7 @@
             "ICMP"
         ],
         "correct": "RIP",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "RIP (Routing Information Protocol) is a distance-vector **routing protocol** used by routers to dynamically exchange routing information and learn new paths to destination networks."
     },
     {
@@ -813,7 +813,7 @@
             "loading"
         ],
         "correct": "2-way",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers that are not elected as DR or BDR (known as DROTHERS) form a full adjacency (state 'full') only with the DR and BDR. They only reach the '2-way' state with each other."
     },
     {
@@ -825,7 +825,7 @@
             "To create static VLANs"
         ],
         "correct": "To route packets to unknown networks",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A default route provides a path when no specific route to a destination network exists."
     },
     {
@@ -995,7 +995,7 @@
             "Cost (delay)"
         ],
         "correct": "Cost (bandwidth)",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF uses 'Cost' as its metric. The cost is inversely related to the link's bandwidth, meaning higher bandwidth links have a lower (better) cost. The best path is the one with the lowest total accumulated cost."
     },
     {

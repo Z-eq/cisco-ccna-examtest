@@ -8,7 +8,7 @@
             "It tells us how many routers the packet must pass through."
         ],
         "correct": "It binds a numeric value to the path to a network.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Korrekt: **Metric** anger ett numeriskt värde som används för att rangordna flera möjliga vägar till ett nätverk — lägre värde indikerar en mer önskvärd väg.\nFelaktiga alternativ:\n- **Next hop IP** är en separat parameter som anger nästa router på vägen.\n- **Subnet mask** beskriver nätverkets storlek, inte dess prioritet.\n- **Antal routers** kan användas som en del av vissa metriker (t.ex. hop count i RIP), men metrikens syfte är bredare: att representera kostnaden för vägen oavsett mätmetod."
     },
     {
@@ -78,7 +78,7 @@
             "variables"
         ],
         "correct": "metrics",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A dynamic routing protocol uses a **metric** to calculate the most efficient or 'best' path to a given destination when multiple routes are available **within that same routing protocol**. The metric is a quantifiable value representing the cost of a route. Different protocols use different metrics:\n\n* **OSPF** uses **Cost** (based on bandwidth).\n* **EIGRP** uses a complex calculation involving **Bandwidth** and **Delay**.\n* **RIP** uses **Hop Count**.\n\nThe route with the lowest metric is considered the best path and is installed in the routing table. **Administrative Distance** is only used when comparing routes learned from *different* routing sources."
     },
     {
@@ -472,7 +472,7 @@
             "OSPF database"
         ],
         "correct": "routing table",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A router performs a lookup in its **routing table** to find the best path (next hop) for a destination IP address. This is the core function of Layer 3 routing."
     },
     {
@@ -902,7 +902,8 @@
             "cellular 4G"
         ],
         "category": "WAN & SDN/Virtualization",
-        "explanation": "Internet-based WAN connectivity (also called Public WAN) relies on the shared, public Internet infrastructure for transport. \n\n1. **cable:** Uses HFC (Hybrid Fiber-Coaxial) networks and a cable modem (DOCSIS) to provide access via the public Internet.\n2. **xDSL:** Uses copper telephone lines (ADSL, VDSL) to deliver broadband access via the public Internet.\n3. **cellular 4G/5G (WWAN):** Uses mobile network towers to connect remote sites to the public Internet over a wireless medium.\n\nConversely, T1/E1, MPLS, and Metro Ethernet are classified as **private, provider-managed WAN solutions** because they use dedicated circuits or secured carrier networks that bypass the public Internet, offering higher performance and security guarantees."    },
+        "explanation": "Internet-based WAN connectivity (also called Public WAN) relies on the shared, public Internet infrastructure for transport. \n\n1. **cable:** Uses HFC (Hybrid Fiber-Coaxial) networks and a cable modem (DOCSIS) to provide access via the public Internet.\n2. **xDSL:** Uses copper telephone lines (ADSL, VDSL) to deliver broadband access via the public Internet.\n3. **cellular 4G/5G (WWAN):** Uses mobile network towers to connect remote sites to the public Internet over a wireless medium.\n\nConversely, T1/E1, MPLS, and Metro Ethernet are classified as **private, provider-managed WAN solutions** because they use dedicated circuits or secured carrier networks that bypass the public Internet, offering higher performance and security guarantees."
+    },
     {
         "category": "Network Fundamentals & Tools",
         "question": "Which layer in the OSI model handles encryption and data representation?",
@@ -1071,7 +1072,7 @@
             "IS-IS",
             "OSPF"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "**OSPF** and **IS-IS** are the two primary protocols that generate a complete map of the network topology (link state) and use Dijkstra's algorithm to calculate the shortest path."
     },
     {

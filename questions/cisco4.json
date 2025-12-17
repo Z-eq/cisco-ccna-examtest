@@ -20,7 +20,7 @@
             "show running-config"
         ],
         "correct": "show ip protocols",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The command **`show ip protocols`** displays information about the active routing protocols (such as OSPF, EIGRP, RIP) configured on the Cisco router."
     },
     {
@@ -243,7 +243,7 @@
             "Loading — 6",
             "Full — 7"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The correct sequence for OSPF neighbor states on a multi-access network (LAN) is: Down, Init, Two-Way, Exstart, Exchange, Loading, Full."
     },
     {
@@ -344,7 +344,7 @@
             "show ip ospf neighbor"
         ],
         "correct": "show ip ospf database summary",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "`show ip ospf database summary` displays a summary of the OSPF database, including a count of the different Link-State Advertisement (LSA) types, such as Router LSAs (which contain Router IDs)."
     },
     {
@@ -522,7 +522,7 @@
             "ipv6 route ff::0/128 2001:0db8:feed::1"
         ],
         "correct": "ipv6 route ::/0 2001:db8::1",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "In IPv6, the **default route** is represented by the prefix **$::/0$**, which matches all destination addresses. The command `ipv6 route ::/0 2001:db8::1` directs all traffic that does not have a more specific route to the next-hop address $2001:db8::1$."
     },
     {
@@ -534,7 +534,7 @@
             "VLAN tagging"
         ],
         "correct": "keepalive",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "FHRP protocols (like HSRP, VRRP, GLBP) use **keepalive** or 'hello' messages to exchange information, monitor the status of the active gateway, and maintain redundancy."
     },
     {
@@ -599,7 +599,7 @@
             "Shortest Path First (SPF) calculation"
         ],
         "correct": "Designated router/Border designated router (DR/BDR) election",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "DR/BDR elections are only necessary on multi-access network types (like Ethernet) to minimize the number of required adjacencies and LSA flooding. On point-to-point links, the election process is skipped because a full adjacency is formed directly between the two routers."
     },
     {
@@ -1048,7 +1048,7 @@
             "by segmenting the network into areas"
         ],
         "correct": "by segmenting the network into areas",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Link-state protocols like OSPF use **areas** (segmentation) to partition the network. This design ensures that a topology change within one area results in LSAs being flooded only within that area, thus limiting the size of the Link-State Database and the scope of recalculation."
     },
     {

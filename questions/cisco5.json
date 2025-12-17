@@ -129,7 +129,7 @@
             "show ip protocols"
         ],
         "correct": "show ip ospf neighbor",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "\"show ip ospf neighbor\" displays the list of direct OSPF neighbors and their states."
     },
     {
@@ -141,7 +141,7 @@
             "the ip route configuration command"
         ],
         "correct": "an active local interface connected to the network",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Correct: A directly connected (local) interface is always the most preferred source of route information because the router has direct access to that network. Dynamic and static routes are only used when the network is not locally connected.\n- 'EIGRP' and 'OSPF' are dynamic routing protocols used for learned routes, not for directly connected networks.\n- 'ip route' defines a static route, which has a lower priority than directly connected routes."
     },
     {
@@ -234,7 +234,7 @@
             "traceroute"
         ],
         "correct": "show ip route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The 'show ip route' command is the direct command used to display and verify the contents of the router's current IP routing table, which is used for all Layer 3 forwarding decisions."
     },
     {
@@ -540,7 +540,7 @@
             "First Hop Redundancy Protocol (FHRP)",
             "Hot Standby Router Protocol (HSRP)"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "FHRP protocols like HSRP provide default gateway redundancy at the distribution layer."
     },
     {
@@ -626,7 +626,7 @@
             "Hello value is 30 seconds, dead value is 120 seconds."
         ],
         "correct": "Hello value is 10 seconds, dead value is 40 seconds.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF default hello on broadcast and point-to-point links is 10 seconds and dead interval is 4 times the hello (40s)."
     },
     {
@@ -674,7 +674,7 @@
             "show ip ospf"
         ],
         "correct": "show ip ospf interface",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "\"show ip ospf interface\" shows interfaces and their associated OSPF areas."
     },
     {
@@ -846,7 +846,7 @@
             "conserving router resources"
         ],
         "correct": "scalability",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Static routing becomes difficult and time-consuming to manage in large, complex networks because every change requires manual updates across multiple routers, making it poor for scalability."
     },
     {

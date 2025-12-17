@@ -49,7 +49,7 @@
             "switchport access vlan 10"
         ],
         "correct": "ip address 192.168.1.1 255.255.255.0",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The 'ip address' command is used under an interface to assign an IP address and mask."
     },
     {
@@ -65,7 +65,7 @@
             "LSU database",
             "topology database"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Link-state protocols like OSPF use the **topology database** (or Link-State Database, LSDB) to maintain a complete map of the network, built from Link State Advertisements (LSAs) that are distributed and stored as an **LSU database** (Link State Update)."
     },
     {
@@ -107,7 +107,7 @@
             "area ID",
             "authentication data"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "For two OSPF routers to become neighbors (reach the Two-Way state), their Hello and Dead timers, Area ID, and Authentication data must match."
     },
     {
@@ -142,7 +142,7 @@
             "loading : 4",
             "full : 7"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The correct sequence for OSPF neighbor states is: **Down**, **Init** (received Hello), **Two-Way** (bi-directional communication established), **ExStart** (master/slave chosen), **Exchange** (DBD packets exchanged), **Loading** (LSRs/LSUs exchanged), and **Full** (databases synchronized)."
     },
     {
@@ -353,7 +353,7 @@
             "192.168.99.167/24"
         ],
         "correct": "192.168.40.39/24",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Host A is on the **$192.168.99.0/24$** network. The address **$192.168.40.39/24$** belongs to the **$192.168.40.0/24$** network. Since the destination is on a **different network**, the host must send the packet to its **default gateway** for routing."
     },
     {
@@ -365,7 +365,7 @@
             "EIGRP"
         ],
         "correct": "OSPF",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Open Shortest Path First (OSPF) is a common IGP protocol for internal network routing."
     },
     {
@@ -389,7 +389,7 @@
             "show ip route bgp"
         ],
         "correct": "show ip bgp summary",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "\"show ip bgp summary\" visar statistik inklusive antal skickade/mottagna BGP-uppdateringar."
     },
     {
@@ -649,7 +649,6 @@
         "explanation": "In Cisco Modeling Labs (CML), once a simulation is running, the console of any network device (router, switch, firewall, etc.) can be opened directly by clicking on the node in the topology and selecting the 'Console' option from the menu, which is presented within the CML GUI (Web User Interface)."
     },
     {
-
         "question": "Which feature is critical to correctly implement a router on a stick?",
         "options": [
             "router subinterfaces that are each configured with a dot1q VLAN tag",
@@ -837,7 +836,7 @@
             "Routers use an ARP table to route between networks."
         ],
         "correct": "Routers are required to reach hosts that are not in the local network.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers operate at Layer 3 (Network Layer) and are required to forward packets **between** different networks (subnets). Hosts in the local network communicate via Layer 2 devices (switches)."
     },
     {
@@ -854,7 +853,7 @@
             "Hop count",
             "Bandwidth"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routing protocols use metrics to determine the best path. Simple protocols like RIP use **Hop Count**. Advanced protocols like OSPF and EIGRP use metrics based on **Bandwidth** and Delay (among others)."
     },
     {
@@ -908,7 +907,7 @@
             "Quicksort"
         ],
         "correct": "Shortest Path First (SPF)",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Link-state routing protocols like OSPF use Dijkstra's algorithm, commonly referred to as the **Shortest Path First (SPF)** algorithm, to analyze the LSDB and compute the shortest, loop-free path to every network destination."
     },
     {
@@ -978,7 +977,7 @@
             "periodically every 30 minutes",
             "on topology change"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF är ett händelsedrivet protokoll som skickar Link-State Advertisements (LSAs) omedelbart **vid topologiförändring**. Dessutom uppdateras LSAs periodiskt **var 30:e minut** (1800 sekunder) för att säkerställa att databasen förblir synkroniserad, även om inga förändringar har inträffat."
     },
     {

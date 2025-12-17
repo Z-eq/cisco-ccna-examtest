@@ -32,7 +32,7 @@
             "It identifies the trustworthiness of the route source."
         ],
         "correct": "It identifies the trustworthiness of the route source.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Administrative Distance (AD) is a value used by a Cisco router to determine the preferred path to a destination when the router learns the same route from two or more different routing sources (e.g., OSPF, EIGRP, Static Route). A lower AD value indicates a more trustworthy or believable source. The AD is locally significant to the router."
     },
     {
@@ -116,7 +116,7 @@
             "by segmenting the network in areas"
         ],
         "correct": "by sending only updates of a topology change",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Link-state protocols (like OSPF) send an **update (LSA) only when a topological change occurs**, not the entire routing table. Segmenting the network into areas (OSPF) also limits the scope of flooding, but the principle of sending only change updates is fundamental."
     },
     {
@@ -152,7 +152,7 @@
             "default route"
         ],
         "correct": "host route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "A host route uses a subnet mask of 255.255.255.255 (or /32 in CIDR) to match and route traffic for only a single specific IP address."
     },
     {
@@ -303,7 +303,7 @@
             "show ip protocols"
         ],
         "correct": "show ip route ospf",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "`show ip route ospf` filtrerar hela routerns routingtabell (`show ip route`) för att endast visa de rutter som har länkats in av OSPF-protokollet."
     },
     {
@@ -463,7 +463,7 @@
             "Manual"
         ],
         "correct": "Periodic",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "RIP (Routing Information Protocol) is a distance-vector protocol that sends its entire routing table to its neighbors on a **periodic** timer, typically every 30 seconds, even if no changes have occurred."
     },
     {
@@ -882,7 +882,7 @@
             "neighbors database",
             "topology database"
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Link-state protocols like OSPF use two main tables: the **Neighbor Database** (or Adjacency Database) which lists all directly connected OSPF neighbors, and the **Topology Database** (or Link-State Database - LSDB) which holds all the Link State Advertisements (LSAs) describing the entire network topology."
     },
     {
@@ -1018,7 +1018,7 @@
             "show ip route bgp"
         ],
         "correct": "show ip bgp summary",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The 'show ip bgp summary' command provides a concise, high-level overview of the status of all configured BGP neighbors (peers), showing their state and the number of prefixes received."
     },
     {

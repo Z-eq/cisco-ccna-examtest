@@ -653,7 +653,7 @@
             "ARP table"
         ],
         "correct": "routing table",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers base their forwarding decisions for Layer 3 (IP) packets solely on the routing table, which contains information about known networks and the next hop to reach them."
     },
     {
@@ -838,7 +838,7 @@
             "170 for internal route and 90 for external route"
         ],
         "correct": "110",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The default administrative distance (AD) for routes learned via OSPF (Open Shortest Path First) is 110."
     },
     {
@@ -979,7 +979,7 @@
             "ARP"
         ],
         "correct": "Hello protocol",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "OSPF uses Hello packets to discover and maintain neighbor relationships and to elect the designated router (DR) and backup DR on multi-access networks."
     },
     {
@@ -1004,7 +1004,7 @@
             "default route"
         ],
         "correct": "EIGRP route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Cisco chooses the best route based on the lowest **Administrative Distance (AD)**. EIGRP (AD 90) has a lower AD than OSPF (AD 110) and RIPv2 (AD 120), so the EIGRP route is installed."
     },
     {
@@ -1029,7 +1029,7 @@
             "GLBP"
         ],
         "correct": "VRRP",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "VRRP (Virtual Router Redundancy Protocol) is an open standard FHRP that allows multiple routers to provide redundancy for a default gateway. Unlike HSRP, which is Cisco proprietary, VRRP can include more than two routers to increase fault tolerance. ARP and DHCP are unrelated protocols, and GLBP is Cisco proprietary."
     },
     {
@@ -1058,7 +1058,7 @@
             "Routers learn new networks by exchanging routing updates.",
             "Dynamic routing protocols automatically adjust routes when the topology or traffic changes."
         ],
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Correct: Dynamic routing protocols allow routers to discover new networks by exchanging updates and automatically adjust routes when topology or traffic changes. Alternatives:\n- 'Unable to make changes' is false; dynamic protocols update the routing table.\n- 'Select paths for non real-time changes' is misleading; they respond to actual topology changes.\n- 'Install a default route to discover neighbors' is incorrect; neighbors are discovered via hello messages, not default routes.\n- 'Keep routes permanently like static' is false; dynamic routes can change."
     },
     {

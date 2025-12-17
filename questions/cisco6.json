@@ -80,7 +80,7 @@
             "It identifies the trustworthiness of the route source."
         ],
         "correct": "It identifies the trustworthiness of the route source.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Administrative Distance (AD) is a value (0-255) used to rate the **trustworthiness** of different routing sources (e.g., Static, OSPF, EIGRP). The route with the lowest AD is always preferred when multiple sources provide a path to the same destination."
     },
     {
@@ -315,7 +315,7 @@
             "Links with speeds greater than 1 Gbps require additional memory in the OSPF router or switch to calculate the larger costs."
         ],
         "correct": "Links with speeds greater than 100 Mbps have a cost of 1.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The default OSPF **reference bandwidth is $100 \text{ Mbps}$**. This means that any link with an actual speed of $100 \text{ Mbps}$ or greater (e.g., $1 \text{ Gbps}$ or $10 \text{ Gbps}$) is assigned a calculated cost of **1** (Cost = $10^8 / \text{Bandwidth}$). This leads to **suboptimal routing** because OSPF cannot distinguish between fast links."
     },
     {
@@ -626,7 +626,7 @@
             "via 10.1.1.3, an IPv4 address on this router (RouterX)"
         ],
         "correct": "via 10.1.1.2, an IPv4 address on a remote router",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The entry `R 192.168.2.0/24 [120/4] via 10.1.1.2` indicates a route learned via the RIP protocol ('R') and specifies that the **next hop** to reach $192.168.2.0/24$ is the remote router at IP address **$10.1.1.2$**."
     },
     {
@@ -841,7 +841,7 @@
             "default route"
         ],
         "correct": "EIGRP route",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers use **Administrative Distance (AD)** to choose between routes learned from different routing protocols. EIGRP has an AD of **90**, OSPF has **110**, and RIPv2 has **120**. The route with the **lowest AD (EIGRP)** will be installed in the routing table."
     },
     {
@@ -877,7 +877,7 @@
             "When a router has the choice of a static route and an OSPF route, the static route takes precedence."
         ],
         "correct": "Static routes have a default administrative distance of 0.",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "The statement is **false**. The default Administrative Distance (AD) for a **static route** is **1**. An AD of 0 is reserved for directly connected interfaces, indicating the highest level of trust."
     },
     {
@@ -973,7 +973,7 @@
             "neither approach"
         ],
         "correct": "static routing",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "**Static routing** requires a network administrator to manually enter or update every route entry when the network topology changes, whereas dynamic routing protocols update routes automatically."
     },
     {
@@ -985,7 +985,7 @@
             "ARP table"
         ],
         "correct": "routing table",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "Routers are Layer 3 devices and primarily use the routing table to determine the best next-hop interface and address for forwarding Layer 3 (IP) packets toward their destination network."
     },
     {
@@ -1009,7 +1009,7 @@
             "show ip protocols"
         ],
         "correct": "show ip bgp",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "\"show ip bgp\" visar hela BGP-rutningstabellen."
     },
     {
@@ -1085,7 +1085,7 @@
             "SPF tree"
         ],
         "correct": "LSDB",
-        "category": "Routing Protocols (OSPF/EIGRP)",
+        "category": "Routing & Protocols",
         "explanation": "LSAs (Link-State Advertisements) are stored in the **Link-State Database (LSDB)**. This database contains a full map of the OSPF area. The router then uses Dijkstra's Shortest Path First (SPF) algorithm on the LSDB to calculate the best paths."
     },
     {
