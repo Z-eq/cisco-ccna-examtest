@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -96,17 +97,20 @@
     </div>
 
     <div id="resultScreen" class="d-none text-center">
-        <h2 id="resultTitle">📊 Resultat</h2>
-        <canvas id="categoryChart" width="400" height="200"></canvas>
+        <h2 id="resultTitle" class="mb-4">📊 Resultat</h2>
+        <div class="chart-container shadow-sm p-3 mb-4 bg-white rounded mx-auto" style="position: relative; height:350px; width:100%; max-width: 800px;">
+            <canvas id="categoryChart"></canvas>
+        </div>
         <div id="totalResult" class="mt-3"></div>
-        <button id="restartBtn" class="btn btn-primary btn-lg mt-3">🔁 Starta om</button>
+        <div id="deepDiveContainer" class="mt-5 text-start mx-auto" style="max-width: 800px;"></div>
+        <button id="restartBtn" class="btn btn-primary btn-lg mt-5 mb-5 px-5">🔁 Starta om</button>
     </div>
 
 </div>
 
 <div class="modal fade" id="abortModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="abortModalTitle">Avbryt quiz?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -122,7 +126,7 @@
 
 <div class="modal fade" id="tagModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="tagModalTitle">Tagga Fråga</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
