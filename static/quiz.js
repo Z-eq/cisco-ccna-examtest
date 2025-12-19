@@ -33,9 +33,9 @@ const languageStrings = {
         card3Header: "3. Inställningar & Start",
         labelNumQuestions: "Antal frågor att ta:",
         buttonStart: "▶ STARTA QUIZ",
-        buttonHighscoresShow: "🏆 Visa highscores",
+        buttonHighscoresShow: "🌟 Visa highscores",
         buttonHighscoresHide: "Dölj highscores",
-        buttonTagsShow: "🔖 Visa taggade frågor",
+        buttonTagsShow: "📌 Visa taggade frågor",
         buttonTagsHide: "Dölj taggade frågor",
         tagsLoading: "<em>Laddar sparade taggar...</em>",
         tagsNone: "<em>Inga taggade frågor hittades.</em>",
@@ -74,7 +74,7 @@ const languageStrings = {
         tagCommentLabel: "Dina anteckningar/kommentar:", 
         tagButtonCancel: "Avbryt", 
         tagButtonSave: "Spara Tagg och Kommentar", 
-        tagButtonText: "🔖 Tagga för senare",
+        tagButtonText: "📌 Tagga för senare",
         toggleFilesSelect: "Markera alla",
         toggleFilesDeselect: "Avmarkera alla",
         toggleCategoriesSelect: "Markera alla kategorier",
@@ -716,3 +716,4 @@ confirmTagBtn.addEventListener('click', () => {
 onlyWrong.addEventListener('change', () => {
     performLoad();
 });
+
