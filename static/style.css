@@ -247,7 +247,7 @@ body.dark .option-item label {
     color: #721c24 !important; 
     pointer-events: none;
 }
-body.dark .option-item.correct { background-color: #2b573a !important; color: #e6ffe6 !important; }
+body.dark .option-item.correct { background-color: #4cd47a !important; color: #e6ffe6 !important; }
 body.dark .option-item.wrong { background-color: #6e333a !important; color: #ffeeee !important; }
 
 /* Explanation */
@@ -257,7 +257,7 @@ body.dark .option-item.wrong { background-color: #6e333a !important; color: #ffe
     margin-top: 30px; 
     border-radius: 8px; 
     background-color: #e6ffe6; 
-    color: #1d6413; 
+    color: #4fd33d; 
 }
 body.dark .explanation {
     background-color: #2b573a;
@@ -269,7 +269,7 @@ body.dark .explanation {
 /* --- Knappar (Submit/Nästa) --- */
 
 #multiSubmitBtn, #nextBtn {
-    background-color: #7ab7f3 !important; 
+    background-color: #489ef5 !important; 
     border-color: #7ab7f3 !important;
     color: #fff !important;
     padding: 15px 40px; 
