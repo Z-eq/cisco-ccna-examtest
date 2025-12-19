@@ -136,9 +136,6 @@ The application reads questions from the folder questions/ directory.
         └── highscores.json # Saved highscores (Managed by app.py, excluded from repo)
 
 
-If you need help or have any questions mail me at : zeq.alidemaj @ gmail com
-        
-    📄 Licensing
+Licensing: This project is licensed under the MIT License - Its free to use change or whatever you wish!
 
-This project is licensed under the MIT License - Its free to use change or whatever you wish!
-.
+If you need help or have any questions mail me at : ###### zeq.alidemaj @ gmail com
