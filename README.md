@@ -138,4 +138,4 @@ The application reads questions from the folder questions/ directory.
 
 Licensing: This project is licensed under the MIT License - Its free to use change or whatever you wish!
 
-If you need help or have any questions mail me at : ###### zeq.alidemaj @ gmail com
+If you need help or have any questions mail me at : zeq.alidemaj at gmail com
