@@ -539,7 +539,7 @@
             "Same AS number",
             "Same K values",
             "Same Hello interval",
-            "All of the above"
+            "All alternatives are correct"
         ],
         "correct": "All of the above",
         "explanation": "For EIGRP neighbor adjacency, routers must agree on the **AS number**, the **K values** (metrics weights), and the **Hello timers** (although EIGRP allows some mismatch in timers, a perfect match is generally expected for reliable operation)."
@@ -1115,3 +1115,4 @@
     }
 
 ]
+
