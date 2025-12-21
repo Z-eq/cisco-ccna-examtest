@@ -218,7 +218,11 @@ function updateUI(lang) {
     if (themeToggleBtn) themeToggleBtn.textContent = strings.themeButtonText;
     languageToggleBtn.textContent = (lang === 'sv') ? languageStrings['en'].langButtonText : languageStrings['sv'].langButtonText;
     document.documentElement.lang = lang;
-    document.getElementById('infoAlert').innerHTML = `<ul class="list-unstyled text-start mx-auto" style="max-width: 800px;"><li>• ${strings.infoAlertText2}</li><li>• ${strings.infoAlertText3}</li></ul>`;
+document.getElementById('infoAlert').innerHTML = `
+    <span class="footer-item">• ${strings.infoAlertText2}</span> 
+    <span class="footer-divider">|</span> 
+    <span class="footer-item">• ${strings.infoAlertText3}</span>
+`;
     document.getElementById('card1Header').textContent = strings.card1Header;
     document.getElementById('checkboxLabelWrong').textContent = strings.checkboxLabelWrong;
     

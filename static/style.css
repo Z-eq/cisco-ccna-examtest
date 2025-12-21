@@ -1,12 +1,11 @@
 /*
- * style.css (Komplett version med kategorival, teman och FIXAD LAYOUT)
+ * style.css (Komplett version med fixad Modal-text och Footer)
  */
 
 /* ====================================================== */
 /* --- GLOBAL STYLING & TEMAN --- */
 /* ====================================================== */
 
-/* Använd Bootstrap 5.3 standard för att styra temat utan att krocka */
 body, [data-bs-theme="light"] body { 
     background: #f0f0f0; 
     color: #333; 
@@ -17,6 +16,7 @@ body, [data-bs-theme="light"] body {
     background: #1e1e1e; 
     color: #fff; 
 }
+
 .container {
     max-width: 1200px;  
 }
@@ -24,22 +24,24 @@ body, [data-bs-theme="light"] body {
 /* Tvinga texten inuti kortet att vara mörk i quizskärmen när vi kör light mode */
 .card-body h4, .card-body p, .card-body div, .card-body label,
 .modal-content, .modal-header, .modal-body, .modal-footer {
-    color: #01001;
+    color: #333; 
 }
 
-/* Dark mode justeringar för text */
+/* Dark mode justeringar för text - FIXAT FÖR SYNLIGHET */
 [data-bs-theme="dark"] .card-body h4, 
 [data-bs-theme="dark"] .card-body p, 
 [data-bs-theme="dark"] .card-body div, 
 [data-bs-theme="dark"] .card-body label,
 [data-bs-theme="dark"] h1, 
 [data-bs-theme="dark"] h2, 
-[data-bs-theme="dark"] h5 {
+[data-bs-theme="dark"] h5,
+[data-bs-theme="dark"] #questionNum,
+[data-bs-theme="dark"] #questionText {
     color: #eee !important;
 }
 
 /* ====================================================== */
-/* --- STARTSIDA LAYOUT (PROFESSIONELL KORTLAYOUT) --- */
+/* --- STARTSIDA LAYOUT --- */
 /* ====================================================== */
 
 .quiz-container {
@@ -146,7 +148,7 @@ body, [data-bs-theme="light"] body {
     display: block !important; 
 }
 
-[data-bs-theme="dark"] #questionNum { color: #bbb; }
+[data-bs-theme="dark"] #questionNum { color: #bbb !important; }
 
 #questionText {
     font-size: 1.3em;
@@ -157,10 +159,9 @@ body, [data-bs-theme="light"] body {
     line-height: 1.5;
 }
 
-/* FIX: Svarsalternativen (Rak linje, flex och centrerat) */
 .option-item {
     display: flex; 
-    align-items: center; /* Centrerar input med texten vertikalt */
+    align-items: center; 
     padding: 18px 20px; 
     margin-bottom: 0; 
     background-color: transparent; 
@@ -179,12 +180,11 @@ body, [data-bs-theme="light"] body {
     background-color: rgba(255, 255, 255, 0.05); 
 }
 
-/* FIX: Gör radioknapparna/checkboxarna stora och raka */
 .option-item input[type="radio"],
 .option-item input[type="checkbox"] {
     flex-shrink: 0;
-    margin: 0 15px 0 0; /* Rak marginal till höger */
-    width: 22px; /* Större storlek */
+    margin: 0 15px 0 0; 
+    width: 22px; 
     height: 22px;
     cursor: pointer;
 }
@@ -197,7 +197,6 @@ body, [data-bs-theme="light"] body {
     line-height: 1.4;
 }
 
-/* Rätt/Fel färger */
 .option-item.correct { background-color: #d4edda !important; color: #155724 !important; }
 .option-item.wrong { background-color: #f8d7da !important; color: #721c24 !important; }
 
@@ -208,8 +207,8 @@ body, [data-bs-theme="light"] body {
 /* --- KNAPPAR & EXTRA --- */
 /* ====================================================== */
 
-#multiSubmitBtn, #nextBtn {
-    background-color: #7ab7f3 !important; 
+#multiSubmitBtn, #nextBtn, #startBtn {
+    background-color: #1276da !important; 
     border: none;
     color: #fff !important;
     padding: 15px 40px; 
@@ -221,6 +220,15 @@ body, [data-bs-theme="light"] body {
     margin: 30px auto; 
     max-width: 400px;
     width: 100%;
+}
+
+/* Stil när knappen är INAKTIVERAD */
+#multiSubmitBtn:disabled, #nextBtn:disabled, #startBtn:disabled {
+    background-color: #a0cff7 !important; 
+    border-color: #a0cff7 !important;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7; 
 }
 
 .explanation {
@@ -237,7 +245,65 @@ body, [data-bs-theme="light"] body {
     color: #d8f3dc;
 }
 
+/* ====================================================== */
+/* --- FOOTER STYLING --- */
+/* ====================================================== */
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding-bottom: 40px;
+}
+
+#infoAlert {
+    background-color: #333333 !important;
+    color: #ffffff !important;           
+    border-radius: 50px;                 
+    padding: 10px 35px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+#infoAlert a {
+    color: #7ab7f3 !important;
+    text-decoration: underline;
+}
+
+.mx-3 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    color: #666;
+}
+
 /* Highscores */
 .highscore-entry.even { background: rgba(0,0,0,0.05); }
 .highscore-entry.odd { background: transparent; }
 [data-bs-theme="dark"] .highscore-entry.even { background: rgba(255,255,255,0.05); }
+
+/* ====================================================== */
+/* --- FIX FÖR ABORT MODAL (AVBRYT-RUTAN) --- */
+/* ====================================================== */
+
+/* Denna sektion styr ENBART Avbryt-rutan så att texten syns perfekt */
+.modal-content {
+    background-color: #ffffff !important;
+}
+
+.modal-header .modal-title, 
+.modal-body {
+    color: #333333 !important; /* Här sätter du textfärgen för ljust läge */
+}
+
+[data-bs-theme="dark"] .modal-content {
+    background-color: #2a2a2a !important;
+}
+
+[data-bs-theme="dark"] .modal-header .modal-title, 
+[data-bs-theme="dark"] .modal-body {
+    color: #eeeeee !important; /* Här sätter du textfärgen för mörkt läge */
+}
