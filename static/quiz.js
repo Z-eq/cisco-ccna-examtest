@@ -17,9 +17,9 @@ const languageStrings = {
         mainTitle: "CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Byt Tema",
         langButtonText: "🇸🇪 Svenska",
-        infoAlertText1: "Det finns cirka <strong>680</strong> unika frågor totalt.",
+        infoAlertText1: "",
         infoAlertText2: "Filerna märkta <strong>Final</strong> innehåller lite svårare och mer relevanta frågor.",
-        infoAlertText3: "Koden finns på <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
+        infoAlertText3: "Koden finns på min <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
         card1Header: "1. Välj Frågekällor",
         checkboxLabelWrong: "🚩 Endast felsvarade frågor",
         buttonDeselectAll: "Avmarkera alla",
@@ -79,7 +79,10 @@ const languageStrings = {
         toggleFilesDeselect: "Avmarkera alla",
         toggleCategoriesSelect: "Markera alla kategorier",
         toggleCategoriesDeselect: "Avmarkera alla kategorier",
-        tipsHeader: "💡 Proffstips - Fokusera på följande områden:",
+        tipsHeader: "💡 Tips - Fokusera på följande områden:",
+        deepDive: "Summering",
+        yourAnswer: "Ditt:",
+        correctAnswer: "Rätt:",
         missesText: "missar",
         fileCountText: "frågor"
     },
@@ -88,9 +91,9 @@ const languageStrings = {
         mainTitle: "CCNA Test - 200-301 v2.1",
         themeButtonText: "🌓 Toggle Theme",
         langButtonText: "🇬🇧 English",
-        infoAlertText1: "There are approximately <strong>680</strong> unique questions in total.",
+        infoAlertText1: "",
         infoAlertText2: "Files labeled <strong>Final</strong> contain slightly harder questions.",
-        infoAlertText3: "The code can be found on <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
+        infoAlertText3: "The code can be found on my <a href='https://github.com/Z-eq/cisco-ccna-examtest' target='_blank'>GitHub</a>.",
         card1Header: "1. Select Question Sources",
         checkboxLabelWrong: "🚩 Only Wrong Answers",
         buttonDeselectAll: "Deselect All",
@@ -150,7 +153,10 @@ const languageStrings = {
         toggleFilesDeselect: "Deselect all",
         toggleCategoriesSelect: "Select all categories",
         toggleCategoriesDeselect: "Deselect all categories",
-        tipsHeader: "🍏 Pro Tips - Focus on the following areas:",
+        tipsHeader: "🍏 Tips - Focus on the following areas:",
+        deepDive: "Summary",
+        yourAnswer: "Your:",
+        correctAnswer: "Correct:",
         missesText: "misses",
         fileCountText: "questions"
     }
@@ -198,7 +204,7 @@ const toggleCategoriesBtn = document.getElementById('toggleCategoriesBtn');
 const languageToggleBtn = document.getElementById('languageToggle'); 
 const themeToggleBtn = document.getElementById('themeToggle');
 
-// Sparar antal frågor per fil globalt för att kunna uppdatera texten vid språkväxling
+// Global state for counts
 let fileQuestionCounts = {};
 
 // ======================================================
@@ -212,7 +218,7 @@ function updateUI(lang) {
     if (themeToggleBtn) themeToggleBtn.textContent = strings.themeButtonText;
     languageToggleBtn.textContent = (lang === 'sv') ? languageStrings['en'].langButtonText : languageStrings['sv'].langButtonText;
     document.documentElement.lang = lang;
-    infoAlert.innerHTML = `<ul class="list-unstyled text-start mx-auto" style="max-width: 800px;"><li>• ${strings.infoAlertText1}</li><li>• ${strings.infoAlertText2}</li><li>• ${strings.infoAlertText3}</li></ul>`;
+    document.getElementById('infoAlert').innerHTML = `<ul class="list-unstyled text-start mx-auto" style="max-width: 800px;"><li>• ${strings.infoAlertText2}</li><li>• ${strings.infoAlertText3}</li></ul>`;
     document.getElementById('card1Header').textContent = strings.card1Header;
     document.getElementById('checkboxLabelWrong').textContent = strings.checkboxLabelWrong;
     
@@ -220,7 +226,6 @@ function updateUI(lang) {
     const allFilesChecked = fileInputs.length > 0 && fileInputs.every(i => i.checked);
     toggleFilesBtn.textContent = allFilesChecked ? strings.toggleFilesDeselect : strings.toggleFilesSelect;
 
-    // Uppdatera texterna för antal frågor vid varje fil
     for (const [fileName, count] of Object.entries(fileQuestionCounts)) {
         const countSpan = document.getElementById(`count-${fileName.replace(/\./g, '_')}`);
         if (countSpan) {
@@ -425,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fileCheckboxesDiv.appendChild(div);
 
             fetch(`/questions/${f}`).then(r => r.json()).then(qs => {
-                fileQuestionCounts[f] = qs.length; // Spara lokalt
+                fileQuestionCounts[f] = qs.length; 
                 const countSpan = document.getElementById(`count-${f.replace(/\./g, '_')}`);
                 const strings = languageStrings[currentLanguage];
                 if (countSpan) countSpan.textContent = `(${qs.length} ${strings.fileCountText})`;
@@ -657,14 +662,24 @@ function showResult() {
     });
 
     const dd = document.getElementById('deepDiveContainer');
-    dd.innerHTML = misses.length ? `<hr class="my-5"><h3 class="text-center mb-4">🔍 Deep Dive</h3>` : '';
+    dd.innerHTML = misses.length ? `<hr class="my-5"><h3 class="text-center mb-4">🔍 ${strings.deepDive}</h3>` : '';
+    
     misses.forEach(m => {
-        dd.innerHTML += `<div class="card mb-3 shadow-sm" style="border-left: 5px solid #dc3545 !important;"><div class="card-body">
-            <p class="fw-bold">${m.question.question}</p>
-            <div class="small"><span class="text-danger">✘ Ditt:</span> ${m.userAnswer}</div>
-            <div class="small mb-2"><span class="text-success">✔ Rätt:</span> ${m.question.correct}</div>
-            <div class="alert alert-secondary py-1 px-2 mb-0 small"><strong>${strings.explanation}:</strong> ${m.question.explanation || strings.explanationNone}</div>
-        </div></div>`;
+        dd.innerHTML += `
+        <div class="card mb-3 shadow-sm" style="border-left: 5px solid #dc3545 !important;">
+            <div class="card-body">
+                <p class="fw-bold">${m.question.question}</p>
+                <div class="small">
+                    <span class="text-danger">✘ ${strings.yourAnswer}</span> ${m.userAnswer}
+                </div>
+                <div class="small mb-2">
+                    <span class="text-success">✔ ${strings.correctAnswer}</span> ${m.question.correct}
+                </div>
+                <div class="alert alert-secondary py-1 px-2 mb-0 small">
+                    <strong>${strings.explanation}:</strong> ${m.question.explanation || strings.explanationNone}
+                </div>
+            </div>
+        </div>`;
     });
 
     saveHighscore(Math.round(perc), `${totalCorrect}/${scoreList.length}`, totalTime, getDisplayDateTime(new Date()), selectedQuizFiles);
@@ -679,7 +694,6 @@ abortWithoutScoreBtn.addEventListener('click', () => location.reload());
 languageToggleBtn.addEventListener('click', () => { currentLanguage = (currentLanguage === 'sv') ? 'en' : 'sv'; localStorage.setItem('quizLanguage', currentLanguage); updateUI(currentLanguage); });
 themeToggleBtn.addEventListener('click', () => { const t = document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-bs-theme', t); localStorage.setItem('theme', t); });
 
-// Toggle All Files Logic
 toggleFilesBtn.addEventListener('click', () => { 
     const cbs = Array.from(fileCheckboxesDiv.querySelectorAll('input')); 
     const anyUnchecked = cbs.some(c => !c.checked);
@@ -697,7 +711,6 @@ toggleFilesBtn.addEventListener('click', () => {
     }
 });
 
-// Toggle All Categories Logic
 toggleCategoriesBtn.addEventListener('click', () => { 
     const cbs = Array.from(categoryCheckboxes.querySelectorAll('input')); 
     const anyUnchecked = cbs.some(c => !c.checked);
@@ -716,4 +729,3 @@ confirmTagBtn.addEventListener('click', () => {
 onlyWrong.addEventListener('change', () => {
     performLoad();
 });
-

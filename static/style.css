@@ -6,78 +6,80 @@
 /* --- GLOBAL STYLING & TEMAN --- */
 /* ====================================================== */
 
-body.light { 
+/* Använd Bootstrap 5.3 standard för att styra temat utan att krocka */
+body, [data-bs-theme="light"] body { 
     background: #f0f0f0; 
     color: #333; 
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
-body.dark { 
+
+[data-bs-theme="dark"] body { 
     background: #1e1e1e; 
     color: #fff; 
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
-
 .container {
-    max-width: 1200px; 
+    max-width: 1200px;  
 }
 
-/* Tvinga texten inuti kortet att vara mörk i quizskärmen, även i dark mode */
+/* Tvinga texten inuti kortet att vara mörk i quizskärmen när vi kör light mode */
 .card-body h4, .card-body p, .card-body div, .card-body label,
 .modal-content, .modal-header, .modal-body, .modal-footer {
-    color: #333 !important;
-}
-/* Gör att texten i card-header och highscores anpassas korrekt i Dark Mode */
-body.dark .modal-content, body.dark .modal-header, body.dark .modal-body, body.dark .modal-footer {
-    color: #333 !important; /* Måste vara ljust i Dark mode, justerar nedan */
-}
-body.dark h1, body.dark h2, body.dark h5, body.dark label {
-    color: #eee;
+    color: #01001;
 }
 
+/* Dark mode justeringar för text */
+[data-bs-theme="dark"] .card-body h4, 
+[data-bs-theme="dark"] .card-body p, 
+[data-bs-theme="dark"] .card-body div, 
+[data-bs-theme="dark"] .card-body label,
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2, 
+[data-bs-theme="dark"] h5 {
+    color: #eee !important;
+}
 
 /* ====================================================== */
 /* --- STARTSIDA LAYOUT (PROFESSIONELL KORTLAYOUT) --- */
 /* ====================================================== */
 
-/* Container för startskärmen som håller korten */
 .quiz-container {
-    max-width: 1400px; /* ÖKAD BREDD */
+    max-width: 1400px; 
     margin: 30px auto;
 }
 
-/* Huvudgrid för korten (gör att elementen i steg 1 och 2 ligger sida vid sida) */
 .start-grid {
     display: grid;
-    /* Skapar flexibla kolumner, minst 400px breda innan de staplas */
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-    gap: 35px; /* ÖKAD MELLANRUM */
+    gap: 35px; 
 }
 
-/* Kortet för Inställningar & Start (Steg 3) tar upp hela bredden i botten */
 .full-width-card {
     grid-column: 1 / -1; 
 }
 
-/* Kortets generella styling */
 .card {
     border: none; 
     border-radius: 15px; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
     background-color: #ffffff; 
-    padding: 0; /* Tar bort den gamla stora paddingen för att korten ska fungera i grid */
+    padding: 0; 
     transition: transform 0.2s, box-shadow 0.2s;
     color: #333; 
 }
 
+[data-bs-theme="dark"] .card {
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 #startScreen .card {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Tydligare skugga på startskärmen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
 #startScreen .card:hover {
-    transform: translateY(-2px); /* Lätt lyft vid hovring */
+    transform: translateY(-2px); 
 }
 
-/* Kortets rubrik */
 .card-header {
     background-color: #f1f3f5; 
     border-bottom: 1px solid #e0e0e0;
@@ -86,84 +88,55 @@ body.dark h1, body.dark h2, body.dark h5, body.dark label {
     border-top-right-radius: 15px;
 }
 
+[data-bs-theme="dark"] .card-header {
+    background-color: #383a3c; 
+    border-bottom: 1px solid #4a4a4a;
+}
+
 .card-header h4 {
     margin: 0;
     font-size: 1.15rem;
     color: #495057;
 }
 
-/* Anpassning för Dark Mode */
-body.dark .card-header {
-    background-color: #383a3c; 
-    border-bottom: 1px solid #4a4a4a;
-}
-body.dark #startScreen .card {
-    background-color: #2a2a2a; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-body.dark #startScreen .card h4, 
-body.dark #startScreen .card label {
-     color: #eee !important;
+[data-bs-theme="dark"] .card-header h4 {
+    color: #eee;
 }
 
-/* Justerar body padding för kortet på startsidan */
 #startScreen .card-body {
     padding: 25px;
 }
 
-/* Checkbox-områden för filer och kategorier */
 .checkbox-area {
-    max-height: 150px; /* Begränsa höjden för att hålla kortet kompakt */
-    overflow-y: auto; /* Lägg till scrollbar vid behov */
+    max-height: 150px; 
+    overflow-y: auto; 
     padding: 10px;
     border: 1px solid #e9ecef;
     border-radius: 4px;
     background-color: #ffffff;
 }
 
-body.dark .checkbox-area {
+[data-bs-theme="dark"] .checkbox-area {
     background-color: #1e1e1e;
     border-color: #4a4a4a;
 }
 
-/* Fil- och kategorivalets checkboxes */
-#fileCheckboxes .form-check, 
-#categoryCheckboxes .form-check {
-    padding-left: 2em;
-}
-
-/* Speciell styling för kategorier i grid */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 5px;
 }
 
-/* Highscores-området */
-.highscores-area {
-    background-color: #fcfcfc;
-    border: 1px solid #ddd;
-}
-body.dark .highscores-area {
-    background-color: #1e1e1e;
-    border-color: #4a4a4a;
-}
-
 /* ====================================================== */
-/* --- QUIZ SKÄRM (FIXAR "KONSTIG FORM") --- */
+/* --- QUIZ SKÄRM (FIXAD FORM OCH STORA SVAR) --- */
 /* ====================================================== */
 
-/* Återställer den generella .card padding för Quizskärmen */
 #quizScreen .card {
     padding: 40px 60px; 
     border: none; 
     border-radius: 15px; 
 }
-#quizScreen .card-body {
-    padding: 0; /* Tar bort den extra paddingen här, vi använder den på quizskärmen genom .card */
-}
 
-/* Rubriker & Frågetext */
 #questionNum {
     font-size: 1.8em; 
     font-weight: 300; 
@@ -173,6 +146,8 @@ body.dark .highscores-area {
     display: block !important; 
 }
 
+[data-bs-theme="dark"] #questionNum { color: #bbb; }
+
 #questionText {
     font-size: 1.3em;
     font-weight: 400 !important; 
@@ -180,97 +155,62 @@ body.dark .highscores-area {
     padding-bottom: 15px;
     margin-bottom: 30px;
     line-height: 1.5;
-    min-height: 50px; /* Säkerställ att den alltid har en minsta höjd */
 }
 
-/* Quiz-alternativen (Använder Flexbox för att räta upp input och text!) */
+/* FIX: Svarsalternativen (Rak linje, flex och centrerat) */
 .option-item {
-    display: flex; /* KRITISK FIX: Använd Flexbox */
-    align-items: flex-start; /* Fixar vertikal justering av input/text */
-    padding: 18px 0; 
+    display: flex; 
+    align-items: center; /* Centrerar input med texten vertikalt */
+    padding: 18px 20px; 
     margin-bottom: 0; 
     background-color: transparent; 
     border: none;
     border-bottom: 1px solid #e0e0e0; 
-    border-radius: 0; 
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    position: relative;
     width: 100%;
 }
 
 .option-item:hover {
-    background-color: #f5f5f5; 
-    border-color: #d0d0d0; 
-    box-shadow: none;
-}
-body.dark .option-item:hover {
-    background-color: #333; 
+    background-color: rgba(0, 0, 0, 0.05); 
 }
 
-#options .option-item:last-child {
-    border-bottom: none;
+[data-bs-theme="dark"] .option-item:hover {
+    background-color: rgba(255, 255, 255, 0.05); 
 }
 
-/* Styling för radio/checkbox input */
+/* FIX: Gör radioknapparna/checkboxarna stora och raka */
 .option-item input[type="radio"],
 .option-item input[type="checkbox"] {
-    flex-shrink: 0; /* Förhindra att input krymper */
-    margin-right: 15px;
-    margin-top: 3px; /* Justera vertikalt för att centrera mot text */
-    width: 20px;
-    height: 20px;
-    accent-color: #678bee; 
-}
-
-/* Svarsalternativets text (Label) */
-.option-item label {
-    flex-grow: 1; /* Låt texten ta upp allt tillgängligt utrymme */
-    margin-bottom: 0;
+    flex-shrink: 0;
+    margin: 0 15px 0 0; /* Rak marginal till höger */
+    width: 22px; /* Större storlek */
+    height: 22px;
     cursor: pointer;
-    color: #333 !important; /* Säkerställ att texten är synlig i Dark mode */
-}
-body.dark .option-item label {
-    color: #eee !important;
 }
 
-/* Stilar för korrekta och felaktiga svar */
-.option-item.correct {
-    background-color: #e6ffe6 !important; 
-    border-color: #28a745 !important; 
-    color: #155724 !important; 
-    pointer-events: none;
-}
-.option-item.wrong {
-    background-color: #ffeeee !important; 
-    border-color: #dc3545 !important; 
-    color: #721c24 !important; 
-    pointer-events: none;
-}
-body.dark .option-item.correct { background-color: #4cd47a !important; color: #e6ffe6 !important; }
-body.dark .option-item.wrong { background-color: #6e333a !important; color: #ffeeee !important; }
-
-/* Explanation */
-.explanation {
-    border: 2px solid #28a745;
-    padding: 15px;
-    margin-top: 30px; 
-    border-radius: 8px; 
-    background-color: #e6ffe6; 
-    color: #4fd33d; 
-}
-body.dark .explanation {
-    background-color: #2b573a;
-    color: #e6ffe6;
-    border-color: #28a745;
+.option-item label {
+    flex-grow: 1;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.1em;
+    line-height: 1.4;
 }
 
+/* Rätt/Fel färger */
+.option-item.correct { background-color: #d4edda !important; color: #155724 !important; }
+.option-item.wrong { background-color: #f8d7da !important; color: #721c24 !important; }
 
-/* --- Knappar (Submit/Nästa) --- */
+[data-bs-theme="dark"] .option-item.correct { background-color: #1b4332 !important; color: #d8f3dc !important; }
+[data-bs-theme="dark"] .option-item.wrong { background-color: #590d22 !important; color: #ffb3c1 !important; }
+
+/* ====================================================== */
+/* --- KNAPPAR & EXTRA --- */
+/* ====================================================== */
 
 #multiSubmitBtn, #nextBtn {
-    background-color: #489ef5 !important; 
-    border-color: #7ab7f3 !important;
+    background-color: #7ab7f3 !important; 
+    border: none;
     color: #fff !important;
     padding: 15px 40px; 
     border-radius: 8px;
@@ -278,138 +218,26 @@ body.dark .explanation {
     font-weight: 500;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 30px auto 10px auto; 
+    margin: 30px auto; 
     max-width: 400px;
     width: 100%;
-    transition: all 0.2s ease-in-out; 
-    pointer-events: auto !important; 
 }
 
-/* Stil när knappen är INAKTIVERAD */
-#multiSubmitBtn:disabled {
-    background-color: #a0cff7 !important; 
-    border-color: #a0cff7 !important;
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.7; 
+.explanation {
+    border: 2px solid #28a745;
+    padding: 15px;
+    margin-top: 30px; 
+    border-radius: 8px; 
+    background-color: #d4edda; 
+    color: #155724; 
 }
 
-#multiSubmitBtn.btn-success-green {
-    background-color: #28a745 !important; 
-    border-color: #28a745 !important;
+[data-bs-theme="dark"] .explanation {
+    background-color: #1b4332;
+    color: #d8f3dc;
 }
 
-/* --- Visuell bekräftelse (Bocken) --- */
-.option-item .temp-icon {
-    position: absolute; 
-    right: 15px; 
-    top: 50%;
-    transform: translateY(-50%); 
-    font-size: 1.8em; 
-    font-weight: bold;
-    color: #28a745; 
-    animation: fadeInOut 0.6s ease-out forwards; 
-    pointer-events: none; 
-    opacity: 0; 
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translateY(-50%) scale(0.8); }
-    50% { opacity: 1; transform: translateY(-50%) scale(1.1); }
-    100% { opacity: 1; transform: translateY(-50%) scale(1.0); } 
-}
-
-
-/* --- Highscores styling --- */
-.highscore-entry {
-    display: flex; 
-    justify-content: space-between; 
-    padding: 8px 12px;
-    font-weight: 600;
-    border-radius: 4px;
-    margin-bottom: 4px;
-    max-width: 900px; 
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Fördelar kolumnerna i highscore-listan */
-.highscore-entry span:nth-child(1) { flex: 2; } /* Datum och tid */
-.highscore-entry span:nth-child(2) { flex: 1.5; text-align: right; } /* Poäng */
-.highscore-entry span:nth-child(3) { flex: 1; text-align: right; } /* Tid */
-.highscore-entry span:nth-child(4) { flex: 3; } /* Kategorier */
-
-
-.highscore-entry.header {
-    font-weight: bold;
-    border-bottom: 2px solid #555;
-    margin-bottom: 8px;
-    padding-bottom: 4px;
-    background: none !important; 
-    color: inherit !important;
-}
-
-.highscore-entry.even { background: #e0e0e0; color: #333; } /* Ljus variant för highscores */
-.highscore-entry.odd  { background: #f0f0f0; color: #333; } /* Ljus variant för highscores */
-
-body.dark .highscore-entry.even { background: #3c3c3c; color: #fff; } 
-body.dark .highscore-entry.odd { background: #454545; color: #fff; }
-
-
-/* ====================================================== */
-/* --- Mobilanpassning --- */
-/* ====================================================== */
-@media (max-width: 768px) {
-    /* STARTSIDA */
-    .start-grid {
-        grid-template-columns: 1fr; /* Endast en kolumn på mobilen */
-        gap: 20px;
-    }
-    .full-width-card {
-        grid-column: auto; /* Återställer för att staplas */
-    }
-    #startScreen .card-body {
-        padding: 15px;
-    }
-    .checkbox-area {
-        max-height: 100px;
-    }
-    .categories-grid {
-        grid-template-columns: 1fr;
-    }
-    .form-check {
-        padding-left: 1.5em; /* Justera padding för checkboxar på mobil */
-    }
-
-    /* QUIZ SKÄRM */
-    .card {
-        padding: 25px 30px; 
-    }
-    #questionNum {
-        font-size: 1.5em; 
-    }
-    #questionText {
-        font-size: 1.1em;
-    }
-    #multiSubmitBtn, #nextBtn {
-        max-width: 100%;
-        font-size: 1.1em;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    
-    /* Mobilanpassning för highscores */
-    .highscore-entry {
-        padding: 6px 8px;
-        font-size: 12px;
-        display: block; /* Ställer om till block för enklare läsning */
-    }
-    .highscore-entry span {
-        display: block;
-        width: 100% !important;
-        text-align: left !important;
-    }
-    .highscore-entry.header {
-        display: none; /* Dölj rubriker på mobil för att spara utrymme */
-    }
-}
+/* Highscores */
+.highscore-entry.even { background: rgba(0,0,0,0.05); }
+.highscore-entry.odd { background: transparent; }
+[data-bs-theme="dark"] .highscore-entry.even { background: rgba(255,255,255,0.05); }

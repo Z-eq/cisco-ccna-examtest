@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body class="light">
 <div class="container my-5">
@@ -110,7 +110,7 @@
 
 <div class="modal fade" id="abortModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content text-dark">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="abortModalTitle">Avbryt quiz?</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -126,7 +126,7 @@
 
 <div class="modal fade" id="tagModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content text-dark">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="tagModalTitle">Tagga Fråga</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -146,7 +146,7 @@
     </div>
 </div>
 
-<script src="{{ url_for('static', filename='darkmode.js') }}"></script>
-<script src="{{ url_for('static', filename='quiz.js') }}"></script>
+<script src="/static/darkmode.js"></script>
+<script src="/static/quiz.js"></script>
 </body>
 </html>
