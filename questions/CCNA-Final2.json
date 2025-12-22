@@ -1128,5 +1128,84 @@
         "correct": "multimode fiber",
         "category": "Network Fundamentals & Tools",
         "explanation": "Single-mode fiber is used for high-bandwidth, long-distance connections such as core-to-data center links."
-    }
+    },
+    {
+    "question": "Which term refers to the strategic use of AI and machine learning (ML) throughout IT operations to simplify and streamline processes and optimize the use of IT resources?",
+    "options": [
+      "SecOps",
+      "ChatOps",
+      "NetOps",
+      "AIOps"
+    ],
+    "correct": "AIOps",
+    "category": "AI & Machine Learning",
+    "explanation": "**AIOps** (Artificial Intelligence for IT Operations) combines big data and machine learning to automate IT operations processes, including event correlation, anomaly detection, and causality determination. "
+  },
+  {
+    "question": "Which group of devices in a network receive IPv6 packets with the destination address of ff05::2?",
+    "options": [
+      "all IPv6 nodes on all the network segments within a site",
+      "all IPv6 nodes on the local network segments",
+      "all IPv6 routers on all the network segments within a site",
+      "all IPv6 routers on the local network segments",
+      "all OSPFv3 routers on all the network segments within a site",
+      "all OSPFv3 routers on the local network segments"
+    ],
+    "correct": "all IPv6 routers on all the network segments within a site",
+    "category": "IP Addressing IPv4/IPv6",
+    "explanation": "In the IPv6 multicast address **ff05::2**: \n* **ff** signifies it is a multicast address. \n* **05** defines the scope as **site-local**. \n* **::2** is the well-known multicast group for **all routers**. \nTherefore, it reaches all routers within the entire site. "
+  },
+  {
+    "question": "Which three layers does the hierarchical three-tier model include? (Choose three.)",
+    "options": [
+      "access",
+      "core",
+      "data link",
+      "distribution",
+      "network"
+    ],
+    "correct": [
+      "access",
+      "core",
+      "distribution"
+    ],
+    "category": "Network Fundamentals & Tools",
+    "explanation": "The Cisco hierarchical design model consists of three layers: \n1. **Core**: High-speed switching backbone. \n2. **Distribution**: Policy-based connectivity and boundary control. \n3. **Access**: Local and remote user access to the network. "
+  },
+  {
+    "question": "What is the default aging timer value on Cisco switches?",
+    "options": [
+      "180 seconds",
+      "240 seconds",
+      "300 seconds",
+      "360 seconds"
+    ],
+    "correct": "300 seconds",
+    "category": "Switching & VLAN",
+    "explanation": "By default, Cisco switches keep an entry in the MAC address table for **300 seconds** (5 minutes) before it is removed if no frames are received from that source address during that period."
+  },
+  {
+    "question": "How can a RADIUS server enhance management security in wireless environments?",
+    "options": [
+      "By enforcing access control list (ACL) configurations.",
+      "By preventing brute-force login attempts.",
+      "By providing a stronger encryption.",
+      "By providing individualized login to specific network devices."
+    ],
+    "correct": "By providing individualized login to specific network devices.",
+    "category": "Security AAA & ACL",
+    "explanation": "A **RADIUS** server centralizes **AAA (Authentication, Authorization, and Accounting)**. It enhances security by allowing administrators to assign **unique, individualized credentials** to users and devices rather than using shared passwords, and tracks their activity through accounting logs."
+  },
+  {
+    "question": "How many switch ports are designated ports on a root bridge?",
+    "options": [
+      "all of them",
+      "none of them",
+      "one",
+      "two"
+    ],
+    "correct": "all of them",
+    "category": "Switching & VLAN",
+    "explanation": "In Spanning Tree Protocol (STP), the **Root Bridge** is the focal point of the network. Because it has the lowest Bridge ID, all of its active ports are placed in a forwarding state and assigned the role of **Designated Ports**. "
+  }
 ]
