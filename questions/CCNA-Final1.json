@@ -979,9 +979,9 @@
             "on the egress AP",
             "on the ingress AP"
         ],
-        "correct": "on a network switch",
+        "correct": "on a wireless access controller (WLC)",
         "category": "Wireless",
-        "explanation": "In local mode, APs forward all client traffic to the switch, which then routes it."
+        "explanation": "The correct answer is on a wireless access controller (WLC). In local mode, the AP sends all the client traffic to the WLC. The network switch would switch the traffic between two stand-alone APs. The egress and ingress points have no influence on the switching decision."
     },
     {
         "question": "What are the three tasks of an Intrusion Prevention System (IPS)? (Choose three.)",

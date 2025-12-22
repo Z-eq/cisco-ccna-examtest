@@ -1020,14 +1020,13 @@
         "question": "How does Unicast Reverse Path Forwarding help with DoS and DDoS attacks mitigation?",
         "options": [
             "by distributing the footprint of DDoS attacks",
-            "by verifying the \"reachability\" of the source address in packets being forwarded",
+            "by verifying the reachability of the source address in packets being forwarded",
             "by monitoring connection states and maintaining a state table",
             "by monitoring interface packet counters"
         ],
-        "correct": "by verifying the \"reachability\" of the source address in packets being forwarded",
+        "correct": "by verifying the reachability of the source address in packets being forwarded",
         "category": "Security AAA & ACL",
-        "explanation": ""
-    },
+"explanation": "uRPF (Unicast Reverse Path Forwarding) motverkar DoS/DDoS genom att bekämpa IP-spoofing. När ett paket anländer till en router, kontrollerar uRPF om källadressen (Source IP) är nåbar via det interface paketet kom in på genom att titta i routingtabellen (FIB). Om källadressen inte är nåbar (inte 'reachable') anses paketet vara förfalskat och kastas. Detta tvingar angripare att använda sina riktiga IP-adresser, vilket gör det svårare att dölja attacker och genomföra reflektionsattacker."    },
     {
         "question": "When an access point (AP) is operating in local mode, on which network device is wireless client traffic switched?",
         "options": [
@@ -1036,9 +1035,9 @@
             "on the egress AP",
             "on the ingress AP"
         ],
-        "correct": "on a network switch",
+        "correct": "on a wireless access controller (WLC)",
         "category": "Wireless",
-        "explanation": "In local mode, APs forward all client traffic to the switch, which then routes it."
+        "explanation": "The correct answer is on a wireless access controller (WLC). In local mode, the AP sends all the client traffic to the WLC. The network switch would switch the traffic between two stand-alone APs. The egress and ingress points have no influence on the switching decision."
     },
     {
         "question": "Which OSI model layer is responsible for physical cables and electrical signals?",
