@@ -1089,6 +1089,43 @@
         "explanation": "LSAs (Link-State Advertisements) are stored in the **Link-State Database (LSDB)**. This database contains a full map of the OSPF area. The router then uses Dijkstra's Shortest Path First (SPF) algorithm on the LSDB to calculate the best paths."
     },
     {
+
+         "question": "Which command would you use to change the OSPF priority of an interface to 200?",
+        "options": [
+            "router-id 200",
+            "priority 200",
+            "ip ospf priority 200",
+            "ip ospf cost 200"
+        ],
+        "correct": "ip ospf priority 200",
+        "category": "Routing & Protocols",
+        "explanation": "The **ip ospf priority** command is applied directly to an interface. A higher priority increases the chance of that router becoming the DR."
+    },
+    {
+        "question": "If two OSPF routers have the same priority, how is the DR elected?",
+        "options": [
+            "Highest MAC address",
+            "Lowest Router ID",
+            "Highest Router ID",
+            "Longest Uptime"
+        ],
+        "correct": "Highest Router ID",
+        "category": "Routing & Protocols",
+        "explanation": "The DR election tie-breaker is the **Router ID**. If priorities are equal (default is 1), the router with the numerically **highest Router ID** wins."
+    },
+    {
+        "question": "What happens if you set the OSPF priority of an interface to 0?",
+        "options": [
+            "It becomes the DR immediately",
+            "It becomes the BDR",
+            "It can never become a DR or BDR",
+            "The interface is shut down"
+        ],
+        "correct": "It can never become a DR or BDR",
+        "category": "Routing & Protocols",
+        "explanation": "Setting a **priority of 0** effectively 'disables' a router from participating in the DR/BDR election for that specific segment."
+    },
+    {
         "question": "Match the transport to the protocol:",
         "options": [
 		

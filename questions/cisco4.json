@@ -364,6 +364,31 @@
         "explanation": "VLAN hopping attacks exploit dynamic trunking and insecure ports. The two best practices to mitigate these are:\n\n1.  **Disable DTP (Dynamic Trunking Protocol):** DTP is used to negotiate trunking between two switches. If enabled, an attacker can spoof the switch identity and force the port into trunking mode, allowing access to all VLANs (VLAN Hopping). Disabling DTP and setting ports manually prevents this.\n2.  **Explicitly configure trunking mode or access mode:** Ports connected to end devices (hosts) should be explicitly set to **access mode** (`switchport mode access`) to prevent them from becoming trunks. Ports connected to other switches should be explicitly set to **trunk mode** (`switchport mode trunk`). This prevents ports from negotiating insecure states."
     },
     {
+
+         "question": "What OSPF network type is the default for an Ethernet interface?",
+        "options": [
+            "Point-to-Point",
+            "Broadcast",
+            "Non-Broadcast",
+            "Point-to-Multipoint"
+        ],
+        "correct": "Broadcast",
+        "category": "Routing & Protocols",
+        "explanation": "Ethernet is considered a multi-access technology. Therefore, OSPF defaults to the **Broadcast** network type and performs DR/BDR elections."
+    },
+    {
+        "question": "What is the OSPF 'Dead Interval' by default on a Broadcast network?",
+        "options": [
+            "10 seconds",
+            "20 seconds",
+            "30 seconds",
+            "40 seconds"
+        ],
+        "correct": "40 seconds",
+        "category": "Routing & Protocols",
+        "explanation": "By default, the **Dead Interval** is 4 times the Hello interval. Since the Hello interval is 10 seconds on Ethernet, the Dead interval is **40 seconds**."
+    },
+    {
         "question": "Which statement correctly describes the authenticator and its responsibility?",
         "options": [
             "The authenticator, which is usually the switch, acts as an intermediary between the authentication server and the client.",

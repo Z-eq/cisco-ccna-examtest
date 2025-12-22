@@ -36,6 +36,30 @@
         "explanation": "A SOHO (Small Office/Home Office) network is fundamentally a Local Area Network (LAN). Modern LANs almost always contain a combination of wired devices (e.g., computers or printers connected via Ethernet cable to a router) and wireless devices (e.g., laptops, tablets, and phones connected via Wi-Fi)."
     },
     {
+         "question": "You see a neighbor stuck in the 'ExStart' state. What is the most common cause?",
+        "options": [
+            "MTU Mismatch",
+            "Hello Timer Mismatch",
+            "Passive Interface",
+            "Wrong Area ID"
+        ],
+        "correct": "MTU Mismatch",
+        "category": "Routing & Protocols",
+        "explanation": "While OSPF doesn't check MTU in Hello packets, it does check them in DBD packets. If there is an **MTU mismatch**, the routers will fail to exchange databases and hang in **ExStart** or **Exchange**."
+    },
+    {
+        "question": "How is the OSPF cost of a path calculated?",
+        "options": [
+            "Total hop count",
+            "Total of the outgoing interface costs",
+            "The highest cost of a single link in the path",
+            "The bandwidth of the slowest link"
+        ],
+        "correct": "Total of the outgoing interface costs",
+        "category": "Routing & Protocols",
+        "explanation": "OSPF cost is a cumulative metric. It adds the **cost of every egress (outgoing) interface** along the path to the destination. "
+    },
+    {
         "question": "Which command will display the interface traffic statistics for the average input rate?",
         "options": [
             "show version",

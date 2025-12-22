@@ -768,6 +768,32 @@
         "explanation": "**`show ip bgp summary`** provides a concise summary of all BGP neighbors, their state, and the number of prefixes exchanged."
     },
     {
+
+         "question": "Which OSPF packet type is used to request specific link-state records from a neighbor?",
+        "options": [
+            "Hello",
+            "DBD",
+            "LSR",
+            "LSU"
+        ],
+        "correct": "LSR",
+        "category": "Routing & Protocols",
+        "explanation": "The **Link State Request (LSR)** is used during the Loading state to ask a neighbor for specific LSAs that were identified as missing during the DBD exchange process. "
+    },
+    {
+        "question": "What is the area ID for the OSPF backbone area?",
+        "options": [
+            "Area 0",
+            "Area 1",
+            "Area 10",
+            "Area 255"
+        ],
+        "correct": "Area 0",
+        "category": "Routing & Protocols",
+        "explanation": "**Area 0** is the **backbone area**. In a multi-area OSPF design, all non-backbone areas must connect to Area 0 to ensure inter-area routing. "
+    },
+    {
+
         "question": "Which layer of the OSI model handles IP addresses?",
         "options": [
             "Transport",

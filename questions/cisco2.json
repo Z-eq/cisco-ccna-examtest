@@ -551,6 +551,30 @@
         "explanation": "OSPF (Open Shortest Path First) uses the Designated Router (DR) and Backup Designated Router (BDR) mechanism to reduce the number of adjacencies that must be formed, which lowers the amount of OSPF traffic (LSAs). This election is performed **independently on every multi-access network segment** (like an Ethernet LAN). The DR/BDR mechanism is only needed on segments where multiple routers could potentially form full adjacencies (broadcast or non-broadcast multi-access). Point-to-point links, for example, do not require a DR/BDR."
     },
     {
+         "question": "Which command is used to prevent OSPF from sending Hello packets out an interface but still includes the interface network in OSPF updates?",
+        "options": [
+            "shutdown",
+            "no network",
+            "passive-interface",
+            "ip ospf ignore"
+        ],
+        "correct": "passive-interface",
+        "category": "Routing & Protocols",
+        "explanation": "The **passive-interface** command is used on interfaces where no other OSPF routers are present (like user VLANs). It keeps the network in the routing table but prevents neighbor adjacencies."
+    },
+    {
+        "question": "Which OSPF state is reached when the Link-State Databases (LSDB) of two neighbors are fully synchronized?",
+        "options": [
+            "2-Way",
+            "Exchange",
+            "Loading",
+            "Full"
+        ],
+        "correct": "Full",
+        "category": "Routing & Protocols",
+        "explanation": "The **Full state** is the final stage of adjacency. It means the routers have successfully exchanged all LSAs and their databases are identical."
+    },
+    {
         "question": "Which VLAN is the default native VLAN on most Cisco switches?",
         "options": [
             "VLAN 1",

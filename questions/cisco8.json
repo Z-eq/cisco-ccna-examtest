@@ -452,6 +452,31 @@
         "explanation": "\"show ip interface brief\" shows a one-line status of each interface and its IP address. \"show interfaces\" is more detailed, \"show running-config\" shows the configuration, and \"show ip route\" shows routing information."
     },
     {
+
+         "question": "What is the primary multicast address for OSPFv3?",
+        "options": [
+            "FF02::5",
+            "FF02::6",
+            "FF02::9",
+            "FF02::A"
+        ],
+        "correct": "FF02::5",
+        "category": "Routing & Protocols",
+        "explanation": "OSPFv3 (for IPv6) uses **FF02::5** as the 'All OSPF Routers' address and **FF02::6** for 'All DR Routers'."
+    },
+    {
+        "question": "Which command shows only the OSPF neighbors and their current states?",
+        "options": [
+            "show ip route",
+            "show ip ospf interface",
+            "show ip ospf neighbor",
+            "show ip protocols"
+        ],
+        "correct": "show ip ospf neighbor",
+        "category": "Routing & Protocols",
+        "explanation": "The **show ip ospf neighbor** command is the primary tool for verifying if adjacencies are formed and identifying the DR/BDR on a link."
+    },
+    {
         "category": "Network Fundamentals & Tools",
         "question": "Which of the following is the default gateway on a device that is configured with an IP address of 192.168.1.50 and a subnet mask of 255.255.255.0?",
         "options": [
