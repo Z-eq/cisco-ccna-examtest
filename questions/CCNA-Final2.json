@@ -766,6 +766,30 @@
         "explanation": "In large enterprise environments, strong security practices emphasize **accountability** and **auditing** (the 'Accounting' part of the AAA framework). \n\nLogging and monitoring **access to sensitive passwords** (often managed via a Privileged Access Management or PAM solution) is essential. This log, which includes the user, the time, and the resource accessed, provides crucial **visibility** for security teams, ensures non-repudiation, helps maintain compliance, and is vital data for any forensic analysis following an incident. While a centralized repository presents a single point of failure risk, that risk is typically mitigated through redundancy and is preferred over decentralized management for consistency."
     },
     {
+         "question": "Which multicast address is used by OSPF 'DROTHER' routers to send updates to the Designated Router (DR) and Backup Designated Router (BDR)?",
+        "options": [
+            "224.0.0.5",
+            "224.0.0.6",
+            "224.0.0.9",
+            "224.0.0.10"
+        ],
+        "correct": "224.0.0.6",
+        "category": "Routing & Protocols",
+        "explanation": "**224.0.0.6** is the multicast address for **AllDRouters**. Non-DR routers (DROTHERs) use this to send Link State Updates to the DR/BDR. The DR then relays this info to others using 224.0.0.5."
+    },
+    {
+        "question": "A router has no manually configured OSPF Router ID. It has Loopback 0 (1.1.1.1), Loopback 1 (2.2.2.2), and FastEthernet 0/0 (192.168.1.1). What is the Router ID?",
+        "options": [
+            "1.1.1.1",
+            "2.2.2.2",
+            "192.168.1.1",
+            "The highest MAC address"
+        ],
+        "correct": "2.2.2.2",
+        "category": "Routing & Protocols",
+        "explanation": "The OSPF Router ID selection follows this order: 1. Manual config, 2. **Highest IP on an active Loopback**, 3. Highest IP on an active physical interface."
+    },
+    {
         "question": "Which fields does the 802.1Q header add to an Ethernet frame?",
         "options": [
             "CRC",

@@ -1226,6 +1226,45 @@
     "explanation": "Virtualisering baseras på två huvudtyper av hypervisorer: **Type-1** (Bare-metal), som körs direkt på hårdvaran (t.ex. VMware ESXi), och **Type-2** (Hosted), som körs ovanpå ett operativsystem (t.ex. Oracle VirtualBox). Docker och Kubernetes är container-teknologier, inte fullständiga hypervisorer, och DOSBox är en emulator."
 },
 {
+ "question": "What is the Hello interval for OSPF on a Point-to-Point link by default?",
+        "options": [
+            "5 seconds",
+            "10 seconds",
+            "30 seconds",
+            "45 seconds"
+        ],
+        "correct": "10 seconds",
+        "category": "Routing & Protocols",
+        "explanation": "On both **Broadcast** and **Point-to-Point** network types, the OSPF Hello timer defaults to **10 seconds**."
+    },
+    {
+
+    "question": "Which algorithm is used by OSPF to calculate the shortest path to a destination network?",
+        "options": [
+            "Bellman-Ford",
+            "DUAL",
+            "Dijkstra",
+            "Spanning Tree"
+        ],
+        "correct": "Dijkstra",
+        "category": "Routing & Protocols",
+        "explanation": "OSPF uses the Shortest Path First (SPF) algorithm, developed by Dijkstra, to build a topology map and determine the best path to each network."
+    },
+    {
+   
+        "question": "Which OSPF state indicates that bi-directional communication has been established and DR/BDR elections can take place?",
+        "options": [
+            "Init",
+            "2-Way",
+            "ExStart",
+            "Full"
+        ],
+        "correct": "2-Way",
+        "category": "Routing & Protocols",
+        "explanation": "In the **2-Way state**, the router has seen its own Router ID in the neighbor's Hello packet, confirming bi-directional communication. This is the state where DR/BDR elections occur on multi-access segments. "
+    },
+    {
+
     "question": "What are two field names corresponding to the IPv4 header field and the IPv6 header field that contain Differentiated Services Code Point (DSCP) markings? (Choose two.)",
     "options": [
         "flow control",
