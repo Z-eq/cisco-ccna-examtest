@@ -384,6 +384,7 @@
             "VLAN ID"
         ],
         "correct": [
+            "EtherType",
             "VLAN ID"
         ],
         "category": "Switching & VLAN",

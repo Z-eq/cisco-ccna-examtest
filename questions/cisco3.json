@@ -539,7 +539,7 @@
             "Same AS number",
             "Same K values",
             "Same Hello interval",
-            "All alternatives are correct"
+            "All of the above"
         ],
         "correct": "All of the above",
         "explanation": "For EIGRP neighbor adjacency, routers must agree on the **AS number**, the **K values** (metrics weights), and the **Hello timers** (although EIGRP allows some mismatch in timers, a perfect match is generally expected for reliable operation)."
@@ -1113,6 +1113,4 @@
         "category": "Network Fundamentals & Tools",
         "explanation": "SDN fundamentally separates the network control logic from the physical forwarding devices. The architecture is defined by three distinct layers:\n\n1.  **Application Layer:** The top layer where network services and business logic reside. This layer communicates *what* the network should do (e.g., security policies, load balancing, traffic engineering). It interacts with the Control Layer using Northbound APIs (typically RESTful APIs).\n2.  **Control Layer:** The central 'brain' of the SDN architecture, typically a centralized controller. It translates the high-level policies received from the Application Layer into specific, low-level instructions and forwarding rules for the hardware. It maintains a centralized view of the entire network.\n3.  **Infrastructure Layer (Data Plane):** The bottom layer, consisting of the actual network devices (switches, routers, firewalls). These devices execute the instructions received from the Control Layer using Southbound APIs (like OpenFlow or NETCONF). Their sole function is the physical forwarding of data traffic.\n\nThe options 'network' and 'presentation' are layers found in the traditional OSI model, not the SDN model."
     }
-
 ]
-

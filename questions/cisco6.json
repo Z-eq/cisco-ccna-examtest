@@ -1091,14 +1091,15 @@
     {
         "question": "Match the transport to the protocol:",
         "options": [
+		
             "HTTP : RESTCONF",
             "SSH : gRPC",
             "HTTP/2 : NETCONF"
         ],
         "correct": [
             "HTTP : RESTCONF",
-            "SSH : NETCONF",
-            "HTTP/2 : gRPC"
+            "SSH : gRPC",
+            "HTTP/2 : NETCONF"
         ],
         "category": "Automation & DevOps",
         "explanation": "NETCONF typically uses SSH for secure transport. RESTCONF uses HTTP(S) for a stateless interface. gRPC is a high-performance framework often transported over HTTP/2."
