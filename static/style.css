@@ -1,5 +1,5 @@
 /*
- * style.css (Komplett version med fixad Modal-text och Footer)
+ * style.css (Komplett version med Fullbreddsknappar, Darkmode & Modal-fix)
  */
 
 /* ====================================================== */
@@ -204,22 +204,30 @@ body, [data-bs-theme="light"] body {
 [data-bs-theme="dark"] .option-item.wrong { background-color: #590d22 !important; color: #ffb3c1 !important; }
 
 /* ====================================================== */
-/* --- KNAPPAR & EXTRA --- */
+/* --- KNAPPAR (FULLBREDD FIX) --- */
 /* ====================================================== */
 
 #multiSubmitBtn, #nextBtn, #startBtn {
     background-color: #1276da !important; 
-    border: none;
+    border: none !important;
     color: #fff !important;
-    padding: 15px 40px; 
+    padding: 18px 40px; 
     border-radius: 8px;
     font-size: 1.2em;
     font-weight: 500;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Ändring för att göra knappen lika lång som rutan */
     display: block;
-    margin: 30px auto; 
-    max-width: 400px;
-    width: 100%;
+    width: 100%; 
+    max-width: 100%; /* Tar bort 400px gränsen */
+    margin: 25px 0; 
+    transition: all 0.2s ease-in-out;
+}
+
+#multiSubmitBtn:hover, #nextBtn:hover, #startBtn:hover {
+    background-color: #1065ba !important;
+    transform: translateY(-1px);
 }
 
 /* Stil när knappen är INAKTIVERAD */
@@ -229,6 +237,7 @@ body, [data-bs-theme="light"] body {
     cursor: not-allowed;
     box-shadow: none;
     opacity: 0.7; 
+    transform: none;
 }
 
 .explanation {
@@ -289,14 +298,13 @@ footer {
 /* --- FIX FÖR ABORT MODAL (AVBRYT-RUTAN) --- */
 /* ====================================================== */
 
-/* Denna sektion styr ENBART Avbryt-rutan så att texten syns perfekt */
 .modal-content {
     background-color: #ffffff !important;
 }
 
 .modal-header .modal-title, 
 .modal-body {
-    color: #333333 !important; /* Här sätter du textfärgen för ljust läge */
+    color: #333333 !important; 
 }
 
 [data-bs-theme="dark"] .modal-content {
@@ -305,5 +313,5 @@ footer {
 
 [data-bs-theme="dark"] .modal-header .modal-title, 
 [data-bs-theme="dark"] .modal-body {
-    color: #eeeeee !important; /* Här sätter du textfärgen för mörkt läge */
+    color: #eeeeee !important; 
 }
