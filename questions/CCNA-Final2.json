@@ -774,7 +774,8 @@
             "VLAN ID"
         ],
         "correct": [
-            "VLAN ID"
+            "VLAN ID",
+            "EtherType"
         ],
         "category": "Switching & VLAN",
         "explanation": "The 802.1Q standard inserts a 4-byte Tag into the Ethernet frame. While the Tag contains two main functional fields (TPID/EtherType and VLAN ID), the **VLAN ID** (a 12-bit sub-field) is the unique identifier that specifically enables the separation and forwarding of traffic based on VLAN membership. It is the core functional component that the 802.1Q process adds to the frame to implement network segmentation."
