@@ -1280,7 +1280,86 @@
     ],
     "category": "IP Addressing IPv4/Ipv6",
     "explanation": "In IPv4, the DSCP markings are stored in the **Type of Service (ToS)** field (specifically the first 6 bits). In IPv6, this field was renamed to **Traffic Class**, but it serves the same purpose for Quality of Service (QoS) markings."
-
-
+   },
+    {
+        "question": "A company needs to implement a secure VPN solution using IPsec. Which protocol and encryption algorithm should be used to guarantee VPN confidentiality?",
+        "options": [
+            "AH protocol with the AES encryption algorithm",
+            "AH protocol with the SHA-2 encryption algorithm",
+            "both ESP and AH protocols with the RSA encryption algorithm",
+            "ESP protocol with the 3DES encryption algorithm",
+            "ESP protocol with the Diffie-Hellman Group 7 encryption algorithm"
+        ],
+        "correct": "ESP protocol with the 3DES encryption algorithm",
+        "category": "Security Operations",
+        "explanation": "Confidentiality (kryptering) tillhandahålls av **ESP** (Encapsulating Security Payload). AH (Authentication Header) erbjuder ingen kryptering. Av alternativen är det endast ESP kombinerat med en krypteringsalgoritm som 3DES som garanterar att datan förblir privat."
+    },
+    {
+        "question": "Which statement is true about Ansible?",
+        "options": [
+            "Ansible is an agentless tool",
+            "JSON syntax Ansible playbook is used to store managed hosts and their variables",
+            "If a task fails on one of the hosts, execution is stopped on all of them",
+            "Ansible playbook uses XML syntax"
+        ],
+        "correct": "Ansible is an agentless tool",
+        "category": "Automation and AI",
+        "explanation": "Ansible är ett **agentlöst** verktyg, vilket innebär att du inte behöver installera någon programvara på de enheter du vill hantera. Det använder SSH eller WinRM för att kommunicera."
+    },
+    {
+        "question": "Which statement best describes predictive AI?",
+        "options": [
+            "predicts missing pieces of information when generating new content",
+            "it refers to the use of machine learning to identify patterns in past events and make predictions about future events",
+            "generates new content based on a variety of inputs",
+            "generates new content based on a single input"
+        ],
+        "correct": "it refers to the use of machine learning to identify patterns in past events and make predictions about future events",
+        "category": "Automation and AI",
+        "explanation": "**Prediktiv AI** använder historiska data och maskininlärning för att identifiera mönster och förutse framtida händelser, till skillnad från generativ AI som skapar nytt innehåll."
+    },
+    {
+        "question": "Which two situations result in the default VLAN being assigned to a port? (Choose two.)",
+        "options": [
+            "The administrator issued the switchport access vlan DEFAULT command.",
+            "The administrator sets the interface back to defaults using the default interface command.",
+            "The non-default VLAN that is assigned to the port is administratively down.",
+            "The non-default VLAN that was assigned to the port was deleted.",
+            "The administrator did not assign any VLAN to the interface"
+        ],
+        "correct": [
+          "The administrator sets the interface back to defaults using the default interface command.", 
+          "The administrator did not assign any VLAN to the interface"
+        ],
+        "category": "Network Access",
+        "explanation": "VLAN 1 är standard-VLAN. Portar hamnar där vid fabriksinställning eller om administratören nollställer porten med `default interface`. Att radera ett VLAN gör porten inaktiv men ändrar inte konfigurationen till VLAN 1."
+    },
+    {
+        "question": "When the store-and-forward switching method is in use, which part of the Ethernet frame is used to perform error checking using cyclic redundancy check (CRC)?",
+        "options": [
+            "All frame fields, except the FCS field in the trailer.",
+            "The destination MAC address in the header, and the FCS field in the trailer.",
+            "The frame check sequence (FCS) field in the trailer.",
+            "The source MAC address in the header, and the FCS field in the trailer."
+        ],
+        "correct": "All frame fields, except the FCS field in the trailer.",
+        "category": "Network Fundamentals",
+        "explanation": "Enligt Cisco beräknas CRC-värdet för FCS-fältet baserat på innehållet i alla andra fält i ramen (Destination, Source, Type, Data/Padding). FCS-fältet självt kan inte ingå i beräkningen av sitt eget värde."
+    },
+    {
+        "question": "When an access port is enabled with the PortFast feature, which two STP states are bypassed? (Choose two.)",
+        "options": [
+            "administratively down",
+            "blocking",
+            "forwarding",
+            "learning",
+            "listening"
+        ],
+        "correct": [
+         "learning",
+         "listening"
+        ],
+        "category": "Network Access",
+        "explanation": "PortFast gör att en access-port hoppar över de 30 sekunderna i tillstånden **listening** och **learning** för att gå direkt från blocking till forwarding."
     }
 ]
