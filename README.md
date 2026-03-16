@@ -4,6 +4,10 @@
 
 A fast, category-based knowledge testing application built with Flask (Python) and JavaScript/CSS, specialized for CCNA certification training.
 
+You can test this app here: https://ccna.onrender.com
+
+
+
 ---
 
 ### Key Features
